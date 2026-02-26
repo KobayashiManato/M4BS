@@ -7,7 +7,6 @@ Partial Public Class Form_f_flx_TANA
 
     Public Property TanaDate As Date
     Private _crud As New CrudHelper()
-    Private _formHelper As New FormHelper()
 
     Public Sub New()
         InitializeComponent()
@@ -98,7 +97,7 @@ Partial Public Class Form_f_flx_TANA
     Private Sub dgv_LIST_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv_LIST.CellDoubleClick
         If e.RowIndex < 0 Then Return
 
-        Dim selectedRow = _formHelper.GetSelectedRow(dgv_LIST)
+        Dim selectedRow = dgv_LIST.GetSelectedRow()
         If selectedRow Is Nothing Then
             Return
         End If

@@ -6,7 +6,6 @@ Partial Public Class Form_f_flx_KLSRYO
     Inherits Form
 
     Private _crud As New CrudHelper()
-    Private _formHelper As New FormHelper()
 
     Public Sub New()
         InitializeComponent()
@@ -86,10 +85,10 @@ Partial Public Class Form_f_flx_KLSRYO
 
     ' --- グリッドの見た目調整 ---
     Private Sub ApplyGridStyle()
-        _formHelper.HideColumns(dgv_LIST, "kykm_id", "kykh_id")
+        dgv_LIST.HideColumns("kykm_id", "kykh_id")
 
-        _formHelper.FormatColumn(dgv_LIST, "現金購入価額_物件", "#0,00")
-        _formHelper.FormatColumn(dgv_LIST, "総支払額", "#0,00")
+        dgv_LIST.FormatColumn("現金購入価額_物件", "#0,00")
+        dgv_LIST.FormatColumn("総支払額", "#0,00")
     End Sub
 
     ' [閉じる]ボタン

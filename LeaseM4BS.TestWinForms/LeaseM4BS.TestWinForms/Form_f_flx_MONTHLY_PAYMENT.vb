@@ -4,7 +4,6 @@ Imports Npgsql
 Public Class Form_f_flx_MONTHLY_PAYMENT
     Public Property labelText As String
     Private _crud As crudHelper = New crudHelper()
-    Private _formHelper As FormHelper = New FormHelper()
 
     Private Sub Form_f_flx_MONTHLY_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         lbl_CONDITION.Text = labelText
@@ -93,11 +92,11 @@ Public Class Form_f_flx_MONTHLY_PAYMENT
 
     ' --- グリッドの見た目調整 ---
     Private Sub ApplyGridStyle()
-        _formHelper.HideColumns(dgv_LIST, "kykm_id", "kykh_id")
+        dgv_LIST.HideColumns("kykm_id", "kykh_id")
 
         ' 日付を短い形式に
-        _formHelper.FormatColumn(dgv_LIST, "開始日", "yyyy/MM/dd")
-        _formHelper.FormatColumn(dgv_LIST, "終了日", "yyyy/MM/dd")
+        dgv_LIST.FormatColumn("開始日", "yyyy/MM/dd")
+        dgv_LIST.FormatColumn("終了日", "yyyy/MM/dd")
     End Sub
 
     ' [閉じる]ボタン
@@ -112,7 +111,7 @@ Public Class Form_f_flx_MONTHLY_PAYMENT
 
     ' [照会]ボタン
     Private Sub cmd_REF_Click(sender As Object, e As EventArgs) Handles cmd_REF.Click
-        Dim selectedRow = _formHelper.GetSelectedRow(dgv_LIST)
+        Dim selectedRow = dgv_LIST.GetSelectedRow()
 
         If selectedRow Is Nothing Then Return
 

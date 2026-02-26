@@ -1,21 +1,192 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\VA03\\source\\repos\\LeaseM4BS\\",
+  "WorkspaceRootPath": "C:\\Users\\VA03\\source\\repos\\M4BS\\LeaseM4BS\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{77A9AE2A-E73B-468C-BCCE-841079F4724C}|..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms.vbproj|c:\\users\\va03\\source\\repos\\leasem4bs.testwinforms\\leasem4bs.testwinforms\\frmbuknentry.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+      "AbsoluteMoniker": "D:0:0:{00000000-0000-0000-0000-000000000000}|\u003CSolution\u003E|LeaseM4BS.TestWinForms||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{77A9AE2A-E73B-468C-BCCE-841079F4724C}|..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms.vbproj|c:\\users\\va03\\source\\repos\\leasem4bs.testwinforms\\leasem4bs.testwinforms\\frmbuknentry.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
+      "AbsoluteMoniker": "D:0:0:{77A9AE2A-E73B-468C-BCCE-841079F4724C}|..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms.vbproj|c:\\users\\va03\\source\\repos\\m4bs\\leasem4bs.testwinforms\\leasem4bs.testwinforms\\formhelper.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{77A9AE2A-E73B-468C-BCCE-841079F4724C}|..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms.vbproj|c:\\users\\va03\\source\\repos\\leasem4bs.testwinforms\\leasem4bs.testwinforms\\frmbuknlist.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
+      "AbsoluteMoniker": "D:0:0:{77A9AE2A-E73B-468C-BCCE-841079F4724C}|..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms.vbproj|c:\\users\\va03\\source\\repos\\m4bs\\leasem4bs.testwinforms\\leasem4bs.testwinforms\\frmjournalentry.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{77A9AE2A-E73B-468C-BCCE-841079F4724C}|..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms.vbproj|c:\\users\\va03\\source\\repos\\leasem4bs.testwinforms\\leasem4bs.testwinforms\\formhelper.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+      "AbsoluteMoniker": "D:0:0:{77A9AE2A-E73B-468C-BCCE-841079F4724C}|..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms.vbproj|c:\\users\\va03\\source\\repos\\m4bs\\leasem4bs.testwinforms\\leasem4bs.testwinforms\\frmcontractlist.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{77A9AE2A-E73B-468C-BCCE-841079F4724C}|..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms.vbproj|c:\\users\\va03\\source\\repos\\leasem4bs.testwinforms\\leasem4bs.testwinforms\\form_f_flx_idolst.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+      "AbsoluteMoniker": "D:0:0:{77A9AE2A-E73B-468C-BCCE-841079F4724C}|..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms.vbproj|c:\\users\\va03\\source\\repos\\m4bs\\leasem4bs.testwinforms\\leasem4bs.testwinforms\\frmcontractentry.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{77A9AE2A-E73B-468C-BCCE-841079F4724C}|..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms.vbproj|c:\\users\\va03\\source\\repos\\m4bs\\leasem4bs.testwinforms\\leasem4bs.testwinforms\\frmbuknlist.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{77A9AE2A-E73B-468C-BCCE-841079F4724C}|..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms.vbproj|c:\\users\\va03\\source\\repos\\m4bs\\leasem4bs.testwinforms\\leasem4bs.testwinforms\\frmbuknentry.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{77A9AE2A-E73B-468C-BCCE-841079F4724C}|..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms.vbproj|c:\\users\\va03\\source\\repos\\m4bs\\leasem4bs.testwinforms\\leasem4bs.testwinforms\\form_skmk.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{77A9AE2A-E73B-468C-BCCE-841079F4724C}|..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms.vbproj|c:\\users\\va03\\source\\repos\\m4bs\\leasem4bs.testwinforms\\leasem4bs.testwinforms\\form_lcpt.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{77A9AE2A-E73B-468C-BCCE-841079F4724C}|..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms.vbproj|c:\\users\\va03\\source\\repos\\m4bs\\leasem4bs.testwinforms\\leasem4bs.testwinforms\\form_kknri.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{77A9AE2A-E73B-468C-BCCE-841079F4724C}|..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms.vbproj|c:\\users\\va03\\source\\repos\\m4bs\\leasem4bs.testwinforms\\leasem4bs.testwinforms\\form_hkmk.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{77A9AE2A-E73B-468C-BCCE-841079F4724C}|..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms.vbproj|c:\\users\\va03\\source\\repos\\m4bs\\leasem4bs.testwinforms\\leasem4bs.testwinforms\\form_f_saimu_joken.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{77A9AE2A-E73B-468C-BCCE-841079F4724C}|..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms.vbproj|c:\\users\\va03\\source\\repos\\m4bs\\leasem4bs.testwinforms\\leasem4bs.testwinforms\\form_f_m_skmk_inp.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{77A9AE2A-E73B-468C-BCCE-841079F4724C}|..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms.vbproj|c:\\users\\va03\\source\\repos\\m4bs\\leasem4bs.testwinforms\\leasem4bs.testwinforms\\form_f_m_skmk_change.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{77A9AE2A-E73B-468C-BCCE-841079F4724C}|..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms.vbproj|c:\\users\\va03\\source\\repos\\m4bs\\leasem4bs.testwinforms\\leasem4bs.testwinforms\\form_f_m_lcpt_inp.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{77A9AE2A-E73B-468C-BCCE-841079F4724C}|..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms.vbproj|c:\\users\\va03\\source\\repos\\m4bs\\leasem4bs.testwinforms\\leasem4bs.testwinforms\\form_f_m_lcpt_change.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{77A9AE2A-E73B-468C-BCCE-841079F4724C}|..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms.vbproj|c:\\users\\va03\\source\\repos\\m4bs\\leasem4bs.testwinforms\\leasem4bs.testwinforms\\form_f_m_kknri_inp.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{77A9AE2A-E73B-468C-BCCE-841079F4724C}|..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms.vbproj|c:\\users\\va03\\source\\repos\\m4bs\\leasem4bs.testwinforms\\leasem4bs.testwinforms\\form_f_m_kknri_change.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{77A9AE2A-E73B-468C-BCCE-841079F4724C}|..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms.vbproj|c:\\users\\va03\\source\\repos\\m4bs\\leasem4bs.testwinforms\\leasem4bs.testwinforms\\form_f_m_hkmk_inp.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{77A9AE2A-E73B-468C-BCCE-841079F4724C}|..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms.vbproj|c:\\users\\va03\\source\\repos\\m4bs\\leasem4bs.testwinforms\\leasem4bs.testwinforms\\form_f_m_hkmk_change.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{77A9AE2A-E73B-468C-BCCE-841079F4724C}|..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms.vbproj|c:\\users\\va03\\source\\repos\\m4bs\\leasem4bs.testwinforms\\leasem4bs.testwinforms\\form_f_m_bknri_inp.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{77A9AE2A-E73B-468C-BCCE-841079F4724C}|..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms.vbproj|c:\\users\\va03\\source\\repos\\m4bs\\leasem4bs.testwinforms\\leasem4bs.testwinforms\\form_f_m_bknri_change.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{77A9AE2A-E73B-468C-BCCE-841079F4724C}|..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms.vbproj|c:\\users\\va03\\source\\repos\\m4bs\\leasem4bs.testwinforms\\leasem4bs.testwinforms\\form_f_m_bcat_inp.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{77A9AE2A-E73B-468C-BCCE-841079F4724C}|..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms.vbproj|c:\\users\\va03\\source\\repos\\m4bs\\leasem4bs.testwinforms\\leasem4bs.testwinforms\\form_f_m_bcat_change.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{77A9AE2A-E73B-468C-BCCE-841079F4724C}|..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms.vbproj|c:\\users\\va03\\source\\repos\\m4bs\\leasem4bs.testwinforms\\leasem4bs.testwinforms\\form_f_monthly_jornal_joken.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{77A9AE2A-E73B-468C-BCCE-841079F4724C}|..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms.vbproj|c:\\users\\va03\\source\\repos\\m4bs\\leasem4bs.testwinforms\\leasem4bs.testwinforms\\form_f_klsryo_joken.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{77A9AE2A-E73B-468C-BCCE-841079F4724C}|..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms.vbproj|c:\\users\\va03\\source\\repos\\m4bs\\leasem4bs.testwinforms\\leasem4bs.testwinforms\\form_f_khiyo_joken.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{77A9AE2A-E73B-468C-BCCE-841079F4724C}|..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms.vbproj|c:\\users\\va03\\source\\repos\\m4bs\\leasem4bs.testwinforms\\leasem4bs.testwinforms\\form_f_idolst_joken.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{77A9AE2A-E73B-468C-BCCE-841079F4724C}|..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms.vbproj|c:\\users\\va03\\source\\repos\\m4bs\\leasem4bs.testwinforms\\leasem4bs.testwinforms\\form_f_flx_zandaka.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{77A9AE2A-E73B-468C-BCCE-841079F4724C}|..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms.vbproj|c:\\users\\va03\\source\\repos\\m4bs\\leasem4bs.testwinforms\\leasem4bs.testwinforms\\form_f_flx_yosan.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{77A9AE2A-E73B-468C-BCCE-841079F4724C}|..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms.vbproj|c:\\users\\va03\\source\\repos\\m4bs\\leasem4bs.testwinforms\\leasem4bs.testwinforms\\form_f_flx_tana.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{77A9AE2A-E73B-468C-BCCE-841079F4724C}|..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms.vbproj|c:\\users\\va03\\source\\repos\\m4bs\\leasem4bs.testwinforms\\leasem4bs.testwinforms\\form_f_flx_saimu.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{77A9AE2A-E73B-468C-BCCE-841079F4724C}|..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms.vbproj|c:\\users\\va03\\source\\repos\\m4bs\\leasem4bs.testwinforms\\leasem4bs.testwinforms\\form_f_flx_m_skmk.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{77A9AE2A-E73B-468C-BCCE-841079F4724C}|..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms.vbproj|c:\\users\\va03\\source\\repos\\m4bs\\leasem4bs.testwinforms\\leasem4bs.testwinforms\\form_f_flx_m_shho.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{77A9AE2A-E73B-468C-BCCE-841079F4724C}|..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms.vbproj|c:\\users\\va03\\source\\repos\\m4bs\\leasem4bs.testwinforms\\leasem4bs.testwinforms\\form_f_flx_m_rsrvk1.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{77A9AE2A-E73B-468C-BCCE-841079F4724C}|..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms.vbproj|c:\\users\\va03\\source\\repos\\m4bs\\leasem4bs.testwinforms\\leasem4bs.testwinforms\\form_f_flx_m_rsrvb1.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{77A9AE2A-E73B-468C-BCCE-841079F4724C}|..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms.vbproj|c:\\users\\va03\\source\\repos\\m4bs\\leasem4bs.testwinforms\\leasem4bs.testwinforms\\form_f_flx_m_mcpt.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{77A9AE2A-E73B-468C-BCCE-841079F4724C}|..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms.vbproj|c:\\users\\va03\\source\\repos\\m4bs\\leasem4bs.testwinforms\\leasem4bs.testwinforms\\form_f_flx_m_lcpt.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{77A9AE2A-E73B-468C-BCCE-841079F4724C}|..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms.vbproj|c:\\users\\va03\\source\\repos\\m4bs\\leasem4bs.testwinforms\\leasem4bs.testwinforms\\form_f_flx_m_koza.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{77A9AE2A-E73B-468C-BCCE-841079F4724C}|..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms.vbproj|c:\\users\\va03\\source\\repos\\m4bs\\leasem4bs.testwinforms\\leasem4bs.testwinforms\\form_f_flx_m_kknri.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{77A9AE2A-E73B-468C-BCCE-841079F4724C}|..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms.vbproj|c:\\users\\va03\\source\\repos\\m4bs\\leasem4bs.testwinforms\\leasem4bs.testwinforms\\form_f_flx_m_hkmk.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{77A9AE2A-E73B-468C-BCCE-841079F4724C}|..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms.vbproj|c:\\users\\va03\\source\\repos\\m4bs\\leasem4bs.testwinforms\\leasem4bs.testwinforms\\form_f_flx_m_hkho.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{77A9AE2A-E73B-468C-BCCE-841079F4724C}|..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms.vbproj|c:\\users\\va03\\source\\repos\\m4bs\\leasem4bs.testwinforms\\leasem4bs.testwinforms\\form_f_flx_m_gsha.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{77A9AE2A-E73B-468C-BCCE-841079F4724C}|..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms.vbproj|c:\\users\\va03\\source\\repos\\m4bs\\leasem4bs.testwinforms\\leasem4bs.testwinforms\\form_f_flx_m_genk.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{77A9AE2A-E73B-468C-BCCE-841079F4724C}|..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms.vbproj|c:\\users\\va03\\source\\repos\\m4bs\\leasem4bs.testwinforms\\leasem4bs.testwinforms\\form_f_flx_m_corp.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{77A9AE2A-E73B-468C-BCCE-841079F4724C}|..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms.vbproj|c:\\users\\va03\\source\\repos\\m4bs\\leasem4bs.testwinforms\\leasem4bs.testwinforms\\form_f_flx_m_bknri.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{77A9AE2A-E73B-468C-BCCE-841079F4724C}|..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms.vbproj|c:\\users\\va03\\source\\repos\\m4bs\\leasem4bs.testwinforms\\leasem4bs.testwinforms\\form_f_flx_m_bkind.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{77A9AE2A-E73B-468C-BCCE-841079F4724C}|..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms.vbproj|c:\\users\\va03\\source\\repos\\m4bs\\leasem4bs.testwinforms\\leasem4bs.testwinforms\\form_f_flx_m_bcat.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{77A9AE2A-E73B-468C-BCCE-841079F4724C}|..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms.vbproj|c:\\users\\va03\\source\\repos\\m4bs\\leasem4bs.testwinforms\\leasem4bs.testwinforms\\form_f_flx_monthly_payment.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{77A9AE2A-E73B-468C-BCCE-841079F4724C}|..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms.vbproj|c:\\users\\va03\\source\\repos\\m4bs\\leasem4bs.testwinforms\\leasem4bs.testwinforms\\form_f_flx_monthly_journal.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{77A9AE2A-E73B-468C-BCCE-841079F4724C}|..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms.vbproj|c:\\users\\va03\\source\\repos\\m4bs\\leasem4bs.testwinforms\\leasem4bs.testwinforms\\form_f_flx_klsryo.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{77A9AE2A-E73B-468C-BCCE-841079F4724C}|..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms.vbproj|c:\\users\\va03\\source\\repos\\m4bs\\leasem4bs.testwinforms\\leasem4bs.testwinforms\\form_f_flx_khiyo.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{77A9AE2A-E73B-468C-BCCE-841079F4724C}|..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms.vbproj|c:\\users\\va03\\source\\repos\\m4bs\\leasem4bs.testwinforms\\leasem4bs.testwinforms\\form_f_flx_idolst.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{77A9AE2A-E73B-468C-BCCE-841079F4724C}|..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms.vbproj|c:\\users\\va03\\source\\repos\\m4bs\\leasem4bs.testwinforms\\leasem4bs.testwinforms\\form_f_flx_d_haif.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{77A9AE2A-E73B-468C-BCCE-841079F4724C}|..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms.vbproj|c:\\users\\va03\\source\\repos\\m4bs\\leasem4bs.testwinforms\\leasem4bs.testwinforms\\form_f_flx_chuki.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{77A9AE2A-E73B-468C-BCCE-841079F4724C}|..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms.vbproj|c:\\users\\va03\\source\\repos\\m4bs\\leasem4bs.testwinforms\\leasem4bs.testwinforms\\form_f_flx_beppyo.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{77A9AE2A-E73B-468C-BCCE-841079F4724C}|..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms.vbproj|c:\\users\\va03\\source\\repos\\m4bs\\leasem4bs.testwinforms\\leasem4bs.testwinforms\\form_f_chuki_sch.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{77A9AE2A-E73B-468C-BCCE-841079F4724C}|..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms.vbproj|c:\\users\\va03\\source\\repos\\m4bs\\leasem4bs.testwinforms\\leasem4bs.testwinforms\\form_f_chuki_joken.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{77A9AE2A-E73B-468C-BCCE-841079F4724C}|..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms.vbproj|c:\\users\\va03\\source\\repos\\m4bs\\leasem4bs.testwinforms\\leasem4bs.testwinforms\\form_bknri.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{77A9AE2A-E73B-468C-BCCE-841079F4724C}|..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms.vbproj|c:\\users\\va03\\source\\repos\\m4bs\\leasem4bs.testwinforms\\leasem4bs.testwinforms\\form_bcat.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{77A9AE2A-E73B-468C-BCCE-841079F4724C}|..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms.vbproj|c:\\users\\va03\\source\\repos\\m4bs\\leasem4bs.testwinforms\\leasem4bs.testwinforms\\form_fc_tc_hrel.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{77A9AE2A-E73B-468C-BCCE-841079F4724C}|..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms.vbproj|c:\\users\\va03\\source\\repos\\m4bs\\leasem4bs.testwinforms\\leasem4bs.testwinforms\\||{B270807C-D8C6-49EB-8EBE-8E8D566637A1}|8998e48e-b89a-4034-b66e-353d8c1fdc2e"
     }
   ],
   "DocumentGroupContainers": [
@@ -25,7 +196,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -37,64 +208,737 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "FrmBuknList.vb [\u30C7\u30B6\u30A4\u30F3]",
-              "DocumentMoniker": "C:\\Users\\VA03\\source\\repos\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\FrmBuknList.vb",
-              "RelativeDocumentMoniker": "..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\FrmBuknList.vb",
-              "ToolTip": "C:\\Users\\VA03\\source\\repos\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\FrmBuknList.vb [\u30C7\u30B6\u30A4\u30F3]",
-              "RelativeToolTip": "..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\FrmBuknList.vb [\u30C7\u30B6\u30A4\u30F3]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2026-02-25T12:40:41.363Z",
-              "EditorCaption": " [\u30C7\u30B6\u30A4\u30F3]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "FormHelper.vb",
-              "DocumentMoniker": "C:\\Users\\VA03\\source\\repos\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\FormHelper.vb",
-              "RelativeDocumentMoniker": "..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\FormHelper.vb",
-              "ToolTip": "C:\\Users\\VA03\\source\\repos\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\FormHelper.vb",
-              "RelativeToolTip": "..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\FormHelper.vb",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAnAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2026-02-20T00:08:36.104Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "FrmBuknEntry.vb",
-              "DocumentMoniker": "C:\\Users\\VA03\\source\\repos\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\FrmBuknEntry.vb",
-              "RelativeDocumentMoniker": "..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\FrmBuknEntry.vb",
-              "ToolTip": "C:\\Users\\VA03\\source\\repos\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\FrmBuknEntry.vb",
-              "RelativeToolTip": "..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\FrmBuknEntry.vb",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAIcBAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2026-02-20T00:51:23.812Z",
+              "Title": "LeaseM4BS.TestWinForms",
+              "DocumentMoniker": "C:\\Users\\VA03\\source\\repos\\M4BS\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms.vbproj",
+              "RelativeDocumentMoniker": "..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms.vbproj",
+              "ToolTip": "C:\\Users\\VA03\\source\\repos\\M4BS\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms.vbproj*",
+              "RelativeToolTip": "..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms.vbproj*",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-02-26T06:13:02.317Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "FrmBuknEntry.vb [\u30C7\u30B6\u30A4\u30F3]",
-              "DocumentMoniker": "C:\\Users\\VA03\\source\\repos\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\FrmBuknEntry.vb",
-              "RelativeDocumentMoniker": "..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\FrmBuknEntry.vb",
-              "ToolTip": "C:\\Users\\VA03\\source\\repos\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\FrmBuknEntry.vb [\u30C7\u30B6\u30A4\u30F3]",
-              "RelativeToolTip": "..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\FrmBuknEntry.vb [\u30C7\u30B6\u30A4\u30F3]",
+              "Title": "FormHelper.vb",
+              "DocumentMoniker": "C:\\Users\\VA03\\source\\repos\\M4BS\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\FormHelper.vb",
+              "RelativeDocumentMoniker": "..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\FormHelper.vb",
+              "ToolTip": "C:\\Users\\VA03\\source\\repos\\M4BS\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\FormHelper.vb",
+              "RelativeToolTip": "..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\FormHelper.vb",
+              "ViewState": "AgIAAJ0AAAAAAAAAAAAmwLgAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2026-02-20T00:51:21.898Z",
-              "EditorCaption": " [\u30C7\u30B6\u30A4\u30F3]"
+              "WhenOpened": "2026-02-26T06:10:32.854Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "FrmJournalEntry.vb",
+              "DocumentMoniker": "C:\\Users\\VA03\\source\\repos\\M4BS\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\FrmJournalEntry.vb",
+              "RelativeDocumentMoniker": "..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\FrmJournalEntry.vb",
+              "ToolTip": "C:\\Users\\VA03\\source\\repos\\M4BS\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\FrmJournalEntry.vb",
+              "RelativeToolTip": "..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\FrmJournalEntry.vb",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAIQAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2026-02-26T06:09:36.375Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "FrmContractList.vb",
+              "DocumentMoniker": "C:\\Users\\VA03\\source\\repos\\M4BS\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\FrmContractList.vb",
+              "RelativeDocumentMoniker": "..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\FrmContractList.vb",
+              "ToolTip": "C:\\Users\\VA03\\source\\repos\\M4BS\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\FrmContractList.vb",
+              "RelativeToolTip": "..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\FrmContractList.vb",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2026-02-26T06:09:30.051Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "Form_f_flx_IDOLST.vb",
-              "DocumentMoniker": "C:\\Users\\VA03\\source\\repos\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_flx_IDOLST.vb",
-              "RelativeDocumentMoniker": "..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_flx_IDOLST.vb",
-              "ToolTip": "C:\\Users\\VA03\\source\\repos\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_flx_IDOLST.vb",
-              "RelativeToolTip": "..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_flx_IDOLST.vb",
-              "ViewState": "AgIAAI8AAAAAAAAAAAAqwI4AAAAcAAAAAAAAAA==",
+              "Title": "FrmContractEntry.vb",
+              "DocumentMoniker": "C:\\Users\\VA03\\source\\repos\\M4BS\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\FrmContractEntry.vb",
+              "RelativeDocumentMoniker": "..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\FrmContractEntry.vb",
+              "ToolTip": "C:\\Users\\VA03\\source\\repos\\M4BS\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\FrmContractEntry.vb",
+              "RelativeToolTip": "..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\FrmContractEntry.vb",
+              "ViewState": "AgIAAAYDAAAAAAAAAAAnwB8DAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2026-02-18T13:00:33.545Z"
+              "WhenOpened": "2026-02-26T06:06:40.918Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "FrmBuknList.vb",
+              "DocumentMoniker": "C:\\Users\\VA03\\source\\repos\\M4BS\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\FrmBuknList.vb",
+              "RelativeDocumentMoniker": "..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\FrmBuknList.vb",
+              "ToolTip": "C:\\Users\\VA03\\source\\repos\\M4BS\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\FrmBuknList.vb",
+              "RelativeToolTip": "..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\FrmBuknList.vb",
+              "ViewState": "AgIAAF0AAAAAAAAAAAAIwGMAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2026-02-26T06:05:38.626Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "FrmBuknEntry.vb",
+              "DocumentMoniker": "C:\\Users\\VA03\\source\\repos\\M4BS\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\FrmBuknEntry.vb",
+              "RelativeDocumentMoniker": "..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\FrmBuknEntry.vb",
+              "ToolTip": "C:\\Users\\VA03\\source\\repos\\M4BS\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\FrmBuknEntry.vb",
+              "RelativeToolTip": "..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\FrmBuknEntry.vb",
+              "ViewState": "AgIAABsAAAAAAAAAAAArwDYAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2026-02-26T05:57:36.096Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Form_SKMK.vb",
+              "DocumentMoniker": "C:\\Users\\VA03\\source\\repos\\M4BS\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_SKMK.vb",
+              "RelativeDocumentMoniker": "..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_SKMK.vb",
+              "ToolTip": "C:\\Users\\VA03\\source\\repos\\M4BS\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_SKMK.vb",
+              "RelativeToolTip": "..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_SKMK.vb",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2026-02-26T05:56:00.95Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Form_LCPT.vb",
+              "DocumentMoniker": "C:\\Users\\VA03\\source\\repos\\M4BS\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_LCPT.vb",
+              "RelativeDocumentMoniker": "..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_LCPT.vb",
+              "ToolTip": "C:\\Users\\VA03\\source\\repos\\M4BS\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_LCPT.vb",
+              "RelativeToolTip": "..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_LCPT.vb",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2026-02-26T05:54:52.477Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Form_KKNRI.vb",
+              "DocumentMoniker": "C:\\Users\\VA03\\source\\repos\\M4BS\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_KKNRI.vb",
+              "RelativeDocumentMoniker": "..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_KKNRI.vb",
+              "ToolTip": "C:\\Users\\VA03\\source\\repos\\M4BS\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_KKNRI.vb",
+              "RelativeToolTip": "..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_KKNRI.vb",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2026-02-26T05:53:33.842Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Form_HKMK.vb",
+              "DocumentMoniker": "C:\\Users\\VA03\\source\\repos\\M4BS\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_HKMK.vb",
+              "RelativeDocumentMoniker": "..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_HKMK.vb",
+              "ToolTip": "C:\\Users\\VA03\\source\\repos\\M4BS\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_HKMK.vb",
+              "RelativeToolTip": "..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_HKMK.vb",
+              "ViewState": "AgIAAA0AAAAAAAAAAAArwCgAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2026-02-26T05:52:19.648Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Form_f_SAIMU_JOKEN.vb",
+              "DocumentMoniker": "C:\\Users\\VA03\\source\\repos\\M4BS\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_SAIMU_JOKEN.vb",
+              "RelativeDocumentMoniker": "..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_SAIMU_JOKEN.vb",
+              "ToolTip": "C:\\Users\\VA03\\source\\repos\\M4BS\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_SAIMU_JOKEN.vb",
+              "RelativeToolTip": "..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_SAIMU_JOKEN.vb",
+              "ViewState": "AgIAACsAAAAAAAAAAAAUwA0AAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2026-02-26T05:51:57.857Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Form_f_M_SKMK_INP.vb",
+              "DocumentMoniker": "C:\\Users\\VA03\\source\\repos\\M4BS\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_M_SKMK_INP.vb",
+              "RelativeDocumentMoniker": "..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_M_SKMK_INP.vb",
+              "ToolTip": "C:\\Users\\VA03\\source\\repos\\M4BS\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_M_SKMK_INP.vb",
+              "RelativeToolTip": "..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_M_SKMK_INP.vb",
+              "ViewState": "AgIAALcAAAAAAAAAAAAQwHEAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2026-02-26T05:48:30.957Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Form_f_M_SKMK_CHANGE.vb",
+              "DocumentMoniker": "C:\\Users\\VA03\\source\\repos\\M4BS\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_M_SKMK_CHANGE.vb",
+              "RelativeDocumentMoniker": "..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_M_SKMK_CHANGE.vb",
+              "ToolTip": "C:\\Users\\VA03\\source\\repos\\M4BS\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_M_SKMK_CHANGE.vb",
+              "RelativeToolTip": "..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_M_SKMK_CHANGE.vb",
+              "ViewState": "AgIAAIAAAAAAAAAAAAAewJUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2026-02-26T05:45:19.578Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Form_f_M_LCPT_INP.vb",
+              "DocumentMoniker": "C:\\Users\\VA03\\source\\repos\\M4BS\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_M_LCPT_INP.vb",
+              "RelativeDocumentMoniker": "..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_M_LCPT_INP.vb",
+              "ToolTip": "C:\\Users\\VA03\\source\\repos\\M4BS\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_M_LCPT_INP.vb",
+              "RelativeToolTip": "..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_M_LCPT_INP.vb",
+              "ViewState": "AgIAAHEAAAAAAAAAAAAlwDEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2026-02-26T05:44:08.183Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Form_f_M_LCPT_CHANGE.vb",
+              "DocumentMoniker": "C:\\Users\\VA03\\source\\repos\\M4BS\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_M_LCPT_CHANGE.vb",
+              "RelativeDocumentMoniker": "..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_M_LCPT_CHANGE.vb",
+              "ToolTip": "C:\\Users\\VA03\\source\\repos\\M4BS\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_M_LCPT_CHANGE.vb",
+              "RelativeToolTip": "..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_M_LCPT_CHANGE.vb",
+              "ViewState": "AgIAAKgAAAAAAAAAAAAlwGcAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2026-02-26T05:42:41.925Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Form_f_M_KKNRI_INP.vb",
+              "DocumentMoniker": "C:\\Users\\VA03\\source\\repos\\M4BS\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_M_KKNRI_INP.vb",
+              "RelativeDocumentMoniker": "..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_M_KKNRI_INP.vb",
+              "ToolTip": "C:\\Users\\VA03\\source\\repos\\M4BS\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_M_KKNRI_INP.vb",
+              "RelativeToolTip": "..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_M_KKNRI_INP.vb",
+              "ViewState": "AgIAAEwAAAAAAAAAAAAlwDUAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2026-02-26T05:41:20.717Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "Form_f_M_KKNRI_CHANGE.vb",
+              "DocumentMoniker": "C:\\Users\\VA03\\source\\repos\\M4BS\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_M_KKNRI_CHANGE.vb",
+              "RelativeDocumentMoniker": "..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_M_KKNRI_CHANGE.vb",
+              "ToolTip": "C:\\Users\\VA03\\source\\repos\\M4BS\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_M_KKNRI_CHANGE.vb",
+              "RelativeToolTip": "..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_M_KKNRI_CHANGE.vb",
+              "ViewState": "AgIAADgAAAAAAAAAAAAjwE8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2026-02-26T05:39:59.997Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "Form_f_M_HKMK_INP.vb",
+              "DocumentMoniker": "C:\\Users\\VA03\\source\\repos\\M4BS\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_M_HKMK_INP.vb",
+              "RelativeDocumentMoniker": "..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_M_HKMK_INP.vb",
+              "ToolTip": "C:\\Users\\VA03\\source\\repos\\M4BS\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_M_HKMK_INP.vb",
+              "RelativeToolTip": "..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_M_HKMK_INP.vb",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAjwCUAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2026-02-26T05:38:29.317Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "Form_f_M_HKMK_CHANGE.vb",
+              "DocumentMoniker": "C:\\Users\\VA03\\source\\repos\\M4BS\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_M_HKMK_CHANGE.vb",
+              "RelativeDocumentMoniker": "..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_M_HKMK_CHANGE.vb",
+              "ToolTip": "C:\\Users\\VA03\\source\\repos\\M4BS\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_M_HKMK_CHANGE.vb",
+              "RelativeToolTip": "..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_M_HKMK_CHANGE.vb",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAjwEsAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2026-02-26T05:36:54.06Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "Form_f_M_BKNRI_INP.vb",
+              "DocumentMoniker": "C:\\Users\\VA03\\source\\repos\\M4BS\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_M_BKNRI_INP.vb",
+              "RelativeDocumentMoniker": "..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_M_BKNRI_INP.vb",
+              "ToolTip": "C:\\Users\\VA03\\source\\repos\\M4BS\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_M_BKNRI_INP.vb",
+              "RelativeToolTip": "..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_M_BKNRI_INP.vb",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAjwB0AAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2026-02-26T05:36:22.814Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "Form_f_M_BKNRI_CHANGE.vb",
+              "DocumentMoniker": "C:\\Users\\VA03\\source\\repos\\M4BS\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_M_BKNRI_CHANGE.vb",
+              "RelativeDocumentMoniker": "..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_M_BKNRI_CHANGE.vb",
+              "ToolTip": "C:\\Users\\VA03\\source\\repos\\M4BS\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_M_BKNRI_CHANGE.vb",
+              "RelativeToolTip": "..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_M_BKNRI_CHANGE.vb",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAnwDgAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2026-02-26T05:35:44.634Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "Form_f_M_BCAT_INP.vb",
+              "DocumentMoniker": "C:\\Users\\VA03\\source\\repos\\M4BS\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_M_BCAT_INP.vb",
+              "RelativeDocumentMoniker": "..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_M_BCAT_INP.vb",
+              "ToolTip": "C:\\Users\\VA03\\source\\repos\\M4BS\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_M_BCAT_INP.vb",
+              "RelativeToolTip": "..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_M_BCAT_INP.vb",
+              "ViewState": "AgIAAIgAAAAAAAAAAAAcwKYAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2026-02-26T05:32:15.068Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "Form_f_M_BCAT_CHANGE.vb",
+              "DocumentMoniker": "C:\\Users\\VA03\\source\\repos\\M4BS\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_M_BCAT_CHANGE.vb",
+              "RelativeDocumentMoniker": "..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_M_BCAT_CHANGE.vb",
+              "ToolTip": "C:\\Users\\VA03\\source\\repos\\M4BS\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_M_BCAT_CHANGE.vb",
+              "RelativeToolTip": "..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_M_BCAT_CHANGE.vb",
+              "ViewState": "AgIAAMQAAAAAAAAAAAAgwIgAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2026-02-26T05:28:33.051Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "Form_f_MONTHLY_JORNAL_JOKEN.vb",
+              "DocumentMoniker": "C:\\Users\\VA03\\source\\repos\\M4BS\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_MONTHLY_JORNAL_JOKEN.vb",
+              "RelativeDocumentMoniker": "..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_MONTHLY_JORNAL_JOKEN.vb",
+              "ToolTip": "C:\\Users\\VA03\\source\\repos\\M4BS\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_MONTHLY_JORNAL_JOKEN.vb",
+              "RelativeToolTip": "..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_MONTHLY_JORNAL_JOKEN.vb",
+              "ViewState": "AgIAABYAAAAAAAAAAAAAwAkAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2026-02-26T05:28:13.068Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "Form_f_KLSRYO_JOKEN.vb",
+              "DocumentMoniker": "C:\\Users\\VA03\\source\\repos\\M4BS\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_KLSRYO_JOKEN.vb",
+              "RelativeDocumentMoniker": "..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_KLSRYO_JOKEN.vb",
+              "ToolTip": "C:\\Users\\VA03\\source\\repos\\M4BS\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_KLSRYO_JOKEN.vb",
+              "RelativeToolTip": "..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_KLSRYO_JOKEN.vb",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2026-02-26T05:28:07.658Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "Form_f_KHIYO_JOKEN.vb",
+              "DocumentMoniker": "C:\\Users\\VA03\\source\\repos\\M4BS\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_KHIYO_JOKEN.vb",
+              "RelativeDocumentMoniker": "..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_KHIYO_JOKEN.vb",
+              "ToolTip": "C:\\Users\\VA03\\source\\repos\\M4BS\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_KHIYO_JOKEN.vb",
+              "RelativeToolTip": "..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_KHIYO_JOKEN.vb",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2026-02-26T05:28:00.958Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "Form_f_IDOLST_JOKEN.vb",
+              "DocumentMoniker": "C:\\Users\\VA03\\source\\repos\\M4BS\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_IDOLST_JOKEN.vb",
+              "RelativeDocumentMoniker": "..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_IDOLST_JOKEN.vb",
+              "ToolTip": "C:\\Users\\VA03\\source\\repos\\M4BS\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_IDOLST_JOKEN.vb",
+              "RelativeToolTip": "..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_IDOLST_JOKEN.vb",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2026-02-26T05:27:56.008Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "Form_f_flx_ZANDAKA.vb",
+              "DocumentMoniker": "C:\\Users\\VA03\\source\\repos\\M4BS\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_flx_ZANDAKA.vb",
+              "RelativeDocumentMoniker": "..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_flx_ZANDAKA.vb",
+              "ToolTip": "C:\\Users\\VA03\\source\\repos\\M4BS\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_flx_ZANDAKA.vb",
+              "RelativeToolTip": "..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_flx_ZANDAKA.vb",
+              "ViewState": "AgIAAI4AAAAAAAAAAAAmwLUAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2026-02-26T05:27:15.346Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "Form_f_flx_YOSAN.vb",
+              "DocumentMoniker": "C:\\Users\\VA03\\source\\repos\\M4BS\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_flx_YOSAN.vb",
+              "RelativeDocumentMoniker": "..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_flx_YOSAN.vb",
+              "ToolTip": "C:\\Users\\VA03\\source\\repos\\M4BS\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_flx_YOSAN.vb",
+              "RelativeToolTip": "..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_flx_YOSAN.vb",
+              "ViewState": "AgIAAMIAAAAAAAAAAAAIwLEAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2026-02-26T05:26:31.589Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "Form_f_flx_TANA.vb",
+              "DocumentMoniker": "C:\\Users\\VA03\\source\\repos\\M4BS\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_flx_TANA.vb",
+              "RelativeDocumentMoniker": "..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_flx_TANA.vb",
+              "ToolTip": "C:\\Users\\VA03\\source\\repos\\M4BS\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_flx_TANA.vb",
+              "RelativeToolTip": "..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_flx_TANA.vb",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2026-02-26T05:26:27.478Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "Form_f_flx_SAIMU.vb",
+              "DocumentMoniker": "C:\\Users\\VA03\\source\\repos\\M4BS\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_flx_SAIMU.vb",
+              "RelativeDocumentMoniker": "..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_flx_SAIMU.vb",
+              "ToolTip": "C:\\Users\\VA03\\source\\repos\\M4BS\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_flx_SAIMU.vb",
+              "RelativeToolTip": "..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_flx_SAIMU.vb",
+              "ViewState": "AgIAAJMAAAAAAAAAAAAowLQAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2026-02-26T05:25:51.88Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "Form_f_flx_M_SKMK.vb",
+              "DocumentMoniker": "C:\\Users\\VA03\\source\\repos\\M4BS\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_flx_M_SKMK.vb",
+              "RelativeDocumentMoniker": "..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_flx_M_SKMK.vb",
+              "ToolTip": "C:\\Users\\VA03\\source\\repos\\M4BS\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_flx_M_SKMK.vb",
+              "RelativeToolTip": "..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_flx_M_SKMK.vb",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2026-02-26T05:25:46.662Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "Form_f_flx_M_SHHO.vb",
+              "DocumentMoniker": "C:\\Users\\VA03\\source\\repos\\M4BS\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_flx_M_SHHO.vb",
+              "RelativeDocumentMoniker": "..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_flx_M_SHHO.vb",
+              "ToolTip": "C:\\Users\\VA03\\source\\repos\\M4BS\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_flx_M_SHHO.vb",
+              "RelativeToolTip": "..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_flx_M_SHHO.vb",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2026-02-26T05:25:42.477Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "Form_f_flx_M_RSRVK1.vb",
+              "DocumentMoniker": "C:\\Users\\VA03\\source\\repos\\M4BS\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_flx_M_RSRVK1.vb",
+              "RelativeDocumentMoniker": "..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_flx_M_RSRVK1.vb",
+              "ToolTip": "C:\\Users\\VA03\\source\\repos\\M4BS\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_flx_M_RSRVK1.vb",
+              "RelativeToolTip": "..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_flx_M_RSRVK1.vb",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2026-02-26T05:25:38.318Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "Form_f_flx_M_RSRVB1.vb",
+              "DocumentMoniker": "C:\\Users\\VA03\\source\\repos\\M4BS\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_flx_M_RSRVB1.vb",
+              "RelativeDocumentMoniker": "..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_flx_M_RSRVB1.vb",
+              "ToolTip": "C:\\Users\\VA03\\source\\repos\\M4BS\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_flx_M_RSRVB1.vb",
+              "RelativeToolTip": "..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_flx_M_RSRVB1.vb",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2026-02-26T05:25:32.288Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "Form_f_flx_M_MCPT.vb",
+              "DocumentMoniker": "C:\\Users\\VA03\\source\\repos\\M4BS\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_flx_M_MCPT.vb",
+              "RelativeDocumentMoniker": "..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_flx_M_MCPT.vb",
+              "ToolTip": "C:\\Users\\VA03\\source\\repos\\M4BS\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_flx_M_MCPT.vb",
+              "RelativeToolTip": "..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_flx_M_MCPT.vb",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2026-02-26T05:25:27.669Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "Form_f_flx_M_LCPT.vb",
+              "DocumentMoniker": "C:\\Users\\VA03\\source\\repos\\M4BS\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_flx_M_LCPT.vb",
+              "RelativeDocumentMoniker": "..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_flx_M_LCPT.vb",
+              "ToolTip": "C:\\Users\\VA03\\source\\repos\\M4BS\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_flx_M_LCPT.vb",
+              "RelativeToolTip": "..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_flx_M_LCPT.vb",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2026-02-26T05:25:22.388Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "Form_f_flx_M_KOZA.vb",
+              "DocumentMoniker": "C:\\Users\\VA03\\source\\repos\\M4BS\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_flx_M_KOZA.vb",
+              "RelativeDocumentMoniker": "..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_flx_M_KOZA.vb",
+              "ToolTip": "C:\\Users\\VA03\\source\\repos\\M4BS\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_flx_M_KOZA.vb",
+              "RelativeToolTip": "..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_flx_M_KOZA.vb",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2026-02-26T05:25:17.78Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
+              "Title": "Form_f_flx_M_KKNRI.vb",
+              "DocumentMoniker": "C:\\Users\\VA03\\source\\repos\\M4BS\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_flx_M_KKNRI.vb",
+              "RelativeDocumentMoniker": "..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_flx_M_KKNRI.vb",
+              "ToolTip": "C:\\Users\\VA03\\source\\repos\\M4BS\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_flx_M_KKNRI.vb",
+              "RelativeToolTip": "..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_flx_M_KKNRI.vb",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2026-02-26T05:25:12.908Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 40,
+              "Title": "Form_f_flx_M_HKMK.vb",
+              "DocumentMoniker": "C:\\Users\\VA03\\source\\repos\\M4BS\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_flx_M_HKMK.vb",
+              "RelativeDocumentMoniker": "..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_flx_M_HKMK.vb",
+              "ToolTip": "C:\\Users\\VA03\\source\\repos\\M4BS\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_flx_M_HKMK.vb",
+              "RelativeToolTip": "..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_flx_M_HKMK.vb",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2026-02-26T05:25:07.219Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 41,
+              "Title": "Form_f_flx_M_HKHO.vb",
+              "DocumentMoniker": "C:\\Users\\VA03\\source\\repos\\M4BS\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_flx_M_HKHO.vb",
+              "RelativeDocumentMoniker": "..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_flx_M_HKHO.vb",
+              "ToolTip": "C:\\Users\\VA03\\source\\repos\\M4BS\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_flx_M_HKHO.vb",
+              "RelativeToolTip": "..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_flx_M_HKHO.vb",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2026-02-26T05:25:02.205Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 42,
+              "Title": "Form_f_flx_M_GSHA.vb",
+              "DocumentMoniker": "C:\\Users\\VA03\\source\\repos\\M4BS\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_flx_M_GSHA.vb",
+              "RelativeDocumentMoniker": "..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_flx_M_GSHA.vb",
+              "ToolTip": "C:\\Users\\VA03\\source\\repos\\M4BS\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_flx_M_GSHA.vb",
+              "RelativeToolTip": "..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_flx_M_GSHA.vb",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2026-02-26T05:24:57.468Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 43,
+              "Title": "Form_f_flx_M_GENK.vb",
+              "DocumentMoniker": "C:\\Users\\VA03\\source\\repos\\M4BS\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_flx_M_GENK.vb",
+              "RelativeDocumentMoniker": "..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_flx_M_GENK.vb",
+              "ToolTip": "C:\\Users\\VA03\\source\\repos\\M4BS\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_flx_M_GENK.vb",
+              "RelativeToolTip": "..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_flx_M_GENK.vb",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2026-02-26T05:24:52.378Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 44,
+              "Title": "Form_f_flx_M_CORP.vb",
+              "DocumentMoniker": "C:\\Users\\VA03\\source\\repos\\M4BS\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_flx_M_CORP.vb",
+              "RelativeDocumentMoniker": "..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_flx_M_CORP.vb",
+              "ToolTip": "C:\\Users\\VA03\\source\\repos\\M4BS\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_flx_M_CORP.vb",
+              "RelativeToolTip": "..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_flx_M_CORP.vb",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2026-02-26T05:24:47.598Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 45,
+              "Title": "Form_f_flx_M_BKNRI.vb",
+              "DocumentMoniker": "C:\\Users\\VA03\\source\\repos\\M4BS\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_flx_M_BKNRI.vb",
+              "RelativeDocumentMoniker": "..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_flx_M_BKNRI.vb",
+              "ToolTip": "C:\\Users\\VA03\\source\\repos\\M4BS\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_flx_M_BKNRI.vb",
+              "RelativeToolTip": "..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_flx_M_BKNRI.vb",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2026-02-26T05:24:43.328Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 46,
+              "Title": "Form_f_flx_M_BKIND.vb",
+              "DocumentMoniker": "C:\\Users\\VA03\\source\\repos\\M4BS\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_flx_M_BKIND.vb",
+              "RelativeDocumentMoniker": "..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_flx_M_BKIND.vb",
+              "ToolTip": "C:\\Users\\VA03\\source\\repos\\M4BS\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_flx_M_BKIND.vb",
+              "RelativeToolTip": "..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_flx_M_BKIND.vb",
+              "ViewState": "AgIAAEYAAAAAAAAAAAAgwAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2026-02-26T05:24:32.908Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 47,
+              "Title": "Form_f_flx_M_BCAT.vb",
+              "DocumentMoniker": "C:\\Users\\VA03\\source\\repos\\M4BS\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_flx_M_BCAT.vb",
+              "RelativeDocumentMoniker": "..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_flx_M_BCAT.vb",
+              "ToolTip": "C:\\Users\\VA03\\source\\repos\\M4BS\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_flx_M_BCAT.vb",
+              "RelativeToolTip": "..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_flx_M_BCAT.vb",
+              "ViewState": "AgIAAEsAAAAAAAAAAADgv2UAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2026-02-26T05:24:20.377Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 48,
+              "Title": "Form_f_flx_MONTHLY_PAYMENT.vb",
+              "DocumentMoniker": "C:\\Users\\VA03\\source\\repos\\M4BS\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_flx_MONTHLY_PAYMENT.vb",
+              "RelativeDocumentMoniker": "..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_flx_MONTHLY_PAYMENT.vb",
+              "ToolTip": "C:\\Users\\VA03\\source\\repos\\M4BS\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_flx_MONTHLY_PAYMENT.vb",
+              "RelativeToolTip": "..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_flx_MONTHLY_PAYMENT.vb",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2026-02-26T05:23:46.684Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 49,
+              "Title": "Form_f_flx_MONTHLY_JOURNAL.vb",
+              "DocumentMoniker": "C:\\Users\\VA03\\source\\repos\\M4BS\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_flx_MONTHLY_JOURNAL.vb",
+              "RelativeDocumentMoniker": "..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_flx_MONTHLY_JOURNAL.vb",
+              "ToolTip": "C:\\Users\\VA03\\source\\repos\\M4BS\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_flx_MONTHLY_JOURNAL.vb",
+              "RelativeToolTip": "..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_flx_MONTHLY_JOURNAL.vb",
+              "ViewState": "AgIAAEYAAAAAAAAAAAAUwFMAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2026-02-26T05:23:27.85Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 50,
+              "Title": "Form_f_flx_KLSRYO.vb",
+              "DocumentMoniker": "C:\\Users\\VA03\\source\\repos\\M4BS\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_flx_KLSRYO.vb",
+              "RelativeDocumentMoniker": "..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_flx_KLSRYO.vb",
+              "ToolTip": "C:\\Users\\VA03\\source\\repos\\M4BS\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_flx_KLSRYO.vb",
+              "RelativeToolTip": "..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_flx_KLSRYO.vb",
+              "ViewState": "AgIAADwAAAAAAAAAAAArwFcAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2026-02-26T05:22:45.233Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 51,
+              "Title": "Form_f_flx_KHIYO.vb",
+              "DocumentMoniker": "C:\\Users\\VA03\\source\\repos\\M4BS\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_flx_KHIYO.vb",
+              "RelativeDocumentMoniker": "..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_flx_KHIYO.vb",
+              "ToolTip": "C:\\Users\\VA03\\source\\repos\\M4BS\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_flx_KHIYO.vb",
+              "RelativeToolTip": "..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_flx_KHIYO.vb",
+              "ViewState": "AgIAADMBAAAAAAAAAAAcwDAAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2026-02-26T05:22:17.066Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 52,
+              "Title": "Form_f_flx_IDOLST.vb",
+              "DocumentMoniker": "C:\\Users\\VA03\\source\\repos\\M4BS\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_flx_IDOLST.vb",
+              "RelativeDocumentMoniker": "..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_flx_IDOLST.vb",
+              "ToolTip": "C:\\Users\\VA03\\source\\repos\\M4BS\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_flx_IDOLST.vb",
+              "RelativeToolTip": "..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_flx_IDOLST.vb",
+              "ViewState": "AgIAAJoAAAAAAAAAAAAswIUAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2026-02-26T05:21:00.936Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 53,
+              "Title": "Form_f_flx_D_HAIF.vb",
+              "DocumentMoniker": "C:\\Users\\VA03\\source\\repos\\M4BS\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_flx_D_HAIF.vb",
+              "RelativeDocumentMoniker": "..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_flx_D_HAIF.vb",
+              "ToolTip": "C:\\Users\\VA03\\source\\repos\\M4BS\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_flx_D_HAIF.vb",
+              "RelativeToolTip": "..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_flx_D_HAIF.vb",
+              "ViewState": "AgIAAJQAAAAAAAAAAAAmwI8AAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2026-02-26T05:19:36.768Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 54,
+              "Title": "Form_f_flx_CHUKI.vb",
+              "DocumentMoniker": "C:\\Users\\VA03\\source\\repos\\M4BS\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_flx_CHUKI.vb",
+              "RelativeDocumentMoniker": "..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_flx_CHUKI.vb",
+              "ToolTip": "C:\\Users\\VA03\\source\\repos\\M4BS\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_flx_CHUKI.vb",
+              "RelativeToolTip": "..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_flx_CHUKI.vb",
+              "ViewState": "AgIAAIMAAAAAAAAAAAAqwIUAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2026-02-26T05:18:54.848Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 55,
+              "Title": "Form_f_flx_BEPPYO.vb",
+              "DocumentMoniker": "C:\\Users\\VA03\\source\\repos\\M4BS\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_flx_BEPPYO.vb",
+              "RelativeDocumentMoniker": "..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_flx_BEPPYO.vb",
+              "ToolTip": "C:\\Users\\VA03\\source\\repos\\M4BS\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_flx_BEPPYO.vb",
+              "RelativeToolTip": "..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_flx_BEPPYO.vb",
+              "ViewState": "AgIAAJ4AAAAAAAAAAAAAAMUAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2026-02-26T05:17:36.359Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 56,
+              "Title": "Form_f_CHUKI_SCH.vb",
+              "DocumentMoniker": "C:\\Users\\VA03\\source\\repos\\M4BS\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_CHUKI_SCH.vb",
+              "RelativeDocumentMoniker": "..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_CHUKI_SCH.vb",
+              "ToolTip": "C:\\Users\\VA03\\source\\repos\\M4BS\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_CHUKI_SCH.vb",
+              "RelativeToolTip": "..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_CHUKI_SCH.vb",
+              "ViewState": "AgIAABwBAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2026-02-26T05:17:21.878Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 57,
+              "Title": "Form_f_CHUKI_JOKEN.vb",
+              "DocumentMoniker": "C:\\Users\\VA03\\source\\repos\\M4BS\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_CHUKI_JOKEN.vb",
+              "RelativeDocumentMoniker": "..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_CHUKI_JOKEN.vb",
+              "ToolTip": "C:\\Users\\VA03\\source\\repos\\M4BS\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_CHUKI_JOKEN.vb",
+              "RelativeToolTip": "..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_f_CHUKI_JOKEN.vb",
+              "ViewState": "AgIAAJMAAAAAAAAAAAAiwM4AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2026-02-26T05:13:54.609Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 58,
+              "Title": "Form_BKNRI.vb",
+              "DocumentMoniker": "C:\\Users\\VA03\\source\\repos\\M4BS\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_BKNRI.vb",
+              "RelativeDocumentMoniker": "..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_BKNRI.vb",
+              "ToolTip": "C:\\Users\\VA03\\source\\repos\\M4BS\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_BKNRI.vb",
+              "RelativeToolTip": "..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_BKNRI.vb",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2026-02-26T05:13:06.109Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 59,
+              "Title": "Form_BCAT.vb",
+              "DocumentMoniker": "C:\\Users\\VA03\\source\\repos\\M4BS\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_BCAT.vb",
+              "RelativeDocumentMoniker": "..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_BCAT.vb",
+              "ToolTip": "C:\\Users\\VA03\\source\\repos\\M4BS\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_BCAT.vb",
+              "RelativeToolTip": "..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_BCAT.vb",
+              "ViewState": "AgIAADMAAAAAAAAAAAAIwFgAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2026-02-26T05:10:05.22Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 60,
+              "Title": "Form_fc_TC_HREL.vb",
+              "DocumentMoniker": "C:\\Users\\VA03\\source\\repos\\M4BS\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_fc_TC_HREL.vb",
+              "RelativeDocumentMoniker": "..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_fc_TC_HREL.vb",
+              "ToolTip": "C:\\Users\\VA03\\source\\repos\\M4BS\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_fc_TC_HREL.vb",
+              "RelativeToolTip": "..\\LeaseM4BS.TestWinForms\\LeaseM4BS.TestWinForms\\Form_fc_TC_HREL.vb",
+              "ViewState": "AgIAALwAAAAAAAAAAAAqwEYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2026-02-26T05:06:48.679Z"
             }
           ]
         }

@@ -4,7 +4,6 @@ Partial Public Class Form_HKMK
     Inherits Form
 
     Protected _crud As crudHelper = New crudHelper()
-    Protected _formHelper As FormHelper = New FormHelper()
 
     Protected Sub LoadSumCombos(cmbSum1 As ComboBox, cmbSum2 As ComboBox, cmbSum3 As ComboBox)
         Dim sqlSum1 As String = "SELECT DISTINCT sum1_cd, sum1_nm " &
@@ -22,12 +21,12 @@ Partial Public Class Form_HKMK
                                     "WHERE sum3_cd <> '' " &
                                     "ORDER BY sum3_cd"
 
-        _formHelper.BindCombo(cmbSum1, sqlSum1, "sum1_cd", "sum1_cd")
-        _formHelper.BindCombo(cmbSum2, sqlSum2, "sum2_cd", "sum2_cd")
-        _formHelper.BindCombo(cmbSum3, sqlSum3, "sum3_cd", "sum3_cd")
+        cmbSum1.Bind(sqlSum1, "sum1_cd", "sum1_cd")
+        cmbSum2.Bind(sqlSum2, "sum2_cd", "sum2_cd")
+        cmbSum3.Bind(sqlSum3, "sum3_cd", "sum3_cd")
 
         For Each cmb In {cmbSum1, cmbSum2, cmbSum3}
-            _formHelper.AdjustComboSize(cmb, 600, 16)
+            cmb.AdjustSize()
             cmb.SelectedIndex = -1
         Next
     End Sub
@@ -38,8 +37,8 @@ Partial Public Class Form_HKMK
                                     "WHERE hrel_ptn_cd3 <> '' " &
                                     "ORDER BY hrel_ptn_cd3"
 
-        _formHelper.BindCombo(cmbPtn, sqlPtn, "hrel_ptn_cd3", "hrel_ptn_cd3")
-        _formHelper.AdjustComboSize(cmbPtn, 600, 16)
+        cmbPtn.Bind(sqlPtn, "hrel_ptn_cd3", "hrel_ptn_cd3")
+        cmbPtn.AdjustSize()
         cmbPtn.SelectedIndex = -1
     End Sub
 End Class

@@ -11,7 +11,6 @@ Partial Public Class FrmContractEntry
     ' ▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
 
     Private _crud As crudHelper = New crudHelper()
-    Private _formHelper As FormHelper = New FormHelper()
 
     ' コンストラクタ
     Public Sub New()
@@ -93,10 +92,10 @@ Partial Public Class FrmContractEntry
                                      "LEFT JOIN m_corp c ON k.corp_id = c.corp_id " &
                                      "ORDER BY k.kknri1_cd"
 
-        _formHelper.BindCombo(cmb_KKNRI_ID, sqlKknri, "kknri1_cd", "kknri_id")
+        cmb_KKNRI_ID.Bind(sqlKknri, "kknri1_cd", "kknri_id")
 
+        cmb_KKNRI_ID.AdjustSize()
         cmb_KKNRI_ID.SelectedIndex = -1
-        _formHelper.AdjustComboSize(cmb_KKNRI_ID, 600, 16)
 
         ' -----------------------------------------------------
         ' 2. 支払先 (LCPT)
@@ -104,12 +103,10 @@ Partial Public Class FrmContractEntry
         Dim sqlLcpt As String = "SELECT lcpt_id, lcpt1_cd, lcpt1_nm, lcpt2_nm " &
                                     "FROM m_lcpt ORDER BY lcpt1_cd"
 
-        _formHelper.BindCombo(cmb_LCPT_ID, sqlLcpt, "lcpt1_cd", "lcpt_id")
+        cmb_LCPT_ID.Bind(sqlLcpt, "lcpt1_cd", "lcpt_id")
 
+        cmb_LCPT_ID.AdjustSize()
         cmb_LCPT_ID.SelectedIndex = -1
-
-        ' ★ここを変更
-        _formHelper.AdjustComboSize(cmb_LCPT_ID, 600, 16)
 
         ' 契約区分 (Accessの値を再現)
         cmb_KKBN_ID.Items.Clear()
@@ -129,11 +126,11 @@ Partial Public Class FrmContractEntry
     '  コンボボックスの3列描画 (Access完全再現・罫線付き)
     ' =========================================================
     Private Sub Combo_KKNRI_DrawItem(sender As Object, e As DrawItemEventArgs) Handles cmb_KKNRI_ID.DrawItem
-        _formHelper.Combo_DrawItem(sender, e, {"kknri1_cd", "kknri1_nm", "corp1_nm"})
+        Combo_DrawItem(sender, e, {"kknri1_cd", "kknri1_nm", "corp1_nm"})
     End Sub
 
     Private Sub Combo_LCPT_DrawItem(sender As Object, e As DrawItemEventArgs) Handles cmb_LCPT_ID.DrawItem
-        _formHelper.Combo_DrawItem(sender, e, {"lcpt1_cd", "lcpt1_nm", "lcpt2_nm"})
+        Combo_DrawItem(sender, e, {"lcpt1_cd", "lcpt1_nm", "lcpt2_nm"})
     End Sub
 
 
@@ -143,12 +140,13 @@ Partial Public Class FrmContractEntry
 
     ' 管理単位が変わったら
     Private Sub cmb_KKNRI_ID_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_KKNRI_ID.SelectedIndexChanged
-        _formHelper.SyncComboToText(Me, cmb_KKNRI_ID, {"kknri1_nm", "corp1_nm"}, {"txt_KKNRI_NM", "txt_CORP_NM"})
+        cmb_KKNRI_ID.SyncTo("kknri1_nm", txt_KKNRI_NM)
+        cmb_KKNRI_ID.SyncTo("corp1_nm", txt_CORP_NM)
     End Sub
 
     ' 支払先が変わったら
     Private Sub cmb_LCPT_ID_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_LCPT_ID.SelectedIndexChanged
-        _formHelper.SyncComboToText(Me, cmb_LCPT_ID, {"lcpt1_nm"}, {"txt_LCPT_NM"})
+        cmb_LCPT_ID.SyncTo("lcpt1_nm", txt_LCPT_NM)
     End Sub
 
     ' =========================================================

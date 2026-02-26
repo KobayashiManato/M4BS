@@ -5,7 +5,6 @@ Partial Public Class Form_f_KLSRYO_JOKEN
     Inherits Form
 
     Private _prevForm As Form_f_flx_KLSRYO
-    Private _formHelper As New FormHelper()
 
     Public Sub New()
         InitializeComponent()

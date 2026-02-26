@@ -76,104 +76,104 @@ Partial Public Class Form_f_M_SKMK_CHANGE
     '  コンボボックスの3列描画 (Access完全再現・罫線付き)
     ' =========================================================
     Private Sub Combo_SUM1_DrawItem(sender As Object, e As DrawItemEventArgs) Handles cmb_SUM1_CD.DrawItem
-        _formHelper.Combo_DrawItem(sender, e, {"sum1_cd", "sum1_nm"})
+        Combo_DrawItem(sender, e, {"sum1_cd", "sum1_nm"})
     End Sub
     Private Sub Combo_SUM2_DrawItem(sender As Object, e As DrawItemEventArgs) Handles cmb_SUM2_CD.DrawItem
-        _formHelper.Combo_DrawItem(sender, e, {"sum2_cd", "sum2_nm"})
+        Combo_DrawItem(sender, e, {"sum2_cd", "sum2_nm"})
     End Sub
     Private Sub Combo_SUM3_DrawItem(sender As Object, e As DrawItemEventArgs) Handles cmb_SUM3_CD.DrawItem
-        _formHelper.Combo_DrawItem(sender, e, {"sum3_cd", "sum3_nm"})
+        Combo_DrawItem(sender, e, {"sum3_cd", "sum3_nm"})
     End Sub
     Private Sub Combo_SUM4_DrawItem(sender As Object, e As DrawItemEventArgs) Handles cmb_SUM4_CD.DrawItem
-        _formHelper.Combo_DrawItem(sender, e, {"sum4_cd", "sum4_nm"})
+        Combo_DrawItem(sender, e, {"sum4_cd", "sum4_nm"})
     End Sub
     Private Sub Combo_SUM5_DrawItem(sender As Object, e As DrawItemEventArgs) Handles cmb_SUM5_CD.DrawItem
-        _formHelper.Combo_DrawItem(sender, e, {"sum5_cd", "sum5_nm"})
+        Combo_DrawItem(sender, e, {"sum5_cd", "sum5_nm"})
     End Sub
     Private Sub Combo_SUM6_DrawItem(sender As Object, e As DrawItemEventArgs) Handles cmb_SUM6_CD.DrawItem
-        _formHelper.Combo_DrawItem(sender, e, {"sum6_cd", "sum6_nm"})
+        Combo_DrawItem(sender, e, {"sum6_cd", "sum6_nm"})
     End Sub
     Private Sub Combo_SUM7_DrawItem(sender As Object, e As DrawItemEventArgs) Handles cmb_SUM7_CD.DrawItem
-        _formHelper.Combo_DrawItem(sender, e, {"sum7_cd", "sum7_nm"})
+        Combo_DrawItem(sender, e, {"sum7_cd", "sum7_nm"})
     End Sub
     Private Sub Combo_SUM8_DrawItem(sender As Object, e As DrawItemEventArgs) Handles cmb_SUM8_CD.DrawItem
-        _formHelper.Combo_DrawItem(sender, e, {"sum8_cd", "sum8_nm"})
+        Combo_DrawItem(sender, e, {"sum8_cd", "sum8_nm"})
     End Sub
     Private Sub Combo_SUM9_DrawItem(sender As Object, e As DrawItemEventArgs) Handles cmb_SUM9_CD.DrawItem
-        _formHelper.Combo_DrawItem(sender, e, {"sum9_cd", "sum9_nm"})
+        Combo_DrawItem(sender, e, {"sum9_cd", "sum9_nm"})
     End Sub
     Private Sub Combo_SUM10_DrawItem(sender As Object, e As DrawItemEventArgs) Handles cmb_SUM10_CD.DrawItem
-        _formHelper.Combo_DrawItem(sender, e, {"sum10_cd", "sum10_nm"})
+        Combo_DrawItem(sender, e, {"sum10_cd", "sum10_nm"})
     End Sub
     Private Sub Combo_SUM11_DrawItem(sender As Object, e As DrawItemEventArgs) Handles cmb_SUM11_CD.DrawItem
-        _formHelper.Combo_DrawItem(sender, e, {"sum11_cd", "sum11_nm"})
+        Combo_DrawItem(sender, e, {"sum11_cd", "sum11_nm"})
     End Sub
     Private Sub Combo_SUM12_DrawItem(sender As Object, e As DrawItemEventArgs) Handles cmb_SUM12_CD.DrawItem
-        _formHelper.Combo_DrawItem(sender, e, {"sum12_cd", "sum12_nm"})
+        Combo_DrawItem(sender, e, {"sum12_cd", "sum12_nm"})
     End Sub
     Private Sub Combo_SUM13_DrawItem(sender As Object, e As DrawItemEventArgs) Handles cmb_SUM13_CD.DrawItem
-        _formHelper.Combo_DrawItem(sender, e, {"sum13_cd", "sum13_nm"})
+        Combo_DrawItem(sender, e, {"sum13_cd", "sum13_nm"})
     End Sub
     Private Sub Combo_SUM14_DrawItem(sender As Object, e As DrawItemEventArgs) Handles cmb_SUM14_CD.DrawItem
-        _formHelper.Combo_DrawItem(sender, e, {"sum14_cd", "sum14_nm"})
+        Combo_DrawItem(sender, e, {"sum14_cd", "sum14_nm"})
     End Sub
     Private Sub Combo_SUM15_DrawItem(sender As Object, e As DrawItemEventArgs) Handles cmb_SUM15_CD.DrawItem
-        _formHelper.Combo_DrawItem(sender, e, {"sum15_cd", "sum15_nm"})
+        Combo_DrawItem(sender, e, {"sum15_cd", "sum15_nm"})
     End Sub
     Private Sub Combo_PTN_DrawItem(sender As Object, e As DrawItemEventArgs) Handles cmb_PTN_CD1.DrawItem
-        _formHelper.Combo_DrawItem(sender, e, {"hrel_ptn_cd1", "hrel_ptn_nm1"})
+        Combo_DrawItem(sender, e, {"hrel_ptn_cd1", "hrel_ptn_nm1"})
     End Sub
 
     ' =========================================================
     '  コンボボックス選択時の連動 (Accessの =Column(x) 再現)
     ' =========================================================
     Private Sub cmb_SUM1_CD_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_SUM1_CD.SelectedIndexChanged
-        _formHelper.SyncComboToText(Me, cmb_SUM1_CD, {"sum1_nm"}, {"txt_SUM1_NM"})
+        cmb_SUM1_CD.SyncTo("sum1_nm", txt_SUM1_NM)
     End Sub
     Private Sub cmb_SUM2_CD_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_SUM2_CD.SelectedIndexChanged
-        _formHelper.SyncComboToText(Me, cmb_SUM2_CD, {"sum2_nm"}, {"txt_SUM2_NM"})
+        cmb_SUM2_CD.SyncTo("sum2_nm", txt_SUM2_NM)
     End Sub
     Private Sub cmb_SUM3_CD_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_SUM3_CD.SelectedIndexChanged
-        _formHelper.SyncComboToText(Me, cmb_SUM3_CD, {"sum3_nm"}, {"txt_SUM3_NM"})
+        cmb_SUM3_CD.SyncTo("sum3_nm", txt_SUM3_NM)
     End Sub
     Private Sub cmb_SUM4_CD_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_SUM4_CD.SelectedIndexChanged
-        _formHelper.SyncComboToText(Me, cmb_SUM4_CD, {"sum4_nm"}, {"txt_SUM4_NM"})
+        cmb_SUM4_CD.SyncTo("sum4_nm", txt_SUM4_NM)
     End Sub
     Private Sub cmb_SUM5_CD_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_SUM5_CD.SelectedIndexChanged
-        _formHelper.SyncComboToText(Me, cmb_SUM5_CD, {"sum5_nm"}, {"txt_SUM5_NM"})
+        cmb_SUM5_CD.SyncTo("sum5_nm", txt_SUM5_NM)
     End Sub
     Private Sub cmb_SUM6_CD_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_SUM6_CD.SelectedIndexChanged
-        _formHelper.SyncComboToText(Me, cmb_SUM6_CD, {"sum6_nm"}, {"txt_SUM6_NM"})
+        cmb_SUM6_CD.SyncTo("sum6_nm", txt_SUM6_NM)
     End Sub
     Private Sub cmb_SUM7_CD_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_SUM7_CD.SelectedIndexChanged
-        _formHelper.SyncComboToText(Me, cmb_SUM7_CD, {"sum7_nm"}, {"txt_SUM7_NM"})
+        cmb_SUM7_CD.SyncTo("sum7_nm", txt_SUM7_NM)
     End Sub
     Private Sub cmb_SUM8_CD_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_SUM8_CD.SelectedIndexChanged
-        _formHelper.SyncComboToText(Me, cmb_SUM8_CD, {"sum8_nm"}, {"txt_SUM8_NM"})
+        cmb_SUM8_CD.SyncTo("sum8_nm", txt_SUM8_NM)
     End Sub
     Private Sub cmb_SUM9_CD_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_SUM9_CD.SelectedIndexChanged
-        _formHelper.SyncComboToText(Me, cmb_SUM9_CD, {"sum9_nm"}, {"txt_SUM9_NM"})
+        cmb_SUM9_CD.SyncTo("sum9_nm", txt_SUM9_NM)
     End Sub
     Private Sub cmb_SUM10_CD_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_SUM10_CD.SelectedIndexChanged
-        _formHelper.SyncComboToText(Me, cmb_SUM10_CD, {"sum10_nm"}, {"txt_SUM10_NM"})
+        cmb_SUM10_CD.SyncTo("sum10_nm", txt_SUM10_NM)
     End Sub
     Private Sub cmb_SUM11_CD_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_SUM11_CD.SelectedIndexChanged
-        _formHelper.SyncComboToText(Me, cmb_SUM11_CD, {"sum11_nm"}, {"txt_SUM11_NM"})
+        cmb_SUM11_CD.SyncTo("sum11_nm", txt_SUM11_NM)
     End Sub
     Private Sub cmb_SUM12_CD_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_SUM12_CD.SelectedIndexChanged
-        _formHelper.SyncComboToText(Me, cmb_SUM12_CD, {"sum12_nm"}, {"txt_SUM12_NM"})
+        cmb_SUM12_CD.SyncTo("sum12_nm", txt_SUM12_NM)
     End Sub
     Private Sub cmb_SUM13_CD_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_SUM13_CD.SelectedIndexChanged
-        _formHelper.SyncComboToText(Me, cmb_SUM13_CD, {"sum13_nm"}, {"txt_SUM13_NM"})
+        cmb_SUM13_CD.SyncTo("sum13_nm", txt_SUM13_NM)
     End Sub
     Private Sub cmb_SUM14_CD_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_SUM14_CD.SelectedIndexChanged
-        _formHelper.SyncComboToText(Me, cmb_SUM14_CD, {"sum14_nm"}, {"txt_SUM14_NM"})
+        cmb_SUM14_CD.SyncTo("sum14_nm", txt_SUM14_NM)
     End Sub
     Private Sub cmb_SUM15_CD_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_SUM15_CD.SelectedIndexChanged
-        _formHelper.SyncComboToText(Me, cmb_SUM15_CD, {"sum15_nm"}, {"txt_SUM15_NM"})
+        cmb_SUM15_CD.SyncTo("sum15_nm", txt_SUM15_NM)
     End Sub
     Private Sub cmb_PTN_CD1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_PTN_CD1.SelectedIndexChanged
-        _formHelper.SyncComboToText(Me, cmb_PTN_CD1, {"hrel_ptn_nm1"}, {"txt_PTN_NM1"})
+        cmb_PTN_CD1.SyncTo("hrel_ptn_nm1", txt_PTN_NM1)
     End Sub
 
     ' [閉じる] ボタン

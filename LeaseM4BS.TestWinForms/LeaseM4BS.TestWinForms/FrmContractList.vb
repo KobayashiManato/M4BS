@@ -4,8 +4,6 @@ Imports Npgsql
 Partial Public Class FrmContractList
     Inherits Form
 
-    Private _formHelper As FormHelper = New FormHelper()
-
     ' 画面ロード時（AccessのForm_Open/Load）
     Private Sub FrmContractList_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ' 初期表示：全件検索
@@ -84,12 +82,12 @@ Partial Public Class FrmContractList
                 dgv_LIST.Columns("kykh_id").Visible = False
             End If
             ' 金額を通貨形式に
-            _formHelper.FormatColumn(dgv_LIST, "月額リース料", "#,##0")
-            _formHelper.FormatColumn(dgv_LIST, "総額リース料", "#,##0")
+            dgv_LIST.FormatColumn("月額リース料", "#,##0")
+            dgv_LIST.FormatColumn("総額リース料", "#,##0")
             ' 日付を短い形式に
-            _formHelper.FormatColumn(dgv_LIST, "契約日", "yyyy/MM/dd")
-            _formHelper.FormatColumn(dgv_LIST, "開始日", "yyyy/MM/dd")
-            _formHelper.FormatColumn(dgv_LIST, "終了日", "yyyy/MM/dd")
+            dgv_LIST.FormatColumn("契約日", "yyyy/MM/dd")
+            dgv_LIST.FormatColumn("開始日", "yyyy/MM/dd")
+            dgv_LIST.FormatColumn("終了日", "yyyy/MM/dd")
 
         Catch ex As Exception
             MessageBox.Show("一覧取得エラー: " & ex.Message)
@@ -122,7 +120,7 @@ Partial Public Class FrmContractList
 
     ' [照会/変更] ボタン
     Private Sub cmd_REF_Click(sender As Object, e As EventArgs) Handles cmd_REF.Click
-        Dim selectedRow = _formHelper.GetSelectedRow(dgv_LIST)
+        Dim selectedRow = dgv_LIST.GetSelectedRow()
 
         If selectedRow Is Nothing Then
             Return
@@ -142,7 +140,7 @@ Partial Public Class FrmContractList
 
     ' グリッドのダブルクリック (Accessの txt_KKNRI1_NM_DblClick 相当)
     Private Sub dgv_LIST_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv_LIST.CellDoubleClick
-        Dim selectedRow = _formHelper.GetSelectedRow(dgv_LIST)
+        Dim selectedRow = dgv_LIST.GetSelectedRow()
 
         If selectedRow Is Nothing Then
             Return

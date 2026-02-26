@@ -18,38 +18,38 @@ Partial Public Class Form_f_M_LCPT_INP
     '  コンボボックスの3列描画 (Access完全再現・罫線付き)
     ' =========================================================
     Private Sub Combo_LCPT2_DrawItem(sender As Object, e As DrawItemEventArgs) Handles cmb_LCPT2_CD.DrawItem
-        _formHelper.Combo_DrawItem(sender, e, {"lcpt2_cd", "lcpt2_nm"})
+        Combo_DrawItem(sender, e, {"lcpt2_cd", "lcpt2_nm"})
     End Sub
 
     Private Sub Combo_SUM1_DrawItem(sender As Object, e As DrawItemEventArgs) Handles cmb_SUM1_CD.DrawItem
-        _formHelper.Combo_DrawItem(sender, e, {"sum1_cd", "sum1_nm"})
+        Combo_DrawItem(sender, e, {"sum1_cd", "sum1_nm"})
     End Sub
 
     Private Sub Combo_SUM2_DrawItem(sender As Object, e As DrawItemEventArgs) Handles cmb_SUM2_CD.DrawItem
-        _formHelper.Combo_DrawItem(sender, e, {"sum2_cd", "sum2_nm"})
+        Combo_DrawItem(sender, e, {"sum2_cd", "sum2_nm"})
     End Sub
 
     Private Sub Combo_SUM3_DrawItem(sender As Object, e As DrawItemEventArgs) Handles cmb_SUM3_CD.DrawItem
-        _formHelper.Combo_DrawItem(sender, e, {"sum3_cd", "sum3_nm"})
+        Combo_DrawItem(sender, e, {"sum3_cd", "sum3_nm"})
     End Sub
 
     ' =========================================================
     '  コンボボックス選択時の連動 (Accessの =Column(x) 再現)
     ' =========================================================
     Private Sub cmb_LCPT2_CD_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_LCPT2_CD.SelectedIndexChanged
-        _formHelper.SyncComboToText(Me, cmb_LCPT2_CD, {"lcpt2_nm"}, {"txt_LCPT2_NM"})
+        cmb_LCPT2_CD.SyncTo("lcpt2_nm", txt_LCPT2_NM)
     End Sub
 
     Private Sub cmb_SUM1_CD_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_SUM1_CD.SelectedIndexChanged
-        _formHelper.SyncComboToText(Me, cmb_SUM1_CD, {"sum1_nm"}, {"txt_SUM1_NM"})
+        cmb_SUM1_CD.SyncTo("sum1_nm", txt_SUM1_NM)
     End Sub
 
     Private Sub cmb_SUM2_CD_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_SUM2_CD.SelectedIndexChanged
-        _formHelper.SyncComboToText(Me, cmb_SUM2_CD, {"sum2_nm"}, {"txt_SUM2_NM"})
+        cmb_SUM2_CD.SyncTo("sum2_nm", txt_SUM2_NM)
     End Sub
 
     Private Sub cmb_SUM3_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_SUM3_CD.SelectedIndexChanged
-        _formHelper.SyncComboToText(Me, cmb_SUM3_CD, {"sum3_nm"}, {"txt_SUM3_NM"})
+        cmb_SUM3_CD.SyncTo("sum3_nm", txt_SUM3_NM)
     End Sub
 
     ' [閉じる] ボタン

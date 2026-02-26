@@ -4,7 +4,6 @@ Partial Public Class Form_BKNRI
     Inherits Form
 
     Protected _crud As crudHelper = New crudHelper()
-    Protected _formHelper As FormHelper = New FormHelper()
 
     ' -------------------------------------------------------------------------
     ' マスタデータのロード
@@ -20,11 +19,11 @@ Partial Public Class Form_BKNRI
                                     "WHERE bknri3_cd <> '' " &
                                     "ORDER BY bknri3_cd;"
 
-        _formHelper.BindCombo(cmbBknri2, sqlBknri2, "bknri2_cd", "bknri2_cd")
-        _formHelper.BindCombo(cmbBknri3, sqlBknri3, "bknri3_cd", "bknri3_cd")
+        cmbBknri2.Bind(sqlBknri2, "bknri2_cd", "bknri2_cd")
+        cmbBknri3.Bind(sqlBknri3, "bknri3_cd", "bknri3_cd")
 
         For Each cmb In {cmbBknri2, cmbBknri3}
-            _formHelper.AdjustComboSize(cmb, 600, 16)
+            cmb.AdjustSize()
             cmb.SelectedIndex = -1
         Next
     End Sub

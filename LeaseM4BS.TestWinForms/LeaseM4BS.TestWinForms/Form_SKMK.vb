@@ -4,7 +4,6 @@ Partial Public Class Form_SKMK
     Inherits Form
 
     Protected _crud As crudHelper = New crudHelper()
-    Protected _formHelper As FormHelper = New FormHelper()
 
     Protected Sub LoadSumCombos(cmbSums As ComboBox())
         ' 集計区分1から15まで
@@ -14,9 +13,9 @@ Partial Public Class Form_SKMK
                                         $"WHERE sum{i}_cd <> '' " &
                                         $"ORDER BY sum{i}_cd"
 
-            _formHelper.BindCombo(cmbSums(i - 1), sqlSum, $"sum{i}_cd", $"sum{i}_cd")
+            cmbSums(i - 1).Bind(sqlSum, $"sum{i}_cd", $"sum{i}_cd")
 
-            _formHelper.AdjustComboSize(cmbSums(i - 1), 600, 16)
+            cmbSums(i - 1).AdjustSize()
             cmbSums(i - 1).SelectedIndex = -1
         Next
     End Sub
@@ -27,9 +26,9 @@ Partial Public Class Form_SKMK
                                     "WHERE hrel_ptn_cd1 <> '' " &
                                     "ORDER BY hrel_ptn_cd1"
 
-        _formHelper.BindCombo(cmbPtn, sqlPtn, "hrel_ptn_cd1", "hrel_ptn_nm1")
+        cmbPtn.Bind(sqlPtn, "hrel_ptn_cd1", "hrel_ptn_nm1")
 
-        _formHelper.AdjustComboSize(cmbPtn, 600, 16)
+        cmbPtn.AdjustSize()
         cmbPtn.SelectedIndex = -1
     End Sub
 End Class

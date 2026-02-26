@@ -6,7 +6,6 @@ Partial Public Class Form_LCPT
     Inherits Form
 
     Protected _crud As crudHelper = New crudHelper()
-    Protected _formHelper As FormHelper = New FormHelper()
 
     ' -------------------------------------------------------------------------
     ' マスタデータのロード
@@ -18,8 +17,8 @@ Partial Public Class Form_LCPT
                                     "WHERE lcpt2_cd <> '' " &
                                     "ORDER BY lcpt2_cd"
 
-        _formHelper.BindCombo(cmbLcpt2, sqlLcpt2, "lcpt2_cd", "lcpt2_cd")
-        _formHelper.AdjustComboSize(cmbLcpt2, 600, 16)
+        cmbLcpt2.Bind(sqlLcpt2, "lcpt2_cd", "lcpt2_cd")
+        cmbLcpt2.AdjustSize()
         cmbLcpt2.SelectedIndex = -1
     End Sub
 
@@ -40,12 +39,12 @@ Partial Public Class Form_LCPT
                                     "WHERE sum3_cd <> '' " &
                                     "ORDER BY sum3_cd"
 
-        _formHelper.BindCombo(cmbSum1, sqlSum1, "sum1_cd", "sum1_cd")
-        _formHelper.BindCombo(cmbSum2, sqlSum2, "sum2_cd", "sum2_cd")
-        _formHelper.BindCombo(cmbSum3, sqlSum3, "sum3_cd", "sum3_cd")
+        cmbSum1.Bind(sqlSum1, "sum1_cd", "sum1_cd")
+        cmbSum2.Bind(sqlSum2, "sum2_cd", "sum2_cd")
+        cmbSum3.Bind(sqlSum3, "sum3_cd", "sum3_cd")
 
         For Each cmb In {cmbSum1, cmbSum2, cmbSum3}
-            _formHelper.AdjustComboSize(cmb, 600, 16)
+            cmb.AdjustSize()
             cmb.SelectedIndex = -1
         Next
     End Sub

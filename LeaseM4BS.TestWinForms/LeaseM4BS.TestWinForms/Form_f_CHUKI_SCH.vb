@@ -9,7 +9,6 @@ Public Class Form_f_CHUKI_SCH
     Public Property KykmId As Double
 
     Private _crud As New CrudHelper()
-    Private _formHelper As New FormHelper()
 
     Private m_rowIndex As Integer = 0
 

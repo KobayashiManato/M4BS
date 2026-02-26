@@ -7,9 +7,7 @@ Partial Public Class FrmBuknEntry
     Public Property KykmId As Double = 0
     Public Property KykhId As Double = 0
 
-    Private _crud As crudHelper = New crudHelper()
-    Private _formHelper As FormHelper = New FormHelper()
-
+    Private _crud As CrudHelper = New CrudHelper()
 
     ' コンストラクタ
     Public Sub New()
@@ -46,7 +44,7 @@ Partial Public Class FrmBuknEntry
                                     "WHERE kjkbn_id <> 0 " &
                                     "ORDER BY kjkbn_id"
 
-        _formHelper.BindCombo(cmb_KJKBN_ID, sqlKjkbn, "kjkbn_nm", "kjkbn_id")
+        cmb_KJKBN_ID.Bind(sqlKjkbn, "kjkbn_nm", "kjkbn_id")
 
         ' 消費税計上区分
         Dim sqlSzeiKjkbn As String = "SELECT szei_kjkbn_id, szei_kjkbn_nm " &
@@ -54,7 +52,7 @@ Partial Public Class FrmBuknEntry
                                         "WHERE szei_kjkbn_id <> 0 " &
                                         "ORDER BY szei_kjkbn_id"
 
-        _formHelper.BindCombo(cmb_SZEI_KJKBN_ID, sqlSzeiKjkbn, "szei_kjkbn_nm", "szei_kjkbn_id")
+        cmb_SZEI_KJKBN_ID.Bind(sqlSzeiKjkbn, "szei_kjkbn_nm", "szei_kjkbn_id")
 
         ' 償却方法
         Dim sqlSkyakHo As String = "SELECT skyak_ho_id, skyak_ho_nm " &
@@ -62,7 +60,7 @@ Partial Public Class FrmBuknEntry
                                         "WHERE skyak_ho_id <> 0 " &
                                         "ORDER BY skyak_ho_id"
 
-        _formHelper.BindCombo(cmb_SKYAK_HO_ID, sqlSkyakHo, "skyak_ho_nm", "skyak_ho_id")
+        cmb_SKYAK_HO_ID.Bind(sqlSkyakHo, "skyak_ho_nm", "skyak_ho_id")
 
         ' 資産区分、物件種別
         Dim sqlBkind As String = "SELECT bkind_id, bkind_cd, bkind_nm " &
@@ -70,15 +68,15 @@ Partial Public Class FrmBuknEntry
                                     "WHERE bkind_id <> 0 " &
                                     "ORDER BY bkind_cd"
 
-        _formHelper.BindCombo(cmb_SKMK_ID, sqlBkind, "bkind_cd", "bkind_id")
-        _formHelper.BindCombo(cmb_BKIND_ID, sqlBkind, "bkind_cd", "bkind_id")
+        cmb_SKMK_ID.Bind(sqlBkind, "bkind_cd", "bkind_id")
+        cmb_BKIND_ID.Bind(sqlBkind, "bkind_cd", "bkind_id")
 
         ' 購入先
         Dim sqlGsha As String = "SELECT gsha_id, gsha_cd, gsha_nm " &
                                     "FROM m_gsha " &
                                     "ORDER BY gsha_cd"
 
-        _formHelper.BindCombo(cmb_GSHA_ID, sqlGsha, "gsha_cd", "gsha_id")
+        cmb_GSHA_ID.Bind(sqlGsha, "gsha_cd", "gsha_id")
 
         ' メーカー
         Dim sqlMcpt As String = "SELECT mcpt_id, mcpt_cd, mcpt_nm " &
@@ -86,7 +84,7 @@ Partial Public Class FrmBuknEntry
                                     "WHERE mcpt_id <> 0 " &
                                     "ORDER BY mcpt_cd"
 
-        _formHelper.BindCombo(cmb_MCPT_ID, sqlMcpt, "mcpt_cd", "mcpt_id")
+        cmb_MCPT_ID.Bind(sqlMcpt, "mcpt_cd", "mcpt_id")
 
         ' 物件予備
         Dim sqlRsrvb1 As String = "SELECT rsrvb1_id, rsrvb1_cd, rsrvb1_nm " &
@@ -94,7 +92,7 @@ Partial Public Class FrmBuknEntry
                                         "WHERE rsrvb1_id <> 0 " &
                                         "ORDER BY rsrvb1_id"
 
-        _formHelper.BindCombo(cmb_RSRVB1_ID, sqlRsrvb1, "rsrvb1_cd", "rsrvb1_nm")
+        cmb_RSRVB1_ID.Bind(sqlRsrvb1, "rsrvb1_cd", "rsrvb1_nm")
 
         ' 管理部署、旧
         Dim sqlBcat As String = "SELECT bcat_id, bcat1_cd, bcat1_nm, bcat2_nm, bcat3_nm, bcat4_nm, bcat5_nm " &
@@ -102,16 +100,16 @@ Partial Public Class FrmBuknEntry
                                     "WHERE bcat_id <> 0 " &
                                     "ORDER BY bcat1_cd"
 
-        _formHelper.BindCombo(cmb_BCAT_ID, sqlBcat, "bcat1_cd", "bcat_id")
-        _formHelper.BindCombo(cmb_OLDBCAT_ID, sqlBcat, "bcat1_cd", "bcat_id")
+        cmb_BCAT_ID.Bind(sqlBcat, "bcat1_cd", "bcat_id")
+        cmb_OLDBCAT_ID.Bind(sqlBcat, "bcat1_cd", "bcat_id")
 
-        _formHelper.AdjustComboSize(cmb_SKMK_ID, 600, 16)
-        _formHelper.AdjustComboSize(cmb_BKIND_ID, 600, 16)
-        _formHelper.AdjustComboSize(cmb_GSHA_ID, 600, 16)
-        _formHelper.AdjustComboSize(cmb_MCPT_ID, 600, 16)
-        _formHelper.AdjustComboSize(cmb_RSRVB1_ID, 600, 16)
-        _formHelper.AdjustComboSize(cmb_BCAT_ID, 600, 16)
-        _formHelper.AdjustComboSize(cmb_OLDBCAT_ID, 600, 16)
+        cmb_SKMK_ID.AdjustSize()
+        cmb_BKIND_ID.AdjustSize()
+        cmb_GSHA_ID.AdjustSize()
+        cmb_MCPT_ID.AdjustSize()
+        cmb_RSRVB1_ID.AdjustSize()
+        cmb_BCAT_ID.AdjustSize()
+        cmb_OLDBCAT_ID.AdjustSize()
 
         ' 初期選択を解除
         cmb_KJKBN_ID.SelectedIndex = -1
@@ -130,23 +128,23 @@ Partial Public Class FrmBuknEntry
     '  コンボボックスの3列描画 (Access完全再現・罫線付き)
     ' =========================================================
     Private Sub Combo_BKIND_DrawItem(sender As Object, e As DrawItemEventArgs) Handles cmb_SKMK_ID.DrawItem, cmb_BKIND_ID.DrawItem
-        _formHelper.Combo_DrawItem(sender, e, {"bkind_cd", "bkind_nm"})
+        Combo_DrawItem(sender, e, {"bkind_cd", "bkind_nm"})
     End Sub
 
     Private Sub Combo_GSHA_DrawItem(sender As Object, e As DrawItemEventArgs) Handles cmb_GSHA_ID.DrawItem
-        _formHelper.Combo_DrawItem(sender, e, {"gsha_cd", "gsha_nm"})
+        Combo_DrawItem(sender, e, {"gsha_cd", "gsha_nm"})
     End Sub
 
     Private Sub Combo_MCPT_DrawItem(sender As Object, e As DrawItemEventArgs) Handles cmb_MCPT_ID.DrawItem
-        _formHelper.Combo_DrawItem(sender, e, {"mcpt_cd", "mcpt_nm"})
+        Combo_DrawItem(sender, e, {"mcpt_cd", "mcpt_nm"})
     End Sub
 
     Private Sub Combo_RSRVB1_DrawItem(sender As Object, e As DrawItemEventArgs) Handles cmb_RSRVB1_ID.DrawItem
-        _formHelper.Combo_DrawItem(sender, e, {"rsrvb1_cd", "rsrvb1_nm"})
+        Combo_DrawItem(sender, e, {"rsrvb1_cd", "rsrvb1_nm"})
     End Sub
 
     Private Sub Combo_BCAT_DrawItem(sender As Object, e As DrawItemEventArgs) Handles cmb_BCAT_ID.DrawItem, cmb_OLDBCAT_ID.DrawItem
-        _formHelper.Combo_DrawItem(sender, e, {"bcat1_cd", "bcat1_nm", "bcat2_nm", "bcat3_nm", "bcat4_nm", "bcat5_nm"})
+        Combo_DrawItem(sender, e, {"bcat1_cd", "bcat1_nm", "bcat2_nm", "bcat3_nm", "bcat4_nm", "bcat5_nm"})
     End Sub
 
     ' =========================================================
@@ -155,31 +153,39 @@ Partial Public Class FrmBuknEntry
 
     ' 資産区分が変わったら
     Private Sub cmb_SKMK_ID_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_SKMK_ID.SelectedIndexChanged
-        _formHelper.SyncComboToText(Me, cmb_SKMK_ID, {"bkind_nm"}, {"txt_SKMK_NM"})
+        cmb_SKMK_ID.SyncTo("bkind_nm", txt_SKMK_NM)
     End Sub
 
     Private Sub cmb_BKIND_ID_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_BKIND_ID.SelectedIndexChanged
-        _formHelper.SyncComboToText(Me, cmb_BKIND_ID, {"bkind_nm"}, {"txt_BKIND_NM"})
+        cmb_BKIND_ID.SyncTo("bkind_nm", txt_BKIND_NM)
     End Sub
 
     Private Sub cmb_GSHA_ID_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_GSHA_ID.SelectedIndexChanged
-        _formHelper.SyncComboToText(Me, cmb_GSHA_ID, {"gsha_nm"}, {"txt_GSHA_NM"})
+        cmb_GSHA_ID.SyncTo("gsha_nm", txt_GSHA_NM)
     End Sub
 
     Private Sub cmb_MCPT_ID_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_MCPT_ID.SelectedIndexChanged
-        _formHelper.SyncComboToText(Me, cmb_MCPT_ID, {"mcpt_nm"}, {"txt_MCPT_NM"})
+        cmb_MCPT_ID.SyncTo("mcpt_nm", txt_MCPT_NM)
     End Sub
 
     Private Sub cmb_RSRVB1_ID_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_RSRVB1_ID.SelectedIndexChanged
-        _formHelper.SyncComboToText(Me, cmb_RSRVB1_ID, {"rsrvb1_nm"}, {"txt_RSRVB1_NM"})
+        cmb_RSRVB1_ID.SyncTo("rsrvb1_nm", txt_RSRVB1_NM)
     End Sub
 
     Private Sub cmb_BCAT_ID_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_BCAT_ID.SelectedIndexChanged
-        _formHelper.SyncComboToText(Me, cmb_BCAT_ID, {"bcat1_nm", "bcat2_nm", "bcat3_nm", "bcat4_nm", "bcat5_nm"}, {"txt_BCAT1_NM", "txt_BCAT2_NM", "txt_BCAT3_NM", "txt_BCAT4_NM", "txt_BCAt5_NM"})
+        cmb_BCAT_ID.SyncTo("bcat1_nm", txt_BCAT1_NM)
+        cmb_BCAT_ID.SyncTo("bcat2_nm", txt_BCAT2_NM)
+        cmb_BCAT_ID.SyncTo("bcat3_nm", txt_BCAT3_NM)
+        cmb_BCAT_ID.SyncTo("bcat4_nm", txt_BCAT4_NM)
+        cmb_BCAT_ID.SyncTo("bcat5_nm", txt_BCAT5_NM)
     End Sub
 
     Private Sub cmb_OLDBCAT_ID_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_OLDBCAT_ID.SelectedIndexChanged
-        _formHelper.SyncComboToText(Me, cmb_OLDBCAT_ID, {"bcat1_nm", "bcat2_nm", "bcat3_nm", "bcat4_nm", "bcat5_nm"}, {"txt_OLDBCAT1_NM", "txt_OLDBCAT2_NM", "txt_OLDBCAT3_NM", "txt_OLDBCAT4_NM", "txt_OLDBCAT5_NM"})
+        cmb_OLDBCAT_ID.SyncTo("bcat1_nm", txt_OLDBCAT1_NM)
+        cmb_OLDBCAT_ID.SyncTo("bcat2_nm", txt_OLDBCAT2_NM)
+        cmb_OLDBCAT_ID.SyncTo("bcat3_nm", txt_OLDBCAT3_NM)
+        cmb_OLDBCAT_ID.SyncTo("bcat4_nm", txt_OLDBCAT4_NM)
+        cmb_OLDBCAT_ID.SyncTo("bcat5_nm", txt_OLDBCAT5_NM)
     End Sub
 
 
@@ -258,7 +264,7 @@ Partial Public Class FrmBuknEntry
 
                 Dim cmbBcat As DataGridViewComboBoxColumn = DirectCast(dgv_DETAILS.Columns("cmb_BCAT1_NM"), DataGridViewComboBoxColumn)
 
-                _formHelper.BindCombo(cmbBcat, sqlBcat, "bcat1_nm", "bcat1_cd")
+                cmbBcat.Bind(sqlBcat, "bcat1_nm", "bcat1_cd")
 
                 Dim sqlHiyokbn As String = "SELECT hkmk_id, hkmk_cd, hkmk_nm " &
                                                 "FROM m_hkmk " &
@@ -267,7 +273,7 @@ Partial Public Class FrmBuknEntry
 
                 Dim cmbHiyokbn As DataGridViewComboBoxColumn = DirectCast(dgv_DETAILS.Columns("cmb_HIYOKBN_NM"), DataGridViewComboBoxColumn)
 
-                _formHelper.BindCombo(cmbHiyokbn, sqlHiyokbn, "hkmk_nm", "hkmk_cd")
+                cmbHiyokbn.Bind(sqlHiyokbn, "hkmk_nm", "hkmk_cd")
 
                 ' 配賦率
                 AddFirstHaif(id)

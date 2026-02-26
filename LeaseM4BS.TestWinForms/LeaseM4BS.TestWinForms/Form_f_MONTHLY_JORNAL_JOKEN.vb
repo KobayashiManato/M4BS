@@ -1,15 +1,13 @@
 ﻿Partial Public Class Form_f_MONTHLY_JORNAL_JOKEN
 
     Private _prevForm As Form_f_flx_MONTHLY_JOURNAL
-    Private _formHelper As New FormHelper()
 
     Private Sub Form_f_FlexMonthlyJornalEntry_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Dim _formHelper As New FormHelper()
 
         ' コンボボックスの設定
         Dim sqlSettei As String = "SELECT settei_id, val_short_nm FROM c_settei_idfld WHERE settei_id = 19 AND val_short_nm <> '';"
 
-        _formHelper.BindCombo(cmb_SETTEI, sqlSettei, "val_short_nm", "settei_id")
+        cmb_SETTEI.Bind(sqlSettei, "val_short_nm", "settei_id")
     End Sub
 
     ' [実行]ボタン

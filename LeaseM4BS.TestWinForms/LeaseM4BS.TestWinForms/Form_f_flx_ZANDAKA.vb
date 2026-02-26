@@ -10,7 +10,6 @@ Partial Public Class Form_f_flx_ZANDAKA
     Public Property DtTo As Date
 
     Private _crud As New CrudHelper()
-    Private _formHelper As New FormHelper()
 
     Public Sub New()
         InitializeComponent()
@@ -33,7 +32,7 @@ Partial Public Class Form_f_flx_ZANDAKA
 
         dgv_LIST.DataSource = _crud.GetDataTable(sql, prms)
 
-        _formHelper.HideColumns(dgv_LIST, "kykm_id", "kykh_id")
+        dgv_LIST.HideColumns("kykm_id", "kykh_id")
     End Sub
 
     Private Function BuildSql(searchText As String, ByRef prms As List(Of NpgsqlParameter))
@@ -119,7 +118,7 @@ Partial Public Class Form_f_flx_ZANDAKA
 
         dgv_TOTAL.DataSource = dtTotal
 
-        _formHelper.HideColumns(dgv_TOTAL, "kykm_id", "kykh_id")
+        dgv_TOTAL.HideColumns("kykm_id", "kykh_id")
     End Sub
 
     ' [閉じる]ボタン
@@ -134,7 +133,7 @@ Partial Public Class Form_f_flx_ZANDAKA
 
     ' [返済スケジュール]ボタン
     Private Sub cmd_SCH_Click(sender As Object, e As EventArgs) Handles cmd_SCH.Click
-        Dim selectedRow = _formHelper.GetSelectedRow(dgv_LIST)
+        Dim selectedRow = dgv_LIST.GetSelectedRow()
 
         If selectedRow Is Nothing Then Return
 
@@ -146,7 +145,7 @@ Partial Public Class Form_f_flx_ZANDAKA
 
     ' [照会]ボタン
     Private Sub cmd_REF_Click(sender As Object, e As EventArgs) Handles cmd_REF.Click
-        Dim selectedRow = _formHelper.GetSelectedRow(dgv_LIST)
+        Dim selectedRow = dgv_LIST.GetSelectedRow()
 
         If selectedRow Is Nothing Then Return
 
@@ -180,6 +179,6 @@ Partial Public Class Form_f_flx_ZANDAKA
     End Sub
 
     Private Sub dgv_LIST_Scroll(sender As Object, e As ScrollEventArgs) Handles dgv_LIST.Scroll
-        _formHelper.SyncDgvScroll(dgv_LIST, dgv_TOTAL)
+        dgv_LIST.SyncDgvScroll(dgv_TOTAL)
     End Sub
 End Class

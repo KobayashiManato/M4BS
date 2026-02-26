@@ -5,8 +5,6 @@ Imports Npgsql
 Partial Public Class Form_f_flx_M_BKNRI
     Inherits Form
 
-    Private _formHelper As New FormHelper()
-
     Public Sub New()
         InitializeComponent()
     End Sub
@@ -82,7 +80,7 @@ Partial Public Class Form_f_flx_M_BKNRI
 
     ' [変更] ボタン
     Private Sub cmd_CHANGE_Click(sender As Object, e As EventArgs) Handles cmd_CHANGE.Click
-        Dim selectedRow = _formHelper.GetSelectedRow(dgv_LIST)
+        Dim selectedRow = dgv_LIST.GetSelectedRow()
 
         If selectedRow Is Nothing Then Return
 

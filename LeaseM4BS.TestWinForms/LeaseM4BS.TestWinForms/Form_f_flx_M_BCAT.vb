@@ -100,10 +100,8 @@ Partial Public Class Form_f_flx_M_BCAT
             Return
         End If
 
-        Dim _formHelper As New FormHelper()
-
         Dim frm As New Form_f_M_BCAT_CHANGE
-        frm.BcatId = Convert.ToDouble(_formHelper.GetSelectedRow(dgv_LIST).Cells("id").Value)
+        frm.BcatId = Convert.ToDouble(dgv_LIST.GetSelectedRow().Cells("id").Value)
         frm.ShowDialog()
 
         SearchData()

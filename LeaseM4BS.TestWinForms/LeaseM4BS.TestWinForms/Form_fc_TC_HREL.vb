@@ -6,7 +6,6 @@ Partial Public Class Form_fc_TC_HREL
     Inherits Form
 
     Private _crud As crudHelper = New crudHelper()
-    Private _formHelper As FormHelper = New FormHelper()
 
     Public Sub New()
         InitializeComponent()
@@ -60,20 +59,20 @@ Partial Public Class Form_fc_TC_HREL
 
     ' コンボボックスの設定
     Private Sub SetupCombos()
-        Dim sqlPtnNm1 As String = "SELECT DISTINCT ptn_cd1, ptn_nm1 FROM tc_hrel ORDER BY ptn_cd1;"
-        Dim sqlPtnNm2 As String = "SELECT DISTINCT genk_cd, genk_nm FROM m_genk WHERE genk_cd <> '' ORDER BY genk_cd;"
-        Dim sqlPtnNm3 As String = "SELECT DISTINCT hkmk_cd, hkmk_nm FROM m_hkmk WHERE hkmk_cd <> '' ORDER BY hkmk_cd;"
-        Dim sqlPtnNm4 As String = "SELECT DISTINCT kknri1_cd, kknri1_nm FROM m_kknri WHERE kknri1_cd <> '' ORDER BY kknri1_cd;"
+        Dim sql1 As String = "SELECT DISTINCT ptn_cd1, ptn_nm1 FROM tc_hrel ORDER BY ptn_cd1;"
+        Dim sql2 As String = "SELECT DISTINCT genk_cd, genk_nm FROM m_genk WHERE genk_cd <> '' ORDER BY genk_cd;"
+        Dim sql3 As String = "SELECT DISTINCT hkmk_cd, hkmk_nm FROM m_hkmk WHERE hkmk_cd <> '' ORDER BY hkmk_cd;"
+        Dim sql4 As String = "SELECT DISTINCT kknri1_cd, kknri1_nm FROM m_kknri WHERE kknri1_cd <> '' ORDER BY kknri1_cd;"
 
         Dim cmbPtnNm1 = DirectCast(dgv_LIST.Columns("col_PTN_NM1"), DataGridViewComboBoxColumn)
         Dim cmbPtnNm2 = DirectCast(dgv_LIST.Columns("col_PTN_NM2"), DataGridViewComboBoxColumn)
         Dim cmbPtnNm3 = DirectCast(dgv_LIST.Columns("col_PTN_NM3"), DataGridViewComboBoxColumn)
         Dim cmbPtnNm4 = DirectCast(dgv_LIST.Columns("col_PTN_NM4"), DataGridViewComboBoxColumn)
 
-        _formHelper.BindCombo(cmbPtnNm1, sqlPtnNm1, "ptn_nm1", "ptn_cd1")
-        _formHelper.BindCombo(cmbPtnNm2, sqlPtnNm2, "genk_nm", "genk_cd")
-        _formHelper.BindCombo(cmbPtnNm3, sqlPtnNm3, "hkmk_nm", "hkmk_cd")
-        _formHelper.BindCombo(cmbPtnNm4, sqlPtnNm4, "kknri1_nm", "kknri1_cd")
+        cmbPtnNm1.Bind(sql1, "ptn_nm1", "ptn_cd1")
+        cmbPtnNm2.Bind(sql2, "genk_nm", "genk_cd")
+        cmbPtnNm3.Bind(sql3, "hkmk_nm", "hkmk_cd")
+        cmbPtnNm4.Bind(sql4, "kknri1_nm", "kknri1_cd")
     End Sub
 
     ' todo 適切なメソッド名

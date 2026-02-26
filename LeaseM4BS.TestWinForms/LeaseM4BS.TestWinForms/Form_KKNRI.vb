@@ -4,7 +4,6 @@ Partial Public Class Form_KKNRI
     Inherits Form
 
     Protected _crud As crudHelper = New crudHelper()
-    Protected _formHelper As FormHelper = New FormHelper()
 
     ' -------------------------------------------------------------------------
     ' マスタデータのロード
@@ -21,11 +20,11 @@ Partial Public Class Form_KKNRI
                                     "WHERE kknri3_cd <> '' " &
                                     "ORDER BY kknri3_cd"
 
-        _formHelper.BindCombo(cmbKknri2, sqlKknri2, "kknri2_cd", "kknri2_cd")
-        _formHelper.BindCombo(cmbKknri3, sqlKknri3, "kknri3_cd", "kknri3_cd")
+        cmbKknri2.Bind(sqlKknri2, "kknri2_cd", "kknri2_cd")
+        cmbKknri3.Bind(sqlKknri3, "kknri3_cd", "kknri3_cd")
 
         For Each cmb In {cmbKknri2, cmbKknri3}
-            _formHelper.AdjustComboSize(cmb, 600, 16)
+            cmb.AdjustSize()
             cmb.SelectedIndex = -1
         Next
     End Sub
@@ -37,8 +36,8 @@ Partial Public Class Form_KKNRI
                                         "WHERE corp_id <> 0 " &
                                         "ORDER BY corp_id"
 
-        _formHelper.BindCombo(cmbCorp, sqlCorp, "corp1_cd", "corp1_cd")
-        _formHelper.AdjustComboSize(cmbCorp, 600, 16)
+        cmbCorp.Bind(sqlCorp, "corp1_cd", "corp1_cd")
+        cmbCorp.AdjustSize()
         cmbCorp.SelectedIndex = -1
     End Sub
 
@@ -49,8 +48,8 @@ Partial Public Class Form_KKNRI
                                         "WHERE hrel_ptn_cd4 <> '' " &
                                         "ORDER BY hrel_ptn_cd4"
 
-        _formHelper.BindCombo(cmbPtn, sqlPtn, "hrel_ptn_cd4", "hrel_ptn_cd4")
-        _formHelper.AdjustComboSize(cmbPtn, 600, 16)
+        cmbPtn.Bind(sqlPtn, "hrel_ptn_cd4", "hrel_ptn_cd4")
+        cmbPtn.AdjustSize()
         cmbPtn.SelectedIndex = -1
     End Sub
 End Class

@@ -3,7 +3,6 @@
 Partial Public Class Form_f_SAIMU_JOKEN
     Inherits Form
 
-    Private _formHelper As New FormHelper()
     Private _prevForm As Form_f_flx_SAIMU
     Public Sub New()
         InitializeComponent()
@@ -12,7 +11,7 @@ Partial Public Class Form_f_SAIMU_JOKEN
     Private Sub Form_f_SAIMU_JOKEN_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Dim sql = "SELECT val_short_nm FROM c_settei_idfld WHERE settei_id = 3 AND val_id <> 0 ORDER BY val_id;"
 
-        _formHelper.BindCombo(cmb_SAIMU_HO, sql, "val_short_nm", "val_short_nm")
+        cmb_SAIMU_HO.Bind(sql, "val_short_nm", "val_short_nm")
     End Sub
 
     ' [実行]ボタン

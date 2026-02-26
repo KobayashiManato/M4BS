@@ -4,7 +4,6 @@ Imports Npgsql
 Public Class Form_f_flx_MONTHLY_JOURNAL
     Public Property labelText As String
     Private _crud As CrudHelper = New CrudHelper()
-    Private _formHelper As FormHelper = New FormHelper()
 
     Private Sub Form_f_flx_MONTHLY_JOURNAL_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         lbl_CONDITION.Text = labelText
@@ -82,7 +81,7 @@ Public Class Form_f_flx_MONTHLY_JOURNAL
 
     ' --- グリッドの見た目調整 ---
     Private Sub ApplyGridStyle()
-        _formHelper.HideColumns(dgv_LIST, "kykm_id", "kykh_id")
+        dgv_LIST.HideColumns("kykm_id", "kykh_id")
     End Sub
 
     ' [閉じる]ボタン

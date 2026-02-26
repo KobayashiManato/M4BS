@@ -32,7 +32,7 @@ Namespace My
         
         <Global.System.Diagnostics.DebuggerStepThroughAttribute()>  _
         Protected Overrides Sub OnCreateMainForm()
-            Me.MainForm = Global.Form_f_減損損失取込
+            Me.MainForm = Global.FrmBuknEntry
         End Sub
         
         <Global.System.Diagnostics.DebuggerStepThroughAttribute()>  _

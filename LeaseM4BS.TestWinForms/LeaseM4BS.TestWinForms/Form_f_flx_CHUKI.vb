@@ -17,7 +17,6 @@ Partial Public Class Form_f_flx_CHUKI
     Public Property Prms As List(Of NpgsqlParameter)
 
     Private _crud As New CrudHelper()
-    Private _formHelper As New FormHelper()
 
     Public Sub New()
         InitializeComponent()
@@ -38,7 +37,7 @@ Partial Public Class Form_f_flx_CHUKI
 
             dgv_LIST.DataSource = _crud.GetDataTable(sql, Prms)
 
-            _formHelper.HideColumns(dgv_LIST, "kykm_id", "kykh_id")
+            dgv_LIST.HideColumns("kykm_id", "kykh_id")
 
         Catch ex As Exception
             MessageBox.Show("一覧取得エラー: " & ex.Message)
@@ -120,7 +119,7 @@ Partial Public Class Form_f_flx_CHUKI
 
     ' [返済スケジュール]ボタン
     Private Sub cmd_SCH_Click(sender As Object, e As EventArgs) Handles cmd_SCH.Click
-        Dim selectedRow = _formHelper.GetSelectedRow(dgv_LIST)
+        Dim selectedRow = dgv_LIST.GetSelectedRow()
 
         If selectedRow Is Nothing Then Return
 
@@ -132,7 +131,7 @@ Partial Public Class Form_f_flx_CHUKI
 
     ' [照会]ボタン
     Private Sub cmd_REF_Click(sender As Object, e As EventArgs) Handles cmd_REF.Click
-        Dim selectedRow = _formHelper.GetSelectedRow(dgv_LIST)
+        Dim selectedRow = dgv_LIST.GetSelectedRow()
 
         If selectedRow Is Nothing Then Return
 

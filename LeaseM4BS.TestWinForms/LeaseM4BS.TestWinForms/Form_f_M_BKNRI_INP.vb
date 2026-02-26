@@ -16,22 +16,22 @@ Partial Public Class Form_f_M_BKNRI_INP
     '  コンボボックスの3列描画 (Access完全再現・罫線付き)
     ' =========================================================
     Private Sub Combo_BKNRI2_DrawItem(sender As Object, e As DrawItemEventArgs) Handles cmb_BKNRI2_CD.DrawItem
-        _formHelper.Combo_DrawItem(sender, e, {"bknri2_cd", "bknri2_nm"})
+        Combo_DrawItem(sender, e, {"bknri2_cd", "bknri2_nm"})
     End Sub
 
     Private Sub Combo_BKNRI3_DrawItem(sender As Object, e As DrawItemEventArgs) Handles cmb_BKNRI3_CD.DrawItem
-        _formHelper.Combo_DrawItem(sender, e, {"bknri3_cd", "bknri3_nm"})
+        Combo_DrawItem(sender, e, {"bknri3_cd", "bknri3_nm"})
     End Sub
 
     ' =========================================================
     '  コンボボックス選択時の連動 (Accessの =Column(x) 再現)
     ' =========================================================
     Private Sub cmb_bknri2_CD_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_BKNRI2_CD.SelectedIndexChanged
-        _formHelper.SyncComboToText(Me, cmb_BKNRI2_CD, {"bknri2_nm"}, {"txt_BKNRI2_NM"})
+        cmb_BKNRI2_CD.SyncTo("bknri2_nm", txt_BKNRI2_NM)
     End Sub
 
     Private Sub cmb_BKNRI3_CD_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_BKNRI3_CD.SelectedIndexChanged
-        _formHelper.SyncComboToText(Me, cmb_BKNRI3_CD, {"bknri3_nm"}, {"txt_BKNRI3_NM"})
+        cmb_BKNRI3_CD.SyncTo("bknri3_nm", txt_BKNRI3_NM)
     End Sub
 
     ' [閉じる] ボタン

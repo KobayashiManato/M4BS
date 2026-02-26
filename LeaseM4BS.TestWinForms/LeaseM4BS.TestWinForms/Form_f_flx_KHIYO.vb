@@ -17,7 +17,6 @@ Partial Public Class Form_f_flx_KHIYO
     Inherits Form
 
     Private _crud As New CrudHelper()
-    Private _formHelper As New FormHelper()
 
     Public Property DtFrom As Date
     Public Property DtTo As Date
@@ -47,7 +46,7 @@ Partial Public Class Form_f_flx_KHIYO
             ' todo グレーアウトの条件を探す(Access版はグレーアウト行がある。条件不明)
             dgv_LIST.DataSource = _crud.GetDataTable(sql, prms)
 
-            _formHelper.HideColumns(dgv_LIST, "kykm_id", "kykh_id")
+            dgv_LIST.HideColumns("kykm_id", "kykh_id")
 
         Catch ex As Exception
             MessageBox.Show("一覧取得エラー: " & ex.Message)
@@ -252,7 +251,7 @@ Partial Public Class Form_f_flx_KHIYO
 
     ' [照会]ボタン
     Private Sub cmd_REF_Click(sender As Object, e As EventArgs) Handles cmd_REF.Click
-        Dim selectedRow = _formHelper.GetSelectedRow(dgv_LIST)
+        Dim selectedRow = dgv_LIST.GetSelectedRow()
 
         If selectedRow Is Nothing Then
             Return
@@ -273,7 +272,7 @@ Partial Public Class Form_f_flx_KHIYO
     Private Sub dgv_LIST_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv_LIST.CellDoubleClick
         If e.RowIndex < 0 Then Return
 
-        Dim selectedRow = _formHelper.GetSelectedRow(dgv_LIST)
+        Dim selectedRow = dgv_LIST.GetSelectedRow()
 
         If selectedRow Is Nothing Then
             Return

@@ -5,8 +5,6 @@ Imports Npgsql
 Partial Public Class Form_f_flx_M_RSRVB1
     Inherits Form
 
-    Private _formHelper As New FormHelper()
-
     Public Sub New()
         InitializeComponent()
     End Sub
@@ -79,7 +77,7 @@ Partial Public Class Form_f_flx_M_RSRVB1
 
     ' [変更] ボタン
     Private Sub cmd_CHANGE_Click(sender As Object, e As EventArgs) Handles cmd_CHANGE.Click
-        Dim selectedRow = _formHelper.GetSelectedRow(dgv_LIST)
+        Dim selectedRow = dgv_LIST.GetSelectedRow()
 
         Dim frm As New Form_f_M_RSRVB1_CHANGE
         frm.Rsrvb1Id = Convert.ToDouble(selectedRow.Cells("id").Value)

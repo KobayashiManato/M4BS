@@ -5,8 +5,6 @@ Imports Npgsql
 Partial Public Class Form_f_flx_D_HAIF
     Inherits Form
 
-    Private _formHelper As New FormHelper
-
     Public Sub New()
         InitializeComponent()
     End Sub
@@ -101,12 +99,12 @@ Partial Public Class Form_f_flx_D_HAIF
 
     ' --- グリッドの見た目調整 ---
     Private Sub ApplyGridStyle()
-        _formHelper.HideColumns(dgv_LIST, "kykm_id", "kykh_id")
+        dgv_LIST.HideColumns("kykm_id", "kykh_id")
 
-        _formHelper.FormatColumn(dgv_LIST, "支払額1", "#,##0")
-        _formHelper.FormatColumn(dgv_LIST, "前払リース料", "#,##0")
-        _formHelper.FormatColumn(dgv_LIST, "開始日", "yyyy/MM/dd")
-        _formHelper.FormatColumn(dgv_LIST, "終了日", "yyyy/MM/dd")
+        dgv_LIST.FormatColumn("支払額1", "#,##0")
+        dgv_LIST.FormatColumn("前払リース料", "#,##0")
+        dgv_LIST.FormatColumn("開始日", "yyyy/MM/dd")
+        dgv_LIST.FormatColumn("終了日", "yyyy/MM/dd")
     End Sub
 
     ' [検索] ボタン
@@ -121,7 +119,7 @@ Partial Public Class Form_f_flx_D_HAIF
 
     ' [変更] ボタン
     Private Sub cmd_CHANGE_Click(sender As Object, e As EventArgs) Handles cmd_CHANGE.Click
-        Dim selectedRow = _formHelper.GetSelectedRow(dgv_LIST)
+        Dim selectedRow = dgv_LIST.GetSelectedRow()
 
         If selectedRow Is Nothing Then Return
 
@@ -131,7 +129,7 @@ Partial Public Class Form_f_flx_D_HAIF
 
     ' [照会] ボタン
     Private Sub cmd_REF_Click(sender As Object, e As EventArgs) Handles cmd_REF.Click
-        Dim selectedRow = _formHelper.GetSelectedRow(dgv_LIST)
+        Dim selectedRow = dgv_LIST.GetSelectedRow()
 
         If selectedRow Is Nothing Then Return
 
@@ -143,7 +141,7 @@ Partial Public Class Form_f_flx_D_HAIF
     Private Sub dgv_LIST_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv_LIST.CellDoubleClick
         If e.RowIndex < 0 Then Return
 
-        Dim selectedRow = _formHelper.GetSelectedRow(dgv_LIST)
+        Dim selectedRow = dgv_LIST.GetSelectedRow()
 
         If selectedRow Is Nothing Then Return
 

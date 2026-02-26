@@ -4,7 +4,6 @@ Partial Public Class Form_BCAT
     Inherits Form
 
     Protected _crud As crudHelper = New crudHelper()
-    Protected _formHelper As FormHelper = New FormHelper()
 
     ' -------------------------------------------------------------------------
     ' マスタデータのロード
@@ -30,13 +29,13 @@ Partial Public Class Form_BCAT
                                     "WHERE bcat5_cd <> '' " &
                                     "ORDER BY bcat5_cd;"
 
-        _formHelper.BindCombo(cmbBcat2, sqlBcat2, "bcat2_cd", "bcat2_cd")
-        _formHelper.BindCombo(cmbBcat3, sqlBcat3, "bcat3_cd", "bcat3_cd")
-        _formHelper.BindCombo(cmbBcat4, sqlBcat4, "bcat4_cd", "bcat4_cd")
-        _formHelper.BindCombo(cmbBcat5, sqlBcat5, "bcat5_cd", "bcat5_cd")
+        cmbBcat2.Bind(sqlBcat2, "bcat2_cd", "bcat2_cd")
+        cmbBcat3.Bind(sqlBcat3, "bcat3_cd", "bcat3_cd")
+        cmbBcat4.Bind(sqlBcat4, "bcat4_cd", "bcat4_cd")
+        cmbBcat5.Bind(sqlBcat5, "bcat5_cd", "bcat5_cd")
 
         For Each cmb In {cmbBcat2, cmbBcat3, cmbBcat4, cmbBcat5}
-            _formHelper.AdjustComboSize(cmb, 600, 16)
+            cmb.AdjustSize()
             cmb.SelectedIndex = -1
         Next
 
@@ -48,9 +47,9 @@ Partial Public Class Form_BCAT
                         "WHERE genk_cd <> '' " &
                         "ORDER BY genk_cd;"
 
-        _formHelper.BindCombo(cmbGenk, sqlGenk, "genk_cd", "genk_cd")
+        cmbGenk.Bind(sqlGenk, "genk_cd", "genk_cd")
 
-        _formHelper.AdjustComboSize(cmbGenk, 600, 16)
+        cmbGenk.AdjustSize()
         cmbGenk.SelectedIndex = -1
     End Sub
 
@@ -70,12 +69,12 @@ Partial Public Class Form_BCAT
                         "WHERE sum1_cd <> '' " &
                         "ORDER BY sum3_cd;"
 
-        _formHelper.BindCombo(cmbSum1, sqlSum1, "sum1_cd", "sum1_cd")
-        _formHelper.BindCombo(cmbSum2, sqlSum2, "sum2_cd", "sum2_cd")
-        _formHelper.BindCombo(cmbSum3, sqlSum3, "sum3_cd", "sum3_cd")
+        cmbSum1.Bind(sqlSum1, "sum1_cd", "sum1_cd")
+        cmbSum2.Bind(sqlSum2, "sum2_cd", "sum2_cd")
+        cmbSum3.Bind(sqlSum3, "sum3_cd", "sum3_cd")
 
         For Each cmb In {cmbSum1, cmbSum2, cmbSum3}
-            _formHelper.AdjustComboSize(cmb, 600, 16)
+            cmb.AdjustSize()
             cmb.SelectedIndex = -1
         Next
     End Sub
@@ -86,8 +85,8 @@ Partial Public Class Form_BCAT
                                     "WHERE bknri1_cd <> '' " &
                                     "ORDER BY bknri1_cd;"
 
-        _formHelper.BindCombo(cmbBknri, sqlBknri, "bknri1_cd", "bknri1_cd")
-        _formHelper.AdjustComboSize(cmbBknri, 600, 16)
+        cmbBknri.Bind(sqlBknri, "bknri1_cd", "bknri1_cd")
+        cmbBknri.AdjustSize()
         cmbBknri.SelectedIndex = -1
     End Sub
 End Class

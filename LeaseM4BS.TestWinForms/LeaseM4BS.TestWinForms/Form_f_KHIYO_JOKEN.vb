@@ -5,7 +5,6 @@ Partial Public Class Form_f_KHIYO_JOKEN
     Inherits Form
 
     Private _prevForm As Form_f_flx_KHIYO
-    Private _formHelper As New FormHelper()
 
     Public Sub New()
         InitializeComponent()

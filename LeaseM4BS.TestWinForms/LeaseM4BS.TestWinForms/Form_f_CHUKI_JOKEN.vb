@@ -8,7 +8,6 @@ Partial Public Class Form_f_CHUKI_JOKEN
     Private _prevForm As Form_f_flx_CHUKI
 
     Private _crud As New CrudHelper()
-    Private _formHelper As New FormHelper()
 
     Public Sub New()
         InitializeComponent()
@@ -19,12 +18,12 @@ Partial Public Class Form_f_CHUKI_JOKEN
         Dim sqlLcpt As String = "SELECT lcpt1_cd, lcpt1_nm FROM m_lcpt WHERE lcpt_id <> 0 ORDER BY lcpt1_cd;"
         Dim sqlBcat As String = "SELECT bcat1_cd, bcat1_nm FROM m_bcat WHERE bcat_id <> 0 ORDER BY bcat1_cd;"
 
-        _formHelper.BindCombo(cmb_SKMK_CD, sqlSkmk, "skmk_cd", "skmk_cd")
-        _formHelper.BindCombo(cmb_LCPT1_CD, sqlLcpt, "lcpt1_cd", "lcpt1_cd")
-        _formHelper.BindCombo(cmb_BCAT1_CD, sqlBcat, "bcat1_cd", "bcat1_cd")
+        cmb_SKMK_CD.Bind(sqlSkmk, "skmk_cd", "skmk_cd")
+        cmb_LCPT1_CD.Bind(sqlLcpt, "lcpt1_cd", "lcpt1_cd")
+        cmb_BCAT1_CD.Bind(sqlBcat, "bcat1_cd", "bcat1_cd")
 
         For Each cmb In {cmb_SKMK_CD, cmb_LCPT1_CD, cmb_BCAT1_CD}
-            _formHelper.AdjustComboSize(cmb, 600, 16)
+            cmb.AdjustSize()
             cmb.SelectedIndex = -1
         Next
     End Sub
@@ -180,29 +179,29 @@ Partial Public Class Form_f_CHUKI_JOKEN
     '  コンボボックスの2列描画 (Access完全再現・罫線付き)
     ' =========================================================
     Private Sub Combo_SKMK_DrawItem(sender As Object, e As DrawItemEventArgs) Handles cmb_SKMK_CD.DrawItem
-        _formHelper.Combo_DrawItem(sender, e, {"skmk_cd", "skmk_nm"})
+        Combo_DrawItem(sender, e, {"skmk_cd", "skmk_nm"})
     End Sub
 
     Private Sub Combo_LCPT_DrawItem(sender As Object, e As DrawItemEventArgs) Handles cmb_LCPT1_CD.DrawItem
-        _formHelper.Combo_DrawItem(sender, e, {"lcpt1_cd", "lcpt1_nm"})
+        Combo_DrawItem(sender, e, {"lcpt1_cd", "lcpt1_nm"})
     End Sub
 
     Private Sub Combo_BCAT_DrawItem(sender As Object, e As DrawItemEventArgs) Handles cmb_BCAT1_CD.DrawItem
-        _formHelper.Combo_DrawItem(sender, e, {"bcat1_cd", "bcat1_nm"})
+        Combo_DrawItem(sender, e, {"bcat1_cd", "bcat1_nm"})
     End Sub
 
     ' =========================================================
     '  コンボボックス選択時の連動 (Accessの =Column(x) 再現)
     ' =========================================================
     Private Sub cmb_SKMK_CD_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_SKMK_CD.SelectedIndexChanged
-        _formHelper.SyncComboToText(Me, cmb_SKMK_CD, {"skmk_nm"}, {"txt_SKMK_NM"})
+        cmb_SKMK_CD.SyncTo("skmk_nm", txt_SKMK_NM)
     End Sub
 
     Private Sub cmb_LCPT1_CD_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_LCPT1_CD.SelectedIndexChanged
-        _formHelper.SyncComboToText(Me, cmb_LCPT1_CD, {"lcpt1_nm"}, {"txt_LCPT1_NM"})
+        cmb_LCPT1_CD.SyncTo("lcpt1_nm", txt_LCPT1_NM)
     End Sub
 
     Private Sub cmb_BCAT1_CD_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_BCAT1_CD.SelectedIndexChanged
-        _formHelper.SyncComboToText(Me, cmb_BCAT1_CD, {"bcat1_nm"}, {"txt_BCAT1_NM"})
+        cmb_BCAT1_CD.SyncTo("bcat1_nm", txt_BCAT1_NM)
     End Sub
 End Class
