@@ -82,8 +82,9 @@ Partial Public Class Form_f_T_HOLIDAY
                     Dim id = row("id", DataRowVersion.Original)
 
                     ' パラメータ設定
-                    Dim prms As New List(Of NpgsqlParameter)
-                    prms.Add(New NpgsqlParameter("@id", id))
+                    Dim prms As New List(Of NpgsqlParameter) From {
+                        {New NpgsqlParameter("@id", id)}
+                    }
 
                     _crud.Delete("t_holiday", "id = @id", prms)
 
@@ -98,8 +99,9 @@ Partial Public Class Form_f_T_HOLIDAY
                     Dim id = row("id", DataRowVersion.Original)
 
                     ' パラメータ設定
-                    Dim prms As New List(Of NpgsqlParameter)
-                    prms.Add(New NpgsqlParameter("@id", id))
+                    Dim prms As New List(Of NpgsqlParameter) From {
+                        {New NpgsqlParameter("@id", id)}
+                    }
 
                     _crud.Update("t_holiday", holiday, "id = @id", prms)
                 End If

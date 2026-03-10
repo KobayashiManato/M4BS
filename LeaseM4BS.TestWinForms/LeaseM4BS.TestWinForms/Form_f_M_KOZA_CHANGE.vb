@@ -12,26 +12,27 @@ Partial Public Class Form_f_M_KOZA_CHANGE
 
         Try
             ' --- ヘッダ取得 (ID指定) ---
-            Dim sqlHead As String = "SELECT * FROM m_koza WHERE koza_id = @id"
+            Dim sql As String = "SELECT * FROM m_koza WHERE koza_id = @id"
 
-            Dim prmHead As New List(Of Npgsql.NpgsqlParameter) From {
+            Dim prm As New List(Of Npgsql.NpgsqlParameter) From {
                 New Npgsql.NpgsqlParameter("@id", KozaId)
             }
 
-            Dim dtHead As DataTable = _crud.GetDataTable(sqlHead, prmHead)
+            Dim dt As DataTable = _crud.GetDataTable(sql, prm)
 
-            If dtHead.Rows.Count > 0 Then
-                Dim row As DataRow = dtHead.Rows(0)
+            If dt.Rows.Count = 0 Then Return
 
-                ' 画面項目に値をセット
-                txt_KOZA_CD.Text = row("koza_cd").ToString()
-                txt_KOZA_NM.Text = row("koza_nm").ToString()
+            Dim row As DataRow = dt.Rows(0)
 
-                txt_BIKO.Text = row("biko").ToString()
-                txt_CREATE_DT.Text = row("create_dt").ToString()
-                txt_UPDATE_DT.Text = row("update_dt").ToString()
-                txt_koza_ID.Text = row("koza_id").ToString()
-            End If
+            ' 画面項目に値をセット
+            txt_KOZA_CD.SetText(row("koza_cd"))
+            txt_KOZA_NM.SetText(row("koza_nm"))
+
+            txt_BIKO.SetText(row("biko"))
+            txt_CREATE_DT.SetText(row("create_dt"))
+            txt_UPDATE_DT.SetText(row("update_dt"))
+            txt_KOZA_ID.SetText(row("koza_id"))
+
         Catch ex As Exception
             MessageBox.Show("詳細読込エラー: " & ex.Message)
         End Try
@@ -66,8 +67,9 @@ Partial Public Class Form_f_M_KOZA_CHANGE
         koza("update_cnt") = currentCnt + 1
 
         ' パラメータ設定
-        Dim prms As New List(Of NpgsqlParameter)
-        prms.Add(New NpgsqlParameter("@id", Integer.Parse(txt_KOZA_ID.Text)))
+        Dim prms As New List(Of NpgsqlParameter) From {
+            {New NpgsqlParameter("@id", Integer.Parse(txt_KOZA_ID.Text))}
+        }
 
         ' 行を更新
         _crud.Update("m_koza", koza, "koza_id = @id", prms)
@@ -87,8 +89,9 @@ Partial Public Class Form_f_M_KOZA_CHANGE
         End If
 
         ' パラメータ設定
-        Dim prms As New List(Of NpgsqlParameter)
-        prms.Add(New NpgsqlParameter("@id", Integer.Parse(txt_KOZA_ID.Text)))
+        Dim prms As New List(Of NpgsqlParameter) From {
+            {New NpgsqlParameter("@id", Integer.Parse(txt_KOZA_ID.Text))}
+        }
 
         ' 行を削除
         _crud.Delete("m_koza", "koza_id = @id", prms)

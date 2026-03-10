@@ -1,4 +1,5 @@
-﻿Partial Public Class Form_f_YOSAN_JOKEN
+﻿' --- 予算実績集計 ---
+Partial Public Class Form_f_YOSAN_JOKEN
     Private _prevForm As Form_f_flx_YOSAN
 
     Private Sub Form_f_YOSAN_JOKEN_Load(sender As Object, e As EventArgs) Handles MyBase.Load

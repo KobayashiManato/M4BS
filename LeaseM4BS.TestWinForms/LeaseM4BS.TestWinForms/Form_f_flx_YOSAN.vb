@@ -11,6 +11,7 @@ Partial Public Class Form_f_flx_YOSAN
     Public Property NextDtFrom As Date
     Public Property NextDtTo As Date
 
+    Private Const FMT_CURRENCY As String = "#,##0"
     Private _crud As New CrudHelper()
 
     Public Sub New()
@@ -27,7 +28,7 @@ Partial Public Class Form_f_flx_YOSAN
 
         LoadDgvTotal()
 
-        lbl_CONDITION.Text = "集計期間：" & DtFrom.ToString("yyyy/MM") & "～" & NextDtTo.ToString("yyyy/MM")
+        lbl_CONDITION.Text = "集計期間：  " & DtFrom.ToString("yyyy/MM") & "～" & NextDtTo.ToString("yyyy/MM")
     End Sub
 
     Private Sub SearchData()
@@ -41,9 +42,7 @@ Partial Public Class Form_f_flx_YOSAN
             ' todo グレーアウトの条件を探す(Access版はグレーアウト行がある。条件不明)
             dgv_LIST.DataSource = _crud.GetDataTable(sql, prms)
 
-            ' --- グリッドの見た目調整 ---
-            dgv_LIST.HideColumns("kykm_id")
-
+            ApplyGridStyle()
 
         Catch ex As Exception
             MessageBox.Show("一覧取得エラー: " & ex.Message)
@@ -97,8 +96,8 @@ Partial Public Class Form_f_flx_YOSAN
         ' sb.AppendLine("ORDER BY kykm_no, saikaisu")
 
         ' パラメータ設定
-        prms.Add(New NpgsqlParameter("@dtFrom", GetMonthStart(DtFrom)))
-        prms.Add(New NpgsqlParameter("@NextDtTo", GetMonthEnd(NextDtTo)))
+        prms.Add(New NpgsqlParameter("@dtFrom", DtFrom))
+        prms.Add(New NpgsqlParameter("@NextDtTo", NextDtTo))
 
         For i = 0 To 23
             prms.Add(New NpgsqlParameter($"dt{i}", DtFrom.AddMonths(i)))
@@ -130,6 +129,14 @@ Partial Public Class Form_f_flx_YOSAN
         dgv_TOTAL.HideColumns("kykm_id")
     End Sub
 
+    Private Sub ApplyGridStyle()
+        dgv_LIST.HideColumns("kykm_id")
+
+        For i = 1 To 23
+            dgv_LIST.FormatColumn($"m{i}", FMT_CURRENCY)
+        Next
+    End Sub
+
     ' [閉じる]ボタン
     Private Sub cmd_CLOSE_Click(sender As Object, e As EventArgs) Handles cmd_CLOSE.Click
         Me.Close()
@@ -146,16 +153,14 @@ Partial Public Class Form_f_flx_YOSAN
     Private Sub cmd_REF_Click(sender As Object, e As EventArgs) Handles cmd_REF.Click
         Dim selectedRow = dgv_LIST.GetSelectedRow()
 
-        If selectedRow Is Nothing Then
-            Return
-        End If
+        If selectedRow Is Nothing Then Return
 
-        Dim frmBukn As New FrmBuknEntry
+        Dim frmBukn As New Form_BuknEntry
 
         frmBukn.KykmId = Convert.ToDouble(selectedRow.Cells("kykm_id").Value)
         frmBukn.ShowDialog()
 
-        Dim frmContract As New FrmContractEntry
+        Dim frmContract As New Form_ContractEntry
 
         frmContract.KykhId = Convert.ToDouble(selectedRow.Cells("kykh_id").Value)
         frmContract.ShowDialog()
@@ -163,7 +168,7 @@ Partial Public Class Form_f_flx_YOSAN
 
     ' [ファイル出力]ボタン
     Private Sub cmd_OUTPUT_FILE_Click(sender As Object, e As EventArgs) Handles cmd_OUTPUT_FILE.Click
-        Dim frm As New Form_f_FlexOutputDLG
+        Dim frm As New Form_f_FlexOutputDLG()
 
         frm.Dgv = dgv_LIST
         frm.ShowDialog()

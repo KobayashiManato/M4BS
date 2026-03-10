@@ -1,8 +1,10 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Public Class Form_f_flx_KEIJO
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+Partial Class Form_f_flx_KEIJO
+    Inherits System.Windows.Forms.Form
 
-    <System.Diagnostics.DebuggerNonUserCode()>
-    Protected Overrides Sub Dispose(disposing As Boolean)
+    'フォームがコンポーネントの一覧をクリーンアップするために dispose をオーバーライドします。
+    <System.Diagnostics.DebuggerNonUserCode()> _
+    Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
                 components.Dispose()
@@ -12,649 +14,520 @@ Partial Public Class Form_f_flx_KEIJO
         End Try
     End Sub
 
+    'Windows フォーム デザイナーで必要です。
     Private components As System.ComponentModel.IContainer
 
-    <System.Diagnostics.DebuggerStepThrough()>
+    'メモ: 以下のプロシージャは Windows フォーム デザイナーで必要です。
+    'Windows フォーム デザイナーを使用して変更できます。  
+    'コード エディターを使って変更しないでください。
+    <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.dgv_LIST = New System.Windows.Forms.DataGridView()
+        Me.col_KYKM_NO = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.col_SAIKAISU = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.col_LINE_ID = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.col_KKBN_NM = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.col_REC_KBN_STR = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.col_KJKBN_NM = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.col_HOREI_KBN = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.col_LEAKBN_NM = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.col_KYKBNL = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.col_LCPT1_NM = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.col_BUKN_NM = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.col_B_BCAT_NM = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.col_H_BCAT_NM = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.col_HKMK = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.col_START_DT = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.col_END_DT = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.col_SEIKYU_MONTH = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.col_CKAIYK_DT = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.col_SUMIKAISU = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.col_B_KNYUKN = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.col_LSRYO_TOTAL = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.col_LSRYO_ZZAN = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.col_LSRYO_TOKI = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.col_ZEI_TOKI = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.col_ZKOMI_TOKI = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.col_LSRYO_ZAN = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.col_LSRYO_ZAN1NAI = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.col_ZRITU = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.col_SHRI_DT = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.col_SHHO_NM = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.pnlHeader = New System.Windows.Forms.Panel()
-        Me.cmd_閉じる = New System.Windows.Forms.Button()
-        Me.cmd_設定 = New System.Windows.Forms.Button()
-        Me.cmd_照会 = New System.Windows.Forms.Button()
-        Me.cmd_仕訳出力 = New System.Windows.Forms.Button()
-        Me.cmd_計上仕訳 = New System.Windows.Forms.Button()
-        Me.cmd_振替伝票 = New System.Windows.Forms.Button()
-        Me.cmd_FlexSearchDLG = New System.Windows.Forms.Button()
-        Me.cmd_FlexSortDLG = New System.Windows.Forms.Button()
+        Me.lblSearch = New System.Windows.Forms.Label()
+        Me.txt_SEARCH = New System.Windows.Forms.TextBox()
+        Me.cmd_SEARCH = New System.Windows.Forms.Button()
+        Me.lbl_CONDITION = New System.Windows.Forms.Label()
+        Me.cmd_OUTPUT_FILE = New System.Windows.Forms.Button()
         Me.cmd_FlexReportDLG = New System.Windows.Forms.Button()
-        Me.cmd_Output = New System.Windows.Forms.Button()
-        Me.dgvMain = New System.Windows.Forms.DataGridView()
-        Me.txt_JOKEN = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.txt_KYKM_NO = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.txt_SAIKAISU = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.txt_LINE_ID = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.txt_KKBN_NM = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.txt_REC_KBN_STR = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.txt_KJKBN_NM = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.txt_HREI_KBN = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.txt_TRHK_KBN_STR = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.txt_KYKBNL = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.txt_LEAKBN = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.txt_BUKN_NM = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.txt_LCPT1_NM = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.txt_B_BCAT_NM = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.txt_H_BCAT_NM = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.txt_START_DT = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.txt_KEIJO_DT = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.txt_CKAIYK_DT = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.txt_SUMIKAISU = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.txt_SYUTOK_ZOU = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.txt_SYUTOK_GEN = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.txt_ZEI_KARI = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.txt_ZEI_MHRI = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.txt_LGNPN_TOKI = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.txt_LRSOK_TOKI = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.txt_GRUIKEI_ZOU = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.txt_GSON_RKEI_ZOU = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.txt_GSON_TK_TOKI = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.txt_ZZAN = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.txt_BOKA_ZAN = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.txt_LGNPN_ZZAN = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.txt_LGNPN_ZAN = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.txt_IDO_DT = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.txt_SYUTOK_ZOU_SUM = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.txt_SYUTOK_GEN_SUM = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.txt_ZEI_KARI_SUM = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.txt_ZEI_MHRI_SUM = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.txt_LGNPN_TOKI_SUM = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.txt_LRSOK_TOKI_SUM = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.txt_GRUIKEI_ZOU_SUM = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.txt_GSON_RKEI_ZOU_SUM = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.txt_GSON_TK_TOKI_SUM = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.txt_ZZAN_SUM = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.txt_BOKA_ZAN_SUM = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.txt_LGNPN_ZZAN_SUM = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.txt_LGNPN_ZAN_SUM = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.txt_ID = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.cmd_支払照合 = New System.Windows.Forms.Button()
+        Me.cmd_REF = New System.Windows.Forms.Button()
+        Me.cmd_RECALCULATE = New System.Windows.Forms.Button()
+        Me.cmd_CLOSE = New System.Windows.Forms.Button()
+        CType(Me.dgv_LIST, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlHeader.SuspendLayout()
-        CType(Me.dgvMain, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        ' pnlHeader
+        'dgv_LIST
         '
-        Me.pnlHeader.Controls.Add(Me.cmd_Output)
+        Me.dgv_LIST.AllowUserToAddRows = False
+        Me.dgv_LIST.AllowUserToDeleteRows = False
+        Me.dgv_LIST.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgv_LIST.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.col_KYKM_NO, Me.col_SAIKAISU, Me.col_LINE_ID, Me.col_KKBN_NM, Me.col_REC_KBN_STR, Me.col_KJKBN_NM, Me.col_HOREI_KBN, Me.col_LEAKBN_NM, Me.col_KYKBNL, Me.col_LCPT1_NM, Me.col_BUKN_NM, Me.col_B_BCAT_NM, Me.col_H_BCAT_NM, Me.col_HKMK, Me.col_START_DT, Me.col_END_DT, Me.col_SEIKYU_MONTH, Me.col_CKAIYK_DT, Me.col_SUMIKAISU, Me.col_B_KNYUKN, Me.col_LSRYO_TOTAL, Me.col_LSRYO_ZZAN, Me.col_LSRYO_TOKI, Me.col_ZEI_TOKI, Me.col_ZKOMI_TOKI, Me.col_LSRYO_ZAN, Me.col_LSRYO_ZAN1NAI, Me.col_ZRITU, Me.col_SHRI_DT, Me.col_SHHO_NM})
+        Me.dgv_LIST.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.dgv_LIST.Location = New System.Drawing.Point(0, 124)
+        Me.dgv_LIST.Margin = New System.Windows.Forms.Padding(5, 4, 5, 4)
+        Me.dgv_LIST.MultiSelect = False
+        Me.dgv_LIST.Name = "dgv_LIST"
+        Me.dgv_LIST.ReadOnly = True
+        Me.dgv_LIST.RowHeadersWidth = 62
+        Me.dgv_LIST.RowTemplate.Height = 21
+        Me.dgv_LIST.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.dgv_LIST.Size = New System.Drawing.Size(2267, 718)
+        Me.dgv_LIST.TabIndex = 0
+        '
+        'col_KYKM_NO
+        '
+        Me.col_KYKM_NO.DataPropertyName = "KYKM_NO"
+        Me.col_KYKM_NO.HeaderText = "物件No"
+        Me.col_KYKM_NO.MinimumWidth = 8
+        Me.col_KYKM_NO.Name = "col_KYKM_NO"
+        Me.col_KYKM_NO.ReadOnly = True
+        Me.col_KYKM_NO.Width = 60
+        '
+        'col_SAIKAISU
+        '
+        Me.col_SAIKAISU.DataPropertyName = "SAIKAISU"
+        Me.col_SAIKAISU.HeaderText = "再回"
+        Me.col_SAIKAISU.MinimumWidth = 8
+        Me.col_SAIKAISU.Name = "col_SAIKAISU"
+        Me.col_SAIKAISU.ReadOnly = True
+        Me.col_SAIKAISU.Width = 60
+        '
+        'col_LINE_ID
+        '
+        Me.col_LINE_ID.DataPropertyName = "LINE_ID"
+        Me.col_LINE_ID.HeaderText = "配No"
+        Me.col_LINE_ID.MinimumWidth = 8
+        Me.col_LINE_ID.Name = "col_LINE_ID"
+        Me.col_LINE_ID.ReadOnly = True
+        Me.col_LINE_ID.Width = 60
+        '
+        'col_KKBN_NM
+        '
+        Me.col_KKBN_NM.DataPropertyName = "KKBN_NM"
+        Me.col_KKBN_NM.HeaderText = "契区"
+        Me.col_KKBN_NM.MinimumWidth = 8
+        Me.col_KKBN_NM.Name = "col_KKBN_NM"
+        Me.col_KKBN_NM.ReadOnly = True
+        Me.col_KKBN_NM.Width = 60
+        '
+        'col_REC_KBN_STR
+        '
+        Me.col_REC_KBN_STR.DataPropertyName = "REC_KBN_STR"
+        Me.col_REC_KBN_STR.HeaderText = "行区"
+        Me.col_REC_KBN_STR.MinimumWidth = 8
+        Me.col_REC_KBN_STR.Name = "col_REC_KBN_STR"
+        Me.col_REC_KBN_STR.ReadOnly = True
+        Me.col_REC_KBN_STR.Width = 60
+        '
+        'col_KJKBN_NM
+        '
+        Me.col_KJKBN_NM.HeaderText = "計上区分"
+        Me.col_KJKBN_NM.MinimumWidth = 8
+        Me.col_KJKBN_NM.Name = "col_KJKBN_NM"
+        Me.col_KJKBN_NM.ReadOnly = True
+        Me.col_KJKBN_NM.Width = 150
+        '
+        'col_HOREI_KBN
+        '
+        Me.col_HOREI_KBN.HeaderText = "法令区分"
+        Me.col_HOREI_KBN.MinimumWidth = 8
+        Me.col_HOREI_KBN.Name = "col_HOREI_KBN"
+        Me.col_HOREI_KBN.ReadOnly = True
+        Me.col_HOREI_KBN.Width = 150
+        '
+        'col_LEAKBN_NM
+        '
+        Me.col_LEAKBN_NM.HeaderText = "リース区分"
+        Me.col_LEAKBN_NM.MinimumWidth = 8
+        Me.col_LEAKBN_NM.Name = "col_LEAKBN_NM"
+        Me.col_LEAKBN_NM.ReadOnly = True
+        Me.col_LEAKBN_NM.Width = 150
+        '
+        'col_KYKBNL
+        '
+        Me.col_KYKBNL.HeaderText = "契約番号"
+        Me.col_KYKBNL.MinimumWidth = 8
+        Me.col_KYKBNL.Name = "col_KYKBNL"
+        Me.col_KYKBNL.ReadOnly = True
+        Me.col_KYKBNL.Width = 150
+        '
+        'col_LCPT1_NM
+        '
+        Me.col_LCPT1_NM.HeaderText = "支払先"
+        Me.col_LCPT1_NM.MinimumWidth = 8
+        Me.col_LCPT1_NM.Name = "col_LCPT1_NM"
+        Me.col_LCPT1_NM.ReadOnly = True
+        Me.col_LCPT1_NM.Width = 150
+        '
+        'col_BUKN_NM
+        '
+        Me.col_BUKN_NM.DataPropertyName = "BUKN_NM"
+        Me.col_BUKN_NM.HeaderText = "物件名"
+        Me.col_BUKN_NM.MinimumWidth = 8
+        Me.col_BUKN_NM.Name = "col_BUKN_NM"
+        Me.col_BUKN_NM.ReadOnly = True
+        Me.col_BUKN_NM.Width = 75
+        '
+        'col_B_BCAT_NM
+        '
+        Me.col_B_BCAT_NM.HeaderText = "管理部署"
+        Me.col_B_BCAT_NM.MinimumWidth = 8
+        Me.col_B_BCAT_NM.Name = "col_B_BCAT_NM"
+        Me.col_B_BCAT_NM.ReadOnly = True
+        Me.col_B_BCAT_NM.Width = 150
+        '
+        'col_H_BCAT_NM
+        '
+        Me.col_H_BCAT_NM.HeaderText = "費用負担部署"
+        Me.col_H_BCAT_NM.MinimumWidth = 8
+        Me.col_H_BCAT_NM.Name = "col_H_BCAT_NM"
+        Me.col_H_BCAT_NM.ReadOnly = True
+        Me.col_H_BCAT_NM.Width = 150
+        '
+        'col_HKMK
+        '
+        Me.col_HKMK.HeaderText = "費用区分"
+        Me.col_HKMK.MinimumWidth = 8
+        Me.col_HKMK.Name = "col_HKMK"
+        Me.col_HKMK.ReadOnly = True
+        Me.col_HKMK.Width = 150
+        '
+        'col_START_DT
+        '
+        Me.col_START_DT.DataPropertyName = "START_DT"
+        Me.col_START_DT.HeaderText = "開始日"
+        Me.col_START_DT.MinimumWidth = 8
+        Me.col_START_DT.Name = "col_START_DT"
+        Me.col_START_DT.ReadOnly = True
+        Me.col_START_DT.Width = 75
+        '
+        'col_END_DT
+        '
+        Me.col_END_DT.HeaderText = "終了日"
+        Me.col_END_DT.MinimumWidth = 8
+        Me.col_END_DT.Name = "col_END_DT"
+        Me.col_END_DT.ReadOnly = True
+        Me.col_END_DT.Width = 150
+        '
+        'col_SEIKYU_MONTH
+        '
+        Me.col_SEIKYU_MONTH.HeaderText = "請求月"
+        Me.col_SEIKYU_MONTH.MinimumWidth = 8
+        Me.col_SEIKYU_MONTH.Name = "col_SEIKYU_MONTH"
+        Me.col_SEIKYU_MONTH.ReadOnly = True
+        Me.col_SEIKYU_MONTH.Width = 150
+        '
+        'col_CKAIYK_DT
+        '
+        Me.col_CKAIYK_DT.DataPropertyName = "CKAIYK_DT"
+        Me.col_CKAIYK_DT.HeaderText = "中途解約日"
+        Me.col_CKAIYK_DT.MinimumWidth = 8
+        Me.col_CKAIYK_DT.Name = "col_CKAIYK_DT"
+        Me.col_CKAIYK_DT.ReadOnly = True
+        Me.col_CKAIYK_DT.Width = 75
+        '
+        'col_SUMIKAISU
+        '
+        Me.col_SUMIKAISU.DataPropertyName = "SUMIKAISU"
+        Me.col_SUMIKAISU.HeaderText = "回数済/総"
+        Me.col_SUMIKAISU.MinimumWidth = 8
+        Me.col_SUMIKAISU.Name = "col_SUMIKAISU"
+        Me.col_SUMIKAISU.ReadOnly = True
+        Me.col_SUMIKAISU.Width = 60
+        '
+        'col_B_KNYUKN
+        '
+        Me.col_B_KNYUKN.DataPropertyName = "B_KNYUKN"
+        Me.col_B_KNYUKN.HeaderText = "現金購入価額(物件)"
+        Me.col_B_KNYUKN.MinimumWidth = 8
+        Me.col_B_KNYUKN.Name = "col_B_KNYUKN"
+        Me.col_B_KNYUKN.ReadOnly = True
+        Me.col_B_KNYUKN.Width = 94
+        '
+        'col_LSRYO_TOTAL
+        '
+        Me.col_LSRYO_TOTAL.DataPropertyName = "LSRYO_TOTAL"
+        Me.col_LSRYO_TOTAL.HeaderText = "総支払額"
+        Me.col_LSRYO_TOTAL.MinimumWidth = 8
+        Me.col_LSRYO_TOTAL.Name = "col_LSRYO_TOTAL"
+        Me.col_LSRYO_TOTAL.ReadOnly = True
+        Me.col_LSRYO_TOTAL.Width = 94
+        '
+        'col_LSRYO_ZZAN
+        '
+        Me.col_LSRYO_ZZAN.DataPropertyName = "LSRYO_ZZAN"
+        Me.col_LSRYO_ZZAN.HeaderText = "前月末残高"
+        Me.col_LSRYO_ZZAN.MinimumWidth = 8
+        Me.col_LSRYO_ZZAN.Name = "col_LSRYO_ZZAN"
+        Me.col_LSRYO_ZZAN.ReadOnly = True
+        Me.col_LSRYO_ZZAN.Width = 94
+        '
+        'col_LSRYO_TOKI
+        '
+        Me.col_LSRYO_TOKI.DataPropertyName = "LSRYO_TOKI"
+        Me.col_LSRYO_TOKI.HeaderText = "税抜き"
+        Me.col_LSRYO_TOKI.MinimumWidth = 8
+        Me.col_LSRYO_TOKI.Name = "col_LSRYO_TOKI"
+        Me.col_LSRYO_TOKI.ReadOnly = True
+        Me.col_LSRYO_TOKI.Width = 94
+        '
+        'col_ZEI_TOKI
+        '
+        Me.col_ZEI_TOKI.DataPropertyName = "ZEI_TOKI"
+        Me.col_ZEI_TOKI.HeaderText = "消費税"
+        Me.col_ZEI_TOKI.MinimumWidth = 8
+        Me.col_ZEI_TOKI.Name = "col_ZEI_TOKI"
+        Me.col_ZEI_TOKI.ReadOnly = True
+        Me.col_ZEI_TOKI.Width = 94
+        '
+        'col_ZKOMI_TOKI
+        '
+        Me.col_ZKOMI_TOKI.DataPropertyName = "ZKOMI_TOKI"
+        Me.col_ZKOMI_TOKI.HeaderText = "税込み"
+        Me.col_ZKOMI_TOKI.MinimumWidth = 8
+        Me.col_ZKOMI_TOKI.Name = "col_ZKOMI_TOKI"
+        Me.col_ZKOMI_TOKI.ReadOnly = True
+        Me.col_ZKOMI_TOKI.Width = 94
+        '
+        'col_LSRYO_ZAN
+        '
+        Me.col_LSRYO_ZAN.DataPropertyName = "LSRYO_ZAN"
+        Me.col_LSRYO_ZAN.HeaderText = "当月末残高"
+        Me.col_LSRYO_ZAN.MinimumWidth = 8
+        Me.col_LSRYO_ZAN.Name = "col_LSRYO_ZAN"
+        Me.col_LSRYO_ZAN.ReadOnly = True
+        Me.col_LSRYO_ZAN.Width = 94
+        '
+        'col_LSRYO_ZAN1NAI
+        '
+        Me.col_LSRYO_ZAN1NAI.DataPropertyName = "LSRYO_ZAN1NAI"
+        Me.col_LSRYO_ZAN1NAI.HeaderText = "内１年内"
+        Me.col_LSRYO_ZAN1NAI.MinimumWidth = 8
+        Me.col_LSRYO_ZAN1NAI.Name = "col_LSRYO_ZAN1NAI"
+        Me.col_LSRYO_ZAN1NAI.ReadOnly = True
+        Me.col_LSRYO_ZAN1NAI.Width = 94
+        '
+        'col_ZRITU
+        '
+        Me.col_ZRITU.DataPropertyName = "ZRITU"
+        Me.col_ZRITU.HeaderText = "消費税率"
+        Me.col_ZRITU.MinimumWidth = 8
+        Me.col_ZRITU.Name = "col_ZRITU"
+        Me.col_ZRITU.ReadOnly = True
+        Me.col_ZRITU.Width = 60
+        '
+        'col_SHRI_DT
+        '
+        Me.col_SHRI_DT.DataPropertyName = "SHRI_DT"
+        Me.col_SHRI_DT.HeaderText = "支払日"
+        Me.col_SHRI_DT.MinimumWidth = 8
+        Me.col_SHRI_DT.Name = "col_SHRI_DT"
+        Me.col_SHRI_DT.ReadOnly = True
+        Me.col_SHRI_DT.Width = 75
+        '
+        'col_SHHO_NM
+        '
+        Me.col_SHHO_NM.HeaderText = "支払方法"
+        Me.col_SHHO_NM.MinimumWidth = 8
+        Me.col_SHHO_NM.Name = "col_SHHO_NM"
+        Me.col_SHHO_NM.ReadOnly = True
+        Me.col_SHHO_NM.Width = 150
+        '
+        'pnlHeader
+        '
+        Me.pnlHeader.Controls.Add(Me.lblSearch)
+        Me.pnlHeader.Controls.Add(Me.txt_SEARCH)
+        Me.pnlHeader.Controls.Add(Me.cmd_SEARCH)
+        Me.pnlHeader.Controls.Add(Me.lbl_CONDITION)
+        Me.pnlHeader.Controls.Add(Me.cmd_OUTPUT_FILE)
         Me.pnlHeader.Controls.Add(Me.cmd_FlexReportDLG)
-        Me.pnlHeader.Controls.Add(Me.cmd_FlexSortDLG)
-        Me.pnlHeader.Controls.Add(Me.cmd_FlexSearchDLG)
-        Me.pnlHeader.Controls.Add(Me.cmd_振替伝票)
-        Me.pnlHeader.Controls.Add(Me.cmd_計上仕訳)
-        Me.pnlHeader.Controls.Add(Me.cmd_仕訳出力)
-        Me.pnlHeader.Controls.Add(Me.cmd_照会)
-        Me.pnlHeader.Controls.Add(Me.cmd_設定)
-        Me.pnlHeader.Controls.Add(Me.cmd_閉じる)
+        Me.pnlHeader.Controls.Add(Me.cmd_支払照合)
+        Me.pnlHeader.Controls.Add(Me.cmd_REF)
+        Me.pnlHeader.Controls.Add(Me.cmd_RECALCULATE)
+        Me.pnlHeader.Controls.Add(Me.cmd_CLOSE)
         Me.pnlHeader.Dock = System.Windows.Forms.DockStyle.Top
         Me.pnlHeader.Location = New System.Drawing.Point(0, 0)
+        Me.pnlHeader.Margin = New System.Windows.Forms.Padding(5, 4, 5, 4)
         Me.pnlHeader.Name = "pnlHeader"
-        Me.pnlHeader.Size = New System.Drawing.Size(1200, 40)
-        Me.pnlHeader.TabIndex = 0
+        Me.pnlHeader.Size = New System.Drawing.Size(2267, 124)
+        Me.pnlHeader.TabIndex = 13
         '
-        ' cmd_閉じる
+        'lblSearch
         '
-        Me.cmd_閉じる.Location = New System.Drawing.Point(4, 4)
-        Me.cmd_閉じる.Name = "cmd_閉じる"
-        Me.cmd_閉じる.Size = New System.Drawing.Size(104, 30)
-        Me.cmd_閉じる.TabIndex = 0
-        Me.cmd_閉じる.Text = "閉じる(&C)"
-        Me.cmd_閉じる.UseVisualStyleBackColor = True
+        Me.lblSearch.AutoSize = True
+        Me.lblSearch.Location = New System.Drawing.Point(1094, 55)
+        Me.lblSearch.Margin = New System.Windows.Forms.Padding(5, 0, 5, 0)
+        Me.lblSearch.Name = "lblSearch"
+        Me.lblSearch.Size = New System.Drawing.Size(148, 18)
+        Me.lblSearch.TabIndex = 24
+        Me.lblSearch.Text = "検索(契約番号等):"
         '
-        ' cmd_設定
+        'txt_SEARCH
         '
-        Me.cmd_設定.Location = New System.Drawing.Point(116, 4)
-        Me.cmd_設定.Name = "cmd_設定"
-        Me.cmd_設定.Size = New System.Drawing.Size(104, 30)
-        Me.cmd_設定.TabIndex = 1
-        Me.cmd_設定.Text = "再計算(&D)"
-        Me.cmd_設定.UseVisualStyleBackColor = True
+        Me.txt_SEARCH.AllowDrop = True
+        Me.txt_SEARCH.Font = New System.Drawing.Font("MS UI Gothic", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(128, Byte))
+        Me.txt_SEARCH.Location = New System.Drawing.Point(1274, 47)
+        Me.txt_SEARCH.Margin = New System.Windows.Forms.Padding(5, 4, 5, 4)
+        Me.txt_SEARCH.Name = "txt_SEARCH"
+        Me.txt_SEARCH.Size = New System.Drawing.Size(331, 29)
+        Me.txt_SEARCH.TabIndex = 1
         '
-        ' cmd_照会
+        'cmd_SEARCH
         '
-        Me.cmd_照会.Location = New System.Drawing.Point(228, 4)
-        Me.cmd_照会.Name = "cmd_照会"
-        Me.cmd_照会.Size = New System.Drawing.Size(92, 30)
-        Me.cmd_照会.TabIndex = 2
-        Me.cmd_照会.Text = "照会(&M)"
-        Me.cmd_照会.UseVisualStyleBackColor = True
+        Me.cmd_SEARCH.AllowDrop = True
+        Me.cmd_SEARCH.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.cmd_SEARCH.Location = New System.Drawing.Point(1618, 39)
+        Me.cmd_SEARCH.Margin = New System.Windows.Forms.Padding(5, 4, 5, 4)
+        Me.cmd_SEARCH.Name = "cmd_SEARCH"
+        Me.cmd_SEARCH.Size = New System.Drawing.Size(167, 51)
+        Me.cmd_SEARCH.TabIndex = 2
+        Me.cmd_SEARCH.Text = "検索(&S)"
+        Me.cmd_SEARCH.UseVisualStyleBackColor = False
         '
-        ' cmd_仕訳出力
+        'lbl_CONDITION
         '
-        Me.cmd_仕訳出力.Location = New System.Drawing.Point(328, 4)
-        Me.cmd_仕訳出力.Name = "cmd_仕訳出力"
-        Me.cmd_仕訳出力.Size = New System.Drawing.Size(116, 30)
-        Me.cmd_仕訳出力.TabIndex = 3
-        Me.cmd_仕訳出力.Text = "仕訳出力(&J)"
-        Me.cmd_仕訳出力.UseVisualStyleBackColor = True
+        Me.lbl_CONDITION.AutoSize = True
+        Me.lbl_CONDITION.Location = New System.Drawing.Point(12, 80)
+        Me.lbl_CONDITION.Name = "lbl_CONDITION"
+        Me.lbl_CONDITION.Size = New System.Drawing.Size(66, 18)
+        Me.lbl_CONDITION.TabIndex = 12
+        Me.lbl_CONDITION.Text = "集計月:"
         '
-        ' cmd_計上仕訳
+        'cmd_OUTPUT_FILE
         '
-        Me.cmd_計上仕訳.Location = New System.Drawing.Point(452, 4)
-        Me.cmd_計上仕訳.Name = "cmd_計上仕訳"
-        Me.cmd_計上仕訳.Size = New System.Drawing.Size(116, 30)
-        Me.cmd_計上仕訳.TabIndex = 4
-        Me.cmd_計上仕訳.Text = "計上仕訳(&J)"
-        Me.cmd_計上仕訳.UseVisualStyleBackColor = True
+        Me.cmd_OUTPUT_FILE.Location = New System.Drawing.Point(831, 13)
+        Me.cmd_OUTPUT_FILE.Margin = New System.Windows.Forms.Padding(5, 4, 5, 4)
+        Me.cmd_OUTPUT_FILE.Name = "cmd_OUTPUT_FILE"
+        Me.cmd_OUTPUT_FILE.Size = New System.Drawing.Size(153, 45)
+        Me.cmd_OUTPUT_FILE.TabIndex = 11
+        Me.cmd_OUTPUT_FILE.TabStop = False
+        Me.cmd_OUTPUT_FILE.Text = "ﾌｧｲﾙ出力(&F)"
+        Me.cmd_OUTPUT_FILE.UseVisualStyleBackColor = True
         '
-        ' cmd_振替伝票
+        'cmd_FlexReportDLG
         '
-        Me.cmd_振替伝票.Location = New System.Drawing.Point(576, 4)
-        Me.cmd_振替伝票.Name = "cmd_振替伝票"
-        Me.cmd_振替伝票.Size = New System.Drawing.Size(116, 30)
-        Me.cmd_振替伝票.TabIndex = 5
-        Me.cmd_振替伝票.Text = "振替伝票(&T)"
-        Me.cmd_振替伝票.UseVisualStyleBackColor = True
-        '
-        ' cmd_FlexSearchDLG
-        '
-        Me.cmd_FlexSearchDLG.Location = New System.Drawing.Point(700, 4)
-        Me.cmd_FlexSearchDLG.Name = "cmd_FlexSearchDLG"
-        Me.cmd_FlexSearchDLG.Size = New System.Drawing.Size(92, 30)
-        Me.cmd_FlexSearchDLG.TabIndex = 6
-        Me.cmd_FlexSearchDLG.Text = "検索(&S)"
-        Me.cmd_FlexSearchDLG.UseVisualStyleBackColor = True
-        '
-        ' cmd_FlexSortDLG
-        '
-        Me.cmd_FlexSortDLG.Location = New System.Drawing.Point(800, 4)
-        Me.cmd_FlexSortDLG.Name = "cmd_FlexSortDLG"
-        Me.cmd_FlexSortDLG.Size = New System.Drawing.Size(116, 30)
-        Me.cmd_FlexSortDLG.TabIndex = 7
-        Me.cmd_FlexSortDLG.Text = "並べ替え(&O)"
-        Me.cmd_FlexSortDLG.UseVisualStyleBackColor = True
-        '
-        ' cmd_FlexReportDLG
-        '
-        Me.cmd_FlexReportDLG.Location = New System.Drawing.Point(924, 4)
+        Me.cmd_FlexReportDLG.Location = New System.Drawing.Point(668, 13)
+        Me.cmd_FlexReportDLG.Margin = New System.Windows.Forms.Padding(5, 4, 5, 4)
         Me.cmd_FlexReportDLG.Name = "cmd_FlexReportDLG"
-        Me.cmd_FlexReportDLG.Size = New System.Drawing.Size(92, 30)
-        Me.cmd_FlexReportDLG.TabIndex = 8
+        Me.cmd_FlexReportDLG.Size = New System.Drawing.Size(153, 45)
+        Me.cmd_FlexReportDLG.TabIndex = 10
+        Me.cmd_FlexReportDLG.TabStop = False
         Me.cmd_FlexReportDLG.Text = "印刷(&R)"
         Me.cmd_FlexReportDLG.UseVisualStyleBackColor = True
         '
-        ' cmd_Output
-        '
-        Me.cmd_Output.Location = New System.Drawing.Point(1024, 4)
-        Me.cmd_Output.Name = "cmd_Output"
-        Me.cmd_Output.Size = New System.Drawing.Size(140, 30)
-        Me.cmd_Output.TabIndex = 9
-        Me.cmd_Output.Text = "ﾌｧｲﾙ出力(&F)"
-        Me.cmd_Output.UseVisualStyleBackColor = True
-        '
-        ' dgvMain
-        '
-        Me.dgvMain.AllowUserToAddRows = False
-        Me.dgvMain.AllowUserToDeleteRows = False
-        Me.dgvMain.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvMain.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {
-            Me.txt_JOKEN, Me.txt_KYKM_NO, Me.txt_SAIKAISU, Me.txt_LINE_ID, Me.txt_KKBN_NM, Me.txt_REC_KBN_STR, Me.txt_KJKBN_NM, Me.txt_HREI_KBN, Me.txt_TRHK_KBN_STR, Me.txt_KYKBNL, Me.txt_LEAKBN, Me.txt_BUKN_NM, Me.txt_LCPT1_NM, Me.txt_B_BCAT_NM, Me.txt_H_BCAT_NM, Me.txt_START_DT, Me.txt_KEIJO_DT, Me.txt_CKAIYK_DT, Me.txt_SUMIKAISU, Me.txt_SYUTOK_ZOU, Me.txt_SYUTOK_GEN, Me.txt_ZEI_KARI, Me.txt_ZEI_MHRI, Me.txt_LGNPN_TOKI, Me.txt_LRSOK_TOKI, Me.txt_GRUIKEI_ZOU, Me.txt_GSON_RKEI_ZOU, Me.txt_GSON_TK_TOKI, Me.txt_ZZAN, Me.txt_BOKA_ZAN, Me.txt_LGNPN_ZZAN, Me.txt_LGNPN_ZAN, Me.txt_IDO_DT, Me.txt_SYUTOK_ZOU_SUM, Me.txt_SYUTOK_GEN_SUM, Me.txt_ZEI_KARI_SUM, Me.txt_ZEI_MHRI_SUM, Me.txt_LGNPN_TOKI_SUM, Me.txt_LRSOK_TOKI_SUM, Me.txt_GRUIKEI_ZOU_SUM, Me.txt_GSON_RKEI_ZOU_SUM, Me.txt_GSON_TK_TOKI_SUM, Me.txt_ZZAN_SUM, Me.txt_BOKA_ZAN_SUM, Me.txt_LGNPN_ZZAN_SUM, Me.txt_LGNPN_ZAN_SUM, Me.txt_ID})
-        Me.dgvMain.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.dgvMain.Location = New System.Drawing.Point(0, 40)
-        Me.dgvMain.MultiSelect = False
-        Me.dgvMain.Name = "dgvMain"
-        Me.dgvMain.ReadOnly = True
-        Me.dgvMain.RowTemplate.Height = 21
-        Me.dgvMain.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvMain.Size = New System.Drawing.Size(1200, 521)
-        Me.dgvMain.TabIndex = 10
-        '
-        ' txt_JOKEN
-        '
-        Me.txt_JOKEN.DataPropertyName = "JOKEN"
-        Me.txt_JOKEN.HeaderText = "JOKEN"
-        Me.txt_JOKEN.Name = "txt_JOKEN"
-        Me.txt_JOKEN.ReadOnly = True
-        Me.txt_JOKEN.Width = 200
-        '
-        ' txt_KYKM_NO
-        '
-        Me.txt_KYKM_NO.DataPropertyName = "KYKM_NO"
-        Me.txt_KYKM_NO.HeaderText = "物件No"
-        Me.txt_KYKM_NO.Name = "txt_KYKM_NO"
-        Me.txt_KYKM_NO.ReadOnly = True
-        Me.txt_KYKM_NO.Width = 60
-        '
-        ' txt_SAIKAISU
-        '
-        Me.txt_SAIKAISU.DataPropertyName = "SAIKAISU"
-        Me.txt_SAIKAISU.HeaderText = "再回"
-        Me.txt_SAIKAISU.Name = "txt_SAIKAISU"
-        Me.txt_SAIKAISU.ReadOnly = True
-        Me.txt_SAIKAISU.Width = 60
-        '
-        ' txt_LINE_ID
-        '
-        Me.txt_LINE_ID.DataPropertyName = "LINE_ID"
-        Me.txt_LINE_ID.HeaderText = "配No"
-        Me.txt_LINE_ID.Name = "txt_LINE_ID"
-        Me.txt_LINE_ID.ReadOnly = True
-        Me.txt_LINE_ID.Width = 60
-        '
-        ' txt_KKBN_NM
-        '
-        Me.txt_KKBN_NM.DataPropertyName = "KKBN_NM"
-        Me.txt_KKBN_NM.HeaderText = "KKBN_NM"
-        Me.txt_KKBN_NM.Name = "txt_KKBN_NM"
-        Me.txt_KKBN_NM.ReadOnly = True
-        Me.txt_KKBN_NM.Width = 60
-        '
-        ' txt_REC_KBN_STR
-        '
-        Me.txt_REC_KBN_STR.DataPropertyName = "REC_KBN_STR"
-        Me.txt_REC_KBN_STR.HeaderText = "行区"
-        Me.txt_REC_KBN_STR.Name = "txt_REC_KBN_STR"
-        Me.txt_REC_KBN_STR.ReadOnly = True
-        Me.txt_REC_KBN_STR.Width = 60
-        '
-        ' txt_KJKBN_NM
-        '
-        Me.txt_KJKBN_NM.DataPropertyName = "KJKBN_NM"
-        Me.txt_KJKBN_NM.HeaderText = "計上区分"
-        Me.txt_KJKBN_NM.Name = "txt_KJKBN_NM"
-        Me.txt_KJKBN_NM.ReadOnly = True
-        Me.txt_KJKBN_NM.Width = 60
-        '
-        ' txt_HREI_KBN
-        '
-        Me.txt_HREI_KBN.DataPropertyName = "HREI_KBN"
-        Me.txt_HREI_KBN.HeaderText = "法令区分"
-        Me.txt_HREI_KBN.Name = "txt_HREI_KBN"
-        Me.txt_HREI_KBN.ReadOnly = True
-        Me.txt_HREI_KBN.Width = 60
-        '
-        ' txt_TRHK_KBN_STR
-        '
-        Me.txt_TRHK_KBN_STR.DataPropertyName = "TRHK_KBN_STR"
-        Me.txt_TRHK_KBN_STR.HeaderText = "TRHK_KBN_STR"
-        Me.txt_TRHK_KBN_STR.Name = "txt_TRHK_KBN_STR"
-        Me.txt_TRHK_KBN_STR.ReadOnly = True
-        Me.txt_TRHK_KBN_STR.Width = 60
-        '
-        ' txt_KYKBNL
-        '
-        Me.txt_KYKBNL.DataPropertyName = "KYKBNL"
-        Me.txt_KYKBNL.HeaderText = "契約番号"
-        Me.txt_KYKBNL.Name = "txt_KYKBNL"
-        Me.txt_KYKBNL.ReadOnly = True
-        Me.txt_KYKBNL.Width = 75
-        '
-        ' txt_LEAKBN
-        '
-        Me.txt_LEAKBN.DataPropertyName = "LEAKBN"
-        Me.txt_LEAKBN.HeaderText = "リース区分"
-        Me.txt_LEAKBN.Name = "txt_LEAKBN"
-        Me.txt_LEAKBN.ReadOnly = True
-        Me.txt_LEAKBN.Width = 90
-        '
-        ' txt_BUKN_NM
-        '
-        Me.txt_BUKN_NM.DataPropertyName = "BUKN_NM"
-        Me.txt_BUKN_NM.HeaderText = "物件名"
-        Me.txt_BUKN_NM.Name = "txt_BUKN_NM"
-        Me.txt_BUKN_NM.ReadOnly = True
-        Me.txt_BUKN_NM.Width = 109
-        '
-        ' txt_LCPT1_NM
-        '
-        Me.txt_LCPT1_NM.DataPropertyName = "LCPT1_NM"
-        Me.txt_LCPT1_NM.HeaderText = "支払先"
-        Me.txt_LCPT1_NM.Name = "txt_LCPT1_NM"
-        Me.txt_LCPT1_NM.ReadOnly = True
-        Me.txt_LCPT1_NM.Width = 109
-        '
-        ' txt_B_BCAT_NM
-        '
-        Me.txt_B_BCAT_NM.DataPropertyName = "B_BCAT_NM"
-        Me.txt_B_BCAT_NM.HeaderText = "B_BCAT_NM"
-        Me.txt_B_BCAT_NM.Name = "txt_B_BCAT_NM"
-        Me.txt_B_BCAT_NM.ReadOnly = True
-        Me.txt_B_BCAT_NM.Width = 132
-        '
-        ' txt_H_BCAT_NM
-        '
-        Me.txt_H_BCAT_NM.DataPropertyName = "H_BCAT_NM"
-        Me.txt_H_BCAT_NM.HeaderText = "H_BCAT_NM"
-        Me.txt_H_BCAT_NM.Name = "txt_H_BCAT_NM"
-        Me.txt_H_BCAT_NM.ReadOnly = True
-        Me.txt_H_BCAT_NM.Width = 132
-        '
-        ' txt_START_DT
-        '
-        Me.txt_START_DT.DataPropertyName = "START_DT"
-        Me.txt_START_DT.HeaderText = "開始日"
-        Me.txt_START_DT.Name = "txt_START_DT"
-        Me.txt_START_DT.ReadOnly = True
-        Me.txt_START_DT.Width = 75
-        '
-        ' txt_KEIJO_DT
-        '
-        Me.txt_KEIJO_DT.DataPropertyName = "KEIJO_DT"
-        Me.txt_KEIJO_DT.HeaderText = "計上月"
-        Me.txt_KEIJO_DT.Name = "txt_KEIJO_DT"
-        Me.txt_KEIJO_DT.ReadOnly = True
-        Me.txt_KEIJO_DT.Width = 75
-        '
-        ' txt_CKAIYK_DT
-        '
-        Me.txt_CKAIYK_DT.DataPropertyName = "CKAIYK_DT"
-        Me.txt_CKAIYK_DT.HeaderText = "中途解約日"
-        Me.txt_CKAIYK_DT.Name = "txt_CKAIYK_DT"
-        Me.txt_CKAIYK_DT.ReadOnly = True
-        Me.txt_CKAIYK_DT.Width = 75
-        '
-        ' txt_SUMIKAISU
-        '
-        Me.txt_SUMIKAISU.DataPropertyName = "SUMIKAISU"
-        Me.txt_SUMIKAISU.HeaderText = "回数済/総"
-        Me.txt_SUMIKAISU.Name = "txt_SUMIKAISU"
-        Me.txt_SUMIKAISU.ReadOnly = True
-        Me.txt_SUMIKAISU.Width = 60
-        '
-        ' txt_SYUTOK_ZOU
-        '
-        Me.txt_SYUTOK_ZOU.DataPropertyName = "SYUTOK_ZOU"
-        Me.txt_SYUTOK_ZOU.HeaderText = "増加･取得価額"
-        Me.txt_SYUTOK_ZOU.Name = "txt_SYUTOK_ZOU"
-        Me.txt_SYUTOK_ZOU.ReadOnly = True
-        Me.txt_SYUTOK_ZOU.Width = 94
-        '
-        ' txt_SYUTOK_GEN
-        '
-        Me.txt_SYUTOK_GEN.DataPropertyName = "SYUTOK_GEN"
-        Me.txt_SYUTOK_GEN.HeaderText = "SYUTOK_GEN"
-        Me.txt_SYUTOK_GEN.Name = "txt_SYUTOK_GEN"
-        Me.txt_SYUTOK_GEN.ReadOnly = True
-        Me.txt_SYUTOK_GEN.Width = 94
-        '
-        ' txt_ZEI_KARI
-        '
-        Me.txt_ZEI_KARI.DataPropertyName = "ZEI_KARI"
-        Me.txt_ZEI_KARI.HeaderText = "仮払消費税"
-        Me.txt_ZEI_KARI.Name = "txt_ZEI_KARI"
-        Me.txt_ZEI_KARI.ReadOnly = True
-        Me.txt_ZEI_KARI.Width = 94
-        '
-        ' txt_ZEI_MHRI
-        '
-        Me.txt_ZEI_MHRI.DataPropertyName = "ZEI_MHRI"
-        Me.txt_ZEI_MHRI.HeaderText = "ZEI_MHRI"
-        Me.txt_ZEI_MHRI.Name = "txt_ZEI_MHRI"
-        Me.txt_ZEI_MHRI.ReadOnly = True
-        Me.txt_ZEI_MHRI.Width = 94
-        '
-        ' txt_LGNPN_TOKI
-        '
-        Me.txt_LGNPN_TOKI.DataPropertyName = "LGNPN_TOKI"
-        Me.txt_LGNPN_TOKI.HeaderText = "返済元本"
-        Me.txt_LGNPN_TOKI.Name = "txt_LGNPN_TOKI"
-        Me.txt_LGNPN_TOKI.ReadOnly = True
-        Me.txt_LGNPN_TOKI.Width = 94
-        '
-        ' txt_LRSOK_TOKI
-        '
-        Me.txt_LRSOK_TOKI.DataPropertyName = "LRSOK_TOKI"
-        Me.txt_LRSOK_TOKI.HeaderText = "支払利息"
-        Me.txt_LRSOK_TOKI.Name = "txt_LRSOK_TOKI"
-        Me.txt_LRSOK_TOKI.ReadOnly = True
-        Me.txt_LRSOK_TOKI.Width = 94
-        '
-        ' txt_GRUIKEI_ZOU
-        '
-        Me.txt_GRUIKEI_ZOU.DataPropertyName = "GRUIKEI_ZOU"
-        Me.txt_GRUIKEI_ZOU.HeaderText = "減価償却額"
-        Me.txt_GRUIKEI_ZOU.Name = "txt_GRUIKEI_ZOU"
-        Me.txt_GRUIKEI_ZOU.ReadOnly = True
-        Me.txt_GRUIKEI_ZOU.Width = 94
-        '
-        ' txt_GSON_RKEI_ZOU
-        '
-        Me.txt_GSON_RKEI_ZOU.DataPropertyName = "GSON_RKEI_ZOU"
-        Me.txt_GSON_RKEI_ZOU.HeaderText = "減損損失"
-        Me.txt_GSON_RKEI_ZOU.Name = "txt_GSON_RKEI_ZOU"
-        Me.txt_GSON_RKEI_ZOU.ReadOnly = True
-        Me.txt_GSON_RKEI_ZOU.Width = 94
-        '
-        ' txt_GSON_TK_TOKI
-        '
-        Me.txt_GSON_TK_TOKI.DataPropertyName = "GSON_TK_TOKI"
-        Me.txt_GSON_TK_TOKI.HeaderText = "GSON_TK_TOKI"
-        Me.txt_GSON_TK_TOKI.Name = "txt_GSON_TK_TOKI"
-        Me.txt_GSON_TK_TOKI.ReadOnly = True
-        Me.txt_GSON_TK_TOKI.Width = 94
-        '
-        ' txt_ZZAN
-        '
-        Me.txt_ZZAN.DataPropertyName = "ZZAN"
-        Me.txt_ZZAN.HeaderText = "前月末残高"
-        Me.txt_ZZAN.Name = "txt_ZZAN"
-        Me.txt_ZZAN.ReadOnly = True
-        Me.txt_ZZAN.Width = 94
-        '
-        ' txt_BOKA_ZAN
-        '
-        Me.txt_BOKA_ZAN.DataPropertyName = "BOKA_ZAN"
-        Me.txt_BOKA_ZAN.HeaderText = "当月末残高"
-        Me.txt_BOKA_ZAN.Name = "txt_BOKA_ZAN"
-        Me.txt_BOKA_ZAN.ReadOnly = True
-        Me.txt_BOKA_ZAN.Width = 94
-        '
-        ' txt_LGNPN_ZZAN
-        '
-        Me.txt_LGNPN_ZZAN.DataPropertyName = "LGNPN_ZZAN"
-        Me.txt_LGNPN_ZZAN.HeaderText = "LGNPN_ZZAN"
-        Me.txt_LGNPN_ZZAN.Name = "txt_LGNPN_ZZAN"
-        Me.txt_LGNPN_ZZAN.ReadOnly = True
-        Me.txt_LGNPN_ZZAN.Width = 94
-        '
-        ' txt_LGNPN_ZAN
-        '
-        Me.txt_LGNPN_ZAN.DataPropertyName = "LGNPN_ZAN"
-        Me.txt_LGNPN_ZAN.HeaderText = "LGNPN_ZAN"
-        Me.txt_LGNPN_ZAN.Name = "txt_LGNPN_ZAN"
-        Me.txt_LGNPN_ZAN.ReadOnly = True
-        Me.txt_LGNPN_ZAN.Width = 94
-        '
-        ' txt_IDO_DT
-        '
-        Me.txt_IDO_DT.DataPropertyName = "IDO_DT"
-        Me.txt_IDO_DT.HeaderText = "移動日"
-        Me.txt_IDO_DT.Name = "txt_IDO_DT"
-        Me.txt_IDO_DT.ReadOnly = True
-        Me.txt_IDO_DT.Width = 75
-        '
-        ' txt_SYUTOK_ZOU_SUM
-        '
-        Me.txt_SYUTOK_ZOU_SUM.DataPropertyName = "SYUTOK_ZOU_SUM"
-        Me.txt_SYUTOK_ZOU_SUM.HeaderText = "SYUTOK_ZOU_SUM"
-        Me.txt_SYUTOK_ZOU_SUM.Name = "txt_SYUTOK_ZOU_SUM"
-        Me.txt_SYUTOK_ZOU_SUM.ReadOnly = True
-        Me.txt_SYUTOK_ZOU_SUM.Width = 94
-        '
-        ' txt_SYUTOK_GEN_SUM
-        '
-        Me.txt_SYUTOK_GEN_SUM.DataPropertyName = "SYUTOK_GEN_SUM"
-        Me.txt_SYUTOK_GEN_SUM.HeaderText = "SYUTOK_GEN_SUM"
-        Me.txt_SYUTOK_GEN_SUM.Name = "txt_SYUTOK_GEN_SUM"
-        Me.txt_SYUTOK_GEN_SUM.ReadOnly = True
-        Me.txt_SYUTOK_GEN_SUM.Width = 94
-        '
-        ' txt_ZEI_KARI_SUM
-        '
-        Me.txt_ZEI_KARI_SUM.DataPropertyName = "ZEI_KARI_SUM"
-        Me.txt_ZEI_KARI_SUM.HeaderText = "ZEI_KARI_SUM"
-        Me.txt_ZEI_KARI_SUM.Name = "txt_ZEI_KARI_SUM"
-        Me.txt_ZEI_KARI_SUM.ReadOnly = True
-        Me.txt_ZEI_KARI_SUM.Width = 94
-        '
-        ' txt_ZEI_MHRI_SUM
-        '
-        Me.txt_ZEI_MHRI_SUM.DataPropertyName = "ZEI_MHRI_SUM"
-        Me.txt_ZEI_MHRI_SUM.HeaderText = "ZEI_MHRI_SUM"
-        Me.txt_ZEI_MHRI_SUM.Name = "txt_ZEI_MHRI_SUM"
-        Me.txt_ZEI_MHRI_SUM.ReadOnly = True
-        Me.txt_ZEI_MHRI_SUM.Width = 94
-        '
-        ' txt_LGNPN_TOKI_SUM
-        '
-        Me.txt_LGNPN_TOKI_SUM.DataPropertyName = "LGNPN_TOKI_SUM"
-        Me.txt_LGNPN_TOKI_SUM.HeaderText = "LGNPN_TOKI_SUM"
-        Me.txt_LGNPN_TOKI_SUM.Name = "txt_LGNPN_TOKI_SUM"
-        Me.txt_LGNPN_TOKI_SUM.ReadOnly = True
-        Me.txt_LGNPN_TOKI_SUM.Width = 94
-        '
-        ' txt_LRSOK_TOKI_SUM
-        '
-        Me.txt_LRSOK_TOKI_SUM.DataPropertyName = "LRSOK_TOKI_SUM"
-        Me.txt_LRSOK_TOKI_SUM.HeaderText = "LRSOK_TOKI_SUM"
-        Me.txt_LRSOK_TOKI_SUM.Name = "txt_LRSOK_TOKI_SUM"
-        Me.txt_LRSOK_TOKI_SUM.ReadOnly = True
-        Me.txt_LRSOK_TOKI_SUM.Width = 94
-        '
-        ' txt_GRUIKEI_ZOU_SUM
-        '
-        Me.txt_GRUIKEI_ZOU_SUM.DataPropertyName = "GRUIKEI_ZOU_SUM"
-        Me.txt_GRUIKEI_ZOU_SUM.HeaderText = "GRUIKEI_ZOU_SUM"
-        Me.txt_GRUIKEI_ZOU_SUM.Name = "txt_GRUIKEI_ZOU_SUM"
-        Me.txt_GRUIKEI_ZOU_SUM.ReadOnly = True
-        Me.txt_GRUIKEI_ZOU_SUM.Width = 94
-        '
-        ' txt_GSON_RKEI_ZOU_SUM
-        '
-        Me.txt_GSON_RKEI_ZOU_SUM.DataPropertyName = "GSON_RKEI_ZOU_SUM"
-        Me.txt_GSON_RKEI_ZOU_SUM.HeaderText = "GSON_RKEI_ZOU_SUM"
-        Me.txt_GSON_RKEI_ZOU_SUM.Name = "txt_GSON_RKEI_ZOU_SUM"
-        Me.txt_GSON_RKEI_ZOU_SUM.ReadOnly = True
-        Me.txt_GSON_RKEI_ZOU_SUM.Width = 94
-        '
-        ' txt_GSON_TK_TOKI_SUM
-        '
-        Me.txt_GSON_TK_TOKI_SUM.DataPropertyName = "GSON_TK_TOKI_SUM"
-        Me.txt_GSON_TK_TOKI_SUM.HeaderText = "GSON_TK_TOKI_SUM"
-        Me.txt_GSON_TK_TOKI_SUM.Name = "txt_GSON_TK_TOKI_SUM"
-        Me.txt_GSON_TK_TOKI_SUM.ReadOnly = True
-        Me.txt_GSON_TK_TOKI_SUM.Width = 94
-        '
-        ' txt_ZZAN_SUM
-        '
-        Me.txt_ZZAN_SUM.DataPropertyName = "ZZAN_SUM"
-        Me.txt_ZZAN_SUM.HeaderText = "ZZAN_SUM"
-        Me.txt_ZZAN_SUM.Name = "txt_ZZAN_SUM"
-        Me.txt_ZZAN_SUM.ReadOnly = True
-        Me.txt_ZZAN_SUM.Width = 94
-        '
-        ' txt_BOKA_ZAN_SUM
-        '
-        Me.txt_BOKA_ZAN_SUM.DataPropertyName = "BOKA_ZAN_SUM"
-        Me.txt_BOKA_ZAN_SUM.HeaderText = "BOKA_ZAN_SUM"
-        Me.txt_BOKA_ZAN_SUM.Name = "txt_BOKA_ZAN_SUM"
-        Me.txt_BOKA_ZAN_SUM.ReadOnly = True
-        Me.txt_BOKA_ZAN_SUM.Width = 94
-        '
-        ' txt_LGNPN_ZZAN_SUM
-        '
-        Me.txt_LGNPN_ZZAN_SUM.DataPropertyName = "LGNPN_ZZAN_SUM"
-        Me.txt_LGNPN_ZZAN_SUM.HeaderText = "LGNPN_ZZAN_SUM"
-        Me.txt_LGNPN_ZZAN_SUM.Name = "txt_LGNPN_ZZAN_SUM"
-        Me.txt_LGNPN_ZZAN_SUM.ReadOnly = True
-        Me.txt_LGNPN_ZZAN_SUM.Width = 94
-        '
-        ' txt_LGNPN_ZAN_SUM
-        '
-        Me.txt_LGNPN_ZAN_SUM.DataPropertyName = "LGNPN_ZAN_SUM"
-        Me.txt_LGNPN_ZAN_SUM.HeaderText = "LGNPN_ZAN_SUM"
-        Me.txt_LGNPN_ZAN_SUM.Name = "txt_LGNPN_ZAN_SUM"
-        Me.txt_LGNPN_ZAN_SUM.ReadOnly = True
-        Me.txt_LGNPN_ZAN_SUM.Width = 94
-        '
-        ' txt_ID
-        '
-        Me.txt_ID.DataPropertyName = "ID"
-        Me.txt_ID.HeaderText = "ID"
-        Me.txt_ID.Name = "txt_ID"
-        Me.txt_ID.ReadOnly = True
-        Me.txt_ID.Visible = False
-        '
-        ' Form_f_flx_KEIJO
-        '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
+        'cmd_支払照合
+        '
+        Me.cmd_支払照合.Location = New System.Drawing.Point(505, 13)
+        Me.cmd_支払照合.Margin = New System.Windows.Forms.Padding(5, 4, 5, 4)
+        Me.cmd_支払照合.Name = "cmd_支払照合"
+        Me.cmd_支払照合.Size = New System.Drawing.Size(153, 45)
+        Me.cmd_支払照合.TabIndex = 3
+        Me.cmd_支払照合.TabStop = False
+        Me.cmd_支払照合.Text = "支払照合(&P)"
+        Me.cmd_支払照合.UseVisualStyleBackColor = True
+        '
+        'cmd_REF
+        '
+        Me.cmd_REF.Location = New System.Drawing.Point(342, 13)
+        Me.cmd_REF.Margin = New System.Windows.Forms.Padding(5, 4, 5, 4)
+        Me.cmd_REF.Name = "cmd_REF"
+        Me.cmd_REF.Size = New System.Drawing.Size(153, 45)
+        Me.cmd_REF.TabIndex = 2
+        Me.cmd_REF.TabStop = False
+        Me.cmd_REF.Text = "照会(&M)"
+        Me.cmd_REF.UseVisualStyleBackColor = True
+        '
+        'cmd_RECALCULATE
+        '
+        Me.cmd_RECALCULATE.Location = New System.Drawing.Point(178, 13)
+        Me.cmd_RECALCULATE.Margin = New System.Windows.Forms.Padding(5, 4, 5, 4)
+        Me.cmd_RECALCULATE.Name = "cmd_RECALCULATE"
+        Me.cmd_RECALCULATE.Size = New System.Drawing.Size(154, 45)
+        Me.cmd_RECALCULATE.TabIndex = 1
+        Me.cmd_RECALCULATE.TabStop = False
+        Me.cmd_RECALCULATE.Text = "再計算(&D)"
+        Me.cmd_RECALCULATE.UseVisualStyleBackColor = True
+        '
+        'cmd_CLOSE
+        '
+        Me.cmd_CLOSE.Location = New System.Drawing.Point(14, 13)
+        Me.cmd_CLOSE.Margin = New System.Windows.Forms.Padding(5, 4, 5, 4)
+        Me.cmd_CLOSE.Name = "cmd_CLOSE"
+        Me.cmd_CLOSE.Size = New System.Drawing.Size(154, 45)
+        Me.cmd_CLOSE.TabIndex = 0
+        Me.cmd_CLOSE.TabStop = False
+        Me.cmd_CLOSE.Text = "閉じる(&C)"
+        Me.cmd_CLOSE.UseVisualStyleBackColor = True
+        '
+        'Form_f_flx_MONTHLY_PAYMENT
+        '
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(10.0!, 18.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1200, 561)
-        Me.Controls.Add(Me.dgvMain)
+        Me.ClientSize = New System.Drawing.Size(2267, 842)
+        Me.Controls.Add(Me.dgv_LIST)
         Me.Controls.Add(Me.pnlHeader)
         Me.KeyPreview = True
-        Me.Name = "Form_f_flx_KEIJO"
-        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
-        Me.Text = "月次仕訳計上フレックス"
+        Me.Name = "Form_f_flx_MONTHLY_PAYMENT"
+        Me.Text = "月次支払照合フレックス"
+        CType(Me.dgv_LIST, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pnlHeader.ResumeLayout(False)
-        CType(Me.dgvMain, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.pnlHeader.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
 
-    Friend WithEvents pnlHeader As System.Windows.Forms.Panel
-    Friend WithEvents cmd_閉じる As System.Windows.Forms.Button
-    Friend WithEvents cmd_設定 As System.Windows.Forms.Button
-    Friend WithEvents cmd_照会 As System.Windows.Forms.Button
-    Friend WithEvents cmd_仕訳出力 As System.Windows.Forms.Button
-    Friend WithEvents cmd_計上仕訳 As System.Windows.Forms.Button
-    Friend WithEvents cmd_振替伝票 As System.Windows.Forms.Button
-    Friend WithEvents cmd_FlexSearchDLG As System.Windows.Forms.Button
-    Friend WithEvents cmd_FlexSortDLG As System.Windows.Forms.Button
-    Friend WithEvents cmd_FlexReportDLG As System.Windows.Forms.Button
-    Friend WithEvents cmd_Output As System.Windows.Forms.Button
-    Friend WithEvents dgvMain As System.Windows.Forms.DataGridView
-    Friend WithEvents txt_JOKEN As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents txt_KYKM_NO As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents txt_SAIKAISU As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents txt_LINE_ID As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents txt_KKBN_NM As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents txt_REC_KBN_STR As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents txt_KJKBN_NM As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents txt_HREI_KBN As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents txt_TRHK_KBN_STR As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents txt_KYKBNL As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents txt_LEAKBN As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents txt_BUKN_NM As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents txt_LCPT1_NM As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents txt_B_BCAT_NM As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents txt_H_BCAT_NM As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents txt_START_DT As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents txt_KEIJO_DT As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents txt_CKAIYK_DT As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents txt_SUMIKAISU As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents txt_SYUTOK_ZOU As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents txt_SYUTOK_GEN As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents txt_ZEI_KARI As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents txt_ZEI_MHRI As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents txt_LGNPN_TOKI As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents txt_LRSOK_TOKI As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents txt_GRUIKEI_ZOU As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents txt_GSON_RKEI_ZOU As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents txt_GSON_TK_TOKI As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents txt_ZZAN As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents txt_BOKA_ZAN As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents txt_LGNPN_ZZAN As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents txt_LGNPN_ZAN As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents txt_IDO_DT As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents txt_SYUTOK_ZOU_SUM As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents txt_SYUTOK_GEN_SUM As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents txt_ZEI_KARI_SUM As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents txt_ZEI_MHRI_SUM As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents txt_LGNPN_TOKI_SUM As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents txt_LRSOK_TOKI_SUM As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents txt_GRUIKEI_ZOU_SUM As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents txt_GSON_RKEI_ZOU_SUM As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents txt_GSON_TK_TOKI_SUM As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents txt_ZZAN_SUM As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents txt_BOKA_ZAN_SUM As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents txt_LGNPN_ZZAN_SUM As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents txt_LGNPN_ZAN_SUM As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents txt_ID As System.Windows.Forms.DataGridViewTextBoxColumn
-
+    Friend WithEvents dgv_LIST As DataGridView
+    Friend WithEvents pnlHeader As Panel
+    Friend WithEvents cmd_OUTPUT_FILE As Button
+    Friend WithEvents cmd_FlexReportDLG As Button
+    Friend WithEvents cmd_支払照合 As Button
+    Friend WithEvents cmd_REF As Button
+    Friend WithEvents cmd_RECALCULATE As Button
+    Friend WithEvents cmd_CLOSE As Button
+    Friend WithEvents lbl_CONDITION As Label
+    Friend WithEvents lblSearch As Label
+    Friend WithEvents txt_SEARCH As TextBox
+    Friend WithEvents cmd_SEARCH As Button
+    Friend WithEvents col_KYKM_NO As DataGridViewTextBoxColumn
+    Friend WithEvents col_SAIKAISU As DataGridViewTextBoxColumn
+    Friend WithEvents col_LINE_ID As DataGridViewTextBoxColumn
+    Friend WithEvents col_KKBN_NM As DataGridViewTextBoxColumn
+    Friend WithEvents col_REC_KBN_STR As DataGridViewTextBoxColumn
+    Friend WithEvents col_KJKBN_NM As DataGridViewTextBoxColumn
+    Friend WithEvents col_HOREI_KBN As DataGridViewTextBoxColumn
+    Friend WithEvents col_LEAKBN_NM As DataGridViewTextBoxColumn
+    Friend WithEvents col_KYKBNL As DataGridViewTextBoxColumn
+    Friend WithEvents col_LCPT1_NM As DataGridViewTextBoxColumn
+    Friend WithEvents col_BUKN_NM As DataGridViewTextBoxColumn
+    Friend WithEvents col_B_BCAT_NM As DataGridViewTextBoxColumn
+    Friend WithEvents col_H_BCAT_NM As DataGridViewTextBoxColumn
+    Friend WithEvents col_HKMK As DataGridViewTextBoxColumn
+    Friend WithEvents col_START_DT As DataGridViewTextBoxColumn
+    Friend WithEvents col_END_DT As DataGridViewTextBoxColumn
+    Friend WithEvents col_SEIKYU_MONTH As DataGridViewTextBoxColumn
+    Friend WithEvents col_CKAIYK_DT As DataGridViewTextBoxColumn
+    Friend WithEvents col_SUMIKAISU As DataGridViewTextBoxColumn
+    Friend WithEvents col_B_KNYUKN As DataGridViewTextBoxColumn
+    Friend WithEvents col_LSRYO_TOTAL As DataGridViewTextBoxColumn
+    Friend WithEvents col_LSRYO_ZZAN As DataGridViewTextBoxColumn
+    Friend WithEvents col_LSRYO_TOKI As DataGridViewTextBoxColumn
+    Friend WithEvents col_ZEI_TOKI As DataGridViewTextBoxColumn
+    Friend WithEvents col_ZKOMI_TOKI As DataGridViewTextBoxColumn
+    Friend WithEvents col_LSRYO_ZAN As DataGridViewTextBoxColumn
+    Friend WithEvents col_LSRYO_ZAN1NAI As DataGridViewTextBoxColumn
+    Friend WithEvents col_ZRITU As DataGridViewTextBoxColumn
+    Friend WithEvents col_SHRI_DT As DataGridViewTextBoxColumn
+    Friend WithEvents col_SHHO_NM As DataGridViewTextBoxColumn
 End Class

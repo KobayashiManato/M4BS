@@ -16,76 +16,6 @@ Partial Public Class Form_f_M_BCAT_INP
         LoadBknriCombo(cmb_BKNRI_CD)
     End Sub
 
-    ' =========================================================
-    '  コンボボックスの3列描画 (Access完全再現・罫線付き)
-    ' =========================================================
-    Private Sub Combo_BCAT2_DrawItem(sender As Object, e As DrawItemEventArgs) Handles cmb_BCAT2_CD.DrawItem
-        Combo_DrawItem(sender, e, {"bcat2_cd", "bcat2_nm"})
-    End Sub
-
-    Private Sub Combo_BCAT3_DrawItem(sender As Object, e As DrawItemEventArgs) Handles cmb_BCAT3_CD.DrawItem
-        Combo_DrawItem(sender, e, {"bcat3_cd", "bcat3_nm"})
-    End Sub
-
-    Private Sub Combo_BCAT4_DrawItem(sender As Object, e As DrawItemEventArgs) Handles cmb_BCAT4_CD.DrawItem
-        Combo_DrawItem(sender, e, {"bcat4_cd", "bcat4_nm"})
-    End Sub
-
-    Private Sub Combo_BCAT5_DrawItem(sender As Object, e As DrawItemEventArgs) Handles cmb_BCAT5_CD.DrawItem
-        Combo_DrawItem(sender, e, {"bcat5_cd", "bcat5_nm"})
-    End Sub
-
-    Private Sub Combo_GENK_DrawItem(sender As Object, e As DrawItemEventArgs) Handles cmb_GENK_CD.DrawItem
-        Combo_DrawItem(sender, e, {"genk_cd", "genk_nm"})
-    End Sub
-
-    Private Sub Combo_SUM1_DrawItem(sender As Object, e As DrawItemEventArgs) Handles cmb_SUM1_CD.DrawItem
-        Combo_DrawItem(sender, e, {"sum1_cd", "sum1_nm"})
-    End Sub
-
-    Private Sub Combo_SUM2_DrawItem(sender As Object, e As DrawItemEventArgs) Handles cmb_SUM2_CD.DrawItem
-        Combo_DrawItem(sender, e, {"sum2_cd", "sum2_nm"})
-    End Sub
-
-    Private Sub Combo_SUM3_DrawItem(sender As Object, e As DrawItemEventArgs) Handles cmb_SUM3_CD.DrawItem, cmb_BKNRI_CD.DrawItem
-        Combo_DrawItem(sender, e, {"sum3_cd", "sum3_nm"})
-    End Sub
-
-    ' =========================================================
-    '  コンボボックス選択時の連動 (Accessの =Column(x) 再現)
-    ' =========================================================
-    Private Sub cmb_BCAT2_CD_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_BCAT2_CD.SelectedIndexChanged
-        cmb_BCAT2_CD.SyncTo("bcat2_nm", txt_BCAT2_NM)
-    End Sub
-
-    Private Sub cmb_BCAT3_CD_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_BCAT3_CD.SelectedIndexChanged
-        cmb_BCAT3_CD.SyncTo("bcat3_nm", txt_BCAT3_NM)
-    End Sub
-
-    Private Sub cmb_BCAT4_CD_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_BCAT4_CD.SelectedIndexChanged
-        cmb_BCAT4_CD.SyncTo("bcat4_nm", txt_BCAT4_NM)
-    End Sub
-
-    Private Sub cmb_BCAT5_CD_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_BCAT5_CD.SelectedIndexChanged
-        cmb_BCAT5_CD.SyncTo("bcat5_nm", txt_BCAT5_NM)
-    End Sub
-
-    Private Sub cmb_GENK_CD_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_GENK_CD.SelectedIndexChanged
-        cmb_GENK_CD.SyncTo("genk_nm", txt_GENK_NM)
-    End Sub
-
-    Private Sub cmb_SUM1_CD_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_SUM1_CD.SelectedIndexChanged
-        cmb_SUM1_CD.SyncTo("sum1_nm", txt_SUM1_NM)
-    End Sub
-
-    Private Sub cmb_SUM2_CD_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_SUM2_CD.SelectedIndexChanged
-        cmb_SUM2_CD.SyncTo("sum2_nm", txt_SUM2_NM)
-    End Sub
-
-    Private Sub cmb_SUM3_CD_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_SUM3_CD.SelectedIndexChanged, cmb_BKNRI_CD.SelectedIndexChanged
-        cmb_SUM3_CD.SyncTo("sum3_nm", txt_SUM3_NM)
-    End Sub
-
     ' [閉じる] ボタン
     Private Sub cmd_CLOSE_Click(sender As Object, e As EventArgs) Handles cmd_CLOSE.Click
         Me.Close()
@@ -163,5 +93,75 @@ Partial Public Class Form_f_M_BCAT_INP
     Private Sub FormKeyDown(sender As Object, e As KeyEventArgs) Handles MyBase.KeyDown
         ' エンターキーが押されたら次のコントロールへ移動
         HandleEnterKeyNavigation(Me, e)
+    End Sub
+
+    ' =========================================================
+    '  コンボボックスの3列描画 (Access完全再現・罫線付き)
+    ' =========================================================
+    Private Sub Combo_BCAT2_DrawItem(sender As Object, e As DrawItemEventArgs) Handles cmb_BCAT2_CD.DrawItem
+        Combo_DrawItem(sender, e, {"bcat2_cd", "bcat2_nm"})
+    End Sub
+
+    Private Sub Combo_BCAT3_DrawItem(sender As Object, e As DrawItemEventArgs) Handles cmb_BCAT3_CD.DrawItem
+        Combo_DrawItem(sender, e, {"bcat3_cd", "bcat3_nm"})
+    End Sub
+
+    Private Sub Combo_BCAT4_DrawItem(sender As Object, e As DrawItemEventArgs) Handles cmb_BCAT4_CD.DrawItem
+        Combo_DrawItem(sender, e, {"bcat4_cd", "bcat4_nm"})
+    End Sub
+
+    Private Sub Combo_BCAT5_DrawItem(sender As Object, e As DrawItemEventArgs) Handles cmb_BCAT5_CD.DrawItem
+        Combo_DrawItem(sender, e, {"bcat5_cd", "bcat5_nm"})
+    End Sub
+
+    Private Sub Combo_GENK_DrawItem(sender As Object, e As DrawItemEventArgs) Handles cmb_GENK_CD.DrawItem
+        Combo_DrawItem(sender, e, {"genk_cd", "genk_nm"})
+    End Sub
+
+    Private Sub Combo_SUM1_DrawItem(sender As Object, e As DrawItemEventArgs) Handles cmb_SUM1_CD.DrawItem
+        Combo_DrawItem(sender, e, {"sum1_cd", "sum1_nm"})
+    End Sub
+
+    Private Sub Combo_SUM2_DrawItem(sender As Object, e As DrawItemEventArgs) Handles cmb_SUM2_CD.DrawItem
+        Combo_DrawItem(sender, e, {"sum2_cd", "sum2_nm"})
+    End Sub
+
+    Private Sub Combo_SUM3_DrawItem(sender As Object, e As DrawItemEventArgs) Handles cmb_SUM3_CD.DrawItem, cmb_BKNRI_CD.DrawItem
+        Combo_DrawItem(sender, e, {"sum3_cd", "sum3_nm"})
+    End Sub
+
+    ' =========================================================
+    '  コンボボックス選択時の連動 (Accessの =Column(x) 再現)
+    ' =========================================================
+    Private Sub cmb_BCAT2_CD_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_BCAT2_CD.SelectedIndexChanged
+        cmb_BCAT2_CD.SyncTo("bcat2_nm", txt_BCAT2_NM)
+    End Sub
+
+    Private Sub cmb_BCAT3_CD_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_BCAT3_CD.SelectedIndexChanged
+        cmb_BCAT3_CD.SyncTo("bcat3_nm", txt_BCAT3_NM)
+    End Sub
+
+    Private Sub cmb_BCAT4_CD_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_BCAT4_CD.SelectedIndexChanged
+        cmb_BCAT4_CD.SyncTo("bcat4_nm", txt_BCAT4_NM)
+    End Sub
+
+    Private Sub cmb_BCAT5_CD_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_BCAT5_CD.SelectedIndexChanged
+        cmb_BCAT5_CD.SyncTo("bcat5_nm", txt_BCAT5_NM)
+    End Sub
+
+    Private Sub cmb_GENK_CD_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_GENK_CD.SelectedIndexChanged
+        cmb_GENK_CD.SyncTo("genk_nm", txt_GENK_NM)
+    End Sub
+
+    Private Sub cmb_SUM1_CD_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_SUM1_CD.SelectedIndexChanged
+        cmb_SUM1_CD.SyncTo("sum1_nm", txt_SUM1_NM)
+    End Sub
+
+    Private Sub cmb_SUM2_CD_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_SUM2_CD.SelectedIndexChanged
+        cmb_SUM2_CD.SyncTo("sum2_nm", txt_SUM2_NM)
+    End Sub
+
+    Private Sub cmb_SUM3_CD_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_SUM3_CD.SelectedIndexChanged, cmb_BKNRI_CD.SelectedIndexChanged
+        cmb_SUM3_CD.SyncTo("sum3_nm", txt_SUM3_NM)
     End Sub
 End Class

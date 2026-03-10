@@ -2,6 +2,7 @@
 Imports LeaseM4BS.DataAccess
 Imports Npgsql
 
+' --- 消費税率テーブル ---
 Partial Public Class Form_f_T_ZEI_KAISEI
     Inherits Form
 
@@ -92,7 +93,7 @@ Partial Public Class Form_f_T_ZEI_KAISEI
 
     ' [ファイル出力] ボタン
     Private Sub cmd_OUTPUT_FILE_Click(sender As Object, e As EventArgs) Handles cmd_OUTPUT_FILE.Click
-        Dim frm As New Form_f_FlexOutputDLG
+        Dim frm As New Form_f_FlexOutputDLG()
         frm.Dgv = dgv_LIST
 
         frm.ShowDialog()
@@ -132,8 +133,9 @@ Partial Public Class Form_f_T_ZEI_KAISEI
                     Dim id = row("zei_kaisei_id", DataRowVersion.Original)
 
                     ' パラメータ設定
-                    Dim prms As New List(Of NpgsqlParameter)
-                    prms.Add(New NpgsqlParameter("@id", id))
+                    Dim prms As New List(Of NpgsqlParameter) From {
+                        {New NpgsqlParameter("@id", id)}
+                    }
 
                     _crud.Delete("t_zei_kaisei", "zei_kaisei_id = @id", prms)
 
@@ -146,8 +148,9 @@ Partial Public Class Form_f_T_ZEI_KAISEI
                     Dim id = row("zei_kaisei_id", DataRowVersion.Original)
 
                     ' パラメータ設定
-                    Dim prms As New List(Of NpgsqlParameter)
-                    prms.Add(New NpgsqlParameter("@id", id))
+                    Dim prms As New List(Of NpgsqlParameter) From {
+                        {New NpgsqlParameter("@id", id)}
+                    }
 
                     MessageBox.Show(id.ToString())
 

@@ -1,5 +1,6 @@
 ﻿Imports System.Windows.Forms
 
+' --- リース残高一覧表 ---
 Partial Public Class Form_f_ZANDAKA_JOKEN
     Inherits Form
 
@@ -48,11 +49,7 @@ Partial Public Class Form_f_ZANDAKA_JOKEN
         ' 期間計算(ヶ月)
         Dim duration As Integer = GetDuration(txt_DT_FROM.Value, txt_DT_TO.Value)
 
-        If duration = 0 Then
-            txt_DURATION.Text = ""
-        Else
-            txt_DURATION.Text = duration.ToString()
-        End If
+        txt_DURATION.Text = If(duration = 0, "", duration.ToString())
     End Sub
 
     Private Sub FormKeyDown(sender As Object, e As KeyEventArgs) Handles MyBase.KeyDown

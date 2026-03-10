@@ -2,6 +2,7 @@
 Imports LeaseM4BS.DataAccess
 Imports Npgsql
 
+' --- 原価区分 ---
 Partial Public Class Form_f_flx_M_GENK
     Inherits Form
 
@@ -69,7 +70,7 @@ Partial Public Class Form_f_flx_M_GENK
 
     ' [新規] ボタン
     Private Sub cmd_NEW_Click(sender As Object, e As EventArgs) Handles cmd_NEW.Click
-        Dim frm As New Form_f_M_GENK_INP
+        Dim frm As New Form_f_M_GENK_INP()
         frm.ShowDialog()
 
         SearchData()
@@ -81,7 +82,7 @@ Partial Public Class Form_f_flx_M_GENK
 
         If selectedRow Is Nothing Then Return
 
-        Dim frm As New Form_f_M_GENK_CHANGE
+        Dim frm As New Form_f_M_GENK_CHANGE()
         frm.GenkId = Convert.ToDouble(selectedRow.Cells("id").Value)
         frm.ShowDialog()
 
@@ -90,7 +91,7 @@ Partial Public Class Form_f_flx_M_GENK
 
     ' [ファイル出力] ボタン
     Private Sub cmd_OUTPUT_FILE_Click(sender As Object, e As EventArgs) Handles cmd_OUTPUT_FILE.Click
-        Dim frm As New Form_f_FlexOutputDLG
+        Dim frm As New Form_f_FlexOutputDLG()
         frm.Dgv = dgv_LIST
 
         frm.ShowDialog()

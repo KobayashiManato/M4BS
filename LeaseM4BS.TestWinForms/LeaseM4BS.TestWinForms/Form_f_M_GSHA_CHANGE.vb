@@ -10,26 +10,27 @@ Partial Public Class Form_f_M_GSHA_CHANGE
     Private Sub Form_f_M_GSHA_CHANGE_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
             ' --- ヘッダ取得 (ID指定) ---
-            Dim sqlHead As String = "SELECT * FROM m_gsha WHERE gsha_id = @id"
+            Dim sql As String = "SELECT * FROM m_gsha WHERE gsha_id = @id"
 
-            Dim prmHead As New List(Of Npgsql.NpgsqlParameter) From {
+            Dim prm As New List(Of Npgsql.NpgsqlParameter) From {
                 New Npgsql.NpgsqlParameter("@id", GshaId)
             }
 
-            Dim dtHead As DataTable = _crud.GetDataTable(sqlHead, prmHead)
+            Dim dt As DataTable = _crud.GetDataTable(sql, prm)
 
-            If dtHead.Rows.Count > 0 Then
-                Dim row As DataRow = dtHead.Rows(0)
+            If dt.Rows.Count = 0 Then Return
 
-                ' 画面項目に値をセット
-                txt_GSHA_CD.Text = row("gsha_cd").ToString()
-                txt_GSHA_NM.Text = row("gsha_nm").ToString()
+            Dim row As DataRow = dt.Rows(0)
 
-                txt_BIKO.Text = row("biko").ToString()
-                txt_CREATE_DT.Text = row("create_dt").ToString()
-                txt_UPDATE_DT.Text = row("update_dt").ToString()
-                txt_GSHA_ID.Text = row("gsha_id").ToString()
-            End If
+            ' 画面項目に値をセット
+            txt_GSHA_CD.SetText(row("gsha_cd"))
+            txt_GSHA_NM.SetText(row("gsha_nm"))
+
+            txt_BIKO.SetText(row("biko"))
+            txt_CREATE_DT.SetText(row("create_dt"))
+            txt_UPDATE_DT.SetText(row("update_dt"))
+            txt_GSHA_ID.SetText(row("gsha_id"))
+
         Catch ex As Exception
             MessageBox.Show("詳細読込エラー: " & ex.Message)
         End Try
@@ -63,8 +64,9 @@ Partial Public Class Form_f_M_GSHA_CHANGE
         gsha("update_cnt") = currentCnt + 1
 
         ' パラメータ設定
-        Dim prms As New List(Of NpgsqlParameter)
-        prms.Add(New NpgsqlParameter("@id", Integer.Parse(txt_GSHA_ID.Text)))
+        Dim prms As New List(Of NpgsqlParameter) From {
+            {New NpgsqlParameter("@id", Integer.Parse(txt_GSHA_ID.Text))}
+        }
 
         ' 行を更新
         _crud.Update("m_gsha", gsha, "gsha_id = @id", prms)
@@ -84,8 +86,9 @@ Partial Public Class Form_f_M_GSHA_CHANGE
         End If
 
         ' パラメータ設定
-        Dim prms As New List(Of NpgsqlParameter)
-        prms.Add(New NpgsqlParameter("@id", Integer.Parse(txt_GSHA_ID.Text)))
+        Dim prms As New List(Of NpgsqlParameter) From {
+            {New NpgsqlParameter("@id", Integer.Parse(txt_GSHA_ID.Text))}
+        }
 
         ' 行を削除
         _crud.Delete("m_gsha", "gsha_id = @id", prms)

@@ -158,22 +158,28 @@
     <Compile Include="Form_fc_TC_HREL.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form_f_BEPPYO_JOKEN.Designer.vb">
-      <DependentUpon>Form_f_BEPPYO_JOKEN.vb</DependentUpon>
+    <Compile Include="Form_f_BEPPYO2_JOKEN.Designer.vb">
+      <DependentUpon>Form_f_BEPPYO2_JOKEN.vb</DependentUpon>
     </Compile>
-    <Compile Include="Form_f_BEPPYO_JOKEN.vb">
+    <Compile Include="Form_f_BEPPYO2_JOKEN.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form_f_BEPPYO_REP.Designer.vb">
-      <DependentUpon>Form_f_BEPPYO_REP.vb</DependentUpon>
+    <Compile Include="Form_f_BEPPYO2_REP.Designer.vb">
+      <DependentUpon>Form_f_BEPPYO2_REP.vb</DependentUpon>
     </Compile>
-    <Compile Include="Form_f_BEPPYO_REP.vb">
+    <Compile Include="Form_f_BEPPYO2_REP.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form_f_BUKN_IDO.Designer.vb">
-      <DependentUpon>Form_f_BUKN_IDO.vb</DependentUpon>
+    <Compile Include="Form_f_flx_TOUGETSU.Designer.vb">
+      <DependentUpon>Form_f_flx_TOUGETSU.vb</DependentUpon>
     </Compile>
-    <Compile Include="Form_f_BUKN_IDO.vb">
+    <Compile Include="Form_f_flx_TOUGETSU.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_f_IMPORT_IDO_FROM_EXCEL.Designer.vb">
+      <DependentUpon>Form_f_IMPORT_IDO_FROM_EXCEL.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form_f_IMPORT_IDO_FROM_EXCEL.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form_f_CHUKI_JOKEN.Designer.vb">
@@ -200,10 +206,10 @@
     <Compile Include="Form_f_CHUKI_YOUSHIKI.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form_f_flx_BEPPYO.Designer.vb">
-      <DependentUpon>Form_f_flx_BEPPYO.vb</DependentUpon>
+    <Compile Include="Form_f_flx_BEPPYO2.Designer.vb">
+      <DependentUpon>Form_f_flx_BEPPYO2.vb</DependentUpon>
     </Compile>
-    <Compile Include="Form_f_flx_BEPPYO.vb">
+    <Compile Include="Form_f_flx_BEPPYO2.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form_f_flx_CHUKI.Designer.vb">
@@ -266,16 +272,16 @@
     <Compile Include="Form_f_KLSRYO_JOKEN.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form_f_MONTHLY_JORNAL_JOKEN.Designer.vb">
-      <DependentUpon>Form_f_MONTHLY_JORNAL_JOKEN.vb</DependentUpon>
+    <Compile Include="Form_f_KEIJO_JOKEN.Designer.vb">
+      <DependentUpon>Form_f_KEIJO_JOKEN.vb</DependentUpon>
     </Compile>
-    <Compile Include="Form_f_MONTHLY_JORNAL_JOKEN.vb">
+    <Compile Include="Form_f_KEIJO_JOKEN.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form_f_MONTHLY_PAYMENT_JOKEN.Designer.vb">
-      <DependentUpon>Form_f_MONTHLY_PAYMENT_JOKEN.vb</DependentUpon>
+    <Compile Include="Form_f_TOUGETSU_JOKEN.Designer.vb">
+      <DependentUpon>Form_f_TOUGETSU_JOKEN.vb</DependentUpon>
     </Compile>
-    <Compile Include="Form_f_MONTHLY_PAYMENT_JOKEN.vb">
+    <Compile Include="Form_f_TOUGETSU_JOKEN.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form_f_FlexOutputDLG.Designer.vb">
@@ -284,16 +290,10 @@
     <Compile Include="Form_f_FlexOutputDLG.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form_f_flx_MONTHLY_JOURNAL.Designer.vb">
-      <DependentUpon>Form_f_flx_MONTHLY_JOURNAL.vb</DependentUpon>
+    <Compile Include="Form_f_flx_KEIJO.Designer.vb">
+      <DependentUpon>Form_f_flx_KEIJO.vb</DependentUpon>
     </Compile>
-    <Compile Include="Form_f_flx_MONTHLY_JOURNAL.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form_f_flx_MONTHLY_PAYMENT.Designer.vb">
-      <DependentUpon>Form_f_flx_MONTHLY_PAYMENT.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Form_f_flx_MONTHLY_PAYMENT.vb">
+    <Compile Include="Form_f_flx_KEIJO.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form_f_flx_M_RSRVK1.Designer.vb">
@@ -633,10 +633,10 @@
     <Compile Include="Form_f_SAIMU_JOKEN.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form_f_SAI_LEASE.Designer.vb">
-      <DependentUpon>Form_f_SAI_LEASE.vb</DependentUpon>
+    <Compile Include="Form_f_IMPORT_SAILEASE_FROM_EXCEL.Designer.vb">
+      <DependentUpon>Form_f_IMPORT_SAILEASE_FROM_EXCEL.vb</DependentUpon>
     </Compile>
-    <Compile Include="Form_f_SAI_LEASE.vb">
+    <Compile Include="Form_f_IMPORT_SAILEASE_FROM_EXCEL.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form_f_ZENKAI_LOG.Designer.vb">
@@ -681,16 +681,16 @@
     <Compile Include="Form_f_ZANDAKA_JOKEN.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form_f_契約書変更情報取込.Designer.vb">
-      <DependentUpon>Form_f_契約書変更情報取込.vb</DependentUpon>
+    <Compile Include="Form_f_IMPORT_CONTRACT_FROM_EXCEL.Designer.vb">
+      <DependentUpon>Form_f_IMPORT_CONTRACT_FROM_EXCEL.vb</DependentUpon>
     </Compile>
-    <Compile Include="Form_f_契約書変更情報取込.vb">
+    <Compile Include="Form_f_IMPORT_CONTRACT_FROM_EXCEL.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form_f_減損損失取込.Designer.vb">
-      <DependentUpon>Form_f_減損損失取込.vb</DependentUpon>
+    <Compile Include="Form_f_IMPORT_GSON_FROM_EXCEL.Designer.vb">
+      <DependentUpon>Form_f_IMPORT_GSON_FROM_EXCEL.vb</DependentUpon>
     </Compile>
-    <Compile Include="Form_f_減損損失取込.vb">
+    <Compile Include="Form_f_IMPORT_GSON_FROM_EXCEL.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form_HKMK.Designer.vb">
@@ -711,40 +711,46 @@
     <Compile Include="Form_LCPT.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Form_MAIN.Designer.vb">
+      <DependentUpon>Form_MAIN.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form_MAIN.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Form_SKMK.Designer.vb">
       <DependentUpon>Form_SKMK.vb</DependentUpon>
     </Compile>
     <Compile Include="Form_SKMK.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmBuknEntry.Designer.vb">
-      <DependentUpon>FrmBuknEntry.vb</DependentUpon>
+    <Compile Include="Form_BuknEntry.Designer.vb">
+      <DependentUpon>Form_BuknEntry.vb</DependentUpon>
     </Compile>
-    <Compile Include="FrmBuknEntry.vb">
+    <Compile Include="Form_BuknEntry.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmContractEntry.Designer.vb">
-      <DependentUpon>FrmContractEntry.vb</DependentUpon>
+    <Compile Include="Form_ContractEntry.Designer.vb">
+      <DependentUpon>Form_ContractEntry.vb</DependentUpon>
     </Compile>
-    <Compile Include="FrmContractEntry.vb">
+    <Compile Include="Form_ContractEntry.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmContractList.Designer.vb">
-      <DependentUpon>FrmContractList.vb</DependentUpon>
+    <Compile Include="Form_f_flx_CONTRACT.Designer.vb">
+      <DependentUpon>Form_f_flx_CONTRACT.vb</DependentUpon>
     </Compile>
-    <Compile Include="FrmContractList.vb">
+    <Compile Include="Form_f_flx_CONTRACT.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmJournalEntry.Designer.vb">
-      <DependentUpon>FrmJournalEntry.vb</DependentUpon>
+    <Compile Include="Form_JournalEntry.Designer.vb">
+      <DependentUpon>Form_JournalEntry.vb</DependentUpon>
     </Compile>
-    <Compile Include="FrmJournalEntry.vb">
+    <Compile Include="Form_JournalEntry.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmBuknList.Designer.vb">
-      <DependentUpon>FrmBuknList.vb</DependentUpon>
+    <Compile Include="Form_f_flx_BUKN.Designer.vb">
+      <DependentUpon>Form_f_flx_BUKN.vb</DependentUpon>
     </Compile>
-    <Compile Include="FrmBuknList.vb">
+    <Compile Include="Form_f_flx_BUKN.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -774,14 +780,14 @@
     <EmbeddedResource Include="Form_fc_TC_HREL.resx">
       <DependentUpon>Form_fc_TC_HREL.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form_f_BEPPYO_JOKEN.resx">
-      <DependentUpon>Form_f_BEPPYO_JOKEN.vb</DependentUpon>
+    <EmbeddedResource Include="Form_f_BEPPYO2_JOKEN.resx">
+      <DependentUpon>Form_f_BEPPYO2_JOKEN.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form_f_BEPPYO_REP.resx">
-      <DependentUpon>Form_f_BEPPYO_REP.vb</DependentUpon>
+    <EmbeddedResource Include="Form_f_BEPPYO2_REP.resx">
+      <DependentUpon>Form_f_BEPPYO2_REP.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form_f_BUKN_IDO.resx">
-      <DependentUpon>Form_f_BUKN_IDO.vb</DependentUpon>
+    <EmbeddedResource Include="Form_f_IMPORT_IDO_FROM_EXCEL.resx">
+      <DependentUpon>Form_f_IMPORT_IDO_FROM_EXCEL.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_f_CHUKI_JOKEN.resx">
       <DependentUpon>Form_f_CHUKI_JOKEN.vb</DependentUpon>
@@ -795,8 +801,8 @@
     <EmbeddedResource Include="Form_f_CHUKI_YOUSHIKI.resx">
       <DependentUpon>Form_f_CHUKI_YOUSHIKI.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form_f_flx_BEPPYO.resx">
-      <DependentUpon>Form_f_flx_BEPPYO.vb</DependentUpon>
+    <EmbeddedResource Include="Form_f_flx_BEPPYO2.resx">
+      <DependentUpon>Form_f_flx_BEPPYO2.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_f_flx_CHUKI.resx">
       <DependentUpon>Form_f_flx_CHUKI.vb</DependentUpon>
@@ -828,20 +834,17 @@
     <EmbeddedResource Include="Form_f_KLSRYO_JOKEN.resx">
       <DependentUpon>Form_f_KLSRYO_JOKEN.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form_f_MONTHLY_JORNAL_JOKEN.resx">
-      <DependentUpon>Form_f_MONTHLY_JORNAL_JOKEN.vb</DependentUpon>
+    <EmbeddedResource Include="Form_f_KEIJO_JOKEN.resx">
+      <DependentUpon>Form_f_KEIJO_JOKEN.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form_f_MONTHLY_PAYMENT_JOKEN.resx">
-      <DependentUpon>Form_f_MONTHLY_PAYMENT_JOKEN.vb</DependentUpon>
+    <EmbeddedResource Include="Form_f_TOUGETSU_JOKEN.resx">
+      <DependentUpon>Form_f_TOUGETSU_JOKEN.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_f_FlexOutputDLG.resx">
       <DependentUpon>Form_f_FlexOutputDLG.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form_f_flx_MONTHLY_JOURNAL.resx">
-      <DependentUpon>Form_f_flx_MONTHLY_JOURNAL.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form_f_flx_MONTHLY_PAYMENT.resx">
-      <DependentUpon>Form_f_flx_MONTHLY_PAYMENT.vb</DependentUpon>
+    <EmbeddedResource Include="Form_f_flx_KEIJO.resx">
+      <DependentUpon>Form_f_flx_KEIJO.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_f_flx_M_RSRVK1.resx">
       <DependentUpon>Form_f_flx_M_RSRVK1.vb</DependentUpon>
@@ -1005,8 +1008,8 @@
     <EmbeddedResource Include="Form_f_SAIMU_JOKEN.resx">
       <DependentUpon>Form_f_SAIMU_JOKEN.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form_f_SAI_LEASE.resx">
-      <DependentUpon>Form_f_SAI_LEASE.vb</DependentUpon>
+    <EmbeddedResource Include="Form_f_IMPORT_SAILEASE_FROM_EXCEL.resx">
+      <DependentUpon>Form_f_IMPORT_SAILEASE_FROM_EXCEL.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_f_ZENKAI_LOG.resx">
       <DependentUpon>Form_f_ZENKAI_LOG.vb</DependentUpon>
@@ -1029,11 +1032,11 @@
     <EmbeddedResource Include="Form_f_ZANDAKA_JOKEN.resx">
       <DependentUpon>Form_f_ZANDAKA_JOKEN.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form_f_契約書変更情報取込.resx">
-      <DependentUpon>Form_f_契約書変更情報取込.vb</DependentUpon>
+    <EmbeddedResource Include="Form_f_IMPORT_CONTRACT_FROM_EXCEL.resx">
+      <DependentUpon>Form_f_IMPORT_CONTRACT_FROM_EXCEL.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form_f_減損損失取込.resx">
-      <DependentUpon>Form_f_減損損失取込.vb</DependentUpon>
+    <EmbeddedResource Include="Form_f_IMPORT_GSON_FROM_EXCEL.resx">
+      <DependentUpon>Form_f_IMPORT_GSON_FROM_EXCEL.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_KKNRI.resx">
       <DependentUpon>Form_KKNRI.vb</DependentUpon>
@@ -1041,20 +1044,23 @@
     <EmbeddedResource Include="Form_LCPT.resx">
       <DependentUpon>Form_LCPT.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmBuknEntry.resx">
-      <DependentUpon>FrmBuknEntry.vb</DependentUpon>
+    <EmbeddedResource Include="Form_MAIN.resx">
+      <DependentUpon>Form_MAIN.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmContractEntry.resx">
-      <DependentUpon>FrmContractEntry.vb</DependentUpon>
+    <EmbeddedResource Include="Form_BuknEntry.resx">
+      <DependentUpon>Form_BuknEntry.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmContractList.resx">
-      <DependentUpon>FrmContractList.vb</DependentUpon>
+    <EmbeddedResource Include="Form_ContractEntry.resx">
+      <DependentUpon>Form_ContractEntry.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmJournalEntry.resx">
-      <DependentUpon>FrmJournalEntry.vb</DependentUpon>
+    <EmbeddedResource Include="Form_f_flx_CONTRACT.resx">
+      <DependentUpon>Form_f_flx_CONTRACT.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmBuknList.resx">
-      <DependentUpon>FrmBuknList.vb</DependentUpon>
+    <EmbeddedResource Include="Form_JournalEntry.resx">
+      <DependentUpon>Form_JournalEntry.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_f_flx_BUKN.resx">
+      <DependentUpon>Form_f_flx_BUKN.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>

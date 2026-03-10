@@ -1,5 +1,6 @@
 ﻿Imports System.Windows.Forms
 
+' --- 棚卸明細表 ---
 Partial Public Class Form_f_TANA_JOKEN
     Inherits Form
 
@@ -18,7 +19,7 @@ Partial Public Class Form_f_TANA_JOKEN
             Return
         End If
 
-        Dim frm As New Form_f_flx_TANA
+        Dim frm As New Form_f_flx_TANA()
         frm.TanaDate = txt_TANA_DATE.Value
 
         frm.ShowDialog()

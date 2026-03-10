@@ -8,25 +8,25 @@ Public Class Form_f_M_GENK_CHANGE
     Private Sub Form_f_M_GENK_CHANGE_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
             ' --- ヘッダ取得 (ID指定) ---
-            Dim sqlHead As String = "SELECT * FROM m_genk WHERE genk_id = @id"
+            Dim sql = "SELECT * FROM m_genk WHERE genk_id = @id"
 
-            Dim prmHead As New List(Of Npgsql.NpgsqlParameter) From {
+            Dim prm As New List(Of Npgsql.NpgsqlParameter) From {
                 New Npgsql.NpgsqlParameter("@id", GenkId)
             }
 
-            Dim dtHead As DataTable = _crud.GetDataTable(sqlHead, prmHead)
+            Dim dt As DataTable = _crud.GetDataTable(sql, prm)
 
-            If dtHead.Rows.Count > 0 Then
-                Dim row As DataRow = dtHead.Rows(0)
+            If dt.Rows.Count = 0 Then Return
+            Dim row As DataRow = dt.Rows(0)
 
-                ' 画面項目にセット（以前のコードと同じロジック）
-                txt_GENK_CD.Text = row("genk_cd").ToString()
-                txt_GENK_NM.Text = row("genk_nm").ToString()
-                txt_BIKO.Text = row("biko").ToString()
-                txt_CREATE_DT.Text = row("create_dt").ToString()
-                txt_UPDATE_DT.Text = row("update_dt").ToString()
-                txt_GENK_ID.Text = row("genk_id").ToString()
-            End If
+            ' 画面項目にセット（以前のコードと同じロジック）
+            txt_GENK_CD.SetText(row("genk_cd"))
+            txt_GENK_NM.SetText(row("genk_nm"))
+            txt_BIKO.SetText(row("biko"))
+            txt_CREATE_DT.SetText(row("create_dt"))
+            txt_UPDATE_DT.SetText(row("update_dt"))
+            txt_GENK_ID.SetText(row("genk_id"))
+
         Catch ex As Exception
             MessageBox.Show("詳細読込エラー: " & ex.Message)
         End Try
@@ -59,8 +59,9 @@ Public Class Form_f_M_GENK_CHANGE
         genk("update_cnt") = currentCnt + 1
 
         ' パラメータ設定
-        Dim prms As New List(Of NpgsqlParameter)
-        prms.Add(New NpgsqlParameter("@id", Integer.Parse(txt_GENK_ID.Text)))
+        Dim prms As New List(Of NpgsqlParameter) From {
+            {New NpgsqlParameter("@id", Integer.Parse(txt_GENK_ID.Text))}
+        }
 
         ' 行を更新
         _crud.Update("m_genk", genk, "genk_id = @id", prms)
@@ -80,8 +81,9 @@ Public Class Form_f_M_GENK_CHANGE
         End If
 
         ' パラメータ設定
-        Dim prms As New List(Of NpgsqlParameter)
-        prms.Add(New NpgsqlParameter("@id", Integer.Parse(txt_GENK_ID.Text)))
+        Dim prms As New List(Of NpgsqlParameter) From {
+            {New NpgsqlParameter("@id", Integer.Parse(txt_GENK_ID.Text))}
+        }
 
         ' 行を削除
         _crud.Delete("m_genk", "genk_id = @id", prms)

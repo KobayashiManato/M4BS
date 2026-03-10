@@ -12,64 +12,165 @@ Partial Public Class Form_f_M_SKMK_CHANGE
 
         Try
             ' --- ヘッダ取得 (ID指定) ---
-            Dim sqlHead As String = "SELECT * FROM m_skmk WHERE skmk_id = @id"
+            Dim sql As String = "SELECT * FROM m_skmk WHERE skmk_id = @id"
 
-            Dim prmHead As New List(Of Npgsql.NpgsqlParameter) From {
+            Dim prm As New List(Of Npgsql.NpgsqlParameter) From {
                 New Npgsql.NpgsqlParameter("@id", SkmkId)
             }
 
-            Dim dtHead As DataTable = _crud.GetDataTable(sqlHead, prmHead)
+            Dim dt As DataTable = _crud.GetDataTable(sql, prm)
 
-            If dtHead.Rows.Count > 0 Then
-                Dim row As DataRow = dtHead.Rows(0)
+            If dt.Rows.Count = 0 Then Return
 
-                ' 画面項目に値をセット
-                txt_SKMK_CD.Text = row("skmk_cd").ToString()
-                txt_SKMK_NM.Text = row("skmk_nm").ToString()
+            Dim row As DataRow = dt.Rows(0)
 
-                cmb_SUM1_CD.SelectedValue = row("sum1_cd").ToString()
-                cmb_SUM2_CD.SelectedValue = row("sum2_cd").ToString()
-                cmb_SUM3_CD.SelectedValue = row("sum3_cd").ToString()
-                cmb_SUM4_CD.SelectedValue = row("sum4_cd").ToString()
-                cmb_SUM5_CD.SelectedValue = row("sum5_cd").ToString()
-                cmb_SUM6_CD.SelectedValue = row("sum6_cd").ToString()
-                cmb_SUM7_CD.SelectedValue = row("sum7_cd").ToString()
-                cmb_SUM8_CD.SelectedValue = row("sum8_cd").ToString()
-                cmb_SUM9_CD.SelectedValue = row("sum9_cd").ToString()
-                cmb_SUM10_CD.SelectedValue = row("sum10_cd").ToString()
-                cmb_SUM11_CD.SelectedValue = row("sum11_cd").ToString()
-                cmb_SUM12_CD.SelectedValue = row("sum12_cd").ToString()
-                cmb_SUM13_CD.SelectedValue = row("sum13_cd").ToString()
-                cmb_SUM14_CD.SelectedValue = row("sum14_cd").ToString()
-                cmb_SUM15_CD.SelectedValue = row("sum15_cd").ToString()
+            ' 画面項目に値をセット
+            txt_SKMK_CD.SetText(row("skmk_cd"))
+            txt_SKMK_NM.SetText(row("skmk_nm"))
 
-                txt_SUM1_NM.Text = row("sum1_nm").ToString()
-                txt_SUM2_NM.Text = row("sum2_nm").ToString()
-                txt_SUM3_NM.Text = row("sum3_nm").ToString()
-                txt_SUM4_NM.Text = row("sum4_nm").ToString()
-                txt_SUM5_NM.Text = row("sum5_nm").ToString()
-                txt_SUM6_NM.Text = row("sum6_nm").ToString()
-                txt_SUM7_NM.Text = row("sum7_nm").ToString()
-                txt_SUM8_NM.Text = row("sum8_nm").ToString()
-                txt_SUM9_NM.Text = row("sum9_nm").ToString()
-                txt_SUM10_NM.Text = row("sum10_nm").ToString()
-                txt_SUM11_NM.Text = row("sum11_nm").ToString()
-                txt_SUM12_NM.Text = row("sum12_nm").ToString()
-                txt_SUM13_NM.Text = row("sum13_nm").ToString()
-                txt_SUM14_NM.Text = row("sum14_nm").ToString()
-                txt_SUM15_NM.Text = row("sum15_nm").ToString()
+            cmb_SUM1_CD.SelectedValue = row("sum1_cd").ToString()
+            cmb_SUM2_CD.SelectedValue = row("sum2_cd").ToString()
+            cmb_SUM3_CD.SelectedValue = row("sum3_cd").ToString()
+            cmb_SUM4_CD.SelectedValue = row("sum4_cd").ToString()
+            cmb_SUM5_CD.SelectedValue = row("sum5_cd").ToString()
+            cmb_SUM6_CD.SelectedValue = row("sum6_cd").ToString()
+            cmb_SUM7_CD.SelectedValue = row("sum7_cd").ToString()
+            cmb_SUM8_CD.SelectedValue = row("sum8_cd").ToString()
+            cmb_SUM9_CD.SelectedValue = row("sum9_cd").ToString()
+            cmb_SUM10_CD.SelectedValue = row("sum10_cd").ToString()
+            cmb_SUM11_CD.SelectedValue = row("sum11_cd").ToString()
+            cmb_SUM12_CD.SelectedValue = row("sum12_cd").ToString()
+            cmb_SUM13_CD.SelectedValue = row("sum13_cd").ToString()
+            cmb_SUM14_CD.SelectedValue = row("sum14_cd").ToString()
+            cmb_SUM15_CD.SelectedValue = row("sum15_cd").ToString()
 
-                cmb_PTN_CD1.SelectedValue = row("hrel_ptn_cd1").ToString()
-                txt_PTN_NM1.Text = row("hrel_ptn_nm1").ToString()
+            txt_SUM1_NM.SetText(row("sum1_nm"))
+            txt_SUM2_NM.SetText(row("sum2_nm"))
+            txt_SUM3_NM.SetText(row("sum3_nm"))
+            txt_SUM4_NM.SetText(row("sum4_nm"))
+            txt_SUM5_NM.SetText(row("sum5_nm"))
+            txt_SUM6_NM.SetText(row("sum6_nm"))
+            txt_SUM7_NM.SetText(row("sum7_nm"))
+            txt_SUM8_NM.SetText(row("sum8_nm"))
+            txt_SUM9_NM.SetText(row("sum9_nm"))
+            txt_SUM10_NM.SetText(row("sum10_nm"))
+            txt_SUM11_NM.SetText(row("sum11_nm"))
+            txt_SUM12_NM.SetText(row("sum12_nm"))
+            txt_SUM13_NM.SetText(row("sum13_nm"))
+            txt_SUM14_NM.SetText(row("sum14_nm"))
+            txt_SUM15_NM.SetText(row("sum15_nm"))
 
-                txt_BIKO.Text = row("biko").ToString()
-                txt_CREATE_DT.Text = row("create_dt").ToString()
-                txt_UPDATE_DT.Text = row("update_dt").ToString()
-                txt_SKMK_ID.Text = row("skmk_id").ToString()
-            End If
+            cmb_PTN_CD1.SelectedValue = row("hrel_ptn_cd1").ToString()
+            txt_PTN_NM1.SetText(row("hrel_ptn_nm1"))
+
+            txt_BIKO.SetText(row("biko"))
+            txt_CREATE_DT.SetText(row("create_dt"))
+            txt_UPDATE_DT.SetText(row("update_dt"))
+            txt_SKMK_ID.SetText(row("skmk_id"))
+
         Catch ex As Exception
             MessageBox.Show("詳細読込エラー: " & ex.Message)
         End Try
+    End Sub
+
+    ' [閉じる] ボタン
+    Private Sub cmd_CLOSE_Click(sender As Object, e As EventArgs) Handles cmd_CLOSE.Click
+        Me.Close()
+    End Sub
+
+    ' [登録] ボタン
+    Private Sub cmd_CREATE_Click(sender As Object, e As EventArgs) Handles cmd_CREATE.Click
+        ' 必須項目が未入力
+        If txt_SKMK_CD.Text = "" Or txt_SKMK_NM.Text = "" Then
+            MessageBox.Show("必須項目が未入力です", "登録不可", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            Return
+        End If
+        If MessageBox.Show("登録してもよろしいですか？", "登録確認", MessageBoxButtons.YesNo) = DialogResult.No Then
+            Return
+        End If
+
+        Dim skmk As New Dictionary(Of String, Object)
+        skmk("skmk_cd") = txt_SKMK_CD.Text
+        skmk("skmk_nm") = txt_SKMK_NM.Text
+
+        skmk("sum1_cd") = cmb_SUM1_CD.SelectedValue
+        skmk("sum2_cd") = cmb_SUM2_CD.SelectedValue
+        skmk("sum3_cd") = cmb_SUM3_CD.SelectedValue
+        skmk("sum4_cd") = cmb_SUM4_CD.SelectedValue
+        skmk("sum5_cd") = cmb_SUM5_CD.SelectedValue
+        skmk("sum6_cd") = cmb_SUM6_CD.SelectedValue
+        skmk("sum7_cd") = cmb_SUM7_CD.SelectedValue
+        skmk("sum8_cd") = cmb_SUM8_CD.SelectedValue
+        skmk("sum9_cd") = cmb_SUM9_CD.SelectedValue
+        skmk("sum10_cd") = cmb_SUM10_CD.SelectedValue
+        skmk("sum11_cd") = cmb_SUM11_CD.SelectedValue
+        skmk("sum12_cd") = cmb_SUM12_CD.SelectedValue
+        skmk("sum13_cd") = cmb_SUM13_CD.SelectedValue
+        skmk("sum14_cd") = cmb_SUM14_CD.SelectedValue
+        skmk("sum15_cd") = cmb_SUM15_CD.SelectedValue
+
+        skmk("sum1_nm") = txt_SUM1_NM.Text
+        skmk("sum2_nm") = txt_SUM2_NM.Text
+        skmk("sum3_nm") = txt_SUM3_NM.Text
+        skmk("sum4_nm") = txt_SUM4_NM.Text
+        skmk("sum5_nm") = txt_SUM5_NM.Text
+        skmk("sum6_nm") = txt_SUM6_NM.Text
+        skmk("sum7_nm") = txt_SUM7_NM.Text
+        skmk("sum8_nm") = txt_SUM8_NM.Text
+        skmk("sum9_nm") = txt_SUM9_NM.Text
+        skmk("sum10_nm") = txt_SUM10_NM.Text
+        skmk("sum11_nm") = txt_SUM11_NM.Text
+        skmk("sum12_nm") = txt_SUM12_NM.Text
+        skmk("sum13_nm") = txt_SUM13_NM.Text
+        skmk("sum14_nm") = txt_SUM14_NM.Text
+        skmk("sum15_nm") = txt_SUM15_NM.Text
+
+        skmk("hrel_ptn_cd1") = cmb_PTN_CD1.SelectedValue
+        skmk("hrel_ptn_nm1") = txt_PTN_NM1.Text
+
+        skmk("biko") = txt_BIKO.Text
+        skmk("update_dt") = DateTime.Now
+
+        Dim currentCnt As Integer = _crud.ExecuteScalar(Of Integer)("SELECT update_cnt FROM m_skmk WHERE skmk_id = @id",
+                                    New List(Of NpgsqlParameter) From {New NpgsqlParameter("@id", CInt(txt_SKMK_ID.Text))})
+        skmk("update_cnt") = currentCnt + 1
+
+        ' パラメータ設定
+        Dim prms As New List(Of NpgsqlParameter) From {
+            {New NpgsqlParameter("@id", Integer.Parse(txt_SKMK_ID.Text))}
+        }
+
+        ' 行を更新
+        _crud.Update("m_skmk", skmk, "skmk_id = @id", prms)
+
+        Me.Close()
+    End Sub
+
+    ' [削除] ボタン
+    Private Sub cmd_DELETE_Click(sender As Object, e As EventArgs) Handles cmd_DELETE.Click
+        If String.IsNullOrWhiteSpace(txt_SKMK_ID.Text) Then
+            MessageBox.Show("削除対象が選択されていません。", "エラー", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Return
+        End If
+
+        If MessageBox.Show("削除してもよろしいですか？", "削除確認", MessageBoxButtons.YesNo) = DialogResult.No Then
+            Return
+        End If
+
+        ' パラメータ設定
+        Dim prms As New List(Of NpgsqlParameter) From {
+            {New NpgsqlParameter("@id", Integer.Parse(txt_SKMK_ID.Text))}
+        }
+
+        ' 行を削除
+        _crud.Delete("m_skmk", "skmk_id = @id", prms)
+
+        Me.Close()
+    End Sub
+
+    Private Sub FormKeyDown(sender As Object, e As KeyEventArgs) Handles MyBase.KeyDown
+        ' エンターキーが押されたら次のコントロールへ移動
+        HandleEnterKeyNavigation(Me, e)
     End Sub
 
     ' =========================================================
@@ -174,103 +275,5 @@ Partial Public Class Form_f_M_SKMK_CHANGE
     End Sub
     Private Sub cmb_PTN_CD1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_PTN_CD1.SelectedIndexChanged
         cmb_PTN_CD1.SyncTo("hrel_ptn_nm1", txt_PTN_NM1)
-    End Sub
-
-    ' [閉じる] ボタン
-    Private Sub cmd_CLOSE_Click(sender As Object, e As EventArgs) Handles cmd_CLOSE.Click
-        Me.Close()
-    End Sub
-
-    ' [登録] ボタン
-    Private Sub cmd_CREATE_Click(sender As Object, e As EventArgs) Handles cmd_CREATE.Click
-        ' 必須項目が未入力
-        If txt_SKMK_CD.Text = "" Or txt_SKMK_NM.Text = "" Then
-            MessageBox.Show("必須項目が未入力です", "登録不可", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
-            Return
-        End If
-        If MessageBox.Show("登録してもよろしいですか？", "登録確認", MessageBoxButtons.YesNo) = DialogResult.No Then
-            Return
-        End If
-
-        Dim skmk As New Dictionary(Of String, Object)
-        skmk("skmk_cd") = txt_SKMK_CD.Text
-        skmk("skmk_nm") = txt_SKMK_NM.Text
-
-        skmk("sum1_cd") = cmb_SUM1_CD.SelectedValue
-        skmk("sum2_cd") = cmb_SUM2_CD.SelectedValue
-        skmk("sum3_cd") = cmb_SUM3_CD.SelectedValue
-        skmk("sum4_cd") = cmb_SUM4_CD.SelectedValue
-        skmk("sum5_cd") = cmb_SUM5_CD.SelectedValue
-        skmk("sum6_cd") = cmb_SUM6_CD.SelectedValue
-        skmk("sum7_cd") = cmb_SUM7_CD.SelectedValue
-        skmk("sum8_cd") = cmb_SUM8_CD.SelectedValue
-        skmk("sum9_cd") = cmb_SUM9_CD.SelectedValue
-        skmk("sum10_cd") = cmb_SUM10_CD.SelectedValue
-        skmk("sum11_cd") = cmb_SUM11_CD.SelectedValue
-        skmk("sum12_cd") = cmb_SUM12_CD.SelectedValue
-        skmk("sum13_cd") = cmb_SUM13_CD.SelectedValue
-        skmk("sum14_cd") = cmb_SUM14_CD.SelectedValue
-        skmk("sum15_cd") = cmb_SUM15_CD.SelectedValue
-
-        skmk("sum1_nm") = txt_SUM1_NM.Text
-        skmk("sum2_nm") = txt_SUM2_NM.Text
-        skmk("sum3_nm") = txt_SUM3_NM.Text
-        skmk("sum4_nm") = txt_SUM4_NM.Text
-        skmk("sum5_nm") = txt_SUM5_NM.Text
-        skmk("sum6_nm") = txt_SUM6_NM.Text
-        skmk("sum7_nm") = txt_SUM7_NM.Text
-        skmk("sum8_nm") = txt_SUM8_NM.Text
-        skmk("sum9_nm") = txt_SUM9_NM.Text
-        skmk("sum10_nm") = txt_SUM10_NM.Text
-        skmk("sum11_nm") = txt_SUM11_NM.Text
-        skmk("sum12_nm") = txt_SUM12_NM.Text
-        skmk("sum13_nm") = txt_SUM13_NM.Text
-        skmk("sum14_nm") = txt_SUM14_NM.Text
-        skmk("sum15_nm") = txt_SUM15_NM.Text
-
-        skmk("hrel_ptn_cd1") = cmb_PTN_CD1.SelectedValue
-        skmk("hrel_ptn_nm1") = txt_PTN_NM1.Text
-
-        skmk("biko") = txt_BIKO.Text
-        skmk("update_dt") = DateTime.Now
-
-        Dim currentCnt As Integer = _crud.ExecuteScalar(Of Integer)("SELECT update_cnt FROM m_skmk WHERE skmk_id = @id",
-                                    New List(Of NpgsqlParameter) From {New NpgsqlParameter("@id", CInt(txt_SKMK_ID.Text))})
-        skmk("update_cnt") = currentCnt + 1
-
-        ' パラメータ設定
-        Dim prms As New List(Of NpgsqlParameter)
-        prms.Add(New NpgsqlParameter("@id", Integer.Parse(txt_SKMK_ID.Text)))
-
-        ' 行を更新
-        _crud.Update("m_skmk", skmk, "skmk_id = @id", prms)
-
-        Me.Close()
-    End Sub
-
-    ' [削除] ボタン
-    Private Sub cmd_DELETE_Click(sender As Object, e As EventArgs) Handles cmd_DELETE.Click
-        If String.IsNullOrWhiteSpace(txt_SKMK_ID.Text) Then
-            MessageBox.Show("削除対象が選択されていません。", "エラー", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-            Return
-        End If
-
-        If MessageBox.Show("削除してもよろしいですか？", "削除確認", MessageBoxButtons.YesNo) = DialogResult.No Then
-            Return
-        End If
-
-        ' パラメータ設定
-        Dim prms As New List(Of NpgsqlParameter)
-        prms.Add(New NpgsqlParameter("@id", Integer.Parse(txt_SKMK_ID.Text)))
-
-        ' 行を削除
-        _crud.Delete("m_skmk", "skmk_id = @id", prms)
-
-        Me.Close()
-    End Sub
-
-    Private Sub FormKeyDown(sender As Object, e As KeyEventArgs) Handles MyBase.KeyDown
-        ' エンターキーが押されたら次のコントロールへ移動
-        HandleEnterKeyNavigation(Me, e)
     End Sub
 End Class

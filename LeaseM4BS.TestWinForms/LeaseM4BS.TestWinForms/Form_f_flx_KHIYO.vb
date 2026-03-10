@@ -16,14 +16,15 @@ End Enum
 Partial Public Class Form_f_flx_KHIYO
     Inherits Form
 
-    Private _crud As New CrudHelper()
-
     Public Property DtFrom As Date
     Public Property DtTo As Date
     Public Property NextDtTo As Date
     Public Property RecBase As RecTiming
     Public Property CheckRecFlags As Boolean() = New Boolean(6) {}
     Public Property RadioSymbol As Symbol
+
+    Private Const FMT_CURRENCY As String = "#,##0"
+    Private _crud As New CrudHelper()
 
     Public Sub New()
         InitializeComponent()
@@ -46,7 +47,7 @@ Partial Public Class Form_f_flx_KHIYO
             ' todo グレーアウトの条件を探す(Access版はグレーアウト行がある。条件不明)
             dgv_LIST.DataSource = _crud.GetDataTable(sql, prms)
 
-            dgv_LIST.HideColumns("kykm_id", "kykh_id")
+            ApplyGridStyle()
 
         Catch ex As Exception
             MessageBox.Show("一覧取得エラー: " & ex.Message)
@@ -196,6 +197,12 @@ Partial Public Class Form_f_flx_KHIYO
         Return sql
     End Function
 
+    Private Sub ApplyGridStyle()
+        dgv_LIST.HideColumns("kykm_id", "kykh_id")
+
+        dgv_LIST.FormatColumn("期間計上額", FMT_CURRENCY)
+    End Sub
+
     ' [閉じる]ボタン
     Private Sub cmd_CLOSE_Click(sender As Object, e As EventArgs) Handles cmd_CLOSE.Click
         Me.Close()
@@ -257,12 +264,12 @@ Partial Public Class Form_f_flx_KHIYO
             Return
         End If
 
-        Dim frmBukn As New FrmBuknEntry
+        Dim frmBukn As New Form_BuknEntry
 
         frmBukn.KykmId = Convert.ToDouble(selectedRow.Cells("kykm_id").Value)
         frmBukn.ShowDialog()
 
-        Dim frmContract As New FrmContractEntry
+        Dim frmContract As New Form_ContractEntry
 
         frmContract.KykhId = Convert.ToDouble(selectedRow.Cells("kykh_id").Value)
         frmContract.ShowDialog()
@@ -278,12 +285,12 @@ Partial Public Class Form_f_flx_KHIYO
             Return
         End If
 
-        Dim frmBukn As New FrmBuknEntry
+        Dim frmBukn As New Form_BuknEntry
 
         frmBukn.KykmId = Convert.ToDouble(selectedRow.Cells("kykm_id").Value)
         frmBukn.ShowDialog()
 
-        Dim frmContract As New FrmContractEntry
+        Dim frmContract As New Form_ContractEntry
 
         frmContract.KykhId = Convert.ToDouble(selectedRow.Cells("kykh_id").Value)
         frmContract.ShowDialog()

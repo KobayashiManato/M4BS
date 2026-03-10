@@ -2,6 +2,7 @@
 Imports LeaseM4BS.DataAccess
 Imports Npgsql.Replication.PgOutput.Messages
 
+' --- 注記判定再計算 ---
 Partial Public Class Form_f_CHUKI_RECALC
     Inherits Form
 
@@ -98,18 +99,16 @@ Partial Public Class Form_f_CHUKI_RECALC
                   $"SET {updateCol} = {defaultValue} " &
                   $"FROM d_kykh kykh " &
                   $"WHERE kykm.kykh_id = kykh.kykh_id " &
-                  $"AND kykh.kkbn_id = 1 AND kykm.saikaisu = 0 "
+                  $"AND kykh.kkbn_id = 1 AND kykm.saikaisu = 0 "    ' リース原契約
 
         If radioDynamic IsNot Nothing AndAlso radioDynamic.Checked Then
-            ' kjkbnだけ例外で_ms_fをつけるだけじゃない
+            ' kjkbn_idだけ例外で_ms_fをつけるだけじゃない
             If updateCol = "kjkbn_id" Then
                 sql &= $"AND kykm.kjkbn_ms_f = FALSE "
             Else
                 sql &= $"AND kykm.{updateCol}_ms_f = FALSE "
             End If
         End If
-
-        Debug.Print(sql)
 
         _crud.ExecuteNonQuery(sql)
     End Sub

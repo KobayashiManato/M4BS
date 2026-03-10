@@ -182,4 +182,14 @@ Public Module FormHelper
             dgvTotal.Columns(i).Visible = dgvMain.Columns(i).Visible
         Next
     End Sub
+
+    <Extension()>
+    Public Sub SetText(target As TextBox, value As Object)
+        target.Text = If(value Is Nothing OrElse IsDBNull(value), "", value.ToString())
+    End Sub
+
+    <Extension()>
+    Public Sub SetAmount(target As TextBox, value As Object)
+        target.Text = ToCurrency(value)
+    End Sub
 End Module

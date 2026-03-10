@@ -23,7 +23,6 @@ Partial Public Class Form_f_flx_M_RSRVK1
             dgv_LIST.Columns.Clear()
             dgv_LIST.AutoGenerateColumns = True
 
-            ' 3. データをセット（ここで勝手に列が作られます）
             dgv_LIST.DataSource = _crud.GetDataTable(sql, prms)
 
         Catch ex As Exception
@@ -68,7 +67,7 @@ Partial Public Class Form_f_flx_M_RSRVK1
 
     ' [新規] ボタン
     Private Sub cmd_NEW_Click(sender As Object, e As EventArgs) Handles cmd_NEW.Click
-        Dim frm As New Form_f_M_RSRVK1_INP
+        Dim frm As New Form_f_M_RSRVK1_INP()
         frm.ShowDialog()
 
         SearchData()
@@ -80,7 +79,7 @@ Partial Public Class Form_f_flx_M_RSRVK1
 
         If selectedRow Is Nothing Then Return
 
-        Dim frm As New Form_f_M_RSRVK1_CHANGE
+        Dim frm As New Form_f_M_RSRVK1_CHANGE()
         frm.Rsrvk1Id = Convert.ToDouble(selectedRow.Cells("id").Value)
         frm.ShowDialog()
 
@@ -89,7 +88,7 @@ Partial Public Class Form_f_flx_M_RSRVK1
 
     ' [ファイル出力] ボタン
     Private Sub cmd_OUTPUT_FILE_Click(sender As Object, e As EventArgs) Handles cmd_OUTPUT_FILE.Click
-        Dim frm As New Form_f_FlexOutputDLG
+        Dim frm As New Form_f_FlexOutputDLG()
         frm.Dgv = dgv_LIST
 
         frm.ShowDialog()
@@ -98,5 +97,9 @@ Partial Public Class Form_f_flx_M_RSRVK1
     Private Sub FormKeyDown(sender As Object, e As KeyEventArgs) Handles MyBase.KeyDown
         ' エンターキーが押されたら次のコントロールへ移動
         HandleEnterKeyNavigation(Me, e)
+    End Sub
+
+    Private Sub pnlHeader_Paint(sender As Object, e As PaintEventArgs) Handles pnlHeader.Paint
+
     End Sub
 End Class

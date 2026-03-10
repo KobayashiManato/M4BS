@@ -2,6 +2,7 @@
 Imports LeaseM4BS.DataAccess
 Imports Npgsql
 
+' --- メーカー ---
 Partial Public Class Form_f_flx_M_MCPT
     Inherits Form
 
@@ -23,7 +24,6 @@ Partial Public Class Form_f_flx_M_MCPT
             dgv_LIST.Columns.Clear()
             dgv_LIST.AutoGenerateColumns = True
 
-            ' 3. データをセット（ここで勝手に列が作られます）
             dgv_LIST.DataSource = _crud.GetDataTable(sql, prms)
 
         Catch ex As Exception
@@ -69,7 +69,7 @@ Partial Public Class Form_f_flx_M_MCPT
 
     ' [新規] ボタン
     Private Sub cmd_NEW_Click(sender As Object, e As EventArgs) Handles cmd_NEW.Click
-        Dim frm As New Form_f_M_MCPT_INP
+        Dim frm As New Form_f_M_MCPT_INP()
         frm.ShowDialog()
 
         SearchData()
@@ -81,7 +81,7 @@ Partial Public Class Form_f_flx_M_MCPT
 
         If selectedRow Is Nothing Then Return
 
-        Dim frm As New Form_f_M_MCPT_CHANGE
+        Dim frm As New Form_f_M_MCPT_CHANGE()
         frm.McptId = Convert.ToDouble(selectedRow.Cells("id").Value)
         frm.ShowDialog()
 
@@ -90,7 +90,7 @@ Partial Public Class Form_f_flx_M_MCPT
 
     ' [ファイル出力] ボタン
     Private Sub cmd_OUTPUT_FILE_Click(sender As Object, e As EventArgs) Handles cmd_OUTPUT_FILE.Click
-        Dim frm As New Form_f_FlexOutputDLG
+        Dim frm As New Form_f_FlexOutputDLG()
         frm.Dgv = dgv_LIST
 
         frm.ShowDialog()

@@ -1,5 +1,6 @@
 ﻿Imports System.Windows.Forms
 
+' --- リース債務返済明細表 ---
 Partial Public Class Form_f_SAIMU_JOKEN
     Inherits Form
 
@@ -29,7 +30,7 @@ Partial Public Class Form_f_SAIMU_JOKEN
             Return
         End If
 
-        Dim frm As New Form_f_flx_SAIMU
+        Dim frm As New Form_f_flx_SAIMU()
         frm.DtFrom = GetMonthStart(txt_DT_FROM.Value)
         frm.DtTo = GetMonthEnd(txt_DT_TO.Value)
 
@@ -54,11 +55,7 @@ Partial Public Class Form_f_SAIMU_JOKEN
         ' 期間計算(ヶ月)
         Dim duration As Integer = GetDuration(txt_DT_FROM.Value, txt_DT_TO.Value)
 
-        If duration = 0 Then
-            txt_DURATION.Text = ""
-        Else
-            txt_DURATION.Text = duration.ToString()
-        End If
+        txt_DURATION.Text = If(duration = 0, "", duration.ToString())
     End Sub
 
     Private Sub FormKeyDown(sender As Object, e As KeyEventArgs) Handles MyBase.KeyDown

@@ -1,5 +1,6 @@
 ﻿Imports System.Windows.Forms
 
+' --- 移動物件一覧表 ---
 Partial Public Class Form_f_IDOLST_JOKEN
     Inherits Form
 
@@ -59,29 +60,35 @@ Partial Public Class Form_f_IDOLST_JOKEN
     ' ラベルテキストを生成
     Private Function GetLabelText()
         ' 移動日
-        Dim labelText As String = "移動日:　" & txt_IDO_DT_FROM.Text & "～" & txt_IDO_DT_TO.Text
+        Dim labelText As String = "移動日:　" & txt_IDO_DT_FROM.Text & "～" & txt_IDO_DT_TO.Text & "  "
 
         ' 管理部署
-        labelText &= " 移動チェックカテゴリ："
+        labelText &= "移動チェックカテゴリ： "
 
+        ' todo 「、」で終わるパターン
         If chk_BCAT1_F.Checked Then
-            labelText &= " 管理部署1"
+            labelText &= "管理部署1、"
         End If
 
         If chk_BCAT2_F.Checked Then
-            labelText &= "、管理部署2"
+            labelText &= "管理部署2、"
         End If
 
         If chk_BCAT3_F.Checked Then
-            labelText &= "、管理部署3"
+            labelText &= "管理部署3、"
         End If
 
         If chk_BCAT4_F.Checked Then
-            labelText &= "、管理部署4"
+            labelText &= "管理部署4、"
         End If
 
         If chk_BCAT5_F.Checked Then
-            labelText &= "、管理部署5"
+            labelText &= "管理部署5"
+        End If
+
+        ' 最後の「、」を削除
+        If labelText.EndsWith("、") Then
+            labelText = labelText.TrimEnd("、"c)
         End If
 
         Return labelText

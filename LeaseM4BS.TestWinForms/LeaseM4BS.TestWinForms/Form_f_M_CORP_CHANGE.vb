@@ -12,28 +12,27 @@ Partial Public Class Form_f_M_CORP_CHANGE
     Private Sub Form_f_M_CORP_CHANGE_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
             ' --- ヘッダ取得 (ID指定) ---
-            Dim sqlHead As String = "SELECT * FROM m_corp WHERE corp_id = @id"
+            Dim sql As String = "SELECT * FROM m_corp WHERE corp_id = @id"
 
-            Dim prmHead As New List(Of Npgsql.NpgsqlParameter) From {
+            Dim prm As New List(Of Npgsql.NpgsqlParameter) From {
                 New Npgsql.NpgsqlParameter("@id", CorpId)
             }
 
-            Dim dtHead As DataTable = _crud.GetDataTable(sqlHead, prmHead)
+            Dim dt As DataTable = _crud.GetDataTable(sql, prm)
 
-            If dtHead.Rows.Count > 0 Then
-                Dim row As DataRow = dtHead.Rows(0)
+            If dt.Rows.Count = 0 Then Return
+            Dim row As DataRow = dt.Rows(0)
 
-                ' 画面項目にセット（以前のコードと同じロジック）
-                txt_CORP1_CD.Text = row("corp1_cd").ToString()
-                txt_CORP1_NM.Text = row("corp1_nm").ToString()
-                cmb_CORP2_CD.SelectedValue = row("corp2_cd").ToString()
-                txt_CORP2_NM.Text = row("corp2_nm").ToString()
-                cmb_CORP3_CD.SelectedValue = row("corp3_cd").ToString()
-                txt_CORP3_NM.Text = row("corp3_nm").ToString()
-                txt_CREATE_DT.Text = row("create_dt").ToString()
-                txt_UPDATE_DT.Text = row("update_dt").ToString()
-                txt_CORP_ID.Text = row("corp_id").ToString()
-            End If
+            txt_CORP1_CD.SetText(row("corp1_cd"))
+            txt_CORP1_NM.SetText(row("corp1_nm"))
+            cmb_CORP2_CD.SelectedValue = row("corp2_cd").ToString()
+            txt_CORP2_NM.SetText(row("corp2_nm"))
+            cmb_CORP3_CD.SelectedValue = row("corp3_cd").ToString()
+            txt_CORP3_NM.SetText(row("corp3_nm"))
+            txt_CREATE_DT.SetText(row("create_dt"))
+            txt_UPDATE_DT.SetText(row("update_dt"))
+            txt_CORP_ID.SetText(row("corp_id"))
+
         Catch ex As Exception
             MessageBox.Show("詳細読込エラー: " & ex.Message)
         End Try
@@ -68,8 +67,9 @@ Partial Public Class Form_f_M_CORP_CHANGE
         corp("update_cnt") = currentCnt + 1
 
         ' パラメータ設定
-        Dim prms As New List(Of NpgsqlParameter)
-        prms.Add(New NpgsqlParameter("@id", Integer.Parse(txt_CORP_ID.Text)))
+        Dim prms As New List(Of NpgsqlParameter) From {
+            {New NpgsqlParameter("@id", Integer.Parse(txt_CORP_ID.Text))}
+        }
 
         _crud.Update("m_corp", corp, "corp_id = @id", prms)
 
@@ -88,8 +88,9 @@ Partial Public Class Form_f_M_CORP_CHANGE
         End If
 
         ' パラメータ設定
-        Dim prms As New List(Of NpgsqlParameter)
-        prms.Add(New NpgsqlParameter("@id", Integer.Parse(txt_CORP_ID.Text)))
+        Dim prms As New List(Of NpgsqlParameter) From {
+            {New NpgsqlParameter("@id", Integer.Parse(txt_CORP_ID.Text))}
+        }
 
         _crud.Delete("m_corp", "corp_id = @id", prms)
 

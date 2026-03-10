@@ -2,8 +2,12 @@
 Imports LeaseM4BS.DataAccess
 Imports Npgsql
 
+' --- 物件フレックス（配賦行単位） ---
 Partial Public Class Form_f_flx_D_HAIF
     Inherits Form
+
+    Private Const FMT_CURRENCY As String = "#,##0"
+    Private Const FMT_DATE As String = "yyyy/MM/dd"
 
     Public Sub New()
         InitializeComponent()
@@ -101,10 +105,10 @@ Partial Public Class Form_f_flx_D_HAIF
     Private Sub ApplyGridStyle()
         dgv_LIST.HideColumns("kykm_id", "kykh_id")
 
-        dgv_LIST.FormatColumn("支払額1", "#,##0")
-        dgv_LIST.FormatColumn("前払リース料", "#,##0")
-        dgv_LIST.FormatColumn("開始日", "yyyy/MM/dd")
-        dgv_LIST.FormatColumn("終了日", "yyyy/MM/dd")
+        dgv_LIST.FormatColumn("支払額1", FMT_CURRENCY)
+        dgv_LIST.FormatColumn("前払リース料", FMT_CURRENCY)
+        dgv_LIST.FormatColumn("開始日", FMT_DATE)
+        dgv_LIST.FormatColumn("終了日", FMT_DATE)
     End Sub
 
     ' [検索] ボタン
@@ -164,7 +168,7 @@ Partial Public Class Form_f_flx_D_HAIF
 
     ' 契約明細フォームを表示
     Private Sub ShowBuknDialog(selectedRow As DataGridViewRow)
-        Dim frmBukn As New FrmBuknEntry
+        Dim frmBukn As New Form_BuknEntry
         frmBukn.KykmId = Convert.ToDouble(selectedRow.Cells("kykm_id").Value)
 
         frmBukn.ShowDialog()
@@ -172,7 +176,7 @@ Partial Public Class Form_f_flx_D_HAIF
 
     ' 契約書フォームを表示
     Private Sub ShowContractDialog(selectedRow As DataGridViewRow)
-        Dim frmContract As New FrmContractEntry
+        Dim frmContract As New Form_ContractEntry
         frmContract.KykhId = Convert.ToDouble(selectedRow.Cells("kykh_id").Value)
 
         frmContract.ShowDialog()

@@ -2,6 +2,7 @@
 Imports LeaseM4BS.DataAccess
 Imports Npgsql
 
+' --- 追加借入利子率テーブル ---
 Partial Public Class Form_f_T_KARI_RITU
     Inherits Form
 
@@ -88,7 +89,7 @@ Partial Public Class Form_f_T_KARI_RITU
 
     ' [ファイル出力] ボタン
     Private Sub cmd_OUTPUT_FILE_Click(sender As Object, e As EventArgs) Handles cmd_OUTPUT_FILE.Click
-        Dim frm As New Form_f_FlexOutputDLG
+        Dim frm As New Form_f_FlexOutputDLG()
         frm.Dgv = dgv_LIST
 
         frm.ShowDialog()
@@ -102,13 +103,11 @@ Partial Public Class Form_f_T_KARI_RITU
         Dim dt As DataTable = DirectCast(dgv_LIST.DataSource, DataTable)
 
         Dim changeDt As DataTable = dt.GetChanges()
-        If changeDt Is Nothing Then
-            Return
-        End If
+        If changeDt Is Nothing Then Return
 
         Try
             ' 削除行などでインデックスが変わるため、後ろからループを回す
-            For i As Integer = dt.Rows.Count - 1 To 0 Step -1
+            For i = dt.Rows.Count - 1 To 0 Step -1
                 Dim row As DataRow = dt.Rows(i)
 
                 ' 新規
@@ -128,8 +127,9 @@ Partial Public Class Form_f_T_KARI_RITU
                     Dim id = row("kari_ritu_id", DataRowVersion.Original)
 
                     ' パラメータ設定
-                    Dim prms As New List(Of NpgsqlParameter)
-                    prms.Add(New NpgsqlParameter("@id", id))
+                    Dim prms As New List(Of NpgsqlParameter) From {
+                        {New NpgsqlParameter("@id", id)}
+                    }
 
                     _crud.Delete("t_kari_ritu", "kari_ritu_id = @id", prms)
 
@@ -142,8 +142,9 @@ Partial Public Class Form_f_T_KARI_RITU
                     Dim id = row("kari_ritu_id", DataRowVersion.Original)
 
                     ' パラメータ設定
-                    Dim prms As New List(Of NpgsqlParameter)
-                    prms.Add(New NpgsqlParameter("@id", id))
+                    Dim prms As New List(Of NpgsqlParameter) From {
+                        {New NpgsqlParameter("@id", id)}
+                    }
 
                     _crud.Update("t_kari_ritu", kariRitu, "kari_ritu_id = @id", prms)
                 End If

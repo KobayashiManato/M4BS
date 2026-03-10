@@ -1080,7 +1080,7 @@ Partial Class Form_f_CHUKI_RECALC
         Me.Controls.Add(Me.Label1)
         Me.KeyPreview = True
         Me.Name = "Form_f_CHUKI_RECALC"
-        Me.Text = "Form_f_CHUKI_RECALCULATE"
+        Me.Text = "注記判定再計算"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)

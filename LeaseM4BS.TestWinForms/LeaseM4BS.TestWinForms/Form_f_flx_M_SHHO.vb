@@ -2,6 +2,7 @@
 Imports LeaseM4BS.DataAccess
 Imports Npgsql
 
+' --- 支払方法 ---
 Partial Public Class Form_f_flx_M_SHHO
     Inherits Form
 
@@ -23,7 +24,6 @@ Partial Public Class Form_f_flx_M_SHHO
             dgv_LIST.Columns.Clear()
             dgv_LIST.AutoGenerateColumns = True
 
-            ' 3. データをセット（ここで勝手に列が作られます）
             dgv_LIST.DataSource = _crud.GetDataTable(sql, prms)
 
         Catch ex As Exception
@@ -68,7 +68,7 @@ Partial Public Class Form_f_flx_M_SHHO
 
     ' [新規] ボタン
     Private Sub cmd_NEW_Click(sender As Object, e As EventArgs) Handles cmd_NEW.Click
-        Dim frm As New Form_f_M_SHHO_INP
+        Dim frm As New Form_f_M_SHHO_INP()
         frm.ShowDialog()
 
         SearchData()
@@ -78,7 +78,9 @@ Partial Public Class Form_f_flx_M_SHHO
     Private Sub cmd_CHANGE_Click(sender As Object, e As EventArgs) Handles cmd_CHANGE.Click
         Dim selectedRow = dgv_LIST.GetSelectedRow()
 
-        Dim frm As New Form_f_M_SHHO_CHANGE
+        If selectedRow Is Nothing Then Return
+
+        Dim frm As New Form_f_M_SHHO_CHANGE()
         frm.ShhoId = Convert.ToDouble(selectedRow.Cells("id").Value)
         frm.ShowDialog()
 
@@ -87,7 +89,7 @@ Partial Public Class Form_f_flx_M_SHHO
 
     ' [ファイル出力] ボタン
     Private Sub cmd_OUTPUT_FILE_Click(sender As Object, e As EventArgs) Handles cmd_OUTPUT_FILE.Click
-        Dim frm As New Form_f_FlexOutputDLG
+        Dim frm As New Form_f_FlexOutputDLG()
         frm.Dgv = dgv_LIST
 
         frm.ShowDialog()

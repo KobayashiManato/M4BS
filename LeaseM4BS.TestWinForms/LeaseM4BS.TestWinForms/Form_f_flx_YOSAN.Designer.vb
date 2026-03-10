@@ -834,11 +834,13 @@ Partial Public Class Form_f_flx_YOSAN
         Me.dgv_TOTAL.AllowUserToResizeColumns = False
         Me.dgv_TOTAL.AllowUserToResizeRows = False
         Me.dgv_TOTAL.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgv_TOTAL.Cursor = System.Windows.Forms.Cursors.Default
         Me.dgv_TOTAL.Location = New System.Drawing.Point(15, 838)
         Me.dgv_TOTAL.Name = "dgv_TOTAL"
         Me.dgv_TOTAL.ReadOnly = True
         Me.dgv_TOTAL.RowHeadersWidth = 62
         Me.dgv_TOTAL.RowTemplate.Height = 27
+        Me.dgv_TOTAL.ScrollBars = System.Windows.Forms.ScrollBars.None
         Me.dgv_TOTAL.Size = New System.Drawing.Size(2635, 177)
         Me.dgv_TOTAL.TabIndex = 1
         '

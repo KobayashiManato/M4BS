@@ -2,6 +2,7 @@
 Imports LeaseM4BS.DataAccess
 Imports Npgsql
 
+' --- 予備マスタ（物件用） ---
 Partial Public Class Form_f_flx_M_RSRVB1
     Inherits Form
 
@@ -23,7 +24,6 @@ Partial Public Class Form_f_flx_M_RSRVB1
             dgv_LIST.Columns.Clear()
             dgv_LIST.AutoGenerateColumns = True
 
-            ' 3. データをセット（ここで勝手に列が作られます）
             dgv_LIST.DataSource = _crud.GetDataTable(sql, prms)
 
         Catch ex As Exception
@@ -69,7 +69,7 @@ Partial Public Class Form_f_flx_M_RSRVB1
 
     ' [新規] ボタン
     Private Sub cmd_NEW_Click(sender As Object, e As EventArgs) Handles cmd_NEW.Click
-        Dim frm As New Form_f_M_RSRVB1_INP
+        Dim frm As New Form_f_M_RSRVB1_INP()
         frm.ShowDialog()
 
         SearchData()
@@ -79,7 +79,7 @@ Partial Public Class Form_f_flx_M_RSRVB1
     Private Sub cmd_CHANGE_Click(sender As Object, e As EventArgs) Handles cmd_CHANGE.Click
         Dim selectedRow = dgv_LIST.GetSelectedRow()
 
-        Dim frm As New Form_f_M_RSRVB1_CHANGE
+        Dim frm As New Form_f_M_RSRVB1_CHANGE()
         frm.Rsrvb1Id = Convert.ToDouble(selectedRow.Cells("id").Value)
         frm.ShowDialog()
 
@@ -88,7 +88,7 @@ Partial Public Class Form_f_flx_M_RSRVB1
 
     ' [ファイル出力] ボタン
     Private Sub cmd_OUTPUT_FILE_Click(sender As Object, e As EventArgs) Handles cmd_OUTPUT_FILE.Click
-        Dim frm As New Form_f_FlexOutputDLG
+        Dim frm As New Form_f_FlexOutputDLG()
         frm.Dgv = dgv_LIST
 
         frm.ShowDialog()

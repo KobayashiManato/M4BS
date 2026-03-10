@@ -2,6 +2,7 @@
 Imports LeaseM4BS.DataAccess
 Imports Npgsql
 
+' --- 予備マスタ（契約書用） ---
 Partial Public Class Form_f_flx_M_RSRVH1
     Inherits Form
 
@@ -23,7 +24,6 @@ Partial Public Class Form_f_flx_M_RSRVH1
             dgv_LIST.Columns.Clear()
             dgv_LIST.AutoGenerateColumns = True
 
-            ' 3. データをセット（ここで勝手に列が作られます）
             dgv_LIST.DataSource = _crud.GetDataTable(sql, prms)
 
         Catch ex As Exception
@@ -69,7 +69,7 @@ Partial Public Class Form_f_flx_M_RSRVH1
 
     ' [ファイル出力] ボタン
     Private Sub cmd_OUTPUT_FILE_Click(sender As Object, e As EventArgs) Handles cmd_OUTPUT_FILE.Click
-        Dim frm As New Form_f_FlexOutputDLG
+        Dim frm As New Form_f_FlexOutputDLG()
         frm.Dgv = dgv_LIST
 
         frm.ShowDialog()

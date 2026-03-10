@@ -10,10 +10,6 @@ Partial Public Class Form_f_M_SHHO_INP
         InitializeComponent()
     End Sub
 
-    Private Sub Form_f_M_SHHO_INP_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-    End Sub
-
     ' [閉じる] ボタン
     Private Sub cmd_CLOSE_Click(sender As Object, e As EventArgs) Handles cmd_CLOSE.Click
         Me.Close()

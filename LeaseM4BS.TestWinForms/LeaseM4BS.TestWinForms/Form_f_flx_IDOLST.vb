@@ -11,6 +11,7 @@ Partial Public Class Form_f_flx_IDOLST
     Public Property DtTo As Date
     Public Property CheckBcatFlags As Boolean() = New Boolean(4) {}
 
+    Private Const FMT_CURRENCY As String = "#,##0"
     Private _crud As New CrudHelper()
 
     Public Sub New()
@@ -33,8 +34,7 @@ Partial Public Class Form_f_flx_IDOLST
 
             dgv_LIST.DataSource = _crud.GetDataTable(sql, prms)
 
-            ' --- グリッドの見た目調整 ---
-            dgv_LIST.HideColumns("kykm_id", "kykh_id")
+            ApplyGridStyle()
 
         Catch ex As Exception
             MessageBox.Show("一覧取得エラー: " & ex.Message)
@@ -98,6 +98,14 @@ Partial Public Class Form_f_flx_IDOLST
         Return sb.ToString()
     End Function
 
+    Private Sub ApplyGridStyle()
+        dgv_LIST.HideColumns("kykm_id", "kykh_id")
+
+        dgv_LIST.FormatColumn("現金購入価額", FMT_CURRENCY)
+        dgv_LIST.FormatColumn("支払額1", FMT_CURRENCY)
+        dgv_LIST.FormatColumn("総額リース料", FMT_CURRENCY)
+    End Sub
+
     ' [閉じるボタン]
     Private Sub cmd_CLOSE_Click(sender As Object, e As EventArgs) Handles cmd_CLOSE.Click
         Me.Close()
@@ -112,16 +120,14 @@ Partial Public Class Form_f_flx_IDOLST
     Private Sub cmd_REF_Click(sender As Object, e As EventArgs) Handles cmd_REF.Click
         Dim selectedRow = dgv_LIST.GetSelectedRow()
 
-        If selectedRow Is Nothing Then
-            Return
-        End If
+        If selectedRow Is Nothing Then Return
 
-        Dim frmBukn As New FrmBuknEntry
+        Dim frmBukn As New Form_BuknEntry
 
         frmBukn.KykmId = Convert.ToDouble(selectedRow.Cells("kykm_id").Value)
         frmBukn.ShowDialog()
 
-        Dim frmContract As New FrmContractEntry
+        Dim frmContract As New Form_ContractEntry
 
         frmContract.KykhId = Convert.ToDouble(selectedRow.Cells("kykh_id").Value)
         frmContract.ShowDialog()
@@ -135,12 +141,12 @@ Partial Public Class Form_f_flx_IDOLST
 
         If selectedRow Is Nothing Then Return
 
-        Dim frmBukn As New FrmBuknEntry
+        Dim frmBukn As New Form_BuknEntry
 
         frmBukn.KykmId = Convert.ToDouble(selectedRow.Cells("kykm_id").Value)
         frmBukn.ShowDialog()
 
-        Dim frmContract As New FrmContractEntry
+        Dim frmContract As New Form_ContractEntry
 
         frmContract.KykhId = Convert.ToDouble(selectedRow.Cells("kykh_id").Value)
         frmContract.ShowDialog()
@@ -172,10 +178,10 @@ Partial Public Class Form_f_flx_IDOLST
 
         Dim trueList = New List(Of String)
 
-        For i As Integer = 0 To CheckBcatFlags.Length - 1
-            If CheckBcatFlags(i) Then
+        For i = 1 To CheckBcatFlags.Length
+            If CheckBcatFlags(i - 1) Then
                 ' 部署コードがnullの行も出力(Access版に準拠)
-                trueList.Add($"b_bcat.bcat{i + 1}_cd <> r1_bcat.bcat{i + 1}_cd OR b_bcat.bcat{i + 1}_cd IS NULL OR r1_bcat.bcat{i + 1}_cd IS NULL")
+                trueList.Add($"b_bcat.bcat{i}_cd <> r1_bcat.bcat{i}_cd OR b_bcat.bcat{i}_cd IS NULL OR r1_bcat.bcat{i}_cd IS NULL")
             End If
         Next
 

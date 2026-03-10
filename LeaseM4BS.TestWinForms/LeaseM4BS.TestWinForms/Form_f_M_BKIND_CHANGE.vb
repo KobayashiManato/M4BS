@@ -10,26 +10,27 @@ Partial Public Class Form_f_M_BKIND_CHANGE
     Private Sub Form_f_M_BKIND_CHANGE_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
             ' --- ヘッダ取得 (ID指定) ---
-            Dim sqlHead As String = "SELECT * FROM m_bkind WHERE bkind_id = @id"
+            Dim sql As String = "SELECT * FROM m_bkind WHERE bkind_id = @id"
 
-            Dim prmHead As New List(Of Npgsql.NpgsqlParameter) From {
+            Dim prm As New List(Of Npgsql.NpgsqlParameter) From {
                 New Npgsql.NpgsqlParameter("@id", BkindId)
             }
 
-            Dim dtHead As DataTable = _crud.GetDataTable(sqlHead, prmHead)
+            Dim dt As DataTable = _crud.GetDataTable(sql, prm)
 
-            If dtHead.Rows.Count > 0 Then
-                Dim row As DataRow = dtHead.Rows(0)
+            If dt.Rows.Count = 0 Then Return
 
-                ' 画面項目に値をセット
-                txt_BKIND_CD.Text = row("bkind_cd").ToString()
-                txt_BKIND_NM.Text = row("bkind_nm").ToString()
+            Dim row As DataRow = dt.Rows(0)
 
-                txt_BIKO.Text = row("biko").ToString()
-                txt_CREATE_DT.Text = row("create_dt").ToString()
-                txt_UPDATE_DT.Text = row("update_dt").ToString()
-                txt_BKIND_ID.Text = row("bkind_id").ToString()
-            End If
+            ' 画面項目に値をセット
+            txt_BKIND_CD.SetText(row("bkind_cd"))
+            txt_BKIND_NM.SetText(row("bkind_nm"))
+
+            txt_BIKO.SetText(row("biko"))
+            txt_CREATE_DT.SetText(row("create_dt"))
+            txt_UPDATE_DT.SetText(row("update_dt"))
+            txt_BKIND_ID.SetText(row("bkind_id"))
+
         Catch ex As Exception
             MessageBox.Show("詳細読込エラー: " & ex.Message)
         End Try
@@ -63,8 +64,9 @@ Partial Public Class Form_f_M_BKIND_CHANGE
         bkind("update_cnt") = currentCnt + 1
 
         ' パラメータ設定
-        Dim prms As New List(Of NpgsqlParameter)
-        prms.Add(New NpgsqlParameter("@id", Integer.Parse(txt_BKIND_ID.Text)))
+        Dim prms As New List(Of NpgsqlParameter) From {
+            {New NpgsqlParameter("@id", Integer.Parse(txt_BKIND_ID.Text))}
+        }
 
         ' 行を更新
         _crud.Update("m_bkind", bkind, "bkind_id = @id", prms)
@@ -84,8 +86,9 @@ Partial Public Class Form_f_M_BKIND_CHANGE
         End If
 
         ' パラメータ設定
-        Dim prms As New List(Of NpgsqlParameter)
-        prms.Add(New NpgsqlParameter("@id", Integer.Parse(txt_BKIND_ID.Text)))
+        Dim prms As New List(Of NpgsqlParameter) From {
+            {New NpgsqlParameter("@id", Integer.Parse(txt_BKIND_ID.Text))}
+        }
 
         ' 行を削除
         _crud.Delete("m_bkind", "bkind_id = @id", prms)

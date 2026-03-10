@@ -12,10 +12,11 @@ End Enum
 Partial Public Class Form_f_flx_CHUKI
     Inherits Form
 
-    Public Property labelText As String
+    Public Property LabelText As String
     Public Property WhereClause As String
     Public Property Prms As List(Of NpgsqlParameter)
 
+    Private Const FMT_CURRENCY As String = "#,##0"
     Private _crud As New CrudHelper()
 
     Public Sub New()
@@ -23,7 +24,7 @@ Partial Public Class Form_f_flx_CHUKI
     End Sub
 
     Private Sub Form_f_flx_CHUKI_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        lbl_CONDITION.Text = labelText
+        lbl_CONDITION.Text = LabelText
 
         SearchData()
     End Sub
@@ -37,7 +38,7 @@ Partial Public Class Form_f_flx_CHUKI
 
             dgv_LIST.DataSource = _crud.GetDataTable(sql, Prms)
 
-            dgv_LIST.HideColumns("kykm_id", "kykh_id")
+            ApplyGridStyle()
 
         Catch ex As Exception
             MessageBox.Show("一覧取得エラー: " & ex.Message)
@@ -100,6 +101,13 @@ Partial Public Class Form_f_flx_CHUKI
         Return sb.ToString()
     End Function
 
+    Private Sub ApplyGridStyle()
+        dgv_LIST.HideColumns("kykm_id", "kykh_id")
+
+        dgv_LIST.FormatColumn("取得価額相当額", FMT_CURRENCY)
+        dgv_LIST.FormatColumn("現金購入価額", FMT_CURRENCY)
+    End Sub
+
     ' [閉じる]ボタン
     Private Sub cmd_CLOSE_Click(sender As Object, e As EventArgs) Handles cmd_CLOSE.Click
         Me.Close()
@@ -112,7 +120,7 @@ Partial Public Class Form_f_flx_CHUKI
 
     ' [様式集計]ボタン
     Private Sub cmd_YOUSHIKI_Click(sender As Object, e As EventArgs) Handles cmd_YOUSHIKI.Click
-        Dim frm As New Form_f_CHUKI_YOUSHIKI
+        Dim frm As New Form_f_CHUKI_YOUSHIKI()
 
         frm.ShowDialog()
     End Sub
@@ -123,7 +131,7 @@ Partial Public Class Form_f_flx_CHUKI
 
         If selectedRow Is Nothing Then Return
 
-        Dim frm As New Form_f_CHUKI_SCH
+        Dim frm As New Form_f_CHUKI_SCH()
         frm.KykmId = Convert.ToDouble(selectedRow.Cells("kykm_id").Value)
 
         frm.ShowDialog()
@@ -135,14 +143,14 @@ Partial Public Class Form_f_flx_CHUKI
 
         If selectedRow Is Nothing Then Return
 
-        Dim frmBukn As New FrmBuknEntry
-
+        Dim frmBukn As New Form_BuknEntry()
         frmBukn.KykmId = Convert.ToDouble(selectedRow.Cells("kykm_id").Value)
+
         frmBukn.ShowDialog()
 
-        Dim frmContract As New FrmContractEntry
-
+        Dim frmContract As New Form_ContractEntry()
         frmContract.KykhId = Convert.ToDouble(selectedRow.Cells("kykh_id").Value)
+
         frmContract.ShowDialog()
     End Sub
 

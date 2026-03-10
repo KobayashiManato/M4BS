@@ -2,6 +2,7 @@
 Imports LeaseM4BS.DataAccess
 Imports Npgsql
 
+' --- 物件種別 ---
 Partial Public Class Form_f_flx_M_BKIND
     Inherits Form
 
@@ -23,9 +24,7 @@ Partial Public Class Form_f_flx_M_BKIND
             dgv_LIST.Columns.Clear()
             dgv_LIST.AutoGenerateColumns = True
 
-            ' 3. データをセット（ここで勝手に列が作られます）
             dgv_LIST.DataSource = _crud.GetDataTable(sql, prms)
-
 
         Catch ex As Exception
             MessageBox.Show("一覧取得エラー: " & ex.Message)
@@ -68,7 +67,7 @@ Partial Public Class Form_f_flx_M_BKIND
 
     ' [新規] ボタン
     Private Sub cmd_NEW_Click(sender As Object, e As EventArgs) Handles cmd_NEW.Click
-        Dim frm As New Form_f_M_BKIND_INP
+        Dim frm As New Form_f_M_BKIND_INP()
         frm.ShowDialog()
 
         SearchData()
@@ -80,7 +79,7 @@ Partial Public Class Form_f_flx_M_BKIND
 
         If selectedRow Is Nothing Then Return
 
-        Dim frm As New Form_f_M_BKIND_CHANGE
+        Dim frm As New Form_f_M_BKIND_CHANGE()
         frm.BkindId = Convert.ToDouble(selectedRow.Cells("id").Value)
         frm.ShowDialog()
 
@@ -89,7 +88,7 @@ Partial Public Class Form_f_flx_M_BKIND
 
     ' [ファイル出力] ボタン
     Private Sub cmd_OUTPUT_FILE_Click(sender As Object, e As EventArgs) Handles cmd_OUTPUT_FILE.Click
-        Dim frm As New Form_f_FlexOutputDLG
+        Dim frm As New Form_f_FlexOutputDLG()
         frm.Dgv = dgv_LIST
 
         frm.ShowDialog()

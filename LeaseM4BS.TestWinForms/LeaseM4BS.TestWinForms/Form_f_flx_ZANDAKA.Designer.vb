@@ -77,11 +77,9 @@ Partial Public Class Form_f_flx_ZANDAKA
         Me.txt_SYUTOK_ZAN_SUM = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.txt_ID = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.dgv_TOTAL = New System.Windows.Forms.DataGridView()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.pnlHeader.SuspendLayout()
         CType(Me.dgv_LIST, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dgv_TOTAL, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'pnlHeader
@@ -670,7 +668,7 @@ Partial Public Class Form_f_flx_ZANDAKA
         Me.dgv_TOTAL.AllowUserToResizeRows = False
         Me.dgv_TOTAL.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgv_TOTAL.ColumnHeadersVisible = False
-        Me.dgv_TOTAL.Location = New System.Drawing.Point(14, 728)
+        Me.dgv_TOTAL.Location = New System.Drawing.Point(12, 728)
         Me.dgv_TOTAL.Name = "dgv_TOTAL"
         Me.dgv_TOTAL.ReadOnly = True
         Me.dgv_TOTAL.RowHeadersVisible = False
@@ -680,30 +678,11 @@ Partial Public Class Form_f_flx_ZANDAKA
         Me.dgv_TOTAL.Size = New System.Drawing.Size(1973, 102)
         Me.dgv_TOTAL.TabIndex = 9
         '
-        'DataGridView1
-        '
-        Me.DataGridView1.AllowUserToAddRows = False
-        Me.DataGridView1.AllowUserToDeleteRows = False
-        Me.DataGridView1.AllowUserToResizeColumns = False
-        Me.DataGridView1.AllowUserToResizeRows = False
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.ColumnHeadersVisible = False
-        Me.DataGridView1.Location = New System.Drawing.Point(15, 713)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.ReadOnly = True
-        Me.DataGridView1.RowHeadersVisible = False
-        Me.DataGridView1.RowHeadersWidth = 62
-        Me.DataGridView1.RowTemplate.Height = 27
-        Me.DataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.None
-        Me.DataGridView1.Size = New System.Drawing.Size(1973, 102)
-        Me.DataGridView1.TabIndex = 9
-        '
         'Form_f_flx_ZANDAKA
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(10.0!, 18.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(2000, 842)
-        Me.Controls.Add(Me.DataGridView1)
+        Me.ClientSize = New System.Drawing.Size(2000, 841)
         Me.Controls.Add(Me.dgv_TOTAL)
         Me.Controls.Add(Me.dgv_LIST)
         Me.Controls.Add(Me.pnlHeader)
@@ -716,7 +695,6 @@ Partial Public Class Form_f_flx_ZANDAKA
         Me.pnlHeader.PerformLayout()
         CType(Me.dgv_LIST, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dgv_TOTAL, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -782,5 +760,4 @@ Partial Public Class Form_f_flx_ZANDAKA
     Friend WithEvents lblSearch As Label
     Friend WithEvents txt_SEARCH As TextBox
     Friend WithEvents cmd_SEARCH As Button
-    Friend WithEvents DataGridView1 As DataGridView
 End Class

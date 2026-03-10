@@ -10,55 +10,34 @@ Partial Public Class Form_f_M_BKNRI_CHANGE
 
         Try
             ' --- ヘッダ取得 (ID指定) ---
-            Dim sqlHead As String = "SELECT * FROM m_bknri WHERE bknri_id = @id"
+            Dim sql = "SELECT * FROM m_bknri WHERE bknri_id = @id"
 
-            Dim prmHead As New List(Of Npgsql.NpgsqlParameter) From {
+            Dim prm As New List(Of Npgsql.NpgsqlParameter) From {
                 New Npgsql.NpgsqlParameter("@id", BknriId)
             }
 
-            Dim dtHead As DataTable = _crud.GetDataTable(sqlHead, prmHead)
+            Dim dt As DataTable = _crud.GetDataTable(sql, prm)
 
-            If dtHead.Rows.Count > 0 Then
-                Dim row As DataRow = dtHead.Rows(0)
+            If dt.Rows.Count = 0 Then Return
 
-                ' 画面項目に値をセット
-                txt_BKNRI1_CD.Text = row("bknri1_cd").ToString()
-                txt_BKNRI1_NM.Text = row("bknri1_nm").ToString()
-                cmb_BKNRI2_CD.SelectedValue = row("bknri2_cd").ToString()
-                txt_BKNRI2_NM.Text = row("bknri2_nm").ToString()
-                cmb_BKNRI3_CD.SelectedValue = row("bknri3_cd").ToString()
-                txt_BKNRI3_NM.Text = row("bknri3_nm").ToString()
+            Dim row As DataRow = dt.Rows(0)
 
-                txt_BIKO.Text = row("biko").ToString()
-                txt_CREATE_DT.Text = row("create_dt").ToString()
-                txt_UPDATE_DT.Text = row("update_dt").ToString()
-                txt_BKNRI_ID.Text = row("bknri_id").ToString()
-            End If
+            ' 画面項目に値をセット
+            txt_BKNRI1_CD.SetText(row("bknri1_cd"))
+            txt_BKNRI1_NM.SetText(row("bknri1_nm"))
+            cmb_BKNRI2_CD.SelectedValue = row("bknri2_cd").ToString()
+            txt_BKNRI2_NM.SetText(row("bknri2_nm"))
+            cmb_BKNRI3_CD.SelectedValue = row("bknri3_cd").ToString()
+            txt_BKNRI3_NM.SetText(row("bknri3_nm"))
+
+            txt_BIKO.SetText(row("biko"))
+            txt_CREATE_DT.SetText(row("create_dt"))
+            txt_UPDATE_DT.SetText(row("update_dt"))
+            txt_BKNRI_ID.SetText(row("bknri_id"))
+
         Catch ex As Exception
             MessageBox.Show("詳細読込エラー: " & ex.Message)
         End Try
-    End Sub
-
-    ' =========================================================
-    '  コンボボックスの3列描画 (Access完全再現・罫線付き)
-    ' =========================================================
-    Private Sub Combo_BKNRI2_DrawItem(sender As Object, e As DrawItemEventArgs) Handles cmb_BKNRI2_CD.DrawItem
-        Combo_DrawItem(sender, e, {"bknri2_cd", "bknri2_nm"})
-    End Sub
-
-    Private Sub Combo_BKNRI3_DrawItem(sender As Object, e As DrawItemEventArgs) Handles cmb_BKNRI3_CD.DrawItem
-        Combo_DrawItem(sender, e, {"bknri3_cd", "bknri3_nm"})
-    End Sub
-
-    ' =========================================================
-    '  コンボボックス選択時の連動 (Accessの =Column(x) 再現)
-    ' =========================================================
-    Private Sub cmb_bknri2_CD_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_BKNRI2_CD.SelectedIndexChanged
-        cmb_BKNRI2_CD.SyncTo("bknri2_nm", txt_BKNRI2_NM)
-    End Sub
-
-    Private Sub cmb_BKNRI3_CD_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_BKNRI3_CD.SelectedIndexChanged
-        cmb_BKNRI3_CD.SyncTo("bknri3_nm", txt_BKNRI3_NM)
     End Sub
 
     ' [閉じる] ボタン
@@ -94,8 +73,9 @@ Partial Public Class Form_f_M_BKNRI_CHANGE
         bknri("update_cnt") = currentCnt + 1
 
         ' パラメータ設定
-        Dim prms As New List(Of NpgsqlParameter)
-        prms.Add(New NpgsqlParameter("@id", Integer.Parse(txt_BKNRI_ID.Text)))
+        Dim prms As New List(Of NpgsqlParameter) From {
+            {New NpgsqlParameter("@id", Integer.Parse(txt_BKNRI_ID.Text))}
+        }
 
         ' 行を更新
         _crud.Update("m_bknri", bknri, "bknri_id = @id", prms)
@@ -115,8 +95,9 @@ Partial Public Class Form_f_M_BKNRI_CHANGE
         End If
 
         ' パラメータ設定
-        Dim prms As New List(Of NpgsqlParameter)
-        prms.Add(New NpgsqlParameter("@id", Integer.Parse(txt_BKNRI_ID.Text)))
+        Dim prms As New List(Of NpgsqlParameter) From {
+            {New NpgsqlParameter("@id", Integer.Parse(txt_BKNRI_ID.Text))}
+        }
 
         ' 行を削除
         _crud.Delete("m_bknri", "bknri_id = @id", prms)
@@ -127,5 +108,27 @@ Partial Public Class Form_f_M_BKNRI_CHANGE
     Private Sub FormKeyDown(sender As Object, e As KeyEventArgs) Handles MyBase.KeyDown
         ' エンターキーが押されたら次のコントロールへ移動
         HandleEnterKeyNavigation(Me, e)
+    End Sub
+
+    ' =========================================================
+    '  コンボボックスの3列描画 (Access完全再現・罫線付き)
+    ' =========================================================
+    Private Sub Combo_BKNRI2_DrawItem(sender As Object, e As DrawItemEventArgs) Handles cmb_BKNRI2_CD.DrawItem
+        Combo_DrawItem(sender, e, {"bknri2_cd", "bknri2_nm"})
+    End Sub
+
+    Private Sub Combo_BKNRI3_DrawItem(sender As Object, e As DrawItemEventArgs) Handles cmb_BKNRI3_CD.DrawItem
+        Combo_DrawItem(sender, e, {"bknri3_cd", "bknri3_nm"})
+    End Sub
+
+    ' =========================================================
+    '  コンボボックス選択時の連動 (Accessの =Column(x) 再現)
+    ' =========================================================
+    Private Sub cmb_bknri2_CD_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_BKNRI2_CD.SelectedIndexChanged
+        cmb_BKNRI2_CD.SyncTo("bknri2_nm", txt_BKNRI2_NM)
+    End Sub
+
+    Private Sub cmb_BKNRI3_CD_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_BKNRI3_CD.SelectedIndexChanged
+        cmb_BKNRI3_CD.SyncTo("bknri3_nm", txt_BKNRI3_NM)
     End Sub
 End Class

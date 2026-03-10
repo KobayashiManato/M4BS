@@ -1,5 +1,6 @@
 ﻿Imports System.Windows.Forms
 
+' --- 保守フレックス（物件付随保守料）
 Partial Public Class Form_f_flx_D_HENF
     Inherits Form
 

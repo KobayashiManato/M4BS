@@ -1,8 +1,10 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Public Class Form_f_KEIJO_JOKEN
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+Partial Class Form_f_KEIJO_JOKEN
+    Inherits System.Windows.Forms.Form
 
-    <System.Diagnostics.DebuggerNonUserCode()>
-    Protected Overrides Sub Dispose(disposing As Boolean)
+    'フォームがコンポーネントの一覧をクリーンアップするために dispose をオーバーライドします。
+    <System.Diagnostics.DebuggerNonUserCode()> _
+    Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
                 components.Dispose()
@@ -12,326 +14,335 @@ Partial Public Class Form_f_KEIJO_JOKEN
         End Try
     End Sub
 
+    'Windows フォーム デザイナーで必要です。
     Private components As System.ComponentModel.IContainer
 
-    <System.Diagnostics.DebuggerStepThrough()>
+    'メモ: 以下のプロシージャは Windows フォーム デザイナーで必要です。
+    'Windows フォーム デザイナーを使用して変更できます。  
+    'コード エディターを使って変更しないでください。
+    <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.cmd_実行 = New System.Windows.Forms.Button()
+        Me.cmd_EXECUTE = New System.Windows.Forms.Button()
         Me.cmd_CANCEL = New System.Windows.Forms.Button()
-        Me.cmd_ZEN = New System.Windows.Forms.Button()
-        Me.txt_KIKAN_FROM = New System.Windows.Forms.TextBox()
-        Me.txt_KIKAN_TO = New System.Windows.Forms.TextBox()
-        Me.txt_GETU_CNT = New System.Windows.Forms.TextBox()
-        Me.ラベル511 = New System.Windows.Forms.Label()
-        Me.ラベル491 = New System.Windows.Forms.Label()
-        Me.ラベル488 = New System.Windows.Forms.Label()
-        Me.ラベル490 = New System.Windows.Forms.Label()
-        Me.ラベル571 = New System.Windows.Forms.Label()
-        Me.ラベル478 = New System.Windows.Forms.Label()
-        Me.ラベル471 = New System.Windows.Forms.Label()
-        Me.ラベル513 = New System.Windows.Forms.Label()
-        Me.ラベル538 = New System.Windows.Forms.Label()
-        Me.ラベル544 = New System.Windows.Forms.Label()
-        Me.ラベル547 = New System.Windows.Forms.Label()
-        Me.ラベル576 = New System.Windows.Forms.Label()
-        Me.lbl_返済方法_新令費用 = New System.Windows.Forms.Label()
-        Me.lbl_返済方法_新令費用_説明 = New System.Windows.Forms.Label()
-        Me.ラベル574 = New System.Windows.Forms.Label()
-        Me.ラベル512 = New System.Windows.Forms.Label()
-        Me.chk_KJ_FLG_1 = New System.Windows.Forms.CheckBox()
-        Me.chk_KJ_FLG_2 = New System.Windows.Forms.CheckBox()
-        Me.chk_FX_SEARCH_FLG = New System.Windows.Forms.CheckBox()
-        Me.オプション487 = New System.Windows.Forms.RadioButton()
-        Me.オプション489 = New System.Windows.Forms.RadioButton()
+        Me.cmd_ZENKAI = New System.Windows.Forms.Button()
+        Me.txt_DATE_FROM = New System.Windows.Forms.DateTimePicker()
+        Me.txt_DATE_TO = New System.Windows.Forms.DateTimePicker()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.txt_DURATION = New System.Windows.Forms.TextBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.radio_BUKN = New System.Windows.Forms.RadioButton()
+        Me.radio_HAIF = New System.Windows.Forms.RadioButton()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.chk_SHORI = New System.Windows.Forms.CheckBox()
+        Me.chk_KEIJO = New System.Windows.Forms.CheckBox()
+        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.cmb_SETTEI = New System.Windows.Forms.ComboBox()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.Panel3.SuspendLayout()
+        Me.Panel1.SuspendLayout()
+        Me.Panel2.SuspendLayout()
+        Me.GroupBox1.SuspendLayout()
+        Me.GroupBox2.SuspendLayout()
+        Me.GroupBox3.SuspendLayout()
         Me.SuspendLayout()
         '
-        ' cmd_実行
+        'cmd_EXECUTE
         '
-        Me.cmd_実行.Location = New System.Drawing.Point(7, 7)
-        Me.cmd_実行.Name = "cmd_実行"
-        Me.cmd_実行.Size = New System.Drawing.Size(75, 26)
-        Me.cmd_実行.TabIndex = 0
-        Me.cmd_実行.Text = "実行(&R)"
-        Me.cmd_実行.UseVisualStyleBackColor = True
+        Me.cmd_EXECUTE.Location = New System.Drawing.Point(14, 13)
+        Me.cmd_EXECUTE.Margin = New System.Windows.Forms.Padding(5, 4, 5, 4)
+        Me.cmd_EXECUTE.Name = "cmd_EXECUTE"
+        Me.cmd_EXECUTE.Size = New System.Drawing.Size(157, 45)
+        Me.cmd_EXECUTE.TabIndex = 2
+        Me.cmd_EXECUTE.Text = "実行(&R)"
+        Me.cmd_EXECUTE.UseVisualStyleBackColor = True
         '
-        ' cmd_CANCEL
+        'cmd_CANCEL
         '
-        Me.cmd_CANCEL.Location = New System.Drawing.Point(90, 7)
+        Me.cmd_CANCEL.Location = New System.Drawing.Point(181, 13)
+        Me.cmd_CANCEL.Margin = New System.Windows.Forms.Padding(5, 4, 5, 4)
         Me.cmd_CANCEL.Name = "cmd_CANCEL"
-        Me.cmd_CANCEL.Size = New System.Drawing.Size(75, 26)
-        Me.cmd_CANCEL.TabIndex = 1
-        Me.cmd_CANCEL.Text = "ｷｬﾝｾﾙ(&C)"
+        Me.cmd_CANCEL.Size = New System.Drawing.Size(153, 45)
+        Me.cmd_CANCEL.TabIndex = 3
+        Me.cmd_CANCEL.Text = "キャンセル(&C)"
         Me.cmd_CANCEL.UseVisualStyleBackColor = True
         '
-        ' cmd_ZEN
+        'cmd_ZENKAI
         '
-        Me.cmd_ZEN.Location = New System.Drawing.Point(362, 7)
-        Me.cmd_ZEN.Name = "cmd_ZEN"
-        Me.cmd_ZEN.Size = New System.Drawing.Size(102, 26)
-        Me.cmd_ZEN.TabIndex = 2
-        Me.cmd_ZEN.Text = "前回集計結果(&Z)"
-        Me.cmd_ZEN.UseVisualStyleBackColor = True
+        Me.cmd_ZENKAI.Location = New System.Drawing.Point(790, 13)
+        Me.cmd_ZENKAI.Margin = New System.Windows.Forms.Padding(5, 4, 5, 4)
+        Me.cmd_ZENKAI.Name = "cmd_ZENKAI"
+        Me.cmd_ZENKAI.Size = New System.Drawing.Size(188, 45)
+        Me.cmd_ZENKAI.TabIndex = 4
+        Me.cmd_ZENKAI.Text = "前回集計結果(&Z)"
+        Me.cmd_ZENKAI.UseVisualStyleBackColor = True
         '
-        ' txt_KIKAN_FROM
+        'txt_DATE_FROM
         '
-        Me.txt_KIKAN_FROM.Location = New System.Drawing.Point(113, 57)
-        Me.txt_KIKAN_FROM.Name = "txt_KIKAN_FROM"
-        Me.txt_KIKAN_FROM.Size = New System.Drawing.Size(75, 19)
-        Me.txt_KIKAN_FROM.TabIndex = 3
+        Me.txt_DATE_FROM.CustomFormat = "yyyy/MM"
+        Me.txt_DATE_FROM.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+        Me.txt_DATE_FROM.Location = New System.Drawing.Point(217, 115)
+        Me.txt_DATE_FROM.Name = "txt_DATE_FROM"
+        Me.txt_DATE_FROM.Size = New System.Drawing.Size(200, 25)
+        Me.txt_DATE_FROM.TabIndex = 0
         '
-        ' txt_KIKAN_TO
+        'txt_DATE_TO
         '
-        Me.txt_KIKAN_TO.Location = New System.Drawing.Point(207, 57)
-        Me.txt_KIKAN_TO.Name = "txt_KIKAN_TO"
-        Me.txt_KIKAN_TO.Size = New System.Drawing.Size(75, 19)
-        Me.txt_KIKAN_TO.TabIndex = 4
+        Me.txt_DATE_TO.CustomFormat = "yyyy/MM"
+        Me.txt_DATE_TO.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+        Me.txt_DATE_TO.Location = New System.Drawing.Point(455, 115)
+        Me.txt_DATE_TO.Name = "txt_DATE_TO"
+        Me.txt_DATE_TO.Size = New System.Drawing.Size(200, 25)
+        Me.txt_DATE_TO.TabIndex = 1
         '
-        ' txt_GETU_CNT
+        'Label1
         '
-        Me.txt_GETU_CNT.Location = New System.Drawing.Point(302, 57)
-        Me.txt_GETU_CNT.Name = "txt_GETU_CNT"
-        Me.txt_GETU_CNT.Size = New System.Drawing.Size(50, 19)
-        Me.txt_GETU_CNT.TabIndex = 5
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(65, 116)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(80, 18)
+        Me.Label1.TabIndex = 8
+        Me.Label1.Text = "集計期間"
         '
-        ' ラベル511
+        'txt_DURATION
         '
-        Me.ラベル511.AutoSize = True
-        Me.ラベル511.Location = New System.Drawing.Point(26, 120)
-        Me.ラベル511.Name = "ラベル511"
-        Me.ラベル511.TabIndex = 6
-        Me.ラベル511.Text = "計算対象"
+        Me.txt_DURATION.Location = New System.Drawing.Point(700, 113)
+        Me.txt_DURATION.Name = "txt_DURATION"
+        Me.txt_DURATION.ReadOnly = True
+        Me.txt_DURATION.Size = New System.Drawing.Size(69, 25)
+        Me.txt_DURATION.TabIndex = 9
         '
-        ' ラベル491
+        'Label2
         '
-        Me.ラベル491.AutoSize = True
-        Me.ラベル491.Location = New System.Drawing.Point(57, 147)
-        Me.ラベル491.Name = "ラベル491"
-        Me.ラベル491.TabIndex = 7
-        Me.ラベル491.Text = "明細"
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(775, 116)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(38, 18)
+        Me.Label2.TabIndex = 10
+        Me.Label2.Text = "ヶ月"
         '
-        ' ラベル488
+        'Label3
         '
-        Me.ラベル488.AutoSize = True
-        Me.ラベル488.Location = New System.Drawing.Point(185, 150)
-        Me.ラベル488.Name = "ラベル488"
-        Me.ラベル488.TabIndex = 8
-        Me.ラベル488.Text = "物件単位"
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(307, 158)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(258, 18)
+        Me.Label3.TabIndex = 11
+        Me.Label3.Text = "yyyy/mmの形式で入力してください"
         '
-        ' ラベル490
+        'Label7
         '
-        Me.ラベル490.AutoSize = True
-        Me.ラベル490.Location = New System.Drawing.Point(261, 150)
-        Me.ラベル490.Name = "ラベル490"
-        Me.ラベル490.TabIndex = 9
-        Me.ラベル490.Text = "配賦単位"
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(70, 67)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(44, 18)
+        Me.Label7.TabIndex = 12
+        Me.Label7.Text = "明細"
         '
-        ' ラベル571
+        'Panel3
         '
-        Me.ラベル571.AutoSize = True
-        Me.ラベル571.Location = New System.Drawing.Point(18, 56)
-        Me.ラベル571.Name = "ラベル571"
-        Me.ラベル571.TabIndex = 10
-        Me.ラベル571.Text = "集計期間"
+        Me.Panel3.Controls.Add(Me.radio_BUKN)
+        Me.Panel3.Controls.Add(Me.radio_HAIF)
+        Me.Panel3.Location = New System.Drawing.Point(160, 43)
+        Me.Panel3.Name = "Panel3"
+        Me.Panel3.Size = New System.Drawing.Size(626, 65)
+        Me.Panel3.TabIndex = 13
         '
-        ' ラベル478
+        'radio_BUKN
         '
-        Me.ラベル478.AutoSize = True
-        Me.ラベル478.Location = New System.Drawing.Point(343, 57)
-        Me.ラベル478.Name = "ラベル478"
-        Me.ラベル478.TabIndex = 11
-        Me.ラベル478.Text = "ヶ月"
+        Me.radio_BUKN.AutoSize = True
+        Me.radio_BUKN.Location = New System.Drawing.Point(14, 20)
+        Me.radio_BUKN.Name = "radio_BUKN"
+        Me.radio_BUKN.Size = New System.Drawing.Size(105, 22)
+        Me.radio_BUKN.TabIndex = 7
+        Me.radio_BUKN.Text = "物件単位"
+        Me.radio_BUKN.UseVisualStyleBackColor = True
         '
-        ' ラベル471
+        'radio_HAIF
         '
-        Me.ラベル471.AutoSize = True
-        Me.ラベル471.Location = New System.Drawing.Point(188, 57)
-        Me.ラベル471.Name = "ラベル471"
-        Me.ラベル471.TabIndex = 12
-        Me.ラベル471.Text = "～"
+        Me.radio_HAIF.AutoSize = True
+        Me.radio_HAIF.Checked = True
+        Me.radio_HAIF.Location = New System.Drawing.Point(157, 20)
+        Me.radio_HAIF.Name = "radio_HAIF"
+        Me.radio_HAIF.Size = New System.Drawing.Size(105, 22)
+        Me.radio_HAIF.TabIndex = 7
+        Me.radio_HAIF.TabStop = True
+        Me.radio_HAIF.Text = "配賦単位"
+        Me.radio_HAIF.UseVisualStyleBackColor = True
         '
-        ' ラベル513
+        'Panel1
         '
-        Me.ラベル513.AutoSize = True
-        Me.ラベル513.Location = New System.Drawing.Point(113, 83)
-        Me.ラベル513.Name = "ラベル513"
-        Me.ラベル513.TabIndex = 13
-        Me.ラベル513.Text = "yyyy/mm の形式で入力してください"
+        Me.Panel1.Controls.Add(Me.chk_SHORI)
+        Me.Panel1.Controls.Add(Me.chk_KEIJO)
+        Me.Panel1.Location = New System.Drawing.Point(160, 49)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(626, 65)
+        Me.Panel1.TabIndex = 13
         '
-        ' ラベル538
+        'chk_SHORI
         '
-        Me.ラベル538.AutoSize = True
-        Me.ラベル538.Location = New System.Drawing.Point(25, 207)
-        Me.ラベル538.Name = "ラベル538"
-        Me.ラベル538.TabIndex = 14
-        Me.ラベル538.Text = "仕訳出力対象"
+        Me.chk_SHORI.AutoSize = True
+        Me.chk_SHORI.Checked = True
+        Me.chk_SHORI.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.chk_SHORI.Location = New System.Drawing.Point(218, 21)
+        Me.chk_SHORI.Name = "chk_SHORI"
+        Me.chk_SHORI.Size = New System.Drawing.Size(166, 22)
+        Me.chk_SHORI.TabIndex = 14
+        Me.chk_SHORI.Text = "賃貸借処理データ"
+        Me.chk_SHORI.UseVisualStyleBackColor = True
         '
-        ' ラベル544
+        'chk_KEIJO
         '
-        Me.ラベル544.AutoSize = True
-        Me.ラベル544.Location = New System.Drawing.Point(72, 234)
-        Me.ラベル544.Name = "ラベル544"
-        Me.ラベル544.TabIndex = 15
-        Me.ラベル544.Text = "資産計上データ"
+        Me.chk_KEIJO.AutoSize = True
+        Me.chk_KEIJO.Checked = True
+        Me.chk_KEIJO.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.chk_KEIJO.Location = New System.Drawing.Point(14, 21)
+        Me.chk_KEIJO.Name = "chk_KEIJO"
+        Me.chk_KEIJO.Size = New System.Drawing.Size(148, 22)
+        Me.chk_KEIJO.TabIndex = 14
+        Me.chk_KEIJO.Text = "資産計上データ"
+        Me.chk_KEIJO.UseVisualStyleBackColor = True
         '
-        ' ラベル547
+        'Panel2
         '
-        Me.ラベル547.AutoSize = True
-        Me.ラベル547.Location = New System.Drawing.Point(230, 234)
-        Me.ラベル547.Name = "ラベル547"
-        Me.ラベル547.TabIndex = 16
-        Me.ラベル547.Text = "賃貸借処理データ"
+        Me.Panel2.Controls.Add(Me.cmb_SETTEI)
+        Me.Panel2.Controls.Add(Me.Label9)
+        Me.Panel2.Controls.Add(Me.Label8)
+        Me.Panel2.Location = New System.Drawing.Point(160, 24)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(626, 97)
+        Me.Panel2.TabIndex = 13
         '
-        ' ラベル576
+        'cmb_SETTEI
         '
-        Me.ラベル576.AutoSize = True
-        Me.ラベル576.Location = New System.Drawing.Point(26, 291)
-        Me.ラベル576.Name = "ラベル576"
-        Me.ラベル576.TabIndex = 17
-        Me.ラベル576.Text = "その他"
+        Me.cmb_SETTEI.FormattingEnabled = True
+        Me.cmb_SETTEI.Location = New System.Drawing.Point(317, 17)
+        Me.cmb_SETTEI.Name = "cmb_SETTEI"
+        Me.cmb_SETTEI.Size = New System.Drawing.Size(294, 26)
+        Me.cmb_SETTEI.TabIndex = 0
         '
-        ' lbl_返済方法_新令費用
+        'Label9
         '
-        Me.lbl_返済方法_新令費用.AutoSize = True
-        Me.lbl_返済方法_新令費用.Location = New System.Drawing.Point(56, 317)
-        Me.lbl_返済方法_新令費用.Name = "lbl_返済方法_新令費用"
-        Me.lbl_返済方法_新令費用.TabIndex = 18
-        Me.lbl_返済方法_新令費用.Text = "新令・費用ﾘｰｽの債務取崩方法"
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(84, 63)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(434, 18)
+        Me.Label9.TabIndex = 8
+        Me.Label9.Text = "未払消費税・リース資産減損勘定の取崩方法を指定します"
         '
-        ' lbl_返済方法_新令費用_説明
+        'Label8
         '
-        Me.lbl_返済方法_新令費用_説明.AutoSize = True
-        Me.lbl_返済方法_新令費用_説明.Location = New System.Drawing.Point(113, 343)
-        Me.lbl_返済方法_新令費用_説明.Name = "lbl_返済方法_新令費用_説明"
-        Me.lbl_返済方法_新令費用_説明.TabIndex = 19
-        Me.lbl_返済方法_新令費用_説明.Text = "未払消費税・リース資産減損勘定の取崩方法を指定します"
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(11, 20)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(252, 18)
+        Me.Label8.TabIndex = 8
+        Me.Label8.Text = "新令・費用リースの債務取崩方法"
         '
-        ' ラベル574
+        'Label10
         '
-        Me.ラベル574.AutoSize = True
-        Me.ラベル574.Location = New System.Drawing.Point(15, 0)
-        Me.ラベル574.Name = "ラベル574"
-        Me.ラベル574.TabIndex = 20
-        Me.ラベル574.Text = "仕訳出力においてフレックス検索条件を加味する"
+        Me.Label10.AutoSize = True
+        Me.Label10.Location = New System.Drawing.Point(423, 116)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(26, 18)
+        Me.Label10.TabIndex = 14
+        Me.Label10.Text = "～"
         '
-        ' ラベル512
+        'GroupBox1
         '
-        Me.ラベル512.AutoSize = True
-        Me.ラベル512.Location = New System.Drawing.Point(14, 15)
-        Me.ラベル512.Name = "ラベル512"
-        Me.ラベル512.TabIndex = 21
-        Me.ラベル512.Text = "※月次仕訳計上ﾌﾚｯｸｽを検索条件で抽出した結果に対して\015\012　仕訳ﾃﾞｰﾀを作成します。部分出力以外に使用しないでください。"
+        Me.GroupBox1.Controls.Add(Me.Panel3)
+        Me.GroupBox1.Controls.Add(Me.Label7)
+        Me.GroupBox1.Location = New System.Drawing.Point(57, 198)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(921, 135)
+        Me.GroupBox1.TabIndex = 15
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "計算対象"
         '
-        ' chk_KJ_FLG_1
+        'GroupBox2
         '
-        Me.chk_KJ_FLG_1.AutoSize = True
-        Me.chk_KJ_FLG_1.Location = New System.Drawing.Point(56, 236)
-        Me.chk_KJ_FLG_1.Name = "chk_KJ_FLG_1"
-        Me.chk_KJ_FLG_1.TabIndex = 22
-        Me.chk_KJ_FLG_1.Text = ""
-        Me.chk_KJ_FLG_1.UseVisualStyleBackColor = True
+        Me.GroupBox2.Controls.Add(Me.Panel1)
+        Me.GroupBox2.Location = New System.Drawing.Point(57, 357)
+        Me.GroupBox2.Name = "GroupBox2"
+        Me.GroupBox2.Size = New System.Drawing.Size(921, 135)
+        Me.GroupBox2.TabIndex = 16
+        Me.GroupBox2.TabStop = False
+        Me.GroupBox2.Text = "仕訳出力対象"
         '
-        ' chk_KJ_FLG_2
+        'GroupBox3
         '
-        Me.chk_KJ_FLG_2.AutoSize = True
-        Me.chk_KJ_FLG_2.Location = New System.Drawing.Point(215, 236)
-        Me.chk_KJ_FLG_2.Name = "chk_KJ_FLG_2"
-        Me.chk_KJ_FLG_2.TabIndex = 23
-        Me.chk_KJ_FLG_2.Text = ""
-        Me.chk_KJ_FLG_2.UseVisualStyleBackColor = True
+        Me.GroupBox3.Controls.Add(Me.Panel2)
+        Me.GroupBox3.Location = New System.Drawing.Point(57, 514)
+        Me.GroupBox3.Name = "GroupBox3"
+        Me.GroupBox3.Size = New System.Drawing.Size(921, 135)
+        Me.GroupBox3.TabIndex = 17
+        Me.GroupBox3.TabStop = False
+        Me.GroupBox3.Text = "その他"
         '
-        ' chk_FX_SEARCH_FLG
+        'Form_f_KEIJO_JOKEN
         '
-        Me.chk_FX_SEARCH_FLG.AutoSize = True
-        Me.chk_FX_SEARCH_FLG.Location = New System.Drawing.Point(0, 2)
-        Me.chk_FX_SEARCH_FLG.Name = "chk_FX_SEARCH_FLG"
-        Me.chk_FX_SEARCH_FLG.TabIndex = 24
-        Me.chk_FX_SEARCH_FLG.Text = ""
-        Me.chk_FX_SEARCH_FLG.UseVisualStyleBackColor = True
-        '
-        ' オプション487
-        '
-        Me.オプション487.AutoSize = True
-        Me.オプション487.Location = New System.Drawing.Point(170, 150)
-        Me.オプション487.Name = "オプション487"
-        Me.オプション487.TabIndex = 25
-        Me.オプション487.Text = ""
-        Me.オプション487.UseVisualStyleBackColor = True
-        '
-        ' オプション489
-        '
-        Me.オプション489.AutoSize = True
-        Me.オプション489.Location = New System.Drawing.Point(246, 150)
-        Me.オプション489.Name = "オプション489"
-        Me.オプション489.TabIndex = 26
-        Me.オプション489.Text = ""
-        Me.オプション489.UseVisualStyleBackColor = True
-        '
-        ' Form_f_KEIJO_JOKEN
-        '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 12.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(10.0!, 18.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(491, 663)
-        Me.Controls.Add(Me.オプション487)
-        Me.Controls.Add(Me.オプション489)
-        Me.Controls.Add(Me.chk_KJ_FLG_1)
-        Me.Controls.Add(Me.chk_KJ_FLG_2)
-        Me.Controls.Add(Me.chk_FX_SEARCH_FLG)
-        Me.Controls.Add(Me.ラベル511)
-        Me.Controls.Add(Me.ラベル491)
-        Me.Controls.Add(Me.ラベル488)
-        Me.Controls.Add(Me.ラベル490)
-        Me.Controls.Add(Me.ラベル571)
-        Me.Controls.Add(Me.ラベル478)
-        Me.Controls.Add(Me.ラベル471)
-        Me.Controls.Add(Me.ラベル513)
-        Me.Controls.Add(Me.ラベル538)
-        Me.Controls.Add(Me.ラベル544)
-        Me.Controls.Add(Me.ラベル547)
-        Me.Controls.Add(Me.ラベル576)
-        Me.Controls.Add(Me.lbl_返済方法_新令費用)
-        Me.Controls.Add(Me.lbl_返済方法_新令費用_説明)
-        Me.Controls.Add(Me.ラベル574)
-        Me.Controls.Add(Me.ラベル512)
-        Me.Controls.Add(Me.txt_KIKAN_FROM)
-        Me.Controls.Add(Me.txt_KIKAN_TO)
-        Me.Controls.Add(Me.txt_GETU_CNT)
-        Me.Controls.Add(Me.cmd_実行)
+        Me.ClientSize = New System.Drawing.Size(1024, 671)
+        Me.Controls.Add(Me.Label10)
+        Me.Controls.Add(Me.Label3)
+        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.txt_DURATION)
+        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.txt_DATE_TO)
+        Me.Controls.Add(Me.txt_DATE_FROM)
+        Me.Controls.Add(Me.cmd_ZENKAI)
         Me.Controls.Add(Me.cmd_CANCEL)
-        Me.Controls.Add(Me.cmd_ZEN)
+        Me.Controls.Add(Me.cmd_EXECUTE)
+        Me.Controls.Add(Me.GroupBox1)
+        Me.Controls.Add(Me.GroupBox2)
+        Me.Controls.Add(Me.GroupBox3)
         Me.Name = "Form_f_KEIJO_JOKEN"
-        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
-        Me.Text = "月次仕訳計上フレックス　期間および出力設定"
+        Me.Text = "Form_f_FlexMonthlyJornalEntry"
+        Me.Panel3.ResumeLayout(False)
+        Me.Panel3.PerformLayout()
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
+        Me.Panel2.ResumeLayout(False)
+        Me.Panel2.PerformLayout()
+        Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
+        Me.GroupBox2.ResumeLayout(False)
+        Me.GroupBox3.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
 
-    Friend WithEvents cmd_実行 As System.Windows.Forms.Button
-    Friend WithEvents cmd_CANCEL As System.Windows.Forms.Button
-    Friend WithEvents cmd_ZEN As System.Windows.Forms.Button
-    Friend WithEvents txt_KIKAN_FROM As System.Windows.Forms.TextBox
-    Friend WithEvents txt_KIKAN_TO As System.Windows.Forms.TextBox
-    Friend WithEvents txt_GETU_CNT As System.Windows.Forms.TextBox
-    Friend WithEvents ラベル511 As System.Windows.Forms.Label
-    Friend WithEvents ラベル491 As System.Windows.Forms.Label
-    Friend WithEvents ラベル488 As System.Windows.Forms.Label
-    Friend WithEvents ラベル490 As System.Windows.Forms.Label
-    Friend WithEvents ラベル571 As System.Windows.Forms.Label
-    Friend WithEvents ラベル478 As System.Windows.Forms.Label
-    Friend WithEvents ラベル471 As System.Windows.Forms.Label
-    Friend WithEvents ラベル513 As System.Windows.Forms.Label
-    Friend WithEvents ラベル538 As System.Windows.Forms.Label
-    Friend WithEvents ラベル544 As System.Windows.Forms.Label
-    Friend WithEvents ラベル547 As System.Windows.Forms.Label
-    Friend WithEvents ラベル576 As System.Windows.Forms.Label
-    Friend WithEvents lbl_返済方法_新令費用 As System.Windows.Forms.Label
-    Friend WithEvents lbl_返済方法_新令費用_説明 As System.Windows.Forms.Label
-    Friend WithEvents ラベル574 As System.Windows.Forms.Label
-    Friend WithEvents ラベル512 As System.Windows.Forms.Label
-    Friend WithEvents chk_KJ_FLG_1 As System.Windows.Forms.CheckBox
-    Friend WithEvents chk_KJ_FLG_2 As System.Windows.Forms.CheckBox
-    Friend WithEvents chk_FX_SEARCH_FLG As System.Windows.Forms.CheckBox
-    Friend WithEvents オプション487 As System.Windows.Forms.RadioButton
-    Friend WithEvents オプション489 As System.Windows.Forms.RadioButton
-
+    Friend WithEvents cmd_EXECUTE As Button
+    Friend WithEvents cmd_CANCEL As Button
+    Friend WithEvents cmd_ZENKAI As Button
+    Friend WithEvents txt_DATE_FROM As DateTimePicker
+    Friend WithEvents txt_DATE_TO As DateTimePicker
+    Friend WithEvents Label1 As Label
+    Friend WithEvents txt_DURATION As TextBox
+    Friend WithEvents Label2 As Label
+    Friend WithEvents Label3 As Label
+    Friend WithEvents Label7 As Label
+    Friend WithEvents Panel3 As Panel
+    Friend WithEvents radio_BUKN As RadioButton
+    Friend WithEvents radio_HAIF As RadioButton
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents chk_KEIJO As CheckBox
+    Friend WithEvents chk_SHORI As CheckBox
+    Friend WithEvents Panel2 As Panel
+    Friend WithEvents cmb_SETTEI As ComboBox
+    Friend WithEvents Label9 As Label
+    Friend WithEvents Label8 As Label
+    Friend WithEvents Label10 As Label
+    Friend WithEvents GroupBox1 As GroupBox
+    Friend WithEvents GroupBox2 As GroupBox
+    Friend WithEvents GroupBox3 As GroupBox
 End Class

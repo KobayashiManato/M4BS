@@ -9,6 +9,7 @@ Partial Public Class Form_f_flx_SAIMU
     Public Property DtFrom As Date
     Public Property DtTo As Date
 
+    Private Const FMT_CURRENCY As String = "#,##0"
     Private _crud As New CrudHelper()
 
     Public Sub New()
@@ -32,7 +33,7 @@ Partial Public Class Form_f_flx_SAIMU
 
         dgv_LIST.DataSource = _crud.GetDataTable(sql, prms)
 
-        dgv_LIST.HideColumns("kykm_id", "kykh_id")
+        ApplyGridStyle(dgv_LIST)
     End Sub
 
     Private Function BuildSql(searchText As String, ByRef prms As List(Of NpgsqlParameter)) As String
@@ -111,13 +112,19 @@ Partial Public Class Form_f_flx_SAIMU
         Next
 
         Dim totalRow As DataRow = dtTotal.NewRow()
-        totalRow("取得価額") = totalSyutok
+        totalRow("取得価額") = ToCurrency(totalSyutok)
 
         dtTotal.Rows.Add(totalRow)
 
         dgv_TOTAL.DataSource = dtTotal
 
-        dgv_TOTAL.HideColumns("kykm_id", "kykh_id")
+        ApplyGridStyle(dgv_TOTAL)
+    End Sub
+
+    Private Sub ApplyGridStyle(dgv As DataGridView)
+        dgv.HideColumns("kykm_id", "kykh_id")
+
+        dgv.FormatColumn("取得価額", FMT_CURRENCY)
     End Sub
 
     ' [閉じる]ボタン
@@ -136,7 +143,7 @@ Partial Public Class Form_f_flx_SAIMU
 
         If selectedRow Is Nothing Then Return
 
-        Dim frm As New Form_f_CHUKI_SCH
+        Dim frm As New Form_f_CHUKI_SCH()
         frm.KykmId = Convert.ToDouble(selectedRow.Cells("kykm_id").Value)
 
         frm.ShowDialog()
@@ -148,20 +155,20 @@ Partial Public Class Form_f_flx_SAIMU
 
         If selectedRow Is Nothing Then Return
 
-        Dim frmBukn As New FrmBuknEntry
-
+        Dim frmBukn As New Form_BuknEntry()
         frmBukn.KykmId = Convert.ToDouble(selectedRow.Cells("kykm_id").Value)
+
         frmBukn.ShowDialog()
 
-        Dim frmContract As New FrmContractEntry
-
+        Dim frmContract As New Form_ContractEntry()
         frmContract.KykhId = Convert.ToDouble(selectedRow.Cells("kykh_id").Value)
+
         frmContract.ShowDialog()
     End Sub
 
     ' [ファイル出力]ボタン
     Private Sub cmd_OUTPUT_FILE_Click(sender As Object, e As EventArgs) Handles cmd_OUTPUT_FILE.Click
-        Dim frm As New Form_f_FlexOutputDLG
+        Dim frm As New Form_f_FlexOutputDLG()
         frm.Dgv = dgv_LIST
 
         frm.ShowDialog()

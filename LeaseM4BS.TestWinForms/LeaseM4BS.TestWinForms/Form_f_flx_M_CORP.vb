@@ -3,6 +3,7 @@ Imports System.Windows.Forms
 Imports LeaseM4BS.DataAccess
 Imports Npgsql
 
+' --- 会社 ---
 Partial Public Class Form_f_flx_M_CORP
     Inherits Form
 
@@ -72,7 +73,7 @@ Partial Public Class Form_f_flx_M_CORP
 
     ' [新規] ボタン
     Private Sub cmd_NEW_Click(sender As Object, e As EventArgs) Handles cmd_NEW.Click
-        Dim frm As New Form_f_M_CORP_INP
+        Dim frm As New Form_f_M_CORP_INP()
         frm.ShowDialog()
 
         SearchData()
@@ -84,7 +85,7 @@ Partial Public Class Form_f_flx_M_CORP
 
         If selectedRow Is Nothing Then Return
 
-        Dim frm As New Form_f_M_CORP_CHANGE
+        Dim frm As New Form_f_M_CORP_CHANGE()
         frm.CorpId = Convert.ToDouble(selectedRow.Cells("id").Value)
         frm.ShowDialog()
 
@@ -93,7 +94,7 @@ Partial Public Class Form_f_flx_M_CORP
 
     ' [ファイル出力] ボタン
     Private Sub cmd_OUTPUT_FILE_Click(sender As Object, e As EventArgs) Handles cmd_OUTPUT_FILE.Click
-        Dim frm As New Form_f_FlexOutputDLG
+        Dim frm As New Form_f_FlexOutputDLG()
         frm.Dgv = dgv_LIST
 
         frm.ShowDialog()

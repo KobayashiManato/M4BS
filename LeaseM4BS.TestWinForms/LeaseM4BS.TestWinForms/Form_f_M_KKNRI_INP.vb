@@ -16,44 +16,6 @@ Partial Public Class Form_f_M_KKNRI_INP
         LoadPtnCombo(cmb_PTN_CD4)
     End Sub
 
-    ' =========================================================
-    '  コンボボックスの3列描画 (Access完全再現・罫線付き)
-    ' =========================================================
-    Private Sub Combo_KKNRI2_DrawItem(sender As Object, e As DrawItemEventArgs) Handles cmb_KKNRI2_CD.DrawItem
-        Combo_DrawItem(sender, e, {"kknri2_cd", "kknri2_nm"})
-    End Sub
-
-    Private Sub Combo_KKNRI3_DrawItem(sender As Object, e As DrawItemEventArgs) Handles cmb_KKNRI3_CD.DrawItem
-        Combo_DrawItem(sender, e, {"kknri3_cd", "kknri3_nm"})
-    End Sub
-
-    Private Sub Combo_CORP_DrawItem(sender As Object, e As DrawItemEventArgs) Handles cmb_CORP1_CD.DrawItem
-        Combo_DrawItem(sender, e, {"corp1_cd", "corp1_nm"})
-    End Sub
-
-    Private Sub Combo_PTN_DrawItem(sender As Object, e As DrawItemEventArgs) Handles cmb_PTN_CD4.DrawItem
-        Combo_DrawItem(sender, e, {"hrel_ptn_cd4", "hrel_ptn_nm4"})
-    End Sub
-
-    ' =========================================================
-    '  コンボボックス選択時の連動 (Accessの =Column(x) 再現)
-    ' =========================================================
-    Private Sub cmb_KKNRI2_CD_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_KKNRI2_CD.SelectedIndexChanged
-        cmb_KKNRI2_CD.SyncTo("kknri2_nm", txt_KKNRI2_NM)
-    End Sub
-
-    Private Sub cmb_KKNRI3_CD_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_KKNRI3_CD.SelectedIndexChanged
-        cmb_KKNRI3_CD.SyncTo("kknri3_nm", txt_KKNRI3_NM)
-    End Sub
-
-    Private Sub cmb_CORP1_CD_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_CORP1_CD.SelectedIndexChanged
-        cmb_CORP1_CD.SyncTo("corp1_nm", txt_CORP1_NM)
-    End Sub
-
-    Private Sub cmb_PTN_CD4_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_PTN_CD4.SelectedIndexChanged
-        cmb_PTN_CD4.SyncTo("hrel_ptn_nm4", txt_PTN_NM4)
-    End Sub
-
     ' [閉じる] ボタン
     Private Sub cmd_CLOSE_Click(sender As Object, e As EventArgs) Handles cmd_CLOSE.Click
         Me.Close()
@@ -105,5 +67,43 @@ Partial Public Class Form_f_M_KKNRI_INP
     Private Sub FormKeyDown(sender As Object, e As KeyEventArgs) Handles MyBase.KeyDown
         ' エンターキーが押されたら次のコントロールへ移動
         HandleEnterKeyNavigation(Me, e)
+    End Sub
+
+    ' =========================================================
+    '  コンボボックスの3列描画 (Access完全再現・罫線付き)
+    ' =========================================================
+    Private Sub Combo_KKNRI2_DrawItem(sender As Object, e As DrawItemEventArgs) Handles cmb_KKNRI2_CD.DrawItem
+        Combo_DrawItem(sender, e, {"kknri2_cd", "kknri2_nm"})
+    End Sub
+
+    Private Sub Combo_KKNRI3_DrawItem(sender As Object, e As DrawItemEventArgs) Handles cmb_KKNRI3_CD.DrawItem
+        Combo_DrawItem(sender, e, {"kknri3_cd", "kknri3_nm"})
+    End Sub
+
+    Private Sub Combo_CORP_DrawItem(sender As Object, e As DrawItemEventArgs) Handles cmb_CORP1_CD.DrawItem
+        Combo_DrawItem(sender, e, {"corp1_cd", "corp1_nm"})
+    End Sub
+
+    Private Sub Combo_PTN_DrawItem(sender As Object, e As DrawItemEventArgs) Handles cmb_PTN_CD4.DrawItem
+        Combo_DrawItem(sender, e, {"hrel_ptn_cd4", "hrel_ptn_nm4"})
+    End Sub
+
+    ' =========================================================
+    '  コンボボックス選択時の連動 (Accessの =Column(x) 再現)
+    ' =========================================================
+    Private Sub cmb_KKNRI2_CD_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_KKNRI2_CD.SelectedIndexChanged
+        cmb_KKNRI2_CD.SyncTo("kknri2_nm", txt_KKNRI2_NM)
+    End Sub
+
+    Private Sub cmb_KKNRI3_CD_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_KKNRI3_CD.SelectedIndexChanged
+        cmb_KKNRI3_CD.SyncTo("kknri3_nm", txt_KKNRI3_NM)
+    End Sub
+
+    Private Sub cmb_CORP1_CD_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_CORP1_CD.SelectedIndexChanged
+        cmb_CORP1_CD.SyncTo("corp1_nm", txt_CORP1_NM)
+    End Sub
+
+    Private Sub cmb_PTN_CD4_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_PTN_CD4.SelectedIndexChanged
+        cmb_PTN_CD4.SyncTo("hrel_ptn_nm4", txt_PTN_NM4)
     End Sub
 End Class

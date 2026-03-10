@@ -8,8 +8,8 @@ Imports Npgsql
 Public Class Form_f_CHUKI_SCH
     Public Property KykmId As Double
 
+    Private Const FMT_CURRENCY As String = "#,##0"
     Private _crud As New CrudHelper()
-
     Private m_rowIndex As Integer = 0
 
     Private Sub Form_f_CHUKI_SCH_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -22,6 +22,8 @@ Public Class Form_f_CHUKI_SCH
         dgv_LIST.AutoGenerateColumns = True
 
         dgv_LIST.DataSource = _crud.GetDataTable(sql, prms)
+
+        ApplyGridStyle()
 
         LoadDgvTotal()
     End Sub
@@ -45,36 +47,36 @@ Public Class Form_f_CHUKI_SCH
 
             Dim row As DataRow = dt.Rows(0)
 
-            txt_KYKM_NO.Text = row("kykm_no").ToString()
-            txt_BUKN_NM.Text = row("bukn_nm").ToString()
-            txt_LEAKBN_NM.Text = row("leakbn_nm").ToString()
-            txt_SKYAK_HO_NM.Text = row("skyak_ho_nm").ToString()
-            ' txt_SKYAK_RITU.Text = row("")
-            txt_SKMK_NM.Text = row("skmk_nm").ToString()
-            txt_BKIND_NM.Text = row("bkind_nm").ToString()
+            txt_KYKM_NO.SetText(row("kykm_no"))
+            txt_BUKN_NM.SetText(row("bukn_nm"))
+            txt_LEAKBN_NM.SetText(row("leakbn_nm"))
+            txt_SKYAK_HO_NM.SetText(row("skyak_ho_nm"))
+            ' txt_SKYAK_RITU.SetText(row(""))
+            txt_SKMK_NM.SetText(row("skmk_nm"))
+            txt_BKIND_NM.SetText(row("bkind_nm"))
             txt_START_DT.Text = ToDateStr(row("start_dt"))
             txt_END_DT.Text = ToDateStr(row("end_dt"))
-            txt_LKIKAN.Text = row("lkikan").ToString()
-            txt_MKAISU.Text = row("mkaisu").ToString()
-            txt_SHRI_CNT.Text = row("shri_cnt").ToString()
+            txt_LKIKAN.SetText(row("lkikan"))
+            txt_MKAISU.SetText(row("mkaisu"))
+            txt_SHRI_CNT.SetText(row("shri_cnt"))
             txt_MAE_DT.Text = ToDateStr(row("mae_dt"))
             txt_SHRI_DT1.Text = ToDateStr(row("shri_dt1"))
             txt_SHRI_DT2.Text = ToDateStr(row("shri_dt2"))
-            txt_SHRI_DT3.Text = row("shri_dt3").ToString()
+            txt_SHRI_DT3.SetText(row("shri_dt3"))
             txt_SHRI_EN_DT.Text = ToDateStr(row("shri_en_dt"))
             txt_CKAIYK_DT.Text = ToDateStr(row("ckaiyk_dt"))
-            txt_CKAIYK_ESDT.Text = row("ckaiyk_esdt_t").ToString()  ' ckaiyk_esdt_hかも
-            txt_KLSRYO.Text = row("b_klsryo").ToString()
-            txt_SLSRYO.Text = row("b_slsryo").ToString()
-            txt_IJIKNR.Text = row("b_ijiknr").ToString()
-            txt_ZANRYO.Text = row("b_zanryo").ToString()
-            txt_KNYUKN.Text = row("b_knyukn").ToString()
-            ' txt_ZEI.Text = row("")
-            txt_KARI_RITU.Text = row("kari_ritu").ToString()
-            txt_GNZAI_KT.Text = row("b_gnzai_kt").ToString()
-            txt_SYUTOK.Text = row("b_syutok").ToString()
-            txt_KSAN_RITU.Text = row("ksan_ritu").ToString()
-            txt_LB.Text = row("b_lb_soneki").ToString()
+            txt_CKAIYK_ESDT.SetText(row("ckaiyk_esdt_t"))     ' ckaiyk_esdt_hかも
+            txt_KLSRYO.SetAmount(row("b_klsryo"))
+            txt_SLSRYO.SetAmount(row("b_slsryo"))
+            txt_IJIKNR.SetAmount(row("b_ijiknr"))
+            txt_ZANRYO.SetAmount(row("b_zanryo"))
+            txt_KNYUKN.SetAmount(row("b_knyukn"))
+            ' txt_ZEI.SetText(row(""))
+            txt_KARI_RITU.SetText(row("kari_ritu"))
+            txt_GNZAI_KT.SetAmount(row("b_gnzai_kt"))
+            txt_SYUTOK.SetAmount(row("b_syutok"))
+            txt_KSAN_RITU.SetText(row("ksan_ritu"))
+            txt_LB.SetAmount(row("b_lb_soneki"))
 
         Catch ex As Exception
             MessageBox.Show("詳細読込エラー: " & ex.Message)
@@ -123,9 +125,9 @@ Public Class Form_f_CHUKI_SCH
             rlsryo -= klsryo
 
             prms.Add(New NpgsqlParameter($"@dt{i}", currentDt.ToString("yyyy/MM")))
-            prms.Add(New NpgsqlParameter($"@klsryo{i}", klsryo.ToString()))
-            prms.Add(New NpgsqlParameter($"@ghassei{i}", ghassei.ToString()))
-            prms.Add(New NpgsqlParameter($"@rlsryo{i}", rlsryo.ToString()))
+            prms.Add(New NpgsqlParameter($"@klsryo{i}", klsryo))
+            prms.Add(New NpgsqlParameter($"@ghassei{i}", ghassei))
+            prms.Add(New NpgsqlParameter($"@rlsryo{i}", rlsryo))
 
             currentDt = currentDt.AddMonths(1)
             i += 1
@@ -135,6 +137,14 @@ Public Class Form_f_CHUKI_SCH
 
         Return sb.ToString()
     End Function
+
+    Private Sub ApplyGridStyle()
+        dgv_LIST.FormatColumn("支払リース料", FMT_CURRENCY)
+        dgv_LIST.FormatColumn("発生リース料", FMT_CURRENCY)
+        dgv_LIST.FormatColumn("未経過リース料残高相当額", FMT_CURRENCY)
+        dgv_LIST.FormatColumn("減価償却累計額相当額", FMT_CURRENCY)
+        dgv_LIST.FormatColumn("維持管理費用", FMT_CURRENCY)
+    End Sub
 
     Private Sub LoadDgvTotal()
         Dim totalKlsryo As Integer = 0
@@ -159,16 +169,16 @@ Public Class Form_f_CHUKI_SCH
         Dim totalRow2 As DataRow = dtTotal.NewRow()
 
         totalRow("年月") = "計"
-        totalRow("支払リース料") = totalKlsryo
-        totalRow("発生リース料") = totalGhassei
-        totalRow("維持管理費用") = totalIjiknr
+        totalRow("支払リース料") = totalKlsryo.ToString(FMT_CURRENCY)
+        totalRow("発生リース料") = totalGhassei.ToString(FMT_CURRENCY)
+        totalRow("維持管理費用") = totalIjiknr.ToString(FMT_CURRENCY)
 
         dtTotal.Rows.Add(totalRow)  ' 計
 
         totalRow2("年月") = "解約含む"
-        totalRow2("支払リース料") = totalKlsryo
-        totalRow2("発生リース料") = totalGhassei
-        totalRow2("維持管理費用") = totalIjiknr
+        totalRow2("支払リース料") = totalKlsryo.ToString(FMT_CURRENCY)
+        totalRow2("発生リース料") = totalGhassei.ToString(FMT_CURRENCY)
+        totalRow2("維持管理費用") = totalIjiknr.ToString(FMT_CURRENCY)
 
         dtTotal.Rows.Add(totalRow2)  ' 解約含む
 
@@ -193,8 +203,9 @@ Public Class Form_f_CHUKI_SCH
                   "LEFT JOIN d_kykh kykh ON kykm.kykh_id = kykh.kykh_id " &
                   "WHERE kykm.kykm_id = @kykmId"
 
-        Dim prms As New List(Of NpgsqlParameter)
-        prms.Add(New NpgsqlParameter("@kykmId", KykmId))
+        Dim prms As New List(Of NpgsqlParameter) From {
+            {New NpgsqlParameter("@kykmId", KykmId)}
+        }
 
         Dim row As DataRow = _crud.GetDataTable(sql, prms).Rows(0)
 
@@ -230,8 +241,9 @@ Public Class Form_f_CHUKI_SCH
     Private Function GetSlsryo() As Integer
         Dim sql = "SELECT b_slsryo FROM d_kykm kykm WHERE kykm.kykm_id = @kykmId "
 
-        Dim prms As New List(Of NpgsqlParameter)
-        prms.Add(New NpgsqlParameter("@kykmId", KykmId))
+        Dim prms As New List(Of NpgsqlParameter) From {
+            {New NpgsqlParameter("@kykmId", KykmId)}
+        }
 
         Dim row As DataRow = _crud.GetDataTable(sql, prms).Rows(0)
 

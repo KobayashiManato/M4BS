@@ -11,59 +11,154 @@ Partial Public Class Form_f_M_LCPT_CHANGE
 
         Try
             ' --- ヘッダ取得 (ID指定) ---
-            Dim sqlHead As String = "SELECT * FROM m_lcpt WHERE lcpt_id = @id"
+            Dim sql As String = "SELECT * FROM m_lcpt WHERE lcpt_id = @id"
 
-            Dim prmHead As New List(Of Npgsql.NpgsqlParameter) From {
+            Dim prm As New List(Of Npgsql.NpgsqlParameter) From {
                 New Npgsql.NpgsqlParameter("@id", LcptId)
             }
 
-            Dim dtHead As DataTable = _crud.GetDataTable(sqlHead, prmHead)
+            Dim dt As DataTable = _crud.GetDataTable(sql, prm)
 
-            If dtHead.Rows.Count > 0 Then
-                Dim row As DataRow = dtHead.Rows(0)
+            If dt.Rows.Count = 0 Then Return
 
-                ' 画面項目に値をセット
-                txt_LCPT1_CD.Text = row("lcpt1_cd").ToString()
-                txt_LCPT1_NM.Text = row("lcpt1_nm").ToString()
-                cmb_LCPT2_CD.SelectedValue = row("lcpt2_cd").ToString()
-                txt_LCPT2_NM.Text = row("lcpt2_nm").ToString()
-                cmb_SUM1_CD.SelectedValue = row("sum1_cd").ToString()
-                txt_SUM1_NM.Text = row("sum1_nm").ToString()
-                cmb_SUM2_CD.SelectedValue = row("sum2_cd").ToString()
-                txt_SUM2_NM.Text = row("sum2_nm").ToString()
-                cmb_SUM3_CD.SelectedValue = row("sum3_cd").ToString()
-                txt_SUM3_NM.Text = row("sum3_nm").ToString()
+            Dim row As DataRow = dt.Rows(0)
 
-                ' 1行目
-                txt_SHIME_DAY_1.Text = row("shime_day_1").ToString()
-                txt_SSHRI_KN1_1.Text = row("sshri_kn1_1").ToString()
-                txt_SHRI_DAY1_1.Text = row("shri_day1_1").ToString()
-                txt_SSHRI_KN2_1.Text = row("sshri_kn2_1").ToString()
-                txt_SHRI_DAY2_1.Text = row("shri_day2_1").ToString()
+            ' 画面項目に値をセット
+            txt_LCPT1_CD.SetText(row("lcpt1_cd"))
+            txt_LCPT1_NM.SetText(row("lcpt1_nm"))
+            cmb_LCPT2_CD.SelectedValue = row("lcpt2_cd").ToString()
+            txt_LCPT2_NM.SetText(row("lcpt2_nm"))
+            cmb_SUM1_CD.SelectedValue = row("sum1_cd").ToString()
+            txt_SUM1_NM.SetText(row("sum1_nm"))
+            cmb_SUM2_CD.SelectedValue = row("sum2_cd").ToString()
+            txt_SUM2_NM.SetText(row("sum2_nm"))
+            cmb_SUM3_CD.SelectedValue = row("sum3_cd").ToString()
+            txt_SUM3_NM.SetText(row("sum3_nm"))
 
-                ' 2行目
-                txt_SHIME_DAY_2.Text = row("shime_day_2").ToString()
-                txt_SSHRI_KN1_2.Text = row("sshri_kn1_2").ToString()
-                txt_SHRI_DAY1_2.Text = row("shri_day1_2").ToString()
-                txt_SSHRI_KN2_2.Text = row("sshri_kn2_2").ToString()
-                txt_SHRI_DAY2_2.Text = row("shri_day2_2").ToString()
+            ' 1行目
+            txt_SHIME_DAY_1.SetText(row("shime_day_1"))
+            txt_SSHRI_KN1_1.SetText(row("sshri_kn1_1"))
+            txt_SHRI_DAY1_1.SetText(row("shri_day1_1"))
+            txt_SSHRI_KN2_1.SetText(row("sshri_kn2_1"))
+            txt_SHRI_DAY2_1.SetText(row("shri_day2_1"))
 
-                ' 3行目
-                txt_SHIME_DAY_3.Text = row("shime_day_3").ToString()
-                txt_SSHRI_KN1_3.Text = row("sshri_kn1_3").ToString()
-                txt_SHRI_DAY1_3.Text = row("shri_day1_3").ToString()
-                txt_SSHRI_KN2_3.Text = row("sshri_kn2_3").ToString()
-                txt_SHRI_DAY2_3.Text = row("shri_day2_3").ToString()
+            ' 2行目
+            txt_SHIME_DAY_2.SetText(row("shime_day_2"))
+            txt_SSHRI_KN1_2.SetText(row("sshri_kn1_2"))
+            txt_SHRI_DAY1_2.SetText(row("shri_day1_2"))
+            txt_SSHRI_KN2_2.SetText(row("sshri_kn2_2"))
+            txt_SHRI_DAY2_2.SetText(row("shri_day2_2"))
 
-                txt_SAI_DENOMI.Text = row("sai_denomi").ToString()
-                txt_BIKO.Text = row("biko").ToString()
-                txt_CREATE_DT.Text = row("create_dt").ToString()
-                txt_UPDATE_DT.Text = row("update_dt").ToString()
-                txt_LCPT_ID.Text = row("lcpt_id").ToString()
-            End If
+            ' 3行目
+            txt_SHIME_DAY_3.SetText(row("shime_day_3"))
+            txt_SSHRI_KN1_3.SetText(row("sshri_kn1_3"))
+            txt_SHRI_DAY1_3.SetText(row("shri_day1_3"))
+            txt_SSHRI_KN2_3.SetText(row("sshri_kn2_3"))
+            txt_SHRI_DAY2_3.SetText(row("shri_day2_3"))
+
+            txt_SAI_DENOMI.SetText(row("sai_denomi"))
+            txt_BIKO.SetText(row("biko"))
+            txt_CREATE_DT.SetText(row("create_dt"))
+            txt_UPDATE_DT.SetText(row("update_dt"))
+            txt_LCPT_ID.SetText(row("lcpt_id"))
+
         Catch ex As Exception
             MessageBox.Show("詳細読込エラー: " & ex.Message)
         End Try
+    End Sub
+
+    ' [閉じる] ボタン
+    Private Sub cmd_CLOSE_Click(sender As Object, e As EventArgs) Handles cmd_CLOSE.Click
+        Me.Close()
+    End Sub
+
+    ' [変更登録] ボタン
+
+    Private Sub cmd_CREATE_Click(sender As Object, e As EventArgs) Handles cmd_CREATE.Click
+        ' 必須項目が未入力
+        If txt_LCPT1_CD.Text = "" Or txt_LCPT1_NM.Text = "" Then
+            MessageBox.Show("必須項目が未入力です", "登録不可", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            Return
+        End If
+        If MessageBox.Show("登録してもよろしいですか？", "登録確認", MessageBoxButtons.YesNo) = DialogResult.No Then
+            Return
+        End If
+
+        Dim lcpt As New Dictionary(Of String, Object)
+        lcpt("lcpt1_cd") = txt_LCPT1_CD.Text
+        lcpt("lcpt1_nm") = txt_LCPT1_NM.Text
+        lcpt("lcpt2_cd") = cmb_LCPT2_CD.SelectedValue
+        lcpt("lcpt2_nm") = txt_LCPT2_NM.Text
+        lcpt("sum1_cd") = cmb_SUM1_CD.SelectedValue
+        lcpt("sum1_nm") = txt_SUM1_NM.Text
+        lcpt("sum2_cd") = cmb_SUM2_CD.SelectedValue
+        lcpt("sum2_nm") = txt_SUM2_NM.Text
+        lcpt("sum3_cd") = cmb_SUM3_CD.SelectedValue
+        lcpt("sum3_nm") = txt_SUM3_NM.Text
+
+        ' 1行目
+        lcpt("shime_day_1") = NzInt(txt_SHIME_DAY_1.Text, DBNull.Value)
+        lcpt("sshri_kn1_1") = NzInt(txt_SSHRI_KN1_1.Text, DBNull.Value)
+        lcpt("shri_day1_1") = NzInt(txt_SHRI_DAY1_1.Text, DBNull.Value)
+        lcpt("sshri_kn2_1") = NzInt(txt_SSHRI_KN2_1.Text, DBNull.Value)
+        lcpt("shri_day2_1") = NzInt(txt_SHRI_DAY2_1.Text, DBNull.Value)
+
+        ' 2行目
+        lcpt("shime_day_2") = NzInt(txt_SHIME_DAY_2.Text, DBNull.Value)
+        lcpt("sshri_kn1_2") = NzInt(txt_SSHRI_KN1_2.Text, DBNull.Value)
+        lcpt("shri_day1_2") = NzInt(txt_SHRI_DAY1_2.Text, DBNull.Value)
+        lcpt("sshri_kn2_2") = NzInt(txt_SSHRI_KN2_2.Text, DBNull.Value)
+        lcpt("shri_day2_2") = NzInt(txt_SHRI_DAY2_2.Text, DBNull.Value)
+
+        ' 3行目
+        lcpt("shime_day_3") = NzInt(txt_SHIME_DAY_3.Text, DBNull.Value)
+        lcpt("sshri_kn1_3") = NzInt(txt_SSHRI_KN1_3.Text, DBNull.Value)
+        lcpt("shri_day1_3") = NzInt(txt_SHRI_DAY1_3.Text, DBNull.Value)
+        lcpt("sshri_kn2_3") = NzInt(txt_SSHRI_KN2_3.Text, DBNull.Value)
+        lcpt("shri_day2_3") = NzInt(txt_SHRI_DAY2_3.Text, DBNull.Value)
+
+        lcpt("update_dt") = DateTime.Now
+
+        Dim currentCnt As Integer = _crud.ExecuteScalar(Of Integer)("SELECT update_cnt FROM m_kknri WHERE kknri_id = @id",
+                                    New List(Of NpgsqlParameter) From {New NpgsqlParameter("@id", CInt(txt_LCPT_ID.Text))})
+        lcpt("update_cnt") = currentCnt + 1
+
+        ' パラメータ設定
+        Dim prms As New List(Of NpgsqlParameter) From {
+            {New NpgsqlParameter("@id", Integer.Parse(txt_LCPT_ID.Text))}
+        }
+
+        ' 行を更新
+        _crud.Update("m_lcpt", lcpt, "lcpt_id = @id", prms)
+
+        Me.Close()
+    End Sub
+
+    ' [削除] ボタン
+    Private Sub cmd_DELETE_Click(sender As Object, e As EventArgs) Handles cmd_DELETE.Click
+        If String.IsNullOrWhiteSpace(txt_LCPT_ID.Text) Then
+            MessageBox.Show("削除対象が選択されていません。", "エラー", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Return
+        End If
+
+        If MessageBox.Show("削除してもよろしいですか？", "削除確認", MessageBoxButtons.YesNo) = DialogResult.No Then
+            Return
+        End If
+
+        ' パラメータ設定
+        Dim prms As New List(Of NpgsqlParameter) From {
+            {New NpgsqlParameter("@id", Integer.Parse(txt_LCPT_ID.Text))}
+        }
+
+        ' 行を削除
+        _crud.Delete("m_lcpt", "lcpt_id = @id", prms)
+
+        Me.Close()
+    End Sub
+
+    Private Sub FormKeyDown(sender As Object, e As KeyEventArgs) Handles MyBase.KeyDown
+        ' エンターキーが押されたら次のコントロールへ移動
+        HandleEnterKeyNavigation(Me, e)
     End Sub
 
     ' =========================================================
@@ -102,99 +197,5 @@ Partial Public Class Form_f_M_LCPT_CHANGE
 
     Private Sub cmb_SUM3_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_SUM3_CD.SelectedIndexChanged
         cmb_SUM3_CD.SyncTo("sum3_nm", txt_SUM3_NM)
-    End Sub
-
-    ' [閉じる] ボタン
-    Private Sub cmd_CLOSE_Click(sender As Object, e As EventArgs) Handles cmd_CLOSE.Click
-        Me.Close()
-    End Sub
-
-    ' [変更登録] ボタン
-
-    Private Sub cmd_CREATE_Click(sender As Object, e As EventArgs) Handles cmd_CREATE.Click
-        ' 必須項目が未入力
-        If txt_LCPT1_CD.Text = "" Or txt_LCPT1_NM.Text = "" Then
-            MessageBox.Show("必須項目が未入力です", "登録不可", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
-            Return
-        End If
-        If MessageBox.Show("登録してもよろしいですか？", "登録確認", MessageBoxButtons.YesNo) = DialogResult.No Then
-            Return
-        End If
-
-        Dim lcpt As New Dictionary(Of String, Object)
-        lcpt("lcpt1_cd") = txt_LCPT1_CD.Text
-        lcpt("lcpt1_nm") = txt_LCPT1_NM.Text
-        lcpt("lcpt2_cd") = cmb_LCPT2_CD.SelectedValue
-        lcpt("lcpt2_nm") = txt_LCPT2_NM.Text
-        lcpt("sum1_cd") = cmb_SUM1_CD.SelectedValue
-        lcpt("sum1_nm") = txt_SUM1_NM.Text
-        lcpt("sum2_cd") = cmb_SUM2_CD.SelectedValue
-        lcpt("sum2_nm") = txt_SUM2_NM.Text
-        lcpt("sum3_cd") = cmb_SUM3_CD.SelectedValue
-        lcpt("sum3_nm") = txt_SUM3_NM.Text
-
-        Dim res As Integer
-
-        ' 1行目
-        lcpt("shime_day_1") = If(Integer.TryParse(txt_SHIME_DAY_1.Text, Res), Res, DBNull.Value)
-        lcpt("sshri_kn1_1") = If(Integer.TryParse(txt_SSHRI_KN1_1.Text, Res), Res, DBNull.Value)
-        lcpt("shri_day1_1") = If(Integer.TryParse(txt_SHRI_DAY1_1.Text, Res), Res, DBNull.Value)
-        lcpt("sshri_kn2_1") = If(Integer.TryParse(txt_SSHRI_KN2_1.Text, Res), Res, DBNull.Value)
-        lcpt("shri_day2_1") = If(Integer.TryParse(txt_SHRI_DAY2_1.Text, Res), Res, DBNull.Value)
-
-        ' 2行目
-        lcpt("shime_day_2") = If(Integer.TryParse(txt_SHIME_DAY_2.Text, res), res, DBNull.Value)
-        lcpt("sshri_kn1_2") = If(Integer.TryParse(txt_SSHRI_KN1_2.Text, res), res, DBNull.Value)
-        lcpt("shri_day1_2") = If(Integer.TryParse(txt_SHRI_DAY1_2.Text, res), res, DBNull.Value)
-        lcpt("sshri_kn2_2") = If(Integer.TryParse(txt_SSHRI_KN2_2.Text, res), res, DBNull.Value)
-        lcpt("shri_day2_2") = If(Integer.TryParse(txt_SHRI_DAY2_2.Text, res), res, DBNull.Value)
-
-        ' 3行目
-        lcpt("shime_day_3") = If(Integer.TryParse(txt_SHIME_DAY_3.Text, res), res, DBNull.Value)
-        lcpt("sshri_kn1_3") = If(Integer.TryParse(txt_SSHRI_KN1_3.Text, res), res, DBNull.Value)
-        lcpt("shri_day1_3") = If(Integer.TryParse(txt_SHRI_DAY1_3.Text, res), res, DBNull.Value)
-        lcpt("sshri_kn2_3") = If(Integer.TryParse(txt_SSHRI_KN2_3.Text, res), res, DBNull.Value)
-        lcpt("shri_day2_3") = If(Integer.TryParse(txt_SHRI_DAY2_3.Text, res), res, DBNull.Value)
-
-        lcpt("update_dt") = DateTime.Now
-
-        Dim currentCnt As Integer = _crud.ExecuteScalar(Of Integer)("SELECT update_cnt FROM m_kknri WHERE kknri_id = @id",
-                                    New List(Of NpgsqlParameter) From {New NpgsqlParameter("@id", CInt(txt_LCPT_ID.Text))})
-        lcpt("update_cnt") = currentCnt + 1
-
-        ' パラメータ設定
-        Dim prms As New List(Of NpgsqlParameter)
-        prms.Add(New NpgsqlParameter("@id", Integer.Parse(txt_LCPT_ID.Text)))
-
-        ' 行を更新
-        _crud.Update("m_lcpt", lcpt, "lcpt_id = @id", prms)
-
-        Me.Close()
-    End Sub
-
-    ' [削除] ボタン
-    Private Sub cmd_DELETE_Click(sender As Object, e As EventArgs) Handles cmd_DELETE.Click
-        If String.IsNullOrWhiteSpace(txt_LCPT_ID.Text) Then
-            MessageBox.Show("削除対象が選択されていません。", "エラー", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-            Return
-        End If
-
-        If MessageBox.Show("削除してもよろしいですか？", "削除確認", MessageBoxButtons.YesNo) = DialogResult.No Then
-            Return
-        End If
-
-        ' パラメータ設定
-        Dim prms As New List(Of NpgsqlParameter)
-        prms.Add(New NpgsqlParameter("@id", Integer.Parse(txt_LCPT_ID.Text)))
-
-        ' 行を削除
-        _crud.Delete("m_lcpt", "lcpt_id = @id", prms)
-
-        Me.Close()
-    End Sub
-
-    Private Sub FormKeyDown(sender As Object, e As KeyEventArgs) Handles MyBase.KeyDown
-        ' エンターキーが押されたら次のコントロールへ移動
-        HandleEnterKeyNavigation(Me, e)
     End Sub
 End Class

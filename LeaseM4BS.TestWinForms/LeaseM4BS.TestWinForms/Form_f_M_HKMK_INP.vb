@@ -12,44 +12,6 @@ Partial Public Class Form_f_M_HKMK_INP
         LoadPtnCombos(cmb_PTN_CD3)
     End Sub
 
-    ' =========================================================
-    '  コンボボックスの3列描画 (Access完全再現・罫線付き)
-    ' =========================================================
-    Private Sub Combo_SUM1_DrawItem(sender As Object, e As DrawItemEventArgs) Handles cmb_SUM1_CD.DrawItem
-        Combo_DrawItem(sender, e, {"sum1_cd", "sum1_nm"})
-    End Sub
-
-    Private Sub Combo_SUM2_DrawItem(sender As Object, e As DrawItemEventArgs) Handles cmb_SUM2_CD.DrawItem
-        Combo_DrawItem(sender, e, {"sum2_cd", "sum2_nm"})
-    End Sub
-
-    Private Sub Combo_SUM3_DrawItem(sender As Object, e As DrawItemEventArgs) Handles cmb_SUM3_CD.DrawItem
-        Combo_DrawItem(sender, e, {"sum3_cd", "sum3_nm"})
-    End Sub
-
-    Private Sub Combo_PTN_DrawItem(sender As Object, e As DrawItemEventArgs) Handles cmb_PTN_CD3.DrawItem
-        Combo_DrawItem(sender, e, {"ptn_cd3", "ptn_nm3"})
-    End Sub
-
-    ' =========================================================
-    '  コンボボックス選択時の連動 (Accessの =Column(x) 再現)
-    ' =========================================================
-    Private Sub cmb_SUM1_CD_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_SUM1_CD.SelectedIndexChanged
-        cmb_SUM1_CD.SyncTo("sum1_nm", txt_SUM1_NM)
-    End Sub
-
-    Private Sub cmb_SUM2_CD_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_SUM2_CD.SelectedIndexChanged
-        cmb_SUM2_CD.SyncTo("sum2_nm", txt_SUM2_NM)
-    End Sub
-
-    Private Sub cmb_SUM3_CD_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_SUM3_CD.SelectedIndexChanged
-        cmb_SUM3_CD.SyncTo("sum3_nm", txt_SUM3_NM)
-    End Sub
-
-    Private Sub cmb_PTN_CD3_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_PTN_CD3.SelectedIndexChanged
-        cmb_PTN_CD3.SyncTo("ptn_nm3", txt_PTN_NM3)
-    End Sub
-
     ' [閉じる] ボタン
     Private Sub cmd_CLOSE_Click(sender As Object, e As EventArgs) Handles cmd_CLOSE.Click
         Me.Close()
@@ -99,5 +61,43 @@ Partial Public Class Form_f_M_HKMK_INP
     Private Sub FormKeyDown(sender As Object, e As KeyEventArgs) Handles MyBase.KeyDown
         ' エンターキーが押されたら次のコントロールへ移動
         HandleEnterKeyNavigation(Me, e)
+    End Sub
+
+    ' =========================================================
+    '  コンボボックスの3列描画 (Access完全再現・罫線付き)
+    ' =========================================================
+    Private Sub Combo_SUM1_DrawItem(sender As Object, e As DrawItemEventArgs) Handles cmb_SUM1_CD.DrawItem
+        Combo_DrawItem(sender, e, {"sum1_cd", "sum1_nm"})
+    End Sub
+
+    Private Sub Combo_SUM2_DrawItem(sender As Object, e As DrawItemEventArgs) Handles cmb_SUM2_CD.DrawItem
+        Combo_DrawItem(sender, e, {"sum2_cd", "sum2_nm"})
+    End Sub
+
+    Private Sub Combo_SUM3_DrawItem(sender As Object, e As DrawItemEventArgs) Handles cmb_SUM3_CD.DrawItem
+        Combo_DrawItem(sender, e, {"sum3_cd", "sum3_nm"})
+    End Sub
+
+    Private Sub Combo_PTN_DrawItem(sender As Object, e As DrawItemEventArgs) Handles cmb_PTN_CD3.DrawItem
+        Combo_DrawItem(sender, e, {"ptn_cd3", "ptn_nm3"})
+    End Sub
+
+    ' =========================================================
+    '  コンボボックス選択時の連動 (Accessの =Column(x) 再現)
+    ' =========================================================
+    Private Sub cmb_SUM1_CD_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_SUM1_CD.SelectedIndexChanged
+        cmb_SUM1_CD.SyncTo("sum1_nm", txt_SUM1_NM)
+    End Sub
+
+    Private Sub cmb_SUM2_CD_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_SUM2_CD.SelectedIndexChanged
+        cmb_SUM2_CD.SyncTo("sum2_nm", txt_SUM2_NM)
+    End Sub
+
+    Private Sub cmb_SUM3_CD_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_SUM3_CD.SelectedIndexChanged
+        cmb_SUM3_CD.SyncTo("sum3_nm", txt_SUM3_NM)
+    End Sub
+
+    Private Sub cmb_PTN_CD3_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmb_PTN_CD3.SelectedIndexChanged
+        cmb_PTN_CD3.SyncTo("ptn_nm3", txt_PTN_NM3)
     End Sub
 End Class

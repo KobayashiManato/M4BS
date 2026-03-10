@@ -6,6 +6,9 @@ Partial Public Class Form_f_flx_TANA
     Inherits Form
 
     Public Property TanaDate As Date
+
+    Private Const FMT_CURRENCY As String = "#,##0"
+    Private Const FMT_DATE As String = "yyyy/MM/dd"
     Private _crud As New CrudHelper()
 
     Public Sub New()
@@ -13,7 +16,7 @@ Partial Public Class Form_f_flx_TANA
     End Sub
 
     Private Sub Form_f_flx_TANA_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        lbl_TANA_DATE.Text = "棚卸日：" + TanaDate.ToString("yyyy/MM/dd")
+        lbl_TANA_DATE.Text = "棚卸日： " + TanaDate.ToString(FMT_DATE)
 
         SearchData()
     End Sub
@@ -27,6 +30,8 @@ Partial Public Class Form_f_flx_TANA
             dgv_LIST.AutoGenerateColumns = True
 
             dgv_LIST.DataSource = _crud.GetDataTable(sql, prms)
+
+            ApplyGridStyle()
 
         Catch ex As Exception
             MessageBox.Show("一覧取得エラー: " & ex.Message)
@@ -83,6 +88,15 @@ Partial Public Class Form_f_flx_TANA
         Return sb.ToString()
     End Function
 
+    Private Sub ApplyGridStyle()
+        dgv_LIST.HideColumns("kykm_id", "kykh_id")
+
+        dgv_LIST.FormatColumn("現金購入価額", FMT_CURRENCY)
+        dgv_LIST.FormatColumn("支払額1", FMT_CURRENCY)
+        dgv_LIST.FormatColumn("総額リース料", FMT_CURRENCY)
+        dgv_LIST.FormatColumn("保守料", FMT_CURRENCY)
+    End Sub
+
     ' [閉じる]ボタン
     Private Sub cmd_CLOSE_Click(sender As Object, e As EventArgs) Handles cmd_CLOSE.Click
         Me.Close()
@@ -98,16 +112,14 @@ Partial Public Class Form_f_flx_TANA
         If e.RowIndex < 0 Then Return
 
         Dim selectedRow = dgv_LIST.GetSelectedRow()
-        If selectedRow Is Nothing Then
-            Return
-        End If
+        If selectedRow Is Nothing Then Return
 
-        Dim frmBukn As New FrmBuknEntry
+        Dim frmBukn As New Form_BuknEntry
 
         frmBukn.KykmId = Convert.ToDouble(selectedRow.Cells("kykm_id").Value)
         frmBukn.ShowDialog()
 
-        Dim frmContract As New FrmContractEntry
+        Dim frmContract As New Form_ContractEntry
 
         frmContract.KykhId = Convert.ToDouble(selectedRow.Cells("kykh_id").Value)
         frmContract.ShowDialog()

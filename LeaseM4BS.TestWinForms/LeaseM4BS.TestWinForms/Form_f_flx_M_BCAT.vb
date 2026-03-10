@@ -2,6 +2,7 @@
 Imports LeaseM4BS.DataAccess
 Imports Npgsql
 
+' --- 部署 ---
 Partial Public Class Form_f_flx_M_BCAT
     Inherits Form
 
@@ -23,7 +24,6 @@ Partial Public Class Form_f_flx_M_BCAT
             dgv_LIST.Columns.Clear()
             dgv_LIST.AutoGenerateColumns = True
 
-            ' 3. データをセット（ここで勝手に列が作られます）
             dgv_LIST.DataSource = _crud.GetDataTable(sql, prms)
 
         Catch ex As Exception
@@ -87,7 +87,7 @@ Partial Public Class Form_f_flx_M_BCAT
 
     ' [新規] ボタン
     Private Sub cmd_NEW_Click(sender As Object, e As EventArgs) Handles cmd_NEW.Click
-        Dim frm As New Form_f_M_BCAT_INP
+        Dim frm As New Form_f_M_BCAT_INP()
         frm.ShowDialog()
 
         SearchData()
@@ -95,13 +95,12 @@ Partial Public Class Form_f_flx_M_BCAT
 
     ' [変更] ボタン
     Private Sub cmd_CHANGE_Click(sender As Object, e As EventArgs) Handles cmd_CHANGE.Click
-        ' データが選択されていないとき
-        If dgv_LIST.CurrentRow Is Nothing OrElse dgv_LIST.RowCount = 0 Then
-            Return
-        End If
+        Dim selectedRow = dgv_LIST.GetSelectedRow()
 
-        Dim frm As New Form_f_M_BCAT_CHANGE
-        frm.BcatId = Convert.ToDouble(dgv_LIST.GetSelectedRow().Cells("id").Value)
+        If selectedRow Is Nothing Then Return
+
+        Dim frm As New Form_f_M_BCAT_CHANGE()
+        frm.BcatId = Convert.ToDouble(selectedRow.Cells("id").Value)
         frm.ShowDialog()
 
         SearchData()
@@ -109,7 +108,7 @@ Partial Public Class Form_f_flx_M_BCAT
 
     ' [ファイル出力] ボタン
     Private Sub cmd_OUTPUT_FILE_Click(sender As Object, e As EventArgs) Handles cmd_OUTPUT_FILE.Click
-        Dim frm As New Form_f_FlexOutputDLG
+        Dim frm As New Form_f_FlexOutputDLG()
         frm.Dgv = dgv_LIST
 
         frm.ShowDialog()

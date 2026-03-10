@@ -1,5 +1,6 @@
 ﻿Imports System.Windows.Forms
 
+' --- 減損フレックス ---
 Partial Public Class Form_f_flx_D_GSON
     Inherits Form
 

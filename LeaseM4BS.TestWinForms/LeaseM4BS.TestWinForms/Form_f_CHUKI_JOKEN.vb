@@ -2,6 +2,7 @@
 Imports LeaseM4BS.DataAccess
 Imports Npgsql
 
+' --- 財務諸表注記 ---
 Partial Public Class Form_f_CHUKI_JOKEN
     Inherits Form
 
@@ -44,7 +45,7 @@ Partial Public Class Form_f_CHUKI_JOKEN
             Return
         End If
 
-        Dim frm As New Form_f_flx_CHUKI
+        Dim frm As New Form_f_flx_CHUKI()
 
         ' 値の順番を正しくする
         SwapIf(txt_DT_FROM, txt_DT_TO)
@@ -152,24 +153,23 @@ Partial Public Class Form_f_CHUKI_JOKEN
     End Function
 
     Private Function GenerateLabelText() As String
-        Dim labelText As String
+        Dim labelText = "決算期間："
 
-        labelText &= "決算期間："
-        labelText &= txt_DT_FROM.Value.ToString("yyyy/MM") & "～" & txt_DT_TO.Value.ToString("yyyy/MM")
+        labelText &= txt_DT_FROM.Value.ToString("yyyy/MM") & "～" & txt_DT_TO.Value.ToString("yyyy/MM") & "  "
 
         ' todo どの条件でもなぜか表示されるテキスト
-        labelText &= " 所有権移転外ファイナンスリースの計算条件"
+        labelText &= "所有権移転外ファイナンスリースの計算条件  "
 
         If radio_TEIGAKU.Checked Then
-            labelText &= " 償却方法：リース定額"
+            labelText &= "償却方法：リース定額  "
         Else
-            labelText &= " 償却方法：近似定率"
+            labelText &= "償却方法：近似定率  "
         End If
 
         If radio_RISOKU.Checked Then
-            labelText &= " 利息計算：利息法"
+            labelText &= "利息計算：利息法  "
         Else
-            labelText &= " 利息計算：利子込法"
+            labelText &= "利息計算：利子込法  "
         End If
 
         Return labelText

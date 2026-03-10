@@ -135,8 +135,6 @@ Partial Public Class Form_f_KHIYO_JOKEN
         'chk_REC_KBN_5
         '
         Me.chk_REC_KBN_5.AutoSize = True
-        Me.chk_REC_KBN_5.Checked = True
-        Me.chk_REC_KBN_5.CheckState = System.Windows.Forms.CheckState.Checked
         Me.chk_REC_KBN_5.Location = New System.Drawing.Point(58, 181)
         Me.chk_REC_KBN_5.Margin = New System.Windows.Forms.Padding(5, 4, 5, 4)
         Me.chk_REC_KBN_5.Name = "chk_REC_KBN_5"
@@ -148,8 +146,6 @@ Partial Public Class Form_f_KHIYO_JOKEN
         'chk_REC_KBN_6
         '
         Me.chk_REC_KBN_6.AutoSize = True
-        Me.chk_REC_KBN_6.Checked = True
-        Me.chk_REC_KBN_6.CheckState = System.Windows.Forms.CheckState.Checked
         Me.chk_REC_KBN_6.Location = New System.Drawing.Point(58, 211)
         Me.chk_REC_KBN_6.Margin = New System.Windows.Forms.Padding(5, 4, 5, 4)
         Me.chk_REC_KBN_6.Name = "chk_REC_KBN_6"
@@ -161,8 +157,6 @@ Partial Public Class Form_f_KHIYO_JOKEN
         'chk_REC_KBN_1
         '
         Me.chk_REC_KBN_1.AutoSize = True
-        Me.chk_REC_KBN_1.Checked = True
-        Me.chk_REC_KBN_1.CheckState = System.Windows.Forms.CheckState.Checked
         Me.chk_REC_KBN_1.Location = New System.Drawing.Point(58, 61)
         Me.chk_REC_KBN_1.Margin = New System.Windows.Forms.Padding(5, 4, 5, 4)
         Me.chk_REC_KBN_1.Name = "chk_REC_KBN_1"
@@ -174,8 +168,6 @@ Partial Public Class Form_f_KHIYO_JOKEN
         'chk_REC_KBN_3
         '
         Me.chk_REC_KBN_3.AutoSize = True
-        Me.chk_REC_KBN_3.Checked = True
-        Me.chk_REC_KBN_3.CheckState = System.Windows.Forms.CheckState.Checked
         Me.chk_REC_KBN_3.Location = New System.Drawing.Point(58, 121)
         Me.chk_REC_KBN_3.Margin = New System.Windows.Forms.Padding(5, 4, 5, 4)
         Me.chk_REC_KBN_3.Name = "chk_REC_KBN_3"
@@ -200,8 +192,6 @@ Partial Public Class Form_f_KHIYO_JOKEN
         'chk_REC_KBN_4
         '
         Me.chk_REC_KBN_4.AutoSize = True
-        Me.chk_REC_KBN_4.Checked = True
-        Me.chk_REC_KBN_4.CheckState = System.Windows.Forms.CheckState.Checked
         Me.chk_REC_KBN_4.Location = New System.Drawing.Point(58, 151)
         Me.chk_REC_KBN_4.Margin = New System.Windows.Forms.Padding(5, 4, 5, 4)
         Me.chk_REC_KBN_4.Name = "chk_REC_KBN_4"
@@ -237,11 +227,13 @@ Partial Public Class Form_f_KHIYO_JOKEN
         'radio_SHIME
         '
         Me.radio_SHIME.AutoSize = True
+        Me.radio_SHIME.Checked = True
         Me.radio_SHIME.Location = New System.Drawing.Point(307, 42)
         Me.radio_SHIME.Margin = New System.Windows.Forms.Padding(5, 4, 5, 4)
         Me.radio_SHIME.Name = "radio_SHIME"
         Me.radio_SHIME.Size = New System.Drawing.Size(185, 22)
         Me.radio_SHIME.TabIndex = 0
+        Me.radio_SHIME.TabStop = True
         Me.radio_SHIME.Text = "〆ベース(請求ベース)"
         Me.radio_SHIME.UseVisualStyleBackColor = True
         '
@@ -289,8 +281,6 @@ Partial Public Class Form_f_KHIYO_JOKEN
         'chk_REC_KBN_7
         '
         Me.chk_REC_KBN_7.AutoSize = True
-        Me.chk_REC_KBN_7.Checked = True
-        Me.chk_REC_KBN_7.CheckState = System.Windows.Forms.CheckState.Checked
         Me.chk_REC_KBN_7.Location = New System.Drawing.Point(58, 241)
         Me.chk_REC_KBN_7.Margin = New System.Windows.Forms.Padding(5, 4, 5, 4)
         Me.chk_REC_KBN_7.Name = "chk_REC_KBN_7"

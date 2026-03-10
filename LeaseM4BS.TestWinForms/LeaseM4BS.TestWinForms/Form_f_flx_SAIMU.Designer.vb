@@ -239,6 +239,7 @@ Partial Public Class Form_f_flx_SAIMU
         Me.dgv_LIST.MultiSelect = False
         Me.dgv_LIST.Name = "dgv_LIST"
         Me.dgv_LIST.ReadOnly = True
+        Me.dgv_LIST.RowHeadersVisible = False
         Me.dgv_LIST.RowHeadersWidth = 62
         Me.dgv_LIST.RowTemplate.Height = 21
         Me.dgv_LIST.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect

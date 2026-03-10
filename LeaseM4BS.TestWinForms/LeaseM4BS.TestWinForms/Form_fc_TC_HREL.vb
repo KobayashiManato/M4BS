@@ -16,7 +16,7 @@ Partial Public Class Form_fc_TC_HREL
     End Sub
 
     Private Sub SearchData()
-        SetupCombos()
+        BindCombos()
 
         Try
             Dim prms As New List(Of NpgsqlParameter)
@@ -24,12 +24,12 @@ Partial Public Class Form_fc_TC_HREL
 
             dgv_LIST.AutoGenerateColumns = False
 
-            For i As Integer = 1 To 4
+            For i = 1 To 4
                 dgv_LIST.Columns($"col_PTN_CD{i}").DataPropertyName = $"ptn_cd{i}"
                 dgv_LIST.Columns($"col_PTN_NM{i}").DataPropertyName = $"ptn_cd{i}"  ' ptn_nmでなくptn_cd
             Next
 
-            For i As Integer = 1 To 15
+            For i = 1 To 15
                 dgv_LIST.Columns($"col_KMK_CD{i}").DataPropertyName = $"kmk_cd{i}"
                 dgv_LIST.Columns($"col_KMK_NM{i}").DataPropertyName = $"kmk_nm{i}"
             Next
@@ -39,6 +39,24 @@ Partial Public Class Form_fc_TC_HREL
         Catch ex As Exception
             MessageBox.Show("一覧取得エラー: " & ex.Message)
         End Try
+    End Sub
+
+    ' コンボボックスの設定
+    Private Sub BindCombos()
+        Dim sql1 As String = "SELECT DISTINCT ptn_cd1, ptn_nm1 FROM tc_hrel ORDER BY ptn_cd1;"
+        Dim sql2 As String = "SELECT DISTINCT genk_cd, genk_nm FROM m_genk WHERE genk_cd <> '' ORDER BY genk_cd;"
+        Dim sql3 As String = "SELECT DISTINCT hkmk_cd, hkmk_nm FROM m_hkmk WHERE hkmk_cd <> '' ORDER BY hkmk_cd;"
+        Dim sql4 As String = "SELECT DISTINCT kknri1_cd, kknri1_nm FROM m_kknri WHERE kknri1_cd <> '' ORDER BY kknri1_cd;"
+
+        Dim cmbPtnNm1 = DirectCast(dgv_LIST.Columns("col_PTN_NM1"), DataGridViewComboBoxColumn)
+        Dim cmbPtnNm2 = DirectCast(dgv_LIST.Columns("col_PTN_NM2"), DataGridViewComboBoxColumn)
+        Dim cmbPtnNm3 = DirectCast(dgv_LIST.Columns("col_PTN_NM3"), DataGridViewComboBoxColumn)
+        Dim cmbPtnNm4 = DirectCast(dgv_LIST.Columns("col_PTN_NM4"), DataGridViewComboBoxColumn)
+
+        cmbPtnNm1.Bind(sql1, "ptn_nm1", "ptn_cd1")
+        cmbPtnNm2.Bind(sql2, "genk_nm", "genk_cd")
+        cmbPtnNm3.Bind(sql3, "hkmk_nm", "hkmk_cd")
+        cmbPtnNm4.Bind(sql4, "kknri1_nm", "kknri1_cd")
     End Sub
 
     Private Function BuildSql(ByRef prms As List(Of NpgsqlParameter))
@@ -56,24 +74,6 @@ Partial Public Class Form_fc_TC_HREL
 
         Return sb.ToString()
     End Function
-
-    ' コンボボックスの設定
-    Private Sub SetupCombos()
-        Dim sql1 As String = "SELECT DISTINCT ptn_cd1, ptn_nm1 FROM tc_hrel ORDER BY ptn_cd1;"
-        Dim sql2 As String = "SELECT DISTINCT genk_cd, genk_nm FROM m_genk WHERE genk_cd <> '' ORDER BY genk_cd;"
-        Dim sql3 As String = "SELECT DISTINCT hkmk_cd, hkmk_nm FROM m_hkmk WHERE hkmk_cd <> '' ORDER BY hkmk_cd;"
-        Dim sql4 As String = "SELECT DISTINCT kknri1_cd, kknri1_nm FROM m_kknri WHERE kknri1_cd <> '' ORDER BY kknri1_cd;"
-
-        Dim cmbPtnNm1 = DirectCast(dgv_LIST.Columns("col_PTN_NM1"), DataGridViewComboBoxColumn)
-        Dim cmbPtnNm2 = DirectCast(dgv_LIST.Columns("col_PTN_NM2"), DataGridViewComboBoxColumn)
-        Dim cmbPtnNm3 = DirectCast(dgv_LIST.Columns("col_PTN_NM3"), DataGridViewComboBoxColumn)
-        Dim cmbPtnNm4 = DirectCast(dgv_LIST.Columns("col_PTN_NM4"), DataGridViewComboBoxColumn)
-
-        cmbPtnNm1.Bind(sql1, "ptn_nm1", "ptn_cd1")
-        cmbPtnNm2.Bind(sql2, "genk_nm", "genk_cd")
-        cmbPtnNm3.Bind(sql3, "hkmk_nm", "hkmk_cd")
-        cmbPtnNm4.Bind(sql4, "kknri1_nm", "kknri1_cd")
-    End Sub
 
     ' todo 適切なメソッド名
     Private Sub SyncCodeColumn(sender As Object, e As DataGridViewCellEventArgs) Handles dgv_LIST.CellValueChanged
@@ -147,7 +147,7 @@ Partial Public Class Form_fc_TC_HREL
 
     ' [ファイル出力] ボタン
     Private Sub cmd_OUTPUT_FILE_Click(sender As Object, e As EventArgs) Handles cmd_OUTPUT_FILE.Click
-        Dim frm As New Form_f_FlexOutputDLG
+        Dim frm As New Form_f_FlexOutputDLG()
         frm.Dgv = dgv_LIST
 
         frm.ShowDialog()

@@ -133,7 +133,7 @@ Partial Class Form_f_YOSAN_JOKEN
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 38.65248!))
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 61.34752!))
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 330.0!))
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 291.0!))
+        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 293.0!))
         Me.TableLayoutPanel1.Controls.Add(Me.ComboBox1, 1, 10)
         Me.TableLayoutPanel1.Controls.Add(Me.TextBox5, 3, 0)
         Me.TableLayoutPanel1.Controls.Add(Me.TextBox2, 1, 0)
@@ -195,15 +195,15 @@ Partial Class Form_f_YOSAN_JOKEN
         '
         Me.ComboBox1.FormattingEnabled = True
         Me.ComboBox1.Items.AddRange(New Object() {"「元データの年額」の12分の1", "「元データの年額」の10分の1"})
-        Me.ComboBox1.Location = New System.Drawing.Point(191, 422)
+        Me.ComboBox1.Location = New System.Drawing.Point(190, 422)
         Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(293, 26)
+        Me.ComboBox1.Size = New System.Drawing.Size(292, 26)
         Me.ComboBox1.TabIndex = 0
         '
         'TextBox5
         '
         Me.TextBox5.BackColor = System.Drawing.SystemColors.ControlDark
-        Me.TextBox5.Location = New System.Drawing.Point(820, 3)
+        Me.TextBox5.Location = New System.Drawing.Point(818, 3)
         Me.TextBox5.Name = "TextBox5"
         Me.TextBox5.ReadOnly = True
         Me.TextBox5.Size = New System.Drawing.Size(281, 25)
@@ -214,10 +214,10 @@ Partial Class Form_f_YOSAN_JOKEN
         'TextBox2
         '
         Me.TextBox2.BackColor = System.Drawing.SystemColors.ControlDark
-        Me.TextBox2.Location = New System.Drawing.Point(191, 3)
+        Me.TextBox2.Location = New System.Drawing.Point(190, 3)
         Me.TextBox2.Name = "TextBox2"
         Me.TextBox2.ReadOnly = True
-        Me.TextBox2.Size = New System.Drawing.Size(293, 25)
+        Me.TextBox2.Size = New System.Drawing.Size(292, 25)
         Me.TextBox2.TabIndex = 22
         Me.TextBox2.Text = "リース原契約"
         Me.TextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
@@ -228,7 +228,7 @@ Partial Class Form_f_YOSAN_JOKEN
         Me.TextBox6.Location = New System.Drawing.Point(3, 3)
         Me.TextBox6.Name = "TextBox6"
         Me.TextBox6.ReadOnly = True
-        Me.TextBox6.Size = New System.Drawing.Size(182, 25)
+        Me.TextBox6.Size = New System.Drawing.Size(181, 25)
         Me.TextBox6.TabIndex = 0
         Me.TextBox6.Text = "更新後項目"
         Me.TextBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
@@ -239,7 +239,7 @@ Partial Class Form_f_YOSAN_JOKEN
         Me.TextBox1.Location = New System.Drawing.Point(3, 35)
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.ReadOnly = True
-        Me.TextBox1.Size = New System.Drawing.Size(182, 25)
+        Me.TextBox1.Size = New System.Drawing.Size(181, 25)
         Me.TextBox1.TabIndex = 0
         Me.TextBox1.Text = "開始日"
         Me.TextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
@@ -247,7 +247,7 @@ Partial Class Form_f_YOSAN_JOKEN
         'TextBox4
         '
         Me.TableLayoutPanel1.SetColumnSpan(Me.TextBox4, 3)
-        Me.TextBox4.Location = New System.Drawing.Point(191, 35)
+        Me.TextBox4.Location = New System.Drawing.Point(190, 35)
         Me.TextBox4.Name = "TextBox4"
         Me.TextBox4.ReadOnly = True
         Me.TextBox4.Size = New System.Drawing.Size(913, 25)
@@ -258,7 +258,7 @@ Partial Class Form_f_YOSAN_JOKEN
         'TextBox3
         '
         Me.TextBox3.BackColor = System.Drawing.SystemColors.ControlDark
-        Me.TextBox3.Location = New System.Drawing.Point(490, 3)
+        Me.TextBox3.Location = New System.Drawing.Point(488, 3)
         Me.TextBox3.Name = "TextBox3"
         Me.TextBox3.ReadOnly = True
         Me.TextBox3.Size = New System.Drawing.Size(324, 25)
@@ -272,7 +272,7 @@ Partial Class Form_f_YOSAN_JOKEN
         Me.TextBox15.Location = New System.Drawing.Point(3, 422)
         Me.TextBox15.Name = "TextBox15"
         Me.TextBox15.ReadOnly = True
-        Me.TextBox15.Size = New System.Drawing.Size(182, 25)
+        Me.TextBox15.Size = New System.Drawing.Size(181, 25)
         Me.TextBox15.TabIndex = 0
         Me.TextBox15.Text = "1支払額"
         Me.TextBox15.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
@@ -283,7 +283,7 @@ Partial Class Form_f_YOSAN_JOKEN
         Me.TextBox14.Location = New System.Drawing.Point(3, 394)
         Me.TextBox14.Name = "TextBox14"
         Me.TextBox14.ReadOnly = True
-        Me.TextBox14.Size = New System.Drawing.Size(182, 25)
+        Me.TextBox14.Size = New System.Drawing.Size(181, 25)
         Me.TextBox14.TabIndex = 0
         Me.TextBox14.Text = "前払額"
         Me.TextBox14.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
@@ -294,7 +294,7 @@ Partial Class Form_f_YOSAN_JOKEN
         Me.TextBox13.Location = New System.Drawing.Point(3, 334)
         Me.TextBox13.Name = "TextBox13"
         Me.TextBox13.ReadOnly = True
-        Me.TextBox13.Size = New System.Drawing.Size(182, 25)
+        Me.TextBox13.Size = New System.Drawing.Size(181, 25)
         Me.TextBox13.TabIndex = 0
         Me.TextBox13.Text = "第2回支払日"
         Me.TextBox13.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
@@ -306,7 +306,7 @@ Partial Class Form_f_YOSAN_JOKEN
         Me.TextBox12.Multiline = True
         Me.TextBox12.Name = "TextBox12"
         Me.TextBox12.ReadOnly = True
-        Me.TextBox12.Size = New System.Drawing.Size(182, 48)
+        Me.TextBox12.Size = New System.Drawing.Size(181, 48)
         Me.TextBox12.TabIndex = 0
         Me.TextBox12.Text = "第1回支払日(初回支払日)"
         Me.TextBox12.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
@@ -317,7 +317,7 @@ Partial Class Form_f_YOSAN_JOKEN
         Me.TextBox11.Location = New System.Drawing.Point(3, 214)
         Me.TextBox11.Name = "TextBox11"
         Me.TextBox11.ReadOnly = True
-        Me.TextBox11.Size = New System.Drawing.Size(182, 25)
+        Me.TextBox11.Size = New System.Drawing.Size(181, 25)
         Me.TextBox11.TabIndex = 0
         Me.TextBox11.Text = "前払日"
         Me.TextBox11.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
@@ -328,7 +328,7 @@ Partial Class Form_f_YOSAN_JOKEN
         Me.TextBox10.Location = New System.Drawing.Point(3, 151)
         Me.TextBox10.Name = "TextBox10"
         Me.TextBox10.ReadOnly = True
-        Me.TextBox10.Size = New System.Drawing.Size(182, 25)
+        Me.TextBox10.Size = New System.Drawing.Size(181, 25)
         Me.TextBox10.TabIndex = 0
         Me.TextBox10.Text = "支払回数"
         Me.TextBox10.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
@@ -339,7 +339,7 @@ Partial Class Form_f_YOSAN_JOKEN
         Me.TextBox9.Location = New System.Drawing.Point(3, 121)
         Me.TextBox9.Name = "TextBox9"
         Me.TextBox9.ReadOnly = True
-        Me.TextBox9.Size = New System.Drawing.Size(182, 25)
+        Me.TextBox9.Size = New System.Drawing.Size(181, 25)
         Me.TextBox9.TabIndex = 0
         Me.TextBox9.Text = "支払間隔"
         Me.TextBox9.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
@@ -350,7 +350,7 @@ Partial Class Form_f_YOSAN_JOKEN
         Me.TextBox8.Location = New System.Drawing.Point(3, 90)
         Me.TextBox8.Name = "TextBox8"
         Me.TextBox8.ReadOnly = True
-        Me.TextBox8.Size = New System.Drawing.Size(182, 25)
+        Me.TextBox8.Size = New System.Drawing.Size(181, 25)
         Me.TextBox8.TabIndex = 0
         Me.TextBox8.Text = "終了日"
         Me.TextBox8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
@@ -361,24 +361,24 @@ Partial Class Form_f_YOSAN_JOKEN
         Me.TextBox7.Location = New System.Drawing.Point(3, 62)
         Me.TextBox7.Name = "TextBox7"
         Me.TextBox7.ReadOnly = True
-        Me.TextBox7.Size = New System.Drawing.Size(182, 25)
+        Me.TextBox7.Size = New System.Drawing.Size(181, 25)
         Me.TextBox7.TabIndex = 0
         Me.TextBox7.Text = "契約期間"
         Me.TextBox7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'TextBox16
         '
-        Me.TextBox16.Location = New System.Drawing.Point(191, 62)
+        Me.TextBox16.Location = New System.Drawing.Point(190, 62)
         Me.TextBox16.Name = "TextBox16"
         Me.TextBox16.ReadOnly = True
-        Me.TextBox16.Size = New System.Drawing.Size(293, 25)
+        Me.TextBox16.Size = New System.Drawing.Size(292, 25)
         Me.TextBox16.TabIndex = 0
         Me.TextBox16.Text = "12"
         Me.TextBox16.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'TextBox17
         '
-        Me.TextBox17.Location = New System.Drawing.Point(490, 62)
+        Me.TextBox17.Location = New System.Drawing.Point(488, 62)
         Me.TextBox17.Name = "TextBox17"
         Me.TextBox17.ReadOnly = True
         Me.TextBox17.Size = New System.Drawing.Size(324, 25)
@@ -388,7 +388,7 @@ Partial Class Form_f_YOSAN_JOKEN
         '
         'TextBox18
         '
-        Me.TextBox18.Location = New System.Drawing.Point(820, 62)
+        Me.TextBox18.Location = New System.Drawing.Point(818, 62)
         Me.TextBox18.Name = "TextBox18"
         Me.TextBox18.ReadOnly = True
         Me.TextBox18.Size = New System.Drawing.Size(281, 25)
@@ -399,17 +399,17 @@ Partial Class Form_f_YOSAN_JOKEN
         'TextBox19
         '
         Me.TableLayoutPanel1.SetColumnSpan(Me.TextBox19, 2)
-        Me.TextBox19.Location = New System.Drawing.Point(191, 90)
+        Me.TextBox19.Location = New System.Drawing.Point(190, 90)
         Me.TextBox19.Name = "TextBox19"
         Me.TextBox19.ReadOnly = True
-        Me.TextBox19.Size = New System.Drawing.Size(623, 25)
+        Me.TextBox19.Size = New System.Drawing.Size(622, 25)
         Me.TextBox19.TabIndex = 0
         Me.TextBox19.Text = "「開始日」の「契約期間」月数後の前日"
         Me.TextBox19.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'TextBox20
         '
-        Me.TextBox20.Location = New System.Drawing.Point(820, 90)
+        Me.TextBox20.Location = New System.Drawing.Point(818, 90)
         Me.TextBox20.Name = "TextBox20"
         Me.TextBox20.ReadOnly = True
         Me.TextBox20.Size = New System.Drawing.Size(281, 25)
@@ -419,10 +419,10 @@ Partial Class Form_f_YOSAN_JOKEN
         '
         'TextBox21
         '
-        Me.TextBox21.Location = New System.Drawing.Point(191, 121)
+        Me.TextBox21.Location = New System.Drawing.Point(190, 121)
         Me.TextBox21.Name = "TextBox21"
         Me.TextBox21.ReadOnly = True
-        Me.TextBox21.Size = New System.Drawing.Size(293, 25)
+        Me.TextBox21.Size = New System.Drawing.Size(292, 25)
         Me.TextBox21.TabIndex = 0
         Me.TextBox21.Text = "12"
         Me.TextBox21.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
@@ -430,7 +430,7 @@ Partial Class Form_f_YOSAN_JOKEN
         'TextBox22
         '
         Me.TableLayoutPanel1.SetColumnSpan(Me.TextBox22, 2)
-        Me.TextBox22.Location = New System.Drawing.Point(490, 121)
+        Me.TextBox22.Location = New System.Drawing.Point(488, 121)
         Me.TextBox22.Name = "TextBox22"
         Me.TextBox22.ReadOnly = True
         Me.TextBox22.Size = New System.Drawing.Size(611, 25)
@@ -440,7 +440,7 @@ Partial Class Form_f_YOSAN_JOKEN
         '
         'TextBox24
         '
-        Me.TextBox24.Location = New System.Drawing.Point(490, 151)
+        Me.TextBox24.Location = New System.Drawing.Point(488, 151)
         Me.TextBox24.Name = "TextBox24"
         Me.TextBox24.ReadOnly = True
         Me.TextBox24.Size = New System.Drawing.Size(324, 25)
@@ -450,7 +450,7 @@ Partial Class Form_f_YOSAN_JOKEN
         '
         'TextBox25
         '
-        Me.TextBox25.Location = New System.Drawing.Point(820, 151)
+        Me.TextBox25.Location = New System.Drawing.Point(818, 151)
         Me.TextBox25.Multiline = True
         Me.TextBox25.Name = "TextBox25"
         Me.TextBox25.ReadOnly = True
@@ -461,7 +461,7 @@ Partial Class Form_f_YOSAN_JOKEN
         '
         'TextBox35
         '
-        Me.TextBox35.Location = New System.Drawing.Point(820, 394)
+        Me.TextBox35.Location = New System.Drawing.Point(818, 394)
         Me.TextBox35.Name = "TextBox35"
         Me.TextBox35.ReadOnly = True
         Me.TextBox35.Size = New System.Drawing.Size(281, 25)
@@ -472,7 +472,7 @@ Partial Class Form_f_YOSAN_JOKEN
         'TextBox37
         '
         Me.TableLayoutPanel1.SetColumnSpan(Me.TextBox37, 2)
-        Me.TextBox37.Location = New System.Drawing.Point(490, 422)
+        Me.TextBox37.Location = New System.Drawing.Point(488, 422)
         Me.TextBox37.Name = "TextBox37"
         Me.TextBox37.ReadOnly = True
         Me.TextBox37.Size = New System.Drawing.Size(611, 25)
@@ -482,7 +482,7 @@ Partial Class Form_f_YOSAN_JOKEN
         '
         'TextBox36
         '
-        Me.TextBox36.Location = New System.Drawing.Point(490, 394)
+        Me.TextBox36.Location = New System.Drawing.Point(488, 394)
         Me.TextBox36.Name = "TextBox36"
         Me.TextBox36.ReadOnly = True
         Me.TextBox36.Size = New System.Drawing.Size(324, 25)
@@ -492,37 +492,37 @@ Partial Class Form_f_YOSAN_JOKEN
         '
         'TextBox34
         '
-        Me.TextBox34.Location = New System.Drawing.Point(191, 394)
+        Me.TextBox34.Location = New System.Drawing.Point(190, 394)
         Me.TextBox34.Name = "TextBox34"
         Me.TextBox34.ReadOnly = True
-        Me.TextBox34.Size = New System.Drawing.Size(293, 25)
+        Me.TextBox34.Size = New System.Drawing.Size(292, 25)
         Me.TextBox34.TabIndex = 0
         Me.TextBox34.Text = "ー"
         Me.TextBox34.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'TextBox31
         '
-        Me.TextBox31.Location = New System.Drawing.Point(191, 334)
+        Me.TextBox31.Location = New System.Drawing.Point(190, 334)
         Me.TextBox31.Name = "TextBox31"
         Me.TextBox31.ReadOnly = True
-        Me.TextBox31.Size = New System.Drawing.Size(293, 25)
+        Me.TextBox31.Size = New System.Drawing.Size(292, 25)
         Me.TextBox31.TabIndex = 0
         Me.TextBox31.Text = "ー"
         Me.TextBox31.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'TextBox26
         '
-        Me.TextBox26.Location = New System.Drawing.Point(191, 214)
+        Me.TextBox26.Location = New System.Drawing.Point(190, 214)
         Me.TextBox26.Name = "TextBox26"
         Me.TextBox26.ReadOnly = True
-        Me.TextBox26.Size = New System.Drawing.Size(293, 25)
+        Me.TextBox26.Size = New System.Drawing.Size(292, 25)
         Me.TextBox26.TabIndex = 0
         Me.TextBox26.Text = "ー"
         Me.TextBox26.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'TextBox27
         '
-        Me.TextBox27.Location = New System.Drawing.Point(490, 214)
+        Me.TextBox27.Location = New System.Drawing.Point(488, 214)
         Me.TextBox27.Multiline = True
         Me.TextBox27.Name = "TextBox27"
         Me.TextBox27.ReadOnly = True
@@ -533,7 +533,7 @@ Partial Class Form_f_YOSAN_JOKEN
         '
         'TextBox28
         '
-        Me.TextBox28.Location = New System.Drawing.Point(820, 214)
+        Me.TextBox28.Location = New System.Drawing.Point(818, 214)
         Me.TextBox28.Name = "TextBox28"
         Me.TextBox28.ReadOnly = True
         Me.TextBox28.Size = New System.Drawing.Size(281, 25)
@@ -544,18 +544,18 @@ Partial Class Form_f_YOSAN_JOKEN
         'TextBox29
         '
         Me.TableLayoutPanel1.SetColumnSpan(Me.TextBox29, 2)
-        Me.TextBox29.Location = New System.Drawing.Point(191, 278)
+        Me.TextBox29.Location = New System.Drawing.Point(190, 278)
         Me.TextBox29.Multiline = True
         Me.TextBox29.Name = "TextBox29"
         Me.TextBox29.ReadOnly = True
-        Me.TextBox29.Size = New System.Drawing.Size(623, 50)
+        Me.TextBox29.Size = New System.Drawing.Size(622, 50)
         Me.TextBox29.TabIndex = 0
         Me.TextBox29.Text = "「元データの第1回支払日」の「元データの契約期間」月数後"
         Me.TextBox29.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'TextBox32
         '
-        Me.TextBox32.Location = New System.Drawing.Point(490, 334)
+        Me.TextBox32.Location = New System.Drawing.Point(488, 334)
         Me.TextBox32.Multiline = True
         Me.TextBox32.Name = "TextBox32"
         Me.TextBox32.ReadOnly = True
@@ -566,7 +566,7 @@ Partial Class Form_f_YOSAN_JOKEN
         '
         'TextBox33
         '
-        Me.TextBox33.Location = New System.Drawing.Point(820, 334)
+        Me.TextBox33.Location = New System.Drawing.Point(818, 334)
         Me.TextBox33.Multiline = True
         Me.TextBox33.Name = "TextBox33"
         Me.TextBox33.ReadOnly = True
@@ -577,7 +577,7 @@ Partial Class Form_f_YOSAN_JOKEN
         '
         'TextBox30
         '
-        Me.TextBox30.Location = New System.Drawing.Point(820, 278)
+        Me.TextBox30.Location = New System.Drawing.Point(818, 278)
         Me.TextBox30.Multiline = True
         Me.TextBox30.Name = "TextBox30"
         Me.TextBox30.ReadOnly = True
@@ -588,10 +588,10 @@ Partial Class Form_f_YOSAN_JOKEN
         '
         'TextBox23
         '
-        Me.TextBox23.Location = New System.Drawing.Point(191, 151)
+        Me.TextBox23.Location = New System.Drawing.Point(190, 151)
         Me.TextBox23.Name = "TextBox23"
         Me.TextBox23.ReadOnly = True
-        Me.TextBox23.Size = New System.Drawing.Size(293, 25)
+        Me.TextBox23.Size = New System.Drawing.Size(292, 25)
         Me.TextBox23.TabIndex = 0
         Me.TextBox23.Text = "1"
         Me.TextBox23.TextAlign = System.Windows.Forms.HorizontalAlignment.Center

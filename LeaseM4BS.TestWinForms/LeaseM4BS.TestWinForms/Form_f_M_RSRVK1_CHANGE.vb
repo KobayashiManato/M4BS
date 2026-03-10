@@ -10,26 +10,26 @@ Partial Public Class Form_f_M_RSRVK1_CHANGE
     Private Sub Form_f_M_RSRVK1_CHANGE_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
             ' --- ヘッダ取得 (ID指定) ---
-            Dim sqlHead As String = "SELECT * FROM m_rsrvk1 WHERE rsrvk1_id = @id"
+            Dim sql As String = "SELECT * FROM m_rsrvk1 WHERE rsrvk1_id = @id"
 
-            Dim prmHead As New List(Of Npgsql.NpgsqlParameter) From {
+            Dim prm As New List(Of Npgsql.NpgsqlParameter) From {
                 New Npgsql.NpgsqlParameter("@id", Rsrvk1Id)
             }
 
-            Dim dtHead As DataTable = _crud.GetDataTable(sqlHead, prmHead)
+            Dim dt As DataTable = _crud.GetDataTable(sql, prm)
 
-            If dtHead.Rows.Count > 0 Then
-                Dim row As DataRow = dtHead.Rows(0)
+            If dt.Rows.Count = 0 Then Return
 
-                ' 画面項目に値をセット
-                txt_RSRVK1_CD.Text = row("rsrvk1_cd").ToString()
-                txt_RSRVK1_NM.Text = row("rsrvk1_nm").ToString()
+            Dim row As DataRow = dt.Rows(0)
 
-                txt_BIKO.Text = row("biko").ToString()
-                txt_CREATE_DT.Text = row("create_dt").ToString()
-                txt_UPDATE_DT.Text = row("update_dt").ToString()
-                txt_RSRVK1_ID.Text = row("rsrvk1_id").ToString()
-            End If
+            ' 画面項目に値をセット
+            txt_RSRVK1_CD.Text = row("rsrvk1_cd").ToString()
+            txt_RSRVK1_NM.Text = row("rsrvk1_nm").ToString()
+
+            txt_BIKO.Text = row("biko").ToString()
+            txt_CREATE_DT.Text = row("create_dt").ToString()
+            txt_UPDATE_DT.Text = row("update_dt").ToString()
+            txt_RSRVK1_ID.Text = row("rsrvk1_id").ToString()
         Catch ex As Exception
             MessageBox.Show("詳細読込エラー: " & ex.Message)
         End Try
@@ -63,8 +63,9 @@ Partial Public Class Form_f_M_RSRVK1_CHANGE
         rsrvk("update_cnt") = currentCnt + 1
 
         ' パラメータ設定
-        Dim prms As New List(Of NpgsqlParameter)
-        prms.Add(New NpgsqlParameter("@id", Integer.Parse(txt_RSRVK1_ID.Text)))
+        Dim prms As New List(Of NpgsqlParameter) From {
+            {New NpgsqlParameter("@id", Integer.Parse(txt_RSRVK1_ID.Text))}
+        }
 
         ' 行を更新
         _crud.Update("m_rsrvk1", rsrvk, "rsrvk1_id = @id", prms)
@@ -84,8 +85,9 @@ Partial Public Class Form_f_M_RSRVK1_CHANGE
         End If
 
         ' パラメータ設定
-        Dim prms As New List(Of NpgsqlParameter)
-        prms.Add(New NpgsqlParameter("@id", Integer.Parse(txt_RSRVK1_ID.Text)))
+        Dim prms As New List(Of NpgsqlParameter) From {
+            {New NpgsqlParameter("@id", Integer.Parse(txt_RSRVK1_ID.Text))}
+        }
 
         ' 行を削除
         _crud.Delete("m_rsrvk1", "rsrvk1_id = @id", prms)

@@ -1,6 +1,7 @@
 ﻿Imports System.Windows.Forms
 Imports UtilDate
 
+' --- 期間リース料支払い明細表 ---
 Partial Public Class Form_f_KLSRYO_JOKEN
     Inherits Form
 
@@ -29,6 +30,7 @@ Partial Public Class Form_f_KLSRYO_JOKEN
 
         Dim frm As New Form_f_flx_KLSRYO
         frm.ShowDialog()
+
         _prevForm = frm
     End Sub
 
@@ -41,11 +43,7 @@ Partial Public Class Form_f_KLSRYO_JOKEN
         ' 期間計算(ヶ月)
         Dim duration As Integer = GetDuration(txt_DATE_FROM.Value, txt_DATE_TO.Value)
 
-        If duration = 0 Then
-            txt_DURATION.Text = ""
-        Else
-            txt_DURATION.Text = duration.ToString()
-        End If
+        txt_DURATION.Text = If(duration = 0, "", duration.ToString())
     End Sub
 
     ' [前回集計結果]ボタン

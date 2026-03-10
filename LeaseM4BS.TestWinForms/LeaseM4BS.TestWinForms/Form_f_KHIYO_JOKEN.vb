@@ -1,6 +1,7 @@
 ﻿Imports System.Windows.Forms
 Imports UtilDate
 
+' --- 期間費用計上明細表 ---
 Partial Public Class Form_f_KHIYO_JOKEN
     Inherits Form
 
@@ -8,9 +9,6 @@ Partial Public Class Form_f_KHIYO_JOKEN
 
     Public Sub New()
         InitializeComponent()
-    End Sub
-
-    Private Sub Form_f_KHIYO_JOKEN_Load(sender As Object, e As EventArgs) Handles MyBase.Load
     End Sub
 
     ' [実行]ボタン
