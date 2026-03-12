@@ -65,7 +65,7 @@ Public Class Form_f_CHUKI_SCH
             txt_SHRI_DT3.SetText(row("shri_dt3"))
             txt_SHRI_EN_DT.Text = ToDateStr(row("shri_en_dt"))
             txt_CKAIYK_DT.Text = ToDateStr(row("ckaiyk_dt"))
-            txt_CKAIYK_ESDT.SetText(row("ckaiyk_esdt_t"))     ' ckaiyk_esdt_hかも
+            txt_CKAIYK_ESDT.SetText(row("ckaiyk_esdt_t"))       ' ckaiyk_esdt_hかも
             txt_KLSRYO.SetAmount(row("b_klsryo"))
             txt_SLSRYO.SetAmount(row("b_slsryo"))
             txt_IJIKNR.SetAmount(row("b_ijiknr"))
