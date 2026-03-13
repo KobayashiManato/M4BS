@@ -1,0 +1,34 @@
+name: Claude Code Review
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+permissions:
+  contents: read
+  pull-requests: write
+  issues: write
+
+jobs:
+  claude-review:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Claude Code Review
+        uses: anthropics/claude-code-action@beta
+        with:
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          model: "claude-sonnet-4-20250514"
+          review_comment_prefix: "[Claude]"
+          direct_prompt: |
+            あなたは VB.NET WinForms アプリケーション（Access VBA からの移行プロジェクト）のコードレビュアーです。
+            以下の観点でレビューしてください:
+
+            1. VB.NET のコード品質・型安全性
+            2. PostgreSQL (Npgsql) のデータアクセスパターン
+            3. WinForms のリソース管理 (Dispose パターン)
+            4. Access VBA からの移行における正確性
+            5. セキュリティ (SQL インジェクション、接続文字列のハードコード)
+            6. エラーハンドリング
+
+            日本語でレビューコメントを書いてください。
+            重要な問題のみコメントし、軽微なスタイルの指摘は避けてください。
