@@ -48,7 +48,7 @@ Public Class Form_f_flx_KEIJO
         ' 施行日以降 → 新法、施行日より前 → 旧法
         sb.AppendLine("  CASE ")
         sb.AppendLine("    WHEN kykh.start_dt IS NULL THEN '' ")
-        sb.AppendLine("    WHEN COALESCE(kykh.kyak_dt, kykh.start_dt) >= settei.sekou_dt THEN '新法' ")
+        sb.AppendLine("    WHEN COALESCE(kykh.kyak_dt, kykh.start_dt) >= (SELECT val_datetime FROM t_settei WHERE settei_nm = 'SEKOU_DT') THEN '新法' ")
         sb.AppendLine("    ELSE '旧法' ")
         sb.AppendLine("  END AS 法令区分, ")
         sb.AppendLine("  leakbn.leakbn_nm AS リース区分, ")               ' リース区分(C_LEAKBN)
@@ -61,7 +61,7 @@ Public Class Form_f_flx_KEIJO
         sb.AppendLine("  kykh.start_dt AS 開始日, ")                      ' 開始日(D_KYKH)
         sb.AppendLine("  kykh.end_dt AS 終了日, ")                        ' 終了日(D_KYKH)
 
-        ' 請求月: 開始日ベースで現在の請求対象月を算出
+        ' 請求月: 現在日ベースで請求対象月を算出
         sb.AppendLine("  TO_CHAR(date_trunc('month', CURRENT_DATE), 'YYYY/MM') AS 請求月, ")
 
         sb.AppendLine("  kykm.ckaiyk_dt AS 中途解約日, ")                 ' 中途解約日(D_KYKM)
@@ -76,7 +76,7 @@ Public Class Form_f_flx_KEIJO
         ' 月額リース料 = 総支払額 / 総回数（均等割）
         sb.AppendLine("  CASE WHEN COALESCE(kykh.mkaisu, 0) > 0 THEN ")
         sb.AppendLine("    ROUND(CAST(kykh.k_slsryo - (kykh.k_slsryo / kykh.mkaisu) * COALESCE(kykh.kj_shri_cnt, 0) AS NUMERIC), 0) ")
-        sb.AppendLine("  ELSE kykh.k_slsryo END AS 前月末残高, ")
+        sb.AppendLine("  ELSE COALESCE(kykh.k_slsryo, 0) END AS 前月末残高, ")
 
         ' 当月計上額（税抜き）= 月額リース料（均等割）
         sb.AppendLine("  CASE WHEN COALESCE(kykh.mkaisu, 0) > 0 THEN ")
@@ -96,7 +96,7 @@ Public Class Form_f_flx_KEIJO
         ' 当月末残高: 前月末残高 - 当月計上額（税抜き）
         sb.AppendLine("  CASE WHEN COALESCE(kykh.mkaisu, 0) > 0 THEN ")
         sb.AppendLine("    ROUND(CAST(kykh.k_slsryo - (kykh.k_slsryo / kykh.mkaisu) * (COALESCE(kykh.kj_shri_cnt, 0) + 1) AS NUMERIC), 0) ")
-        sb.AppendLine("  ELSE kykh.k_slsryo END AS 当月末残高, ")
+        sb.AppendLine("  ELSE COALESCE(kykh.k_slsryo, 0) END AS 当月末残高, ")
 
         ' 内1年内: 月額 × MIN(12, 残回数)
         sb.AppendLine("  CASE WHEN COALESCE(kykh.mkaisu, 0) > 0 THEN ")
@@ -121,7 +121,6 @@ Public Class Form_f_flx_KEIJO
         sb.AppendLine("LEFT JOIN d_haif haif ON kykm.kykm_id = haif.kykm_id ")
         sb.AppendLine("LEFT JOIN c_kkbn kkbn ON kykh.kkbn_id = kkbn.kkbn_id ")
         sb.AppendLine("LEFT JOIN c_kjkbn kjkbn_h ON kykh.kjkbn_id = kjkbn_h.kjkbn_id ")   ' 契約ヘッダの計上区分
-        sb.AppendLine("CROSS JOIN (SELECT val_datetime AS sekou_dt FROM t_settei WHERE settei_nm = 'SEKOU_DT') settei ")
         sb.AppendLine("LEFT JOIN c_leakbn leakbn ON kykm.leakbn_id = leakbn.leakbn_id ")
         sb.AppendLine("LEFT JOIN m_lcpt lcpt ON kykh.lcpt_id = lcpt.lcpt_id ")
         sb.AppendLine("LEFT JOIN m_bcat b_bcat ON kykm.b_bcat_id = b_bcat.bcat_id ")
