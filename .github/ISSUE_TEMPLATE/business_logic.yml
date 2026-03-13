@@ -1,0 +1,104 @@
+name: ビジネスロジック実装
+description: Access VBAからVB.NETへのビジネスロジック移行・実装タスク
+title: "[ビジネスロジック] "
+labels: ["business-logic"]
+body:
+  - type: input
+    id: vba-module-reference
+    attributes:
+      label: VBAモジュール参照元
+      description: 移行元のVBAモジュール名またはプロシージャ名を入力してください
+      placeholder: 例：Module_契約計算.bas / Function 残価計算()
+    validations:
+      required: true
+
+  - type: textarea
+    id: logic-description
+    attributes:
+      label: ロジックの説明
+      description: 実装するビジネスロジックの内容を詳細に記述してください
+    validations:
+      required: true
+
+  - type: dropdown
+    id: customer-specific
+    attributes:
+      label: 顧客固有ロジック
+      description: このロジックは特定の顧客向けのカスタマイズですか？
+      options:
+        - いいえ（共通ロジック）
+        - はい（顧客固有）
+    validations:
+      required: true
+
+  - type: input
+    id: customer-name
+    attributes:
+      label: 対象顧客名
+      description: 顧客固有ロジックの場合、対象の顧客名を入力してください
+      placeholder: 例：〇〇リース株式会社
+    validations:
+      required: false
+
+  - type: dropdown
+    id: complexity
+    attributes:
+      label: 複雑度
+      description: ロジックの複雑度を選択してください
+      options:
+        - 低（単純な計算・条件分岐）
+        - 中（複数テーブル参照・中程度の計算）
+        - 高（複雑な計算・外部連携・多数の条件分岐）
+    validations:
+      required: true
+
+  - type: textarea
+    id: input-output
+    attributes:
+      label: 入出力仕様
+      description: ロジックの入力パラメータと出力（戻り値）を記述してください
+      placeholder: |
+        【入力】
+        - 契約番号 (String)
+        - 計算基準日 (Date)
+
+        【出力】
+        - 残価金額 (Decimal)
+    validations:
+      required: false
+
+  - type: textarea
+    id: related-tables
+    attributes:
+      label: 関連テーブル
+      description: このロジックが参照・更新するテーブルを列挙してください
+      placeholder: |
+        - T_契約
+        - T_契約明細
+        - M_利率
+    validations:
+      required: false
+
+  - type: textarea
+    id: test-cases
+    attributes:
+      label: テストケース
+      description: 想定されるテストケースを記述してください
+      placeholder: |
+        - 正常系：通常の契約データで計算結果が正しいこと
+        - 境界値：期間0日の場合
+        - 異常系：必須パラメータがNullの場合
+    validations:
+      required: false
+
+  - type: textarea
+    id: acceptance-criteria
+    attributes:
+      label: 受け入れ条件
+      description: 実装完了と判断するための条件を記述してください
+      placeholder: |
+        - Access版と同一の計算結果が得られること
+        - 単体テストが全てパスすること
+        - エラーハンドリングが適切に実装されていること
+    validations:
+      required: false

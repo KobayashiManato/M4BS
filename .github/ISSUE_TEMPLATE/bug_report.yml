@@ -1,0 +1,102 @@
+name: バグ報告
+description: 移行後のアプリケーションで発見されたバグの報告
+title: "[バグ] "
+labels: ["bug"]
+body:
+  - type: textarea
+    id: description
+    attributes:
+      label: バグの説明
+      description: 発生しているバグの内容を簡潔に記述してください
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps-to-reproduce
+    attributes:
+      label: 再現手順
+      description: バグを再現するための手順を記述してください
+      placeholder: |
+        1. 「契約一覧」画面を開く
+        2. 検索条件に「〇〇」を入力する
+        3. 検索ボタンをクリックする
+        4. エラーが発生する
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected-behavior
+    attributes:
+      label: 期待される動作
+      description: 本来どのように動作すべきかを記述してください
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual-behavior
+    attributes:
+      label: 実際の動作
+      description: 現在どのように動作しているかを記述してください
+    validations:
+      required: true
+
+  - type: input
+    id: related-form
+    attributes:
+      label: 関連フォーム
+      description: バグが発生するフォーム名を入力してください
+      placeholder: 例：F_契約一覧
+    validations:
+      required: false
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: 優先度
+      description: バグの優先度を選択してください
+      options:
+        - "高 (priority:high)"
+        - "中 (priority:medium)"
+        - "低 (priority:low)"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: bug-category
+    attributes:
+      label: バグ分類
+      description: バグの種類を選択してください
+      options:
+        - UI表示の問題
+        - データアクセスの問題
+        - ビジネスロジックの問題
+        - Access版との動作差異
+        - パフォーマンスの問題
+        - その他
+    validations:
+      required: true
+
+  - type: textarea
+    id: access-comparison
+    attributes:
+      label: Access版での動作
+      description: Access VBA版では同じ操作でどのように動作していたかを記述してください
+    validations:
+      required: false
+
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: スクリーンショット・ログ
+      description: エラー画面のスクリーンショットやエラーログがあれば貼り付けてください
+    validations:
+      required: false
+
+  - type: input
+    id: environment
+    attributes:
+      label: 環境情報
+      description: OS、.NETバージョン、PostgreSQLバージョン等
+      placeholder: 例：Windows 11, .NET 8, PostgreSQL 16
+    validations:
+      required: false

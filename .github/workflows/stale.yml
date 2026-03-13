@@ -1,0 +1,38 @@
+name: Stale Issues Management
+
+on:
+  schedule:
+    - cron: '0 0 * * 1'  # 毎週月曜 UTC 0:00 (JST 9:00)
+  workflow_dispatch:
+
+permissions:
+  issues: write
+  pull-requests: write
+
+jobs:
+  stale:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 非アクティブ Issue/PR を管理
+        uses: actions/stale@v9
+        with:
+          stale-issue-message: |
+            この Issue は14日間更新がありません。
+            対応予定がある場合はコメントしてください。
+            7日以内にアクティビティがない場合、自動クローズされます。
+          stale-pr-message: |
+            この PR は14日間更新がありません。
+            引き続き作業中の場合はコメントしてください。
+            7日以内にアクティビティがない場合、自動クローズされます。
+          close-issue-message: |
+            非アクティブのため自動クローズしました。
+            再開が必要な場合は再オープンしてください。
+          close-pr-message: |
+            非アクティブのため自動クローズしました。
+            再開が必要な場合は再オープンしてください。
+          days-before-stale: 14
+          days-before-close: 7
+          stale-issue-label: stale
+          stale-pr-label: stale
+          exempt-issue-labels: 'priority:high,bug'
+          exempt-pr-labels: 'priority:high'

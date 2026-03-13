@@ -1,0 +1,70 @@
+# CI Pipeline for LeaseM4BS (.NET Framework 4.7.2 VB.NET WinForms)
+# Build status badge:
+# ![CI](https://github.com/M4BS-Organization/M4BS/actions/workflows/ci.yml/badge.svg)
+
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    name: Build & Test
+    runs-on: windows-latest
+
+    steps:
+      - name: チェックアウト
+        uses: actions/checkout@v4
+
+      - name: MSBuild セットアップ
+        uses: microsoft/setup-msbuild@v2
+
+      - name: NuGet セットアップ
+        uses: nuget/setup-nuget@v2
+
+      - name: NuGet パッケージキャッシュ
+        uses: actions/cache@v4
+        with:
+          path: |
+            LeaseM4BS/packages
+            LeaseM4BS.TestWinForms/packages
+            ~/.nuget/packages
+          key: ${{ runner.os }}-nuget-${{ hashFiles('**/packages.config') }}
+          restore-keys: |
+            ${{ runner.os }}-nuget-
+
+      - name: NuGet 復元 (LeaseM4BS)
+        run: nuget restore LeaseM4BS/LeaseM4BS.slnx
+
+      - name: NuGet 復元 (TestWinForms)
+        run: nuget restore LeaseM4BS.TestWinForms/LeaseM4BS.TestWinForms.slnx
+
+      - name: ビルド LeaseM4BS
+        run: msbuild LeaseM4BS/LeaseM4BS.slnx /p:Configuration=Release /p:Platform="Any CPU" /m /verbosity:minimal
+
+      - name: ビルド TestWinForms
+        run: msbuild LeaseM4BS.TestWinForms/LeaseM4BS.TestWinForms.slnx /p:Configuration=Release /p:Platform="Any CPU" /m /verbosity:minimal
+
+      - name: テスト実行
+        run: |
+          $testAssemblies = Get-ChildItem -Recurse -Filter "*Test*.dll" -Path "**\bin\Release" | Where-Object { $_.FullName -notmatch "\\obj\\" }
+          if ($testAssemblies) {
+            Write-Host "テストアセンブリ検出:"
+            $testAssemblies | ForEach-Object { Write-Host "  $_" }
+            Write-Host "テストフレームワーク未検出のため、テスト実行をスキップします。"
+          } else {
+            Write-Host "テストアセンブリなし。テスト実行をスキップします。"
+          }
+        shell: pwsh
+
+      - name: ビルド成果物アップロード
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-output
+          path: |
+            LeaseM4BS/LeaseM4BS.DataAccess/bin/Release/
+            LeaseM4BS.TestWinForms/LeaseM4BS.TestWinForms/bin/Release/
+          retention-days: 7

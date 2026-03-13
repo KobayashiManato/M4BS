@@ -97,8 +97,84 @@ bugfix/<Issue番号>-<簡潔な説明>
 ## ディレクトリ構成
 ```
 C:\kobayashi_LeaseM4BS/
-├── LeaseM4BS/                    # メインソリューション
-│   ├── LeaseM4BS.DataAccess/     # データアクセス層
-│   └── LeaseM4BS.slnx            # ソリューションファイル
-└── LeaseM4BS.TestWinForms/       # テスト用WinFormsプロジェクト
+├── .claude/                      # Claude Code 設定
+│   ├── hooks.json                # Pre-commit/Post-push/PreToolUse フック
+│   └── settings.json             # プロジェクト設定
+├── .github/
+│   ├── labeler.yml               # 自動ラベリング設定
+│   ├── pull_request_template.md  # PR テンプレート
+│   ├── ISSUE_TEMPLATE/           # Issue テンプレート (3種)
+│   └── workflows/
+│       ├── ci.yml                # CI ビルド・テスト (MSBuild)
+│       ├── auto-label.yml        # PR 自動ラベリング
+│       ├── pr-review.yml         # PR 自動レビュー (6項目チェック)
+│       ├── assign-reviewer.yml   # レビュアー自動アサイン
+│       ├── slack-notify.yml      # Slack 通知 (push/PR/issue)
+│       ├── daily-progress.yml    # 日次進捗レポート (平日 JST 9:00)
+│       ├── release.yml           # タグ push でリリース作成
+│       └── stale.yml             # 非アクティブ Issue 自動管理
+├── scripts/
+│   ├── setup-branch-protection.sh # ブランチ保護 + ラベル初期設定
+│   ├── start-task.sh              # Issue → ブランチ作成 → 作業開始
+│   ├── finish-task.sh             # コミット → push → PR 作成
+│   ├── sync-main.sh               # main リベース
+│   ├── progress-report.sh         # 進捗レポート生成 (Phase別)
+│   ├── assign-issues.sh           # Issue 一括アサイン
+│   ├── check-migration-status.sh  # TODO/未実装スキャン
+│   └── claude-dev.sh              # Claude Code 自動開発ワークフロー
+├── LeaseM4BS/                     # メインソリューション
+│   ├── LeaseM4BS.DataAccess/      # データアクセス層
+│   └── LeaseM4BS.slnx             # ソリューションファイル
+└── LeaseM4BS.TestWinForms/        # テスト用WinFormsプロジェクト
 ```
+
+## CI/CD パイプライン
+
+### GitHub Actions Workflows
+| Workflow | トリガー | 内容 |
+|----------|----------|------|
+| `ci.yml` | push to main, PR | MSBuild ビルド + テスト |
+| `auto-label.yml` | PR | 変更ファイルに応じたラベル自動付与 |
+| `pr-review.yml` | PR | サイズ/Designer.vb/接続文字列/TODO/命名規則チェック |
+| `assign-reviewer.yml` | PR opened | 中村↔小谷 相互レビュアーアサイン |
+| `slack-notify.yml` | push/PR/issue | `#m4bs-progress` に通知 |
+| `daily-progress.yml` | 平日 JST 9:00 | Phase別進捗レポート自動送信 |
+| `release.yml` | tag `v*` push | Release ビルド + 成果物配布 |
+| `stale.yml` | 毎週月曜 | 14日非アクティブ Issue を stale 化 |
+
+### 必要な GitHub Secrets
+- `SLACK_WEBHOOK_URL` - Slack Incoming Webhook URL
+
+### 初期セットアップ
+```bash
+# ブランチ保護 + ラベル作成 (1回のみ)
+./scripts/setup-branch-protection.sh
+```
+
+## 開発ワークフロー (Claude Code ドリブン)
+
+### 手動フロー
+```bash
+# 1. タスク開始 (Issue → ブランチ作成)
+./scripts/start-task.sh <ISSUE番号>
+
+# 2. 開発作業 (Claude Code で実装)
+
+# 3. タスク完了 (コミット → PR 作成)
+./scripts/finish-task.sh <ISSUE番号>
+
+# 4. 進捗確認
+./scripts/progress-report.sh
+./scripts/progress-report.sh --markdown  # Markdown 出力
+```
+
+### 自動フロー (Claude Code 完全自動)
+```bash
+# 未アサイン Issue を自動取得 → ブランチ作成 → コンテキスト準備
+./scripts/claude-dev.sh
+```
+
+### Claude Code hooks
+- **PreCommit**: CRITICAL TODO / ハードコード接続文字列 / ブランチ命名規則チェック
+- **PostPush**: CI ステータス確認リマインダー
+- **PreToolUse**: Designer.vb 編集時に確認プロンプト

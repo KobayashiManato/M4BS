@@ -1,0 +1,31 @@
+{
+  "hooks": [
+    {
+      "matcher": "PreCommit",
+      "hooks": [
+        {
+          "type": "command",
+          "command": "bash -c '\n# CRITICAL TODO チェック\nif git diff --cached --name-only | xargs grep -l \"TODO.*CRITICAL\" 2>/dev/null; then\n  echo \"ERROR: CRITICAL TODO が含まれています。コミット前に解決してください。\" >&2\n  exit 1\nfi\n\n# 接続文字列ハードコードチェック\nif git diff --cached -- \"*.vb\" | grep -iE \"(Host=|Password=|Server=)\" | grep -v \"App\\.config\" 2>/dev/null; then\n  echo \"ERROR: .vb ファイルにハードコードされた接続文字列があります。App.config を使用してください。\" >&2\n  exit 1\nfi\n\n# ブランチ命名規則チェック\nBRANCH=$(git rev-parse --abbrev-ref HEAD)\nif [[ \"$BRANCH\" != \"main\" && \"$BRANCH\" != \"master\" && ! \"$BRANCH\" =~ ^(feature|bugfix)/ ]]; then\n  echo \"WARNING: ブランチ名が命名規則に従っていません: $BRANCH\" >&2\n  echo \"  推奨: feature/<issue番号>-<説明> または bugfix/<issue番号>-<説明>\" >&2\nfi\n\nexit 0\n'"
+        }
+      ]
+    },
+    {
+      "matcher": "PostPush",
+      "hooks": [
+        {
+          "type": "command",
+          "command": "bash -c 'echo \"✓ プッシュ完了。CI ステータスを確認してください: gh run list --limit 3\"'"
+        }
+      ]
+    },
+    {
+      "matcher": "PreToolUse",
+      "hooks": [
+        {
+          "type": "command",
+          "command": "bash -c '\nINPUT=$(cat)\nFILE=$(echo \"$INPUT\" | grep -o '\"file_path\"[[:space:]]*:[[:space:]]*\"[^\"]*\"' | head -1 | sed 's/.*\"\\([^\"]*\\)\"$/\\1/')\nif echo \"$FILE\" | grep -q \"\\.Designer\\.vb$\"; then\n  echo \"{\\\"decision\\\": \\\"ask\\\", \\\"reason\\\": \\\"Designer.vb は自動生成ファイルです。手動編集は慎重に行ってください。\\\"}\" \nelse\n  echo \"{\\\"decision\\\": \\\"approve\\\"}\"\nfi\n'"
+        }
+      ]
+    }
+  ]
+}

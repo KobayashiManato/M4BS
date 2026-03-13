@@ -1,0 +1,40 @@
+name: Auto Assign Reviewer
+
+on:
+  pull_request:
+    types: [opened]
+
+permissions:
+  pull-requests: write
+
+jobs:
+  assign-reviewer:
+    runs-on: ubuntu-latest
+    steps:
+      - name: PR 作成者に応じてレビュアーを自動アサイン
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const author = context.payload.pull_request.user.login;
+            const prNumber = context.payload.pull_request.number;
+
+            // チームメンバー定義
+            const reviewerMap = {
+              'nkshn1726fgu': 'kodani-t',   // 中村 → 小谷がレビュー
+              'kodani-t': 'nkshn1726fgu'    // 小谷 → 中村がレビュー
+            };
+
+            const reviewer = reviewerMap[author];
+
+            if (reviewer) {
+              await github.rest.pulls.requestReviewers({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                pull_number: prNumber,
+                reviewers: [reviewer]
+              });
+              console.log(`レビュアー ${reviewer} を PR #${prNumber} にアサインしました`);
+            } else {
+              console.log(`作成者 ${author} のレビュアーマッピングがありません`);
+            }

@@ -1,0 +1,41 @@
+form-migration:
+  - changed-files:
+      - any-glob-to-any-file:
+          - 'LeaseM4BS.TestWinForms/**/Form_*.vb'
+          - 'LeaseM4BS.TestWinForms/**/f_flx_*.vb'
+          - 'LeaseM4BS.TestWinForms/**/f_M_*.vb'
+          - 'LeaseM4BS.TestWinForms/**/fc_*.vb'
+          - 'LeaseM4BS.TestWinForms/**/f_REF_*.vb'
+
+data-access:
+  - changed-files:
+      - any-glob-to-any-file:
+          - 'LeaseM4BS/LeaseM4BS.DataAccess/**'
+          - '**/*Helper*.vb'
+          - 'sql/**'
+
+business-logic:
+  - changed-files:
+      - any-glob-to-any-file:
+          - '**/*[Cc]alc*.vb'
+          - '**/*[Kk]eijo*.vb'
+          - '**/*[Ss]wkj*.vb'
+          - '**/*KEIJO*.vb'
+          - '**/*KLSRYO*.vb'
+          - '**/*KHIYO*.vb'
+
+ui:
+  - changed-files:
+      - any-glob-to-any-file:
+          - '**/*.Designer.vb'
+
+testing:
+  - changed-files:
+      - any-glob-to-any-file:
+          - 'LeaseM4BS.TestWinForms/**'
+
+documentation:
+  - changed-files:
+      - any-glob-to-any-file:
+          - 'docs/**'
+          - '**/*.md'

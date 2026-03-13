@@ -1,0 +1,19 @@
+{
+  "project": {
+    "name": "LeaseM4BS",
+    "description": "Access VBA → VB.NET/WinForms マイグレーションプロジェクト",
+    "repository": "M4BS-Organization/M4BS"
+  },
+  "permissions": {
+    "allow": [
+      "Read",
+      "Glob",
+      "Grep",
+      "Bash(git *)",
+      "Bash(gh *)",
+      "Bash(dotnet *)",
+      "Bash(msbuild *)",
+      "Bash(nuget *)"
+    ]
+  }
+}

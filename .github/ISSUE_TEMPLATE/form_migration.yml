@@ -1,0 +1,93 @@
+name: フォーム移行
+description: Access VBAフォームからVB.NET WinFormsへの移行タスク
+title: "[フォーム移行] "
+labels: ["form-migration"]
+body:
+  - type: input
+    id: form-name
+    attributes:
+      label: フォーム名
+      description: 移行対象のフォーム名を入力してください
+      placeholder: 例：F_契約一覧
+    validations:
+      required: true
+
+  - type: input
+    id: access-source-file
+    attributes:
+      label: Access ソースファイル
+      description: 移行元のAccessフォーム/モジュールのファイルパスまたは名前
+      placeholder: 例：F_契約一覧.frm
+    validations:
+      required: true
+
+  - type: dropdown
+    id: migration-status
+    attributes:
+      label: 移行ステータス
+      description: 現在の移行状況を選択してください
+      options:
+        - 未着手
+        - 設計中
+        - 実装中
+        - レビュー待ち
+        - テスト中
+        - 完了
+    validations:
+      required: true
+
+  - type: dropdown
+    id: complexity
+    attributes:
+      label: 複雑度
+      description: フォーム移行の複雑度を選択してください
+      options:
+        - 低（単純な表示フォーム）
+        - 中（CRUD操作あり）
+        - 高（複雑なビジネスロジック・複数テーブル連携）
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: 移行内容の説明
+      description: フォームの機能概要や移行時の注意点を記述してください
+    validations:
+      required: false
+
+  - type: textarea
+    id: vba-events
+    attributes:
+      label: VBAイベント一覧
+      description: 移行対象のVBAイベントプロシージャを列挙してください
+      placeholder: |
+        - Form_Open
+        - btn検索_Click
+        - txt契約番号_AfterUpdate
+    validations:
+      required: false
+
+  - type: textarea
+    id: related-tables
+    attributes:
+      label: 関連テーブル
+      description: このフォームが参照・更新するテーブルを列挙してください
+      placeholder: |
+        - T_契約
+        - T_顧客
+        - M_商品
+    validations:
+      required: false
+
+  - type: textarea
+    id: acceptance-criteria
+    attributes:
+      label: 受け入れ条件
+      description: 移行完了と判断するための条件を記述してください
+      placeholder: |
+        - Access版と同等の画面表示
+        - 全ボタンの動作確認
+        - データの登録・更新・削除が正常に動作
+    validations:
+      required: false
