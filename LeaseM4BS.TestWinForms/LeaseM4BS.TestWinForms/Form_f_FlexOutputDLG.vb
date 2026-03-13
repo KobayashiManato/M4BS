@@ -15,6 +15,7 @@ Partial Public Class Form_f_FlexOutputDLG
                 lst_FieldList.Items.Add(col.HeaderText)
             End If
         Next
+        If cmb_DELIMITER.Items.Count > 0 Then cmb_DELIMITER.SelectedIndex = 0
     End Sub
 
     ' [実行]ボタン
@@ -24,7 +25,9 @@ Partial Public Class Form_f_FlexOutputDLG
         If radio_EXCEL.Checked Then
             fileHelper.ToExcelFile(Dgv)
         ElseIf radio_CSV.Checked Then
-            fileHelper.ToCsvFile(Dgv)       ' todo 区切り文字の指定
+            Dim qualifier As String = If(cmb_DELIMITER.SelectedItem?.ToString(), """")
+            If qualifier = "なし" Then qualifier = ""
+            fileHelper.ToCsvFile(Dgv, ",", qualifier)
         Else
             fileHelper.ToFixedLengthFile(Dgv)
         End If

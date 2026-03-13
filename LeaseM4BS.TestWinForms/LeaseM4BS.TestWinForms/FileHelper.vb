@@ -70,8 +70,7 @@ Public Class FileHelper
     End Sub
 
     ' Csvファイルとして出力
-    ' todo delimiter(区切り文字)にカンマ以外(", 'など)を指定すると、正しく出力されない
-    Public Sub ToCsvFile(dgv As DataGridView, Optional delimiter As String = ",")
+    Public Sub ToCsvFile(dgv As DataGridView, Optional delimiter As String = ",", Optional textQualifier As String = """")
         ' 保存ダイアログ
         Dim sfd As New SaveFileDialog()
         sfd.Filter = "CSVファイル(*.csv)|*.csv"
@@ -89,7 +88,11 @@ Public Class FileHelper
                 Dim headerList As New List(Of String)
                 For Each col As DataGridViewColumn In dgv.Columns
                     If col.Visible Then
-                        headerList.Add($"""{col.HeaderText}""")
+                        If String.IsNullOrEmpty(textQualifier) Then
+                            headerList.Add(col.HeaderText)
+                        Else
+                            headerList.Add(textQualifier & col.HeaderText.Replace(textQualifier, textQualifier & textQualifier) & textQualifier)
+                        End If
                     End If
                 Next
                 sw.WriteLine(String.Join(delimiter, headerList))
@@ -101,9 +104,12 @@ Public Class FileHelper
                     Dim dataList As New List(Of String)
                     For Each col As DataGridViewColumn In dgv.Columns
                         If col.Visible Then
-                            ' セルの値を取得（Nothingなら空文字、ダブルクォーテーションで囲む）
                             Dim val As String = If(row.Cells(col.Index).FormattedValue?.ToString(), "")
-                            dataList.Add($"""{val.Replace("""", """""")}""") ' 値の中の " を "" にエスケープ
+                            If String.IsNullOrEmpty(textQualifier) Then
+                                dataList.Add(val)
+                            Else
+                                dataList.Add(textQualifier & val.Replace(textQualifier, textQualifier & textQualifier) & textQualifier)
+                            End If
                         End If
                     Next
 
