@@ -23,67 +23,91 @@ jobs:
             const owner = context.repo.owner;
             const repo = context.repo.repo;
 
-            // Issue 統計
-            const openIssues = await github.rest.issues.listForRepo({
-              owner, repo, state: 'open', per_page: 100
-            });
-            const closedIssues = await github.rest.issues.listForRepo({
-              owner, repo, state: 'closed', per_page: 100
-            });
+            // --- Project V2 からステータスを取得 ---
+            let projectItems = [];
+            try {
+              const query = `query {
+                organization(login: "${owner}") {
+                  projectV2(number: 1) {
+                    items(first: 50) {
+                      nodes {
+                        fieldValueByName(name: "Status") {
+                          ... on ProjectV2ItemFieldSingleSelectValue { name }
+                        }
+                        content {
+                          ... on Issue {
+                            number
+                            title
+                            assignees(first: 3) { nodes { login } }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }`;
+              const result = await github.graphql(query);
+              projectItems = result.organization.projectV2.items.nodes;
+            } catch (e) {
+              core.warning('Project V2 API アクセス失敗。Issue ベースにフォールバックします。');
+            }
 
-            const totalOpen = openIssues.data.filter(i => !i.pull_request).length;
-            const totalClosed = closedIssues.data.filter(i => !i.pull_request).length;
-            const total = totalOpen + totalClosed;
-            const progress = total > 0 ? Math.round((totalClosed / total) * 100) : 0;
+            // ステータス別に集計
+            let todo = [], inProgress = [], done = [];
+            if (projectItems.length > 0) {
+              for (const item of projectItems) {
+                if (!item.content) continue;
+                const status = item.fieldValueByName?.name || 'Todo';
+                const entry = { number: item.content.number, title: item.content.title, assignees: item.content.assignees?.nodes?.map(a => a.login) || [] };
+                if (status === 'Done') done.push(entry);
+                else if (status === 'In Progress') inProgress.push(entry);
+                else todo.push(entry);
+              }
+            } else {
+              // フォールバック: Issue ベース
+              const open = await github.rest.issues.listForRepo({ owner, repo, state: 'open', per_page: 100 });
+              const closed = await github.rest.issues.listForRepo({ owner, repo, state: 'closed', per_page: 100 });
+              todo = open.data.filter(i => !i.pull_request).map(i => ({ number: i.number, title: i.title, assignees: i.assignees.map(a => a.login) }));
+              done = closed.data.filter(i => !i.pull_request).map(i => ({ number: i.number, title: i.title, assignees: i.assignees.map(a => a.login) }));
+            }
 
-            // 今週クローズされた Issue
-            const oneWeekAgo = new Date();
-            oneWeekAgo.setDate(oneWeekAgo.getDate() - 7);
-            const recentClosed = closedIssues.data.filter(i =>
-              !i.pull_request && new Date(i.closed_at) > oneWeekAgo
-            );
+            const total = todo.length + inProgress.length + done.length;
+            const progress = total > 0 ? Math.round((done.length / total) * 100) : 0;
+            const bar = '\u2588'.repeat(Math.round(progress / 10)) + '\u2591'.repeat(10 - Math.round(progress / 10));
 
-            // オープン PR
-            const openPRs = await github.rest.pulls.list({
-              owner, repo, state: 'open', per_page: 100
-            });
-
-            // Phase 別進捗
+            // Phase 別集計
             const phases = [
               { name: 'Phase 1: 基盤修正', issues: [2,3,4,5,6,7] },
-              { name: 'Phase 2: 仕訳出力検証', issues: [8,9,10,11,12,13] },
-              { name: 'Phase 3: 動作確認', issues: [14,15,16,17] }
+              { name: 'Phase 2: 機能検証', issues: [8,9,10,11,12,13] },
+              { name: 'Phase 3: 統合テスト', issues: [14,15,16,17] }
             ];
+            const doneNumbers = new Set(done.map(i => i.number));
+            const inProgressNumbers = new Set(inProgress.map(i => i.number));
 
             let phaseReport = '';
             for (const phase of phases) {
-              let closed = 0;
-              for (const num of phase.issues) {
-                try {
-                  const issue = await github.rest.issues.get({ owner, repo, issue_number: num });
-                  if (issue.data.state === 'closed') closed++;
-                } catch (e) { /* skip */ }
-              }
-              const pct = Math.round((closed / phase.issues.length) * 100);
-              const bar = '█'.repeat(Math.round(pct / 10)) + '░'.repeat(10 - Math.round(pct / 10));
-              phaseReport += `${phase.name}: ${bar} ${pct}% (${closed}/${phase.issues.length})\n`;
+              const phaseDone = phase.issues.filter(n => doneNumbers.has(n)).length;
+              const phaseInProgress = phase.issues.filter(n => inProgressNumbers.has(n)).length;
+              const pct = Math.round((phaseDone / phase.issues.length) * 100);
+              const pBar = '\u2588'.repeat(Math.round(pct / 10)) + '\u2591'.repeat(10 - Math.round(pct / 10));
+              phaseReport += `${phase.name}: ${pBar} ${pct}% (${phaseDone}/${phase.issues.length})\n`;
             }
 
-            // Slack メッセージ
-            const message = {
-              text: `:chart_with_upwards_trend: *M4BS 日次進捗レポート*\n` +
-                `日付: ${new Date().toLocaleDateString('ja-JP')}\n\n` +
-                `*全体進捗: ${progress}% (${totalClosed}/${total})*\n` +
-                `:green_circle: オープン: ${totalOpen}  :white_check_mark: クローズ: ${totalClosed}\n` +
-                `:arrows_counterclockwise: オープンPR: ${openPRs.data.length}\n\n` +
-                `*Phase 別進捗:*\n\`\`\`\n${phaseReport}\`\`\`\n` +
-                (recentClosed.length > 0
-                  ? `*今週クローズ:*\n${recentClosed.map(i => `  :white_check_mark: #${i.number} ${i.title}`).join('\n')}\n`
-                  : '') +
-                (openPRs.data.length > 0
-                  ? `*オープンPR:*\n${openPRs.data.map(p => `  :memo: #${p.number} ${p.title} (@${p.user.login})`).join('\n')}`
-                  : '')
-            };
+            // メッセージ組み立て
+            let message = `:chart_with_upwards_trend: *M4BS 日次進捗レポート*\n`;
+            message += `${new Date().toLocaleDateString('ja-JP')}\n\n`;
+            message += `*全体: ${bar} ${progress}% (${done.length}/${total})*\n`;
+            message += `:white_circle: Todo: ${todo.length}  :large_blue_circle: 進行中: ${inProgress.length}  :white_check_mark: 完了: ${done.length}\n\n`;
+            message += `*Phase 別:*\n\`\`\`\n${phaseReport}\`\`\``;
+
+            if (inProgress.length > 0) {
+              message += `\n*:large_blue_circle: 進行中:*\n`;
+              for (const item of inProgress) {
+                message += `  #${item.number} ${item.title} (@${item.assignees.join(', @')})\n`;
+              }
+            }
+
+            message += `\n<https://github.com/orgs/${owner}/projects/1|:link: プロジェクトボード>`;
 
             // Slack 送信
             const webhookUrl = process.env.SLACK_WEBHOOK_URL;
@@ -91,10 +115,10 @@ jobs:
               const response = await fetch(webhookUrl, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(message)
+                body: JSON.stringify({ text: message })
               });
               console.log(`Slack 送信結果: ${response.status}`);
             } else {
-              console.log('SLACK_WEBHOOK_URL が設定されていません');
-              console.log(message.text);
+              console.log('SLACK_WEBHOOK_URL 未設定');
+              console.log(message);
             }
