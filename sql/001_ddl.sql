@@ -1435,6 +1435,85 @@ CREATE INDEX idx_tc_rec_shri_xxxx4id ON tc_rec_shri (xxxx4id);
 CREATE INDEX idx_tc_rec_shri_xxxx5id ON tc_rec_shri (xxxx5id);
 
 -- ==========================================================
+-- 外部キー制約
+-- ==========================================================
+
+-- セキュリティ
+ALTER TABLE sec_user ADD CONSTRAINT fk_sec_user_kngn FOREIGN KEY (kngn_id) REFERENCES sec_kngn (kngn_id);
+ALTER TABLE sec_kngn_bknri ADD CONSTRAINT fk_sec_kngn_bknri_kngn FOREIGN KEY (kngn_id) REFERENCES sec_kngn (kngn_id);
+ALTER TABLE sec_kngn_bknri ADD CONSTRAINT fk_sec_kngn_bknri_bknri FOREIGN KEY (bknri_id) REFERENCES m_bknri (bknri_id);
+ALTER TABLE sec_kngn_kknri ADD CONSTRAINT fk_sec_kngn_kknri_kngn FOREIGN KEY (kngn_id) REFERENCES sec_kngn (kngn_id);
+ALTER TABLE sec_kngn_kknri ADD CONSTRAINT fk_sec_kngn_kknri_kknri FOREIGN KEY (kknri_id) REFERENCES m_kknri (kknri_id);
+
+-- 契約ヘッダ → マスタ
+ALTER TABLE d_kykh ADD CONSTRAINT fk_d_kykh_kknri FOREIGN KEY (kknri_id) REFERENCES m_kknri (kknri_id);
+ALTER TABLE d_kykh ADD CONSTRAINT fk_d_kykh_kkbn FOREIGN KEY (kkbn_id) REFERENCES c_kkbn (kkbn_id);
+ALTER TABLE d_kykh ADD CONSTRAINT fk_d_kykh_lcpt FOREIGN KEY (lcpt_id) REFERENCES m_lcpt (lcpt_id);
+ALTER TABLE d_kykh ADD CONSTRAINT fk_d_kykh_koza FOREIGN KEY (koza_id) REFERENCES m_koza (koza_id);
+ALTER TABLE d_kykh ADD CONSTRAINT fk_d_kykh_rsrvk1 FOREIGN KEY (rsrvk1_id) REFERENCES m_rsrvk1 (rsrvk1_id);
+ALTER TABLE d_kykh ADD CONSTRAINT fk_d_kykh_kjkbn FOREIGN KEY (kjkbn_id) REFERENCES c_kjkbn (kjkbn_id);
+ALTER TABLE d_kykh ADD CONSTRAINT fk_d_kykh_shho_m FOREIGN KEY (shho_m_id) REFERENCES m_shho (shho_id);
+ALTER TABLE d_kykh ADD CONSTRAINT fk_d_kykh_shho_1 FOREIGN KEY (shho_1_id) REFERENCES m_shho (shho_id);
+ALTER TABLE d_kykh ADD CONSTRAINT fk_d_kykh_shho_2 FOREIGN KEY (shho_2_id) REFERENCES m_shho (shho_id);
+ALTER TABLE d_kykh ADD CONSTRAINT fk_d_kykh_shho_3 FOREIGN KEY (shho_3_id) REFERENCES m_shho (shho_id);
+
+-- 物件明細 → 契約ヘッダ・マスタ・コード
+ALTER TABLE d_kykm ADD CONSTRAINT fk_d_kykm_kykh FOREIGN KEY (kykh_id) REFERENCES d_kykh (kykh_id);
+ALTER TABLE d_kykm ADD CONSTRAINT fk_d_kykm_bkind FOREIGN KEY (bkind_id) REFERENCES m_bkind (bkind_id);
+ALTER TABLE d_kykm ADD CONSTRAINT fk_d_kykm_mcpt FOREIGN KEY (mcpt_id) REFERENCES m_mcpt (mcpt_id);
+ALTER TABLE d_kykm ADD CONSTRAINT fk_d_kykm_skmk FOREIGN KEY (skmk_id) REFERENCES m_skmk (skmk_id);
+ALTER TABLE d_kykm ADD CONSTRAINT fk_d_kykm_b_bcat FOREIGN KEY (b_bcat_id) REFERENCES m_bcat (bcat_id);
+ALTER TABLE d_kykm ADD CONSTRAINT fk_d_kykm_rsrvb1 FOREIGN KEY (rsrvb1_id) REFERENCES m_rsrvb1 (rsrvb1_id);
+ALTER TABLE d_kykm ADD CONSTRAINT fk_d_kykm_hkho FOREIGN KEY (hkho_id) REFERENCES m_hkho (hkho_id);
+ALTER TABLE d_kykm ADD CONSTRAINT fk_d_kykm_leakbn FOREIGN KEY (leakbn_id) REFERENCES c_leakbn (leakbn_id);
+ALTER TABLE d_kykm ADD CONSTRAINT fk_d_kykm_chuum FOREIGN KEY (chuum_id) REFERENCES c_chuum (chuum_id);
+ALTER TABLE d_kykm ADD CONSTRAINT fk_d_kykm_chu_hnti FOREIGN KEY (chu_hnti_id) REFERENCES c_chu_hnti (chu_hnti_id);
+ALTER TABLE d_kykm ADD CONSTRAINT fk_d_kykm_kjkbn FOREIGN KEY (kjkbn_id) REFERENCES c_kjkbn (kjkbn_id);
+ALTER TABLE d_kykm ADD CONSTRAINT fk_d_kykm_skyak_ho FOREIGN KEY (skyak_ho_id) REFERENCES c_skyak_ho (skyak_ho_id);
+ALTER TABLE d_kykm ADD CONSTRAINT fk_d_kykm_szei_kjkbn FOREIGN KEY (szei_kjkbn_id) REFERENCES c_szei_kjkbn (szei_kjkbn_id);
+ALTER TABLE d_kykm ADD CONSTRAINT fk_d_kykm_hszei_kjkbn FOREIGN KEY (hszei_kjkbn_id) REFERENCES c_szei_kjkbn (szei_kjkbn_id);
+ALTER TABLE d_kykm ADD CONSTRAINT fk_d_kykm_f_lcpt FOREIGN KEY (f_lcpt_id) REFERENCES m_lcpt (lcpt_id);
+ALTER TABLE d_kykm ADD CONSTRAINT fk_d_kykm_f_hkmk FOREIGN KEY (f_hkmk_id) REFERENCES m_hkmk (hkmk_id);
+ALTER TABLE d_kykm ADD CONSTRAINT fk_d_kykm_f_gsha FOREIGN KEY (f_gsha_id) REFERENCES m_gsha (gsha_id);
+ALTER TABLE d_kykm ADD CONSTRAINT fk_d_kykm_hk_gsha FOREIGN KEY (hk_gsha_id) REFERENCES m_gsha (gsha_id);
+ALTER TABLE d_kykm ADD CONSTRAINT fk_d_kykm_k_gsha FOREIGN KEY (k_gsha_id) REFERENCES m_gsha (gsha_id);
+
+-- 配賦 → 物件明細・マスタ
+ALTER TABLE d_haif ADD CONSTRAINT fk_d_haif_kykm FOREIGN KEY (kykm_id) REFERENCES d_kykm (kykm_id);
+ALTER TABLE d_haif ADD CONSTRAINT fk_d_haif_kykh FOREIGN KEY (kykh_id) REFERENCES d_kykh (kykh_id);
+ALTER TABLE d_haif ADD CONSTRAINT fk_d_haif_hkmk FOREIGN KEY (hkmk_id) REFERENCES m_hkmk (hkmk_id);
+ALTER TABLE d_haif ADD CONSTRAINT fk_d_haif_h_bcat FOREIGN KEY (h_bcat_id) REFERENCES m_bcat (bcat_id);
+ALTER TABLE d_haif ADD CONSTRAINT fk_d_haif_rsrvh1 FOREIGN KEY (rsrvh1_id) REFERENCES m_rsrvh1 (rsrvh1_id);
+
+-- 減損 → 物件明細・契約ヘッダ
+ALTER TABLE d_gson ADD CONSTRAINT fk_d_gson_kykm FOREIGN KEY (kykm_id) REFERENCES d_kykm (kykm_id);
+ALTER TABLE d_gson ADD CONSTRAINT fk_d_gson_kykh FOREIGN KEY (kykh_id) REFERENCES d_kykh (kykh_id);
+
+-- 変更リース → 物件明細・契約ヘッダ・支払方法
+ALTER TABLE d_henl ADD CONSTRAINT fk_d_henl_kykm FOREIGN KEY (kykm_id) REFERENCES d_kykm (kykm_id);
+ALTER TABLE d_henl ADD CONSTRAINT fk_d_henl_kykh FOREIGN KEY (kykh_id) REFERENCES d_kykh (kykh_id);
+ALTER TABLE d_henl ADD CONSTRAINT fk_d_henl_shho FOREIGN KEY (shho_id) REFERENCES m_shho (shho_id);
+
+-- 変更ファイナンス → 物件明細・契約ヘッダ・支払方法
+ALTER TABLE d_henf ADD CONSTRAINT fk_d_henf_kykm FOREIGN KEY (kykm_id) REFERENCES d_kykm (kykm_id);
+ALTER TABLE d_henf ADD CONSTRAINT fk_d_henf_kykh FOREIGN KEY (kykh_id) REFERENCES d_kykh (kykh_id);
+ALTER TABLE d_henf ADD CONSTRAINT fk_d_henf_shho FOREIGN KEY (shho_id) REFERENCES m_shho (shho_id);
+
+-- マスタ間
+ALTER TABLE m_bcat ADD CONSTRAINT fk_m_bcat_genk FOREIGN KEY (genk_id) REFERENCES m_genk (genk_id);
+ALTER TABLE m_bcat ADD CONSTRAINT fk_m_bcat_skti FOREIGN KEY (skti_id) REFERENCES m_skti (skti_id);
+ALTER TABLE m_bcat ADD CONSTRAINT fk_m_bcat_bknri FOREIGN KEY (bknri_id) REFERENCES m_bknri (bknri_id);
+ALTER TABLE m_kknri ADD CONSTRAINT fk_m_kknri_corp FOREIGN KEY (corp_id) REFERENCES m_corp (corp_id);
+
+-- 更新ログ → セッションログ
+ALTER TABLE l_ulog ADD CONSTRAINT fk_l_ulog_slog FOREIGN KEY (slog_no) REFERENCES l_slog (slog_no);
+
+-- 消費税科目 → コードテーブル
+ALTER TABLE t_szei_kmk ADD CONSTRAINT fk_t_szei_kmk_leakbn FOREIGN KEY (leakbn_id) REFERENCES c_leakbn (leakbn_id);
+ALTER TABLE t_szei_kmk ADD CONSTRAINT fk_t_szei_kmk_kjkbn FOREIGN KEY (kjkbn_id) REFERENCES c_kjkbn (kjkbn_id);
+ALTER TABLE t_szei_kmk ADD CONSTRAINT fk_t_szei_kmk_szei_kjkbn FOREIGN KEY (szei_kjkbn_id) REFERENCES c_szei_kjkbn (szei_kjkbn_id);
+
+-- ==========================================================
 -- テーブルコメント
 -- ==========================================================
 
