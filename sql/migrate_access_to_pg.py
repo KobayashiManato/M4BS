@@ -1,17 +1,18 @@
 """Access MDB → PostgreSQL データ移行スクリプト
 FK制約を一時DROP → データ投入 → DDLから制約再作成
 """
+import os
 import pyodbc
 import psycopg2  # type: ignore
 
 
 MDB_PATH = r"c:\access_LeaseM4BS\Data\LM4BSdat.mdb"
 PG_CONN = {
-    "host": "localhost",
-    "port": 5432,
-    "database": "lease_m4bs",
-    "user": "lease_m4bs_user",
-    "password": "iltex_mega_pass_m4",
+    "host": os.environ.get("PGHOST", "localhost"),
+    "port": int(os.environ.get("PGPORT", "5432")),
+    "database": os.environ.get("PGDATABASE", "lease_m4bs"),
+    "user": os.environ.get("PGUSER", "lease_m4bs_user"),
+    "password": os.environ.get("PGPASSWORD", ""),
 }
 
 
@@ -74,94 +75,95 @@ def migrate():
     pg_conn.commit()
     print(f"FK制約を一時DROP ({len(recreate_sqls)}件)\n")
 
-    access_tables = get_access_tables(ac)
-    pg_table_set = {t.lower(): t for t in get_pg_tables(pg)}
-
     migrated = 0
     skipped = 0
     errors = []
 
-    # Step 2: データ移行
-    for at in access_tables:
-        pt = pg_table_set.get(at.lower())
-        if not pt:
-            print(f"  SKIP: {at} (PGにテーブルなし)")
-            skipped += 1
-            continue
+    try:
+        access_tables = get_access_tables(ac)
+        pg_table_set = {t.lower(): t for t in get_pg_tables(pg)}
 
-        try:
-            ac.execute(f"SELECT COUNT(*) FROM [{at}]")
-            cnt = ac.fetchone()[0]
-            if cnt == 0:
-                print(f"  SKIP: {at} (empty)")
+        # Step 2: データ移行
+        for at in access_tables:
+            pt = pg_table_set.get(at.lower())
+            if not pt:
+                print(f"  SKIP: {at} (PGにテーブルなし)")
                 skipped += 1
                 continue
-        except Exception as e:
-            errors.append((at, str(e)))
-            continue
 
-        pg_cols = get_pg_columns(pg, pt)
-        if not pg_cols:
-            errors.append((at, "PGカラム取得失敗"))
-            continue
-
-        ac.execute(f"SELECT TOP 1 * FROM [{at}]")
-        ac_cols = [d[0] for d in ac.description]
-
-        pg_col_map = {c.lower(): c for c in pg_cols}
-        matched = [(a, pg_col_map[a.lower()]) for a in ac_cols if a.lower() in pg_col_map]
-
-        if not matched:
-            errors.append((at, "マッチするカラムなし"))
-            continue
-
-        ac_names = [m[0] for m in matched]
-        pg_names = [m[1] for m in matched]
-
-        pg.execute(f"TRUNCATE {pt}")
-
-        sel = ", ".join([f"[{c}]" for c in ac_names])
-        ac.execute(f"SELECT {sel} FROM [{at}]")
-
-        ph = ", ".join(["%s"] * len(pg_names))
-        ins = f"INSERT INTO {pt} ({', '.join(pg_names)}) VALUES ({ph})"
-
-        row_count = 0
-        for row in ac.fetchall():
-            vals = [convert_value(v) for v in row]
             try:
-                pg.execute(ins, vals)
-                row_count += 1
+                ac.execute(f"SELECT COUNT(*) FROM [{at}]")
+                cnt = ac.fetchone()[0]
+                if cnt == 0:
+                    print(f"  SKIP: {at} (empty)")
+                    skipped += 1
+                    continue
+            except Exception as e:
+                errors.append((at, str(e)))
+                continue
+
+            pg_cols = get_pg_columns(pg, pt)
+            if not pg_cols:
+                errors.append((at, "PGカラム取得失敗"))
+                continue
+
+            ac.execute(f"SELECT TOP 1 * FROM [{at}]")
+            ac_cols = [d[0] for d in ac.description]
+
+            pg_col_map = {c.lower(): c for c in pg_cols}
+            matched = [(a, pg_col_map[a.lower()]) for a in ac_cols if a.lower() in pg_col_map]
+
+            if not matched:
+                errors.append((at, "マッチするカラムなし"))
+                continue
+
+            ac_names = [m[0] for m in matched]
+            pg_names = [m[1] for m in matched]
+
+            pg.execute(f"TRUNCATE {pt}")
+
+            sel = ", ".join([f"[{c}]" for c in ac_names])
+            ac.execute(f"SELECT {sel} FROM [{at}]")
+
+            ph = ", ".join(["%s"] * len(pg_names))
+            ins = f"INSERT INTO {pt} ({', '.join(pg_names)}) VALUES ({ph})"
+
+            row_count = 0
+            for row in ac.fetchall():
+                vals = [convert_value(v) for v in row]
+                try:
+                    pg.execute(ins, vals)
+                    row_count += 1
+                except Exception as e:
+                    pg_conn.rollback()
+                    errors.append((at, f"insert error: {e}"))
+                    row_count = -1
+                    break
+
+            if row_count > 0:
+                pg_conn.commit()
+                print(f"  OK: {at} -> {pt} ({row_count} rows)")
+                migrated += 1
+            elif row_count == 0:
+                pg_conn.commit()
+    finally:
+        # Step 3: FK制約を再作成（異常終了時も必ず実行）
+        print(f"\nFK制約を再作成中...")
+        fk_errors = []
+        for sql in recreate_sqls:
+            try:
+                pg.execute(sql)
+                pg_conn.commit()
             except Exception as e:
                 pg_conn.rollback()
-                errors.append((at, f"insert error: {e}"))
-                row_count = -1
-                break
+                fk_errors.append(f"  {sql[:80]}... -> {e}")
 
-        if row_count > 0:
-            pg_conn.commit()
-            print(f"  OK: {at} -> {pt} ({row_count} rows)")
-            migrated += 1
-        elif row_count == 0:
-            pg_conn.commit()
-
-    # Step 3: FK制約を再作成
-    print(f"\nFK制約を再作成中...")
-    fk_errors = []
-    for sql in recreate_sqls:
-        try:
-            pg.execute(sql)
-            pg_conn.commit()
-        except Exception as e:
-            pg_conn.rollback()
-            fk_errors.append(f"  {sql[:80]}... -> {e}")
-
-    if fk_errors:
-        print(f"FK再作成エラー ({len(fk_errors)}件):")
-        for fe in fk_errors:
-            print(fe)
-    else:
-        print(f"FK制約を全て再作成しました ({len(recreate_sqls)}件)")
+        if fk_errors:
+            print(f"FK再作成エラー ({len(fk_errors)}件):")
+            for fe in fk_errors:
+                print(fe)
+        else:
+            print(f"FK制約を全て再作成しました ({len(recreate_sqls)}件)")
 
     print(f"\n=== 結果 ===")
     print(f"移行成功: {migrated} テーブル")
