@@ -315,6 +315,19 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormHelper.vb" />
+    <Compile Include="LoginSession.vb" />
+    <Compile Include="Form_f_LOGIN_JET.Designer.vb">
+      <DependentUpon>Form_f_LOGIN_JET.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form_f_LOGIN_JET.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_f_LOGIN_ORACLE.Designer.vb">
+      <DependentUpon>Form_f_LOGIN_ORACLE.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form_f_LOGIN_ORACLE.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Form_BCAT.Designer.vb">
       <DependentUpon>Form_BCAT.vb</DependentUpon>
     </Compile>
@@ -754,6 +767,7 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\ApplicationEvents.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
       <DependentUpon>Application.myapp</DependentUpon>

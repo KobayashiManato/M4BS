@@ -154,10 +154,7 @@ Public Class DbConnectionManager
     ''' <returns>マスクされた接続文字列</returns>
     Public Function GetMaskedConnectionString() As String
         Dim builder As New NpgsqlConnectionStringBuilder(_connectionString)
-        If Not String.IsNullOrEmpty(builder.Password) Then
-            builder.Password = "********"
-        End If
-        Return builder.ConnectionString
+        Return $"Host={builder.Host};Port={builder.Port};Database={builder.Database}"
     End Function
 
     ' 簡易ロガークラス（Logger.vb）の作成推奨
