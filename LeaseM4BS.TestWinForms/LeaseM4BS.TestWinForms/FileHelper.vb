@@ -118,9 +118,9 @@ Public Class FileHelper
         End Try
     End Sub
 
-    ' todo 未完成(実行するとエラーは出ず、空のテキストファイルが出力される)
     ' 固定長ファイルとして出力
-    Public Sub ToFixedLengthFile(dgv As DataGridView)
+    ' columnByteWidths: 列名→バイト幅の辞書（未指定時は col.Tag または自動算出）
+    Public Sub ToFixedLengthFile(dgv As DataGridView, Optional columnByteWidths As Dictionary(Of String, Integer) = Nothing)
         Dim sfd As New SaveFileDialog()
         sfd.Filter = "テキストファイル(*.txt)|*.txt"
         sfd.FileName = dgv.FindForm().Text & ".txt"
@@ -136,17 +136,15 @@ Public Class FileHelper
 
                     Dim line As New StringBuilder()
 
-                    ' 全列をループし、条件に合うものだけ出力
                     For Each col As DataGridViewColumn In dgv.Columns
-                        ' 条件：表示されている列 かつ バイト数定義が存在する列
                         If col.Visible Then
-                            ' 値を取得（コンボボックスなら名称、テキストならコード）
                             Dim rawValue As String = row.Cells(col.Name).FormattedValue?.ToString()
-
-                            ' 前に作成した PadRightByte 関数でバイト数を固定して結合
-                            line.Append(PadRightByte(rawValue, 5))  ' todo バイト数を定数じゃなくする
+                            Dim byteWidth As Integer = GetColumnByteWidth(col, columnByteWidths)
+                            line.Append(PadRightByte(rawValue, byteWidth))
                         End If
                     Next
+
+                    sw.WriteLine(line.ToString())
                 Next
             End Using
 
@@ -156,6 +154,26 @@ Public Class FileHelper
             MessageBox.Show("出力エラー: " & ex.Message)
         End Try
     End Sub
+
+    ''' <summary>
+    ''' 列のバイト幅を取得します（辞書 → Tag → デフォルトの優先順位）
+    ''' </summary>
+    Private Function GetColumnByteWidth(col As DataGridViewColumn, columnByteWidths As Dictionary(Of String, Integer)) As Integer
+        ' 優先1: 呼び出し元から指定された辞書
+        If columnByteWidths IsNot Nothing AndAlso columnByteWidths.ContainsKey(col.Name) Then
+            Return columnByteWidths(col.Name)
+        End If
+
+        ' 優先2: Column.Tag に Integer が設定されている場合
+        If col.Tag IsNot Nothing AndAlso TypeOf col.Tag Is Integer Then
+            Return CInt(col.Tag)
+        End If
+
+        ' 優先3: ヘッダーテキストのバイト長ベースのデフォルト（最低10バイト）
+        Dim sjis As Encoding = Encoding.GetEncoding("Shift_JIS")
+        Dim headerBytes As Integer = sjis.GetByteCount(If(col.HeaderText, ""))
+        Return Math.Max(headerBytes + 2, 10)
+    End Function
 
     ''' <summary>
     ''' 文字列をバイト数指定でパディング（または切り捨て）します
