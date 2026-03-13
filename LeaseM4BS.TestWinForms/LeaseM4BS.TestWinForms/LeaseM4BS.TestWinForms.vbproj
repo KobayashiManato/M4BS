@@ -1,0 +1,1141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{77A9AE2A-E73B-468C-BCCE-841079F4724C}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>My.MyApplication</StartupObject>
+    <RootNamespace>
+    </RootNamespace>
+    <AssemblyName>LeaseM4BS.TestWinForms</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>LeaseM4BS.TestWinForms.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>LeaseM4BS.TestWinForms.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.6.0.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.HashCode, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.HashCode.1.1.1\lib\net461\Microsoft.Bcl.HashCode.dll</HintPath>
+    </Reference>
+    <Reference Include="Npgsql, Version=6.0.11.0, Culture=neutral, PublicKeyToken=5d8b90d52f46fda7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Npgsql.6.0.11\lib\netstandard2.0\Npgsql.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Collections.Immutable, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Collections.Immutable.6.0.0\lib\net461\System.Collections.Immutable.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.6.0.0\lib\net461\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Encodings.Web, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encodings.Web.6.0.0\lib\net461\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Json.6.0.0\lib\net461\System.Text.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Channels, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Channels.6.0.0\lib\net461\System.Threading.Channels.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\LeaseM4BS\LeaseM4BS.DataAccess\UsageExamples.vb">
+      <Link>UsageExamples.vb</Link>
+    </Compile>
+    <Compile Include="CalendarColumn.vb" />
+    <Compile Include="FileHelper.vb" />
+    <Compile Include="Form1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.vb">
+      <DependentUpon>Form1.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_fc_TC_HREL.Designer.vb">
+      <DependentUpon>Form_fc_TC_HREL.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form_fc_TC_HREL.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_f_BEPPYO2_JOKEN.Designer.vb">
+      <DependentUpon>Form_f_BEPPYO2_JOKEN.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form_f_BEPPYO2_JOKEN.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_f_BEPPYO2_REP.Designer.vb">
+      <DependentUpon>Form_f_BEPPYO2_REP.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form_f_BEPPYO2_REP.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_f_flx_TOUGETSU.Designer.vb">
+      <DependentUpon>Form_f_flx_TOUGETSU.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form_f_flx_TOUGETSU.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_f_IMPORT_IDO_FROM_EXCEL.Designer.vb">
+      <DependentUpon>Form_f_IMPORT_IDO_FROM_EXCEL.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form_f_IMPORT_IDO_FROM_EXCEL.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_f_CHUKI_JOKEN.Designer.vb">
+      <DependentUpon>Form_f_CHUKI_JOKEN.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form_f_CHUKI_JOKEN.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_f_CHUKI_RECALC.Designer.vb">
+      <DependentUpon>Form_f_CHUKI_RECALC.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form_f_CHUKI_RECALC.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_f_CHUKI_SCH.Designer.vb">
+      <DependentUpon>Form_f_CHUKI_SCH.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form_f_CHUKI_SCH.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_f_CHUKI_YOUSHIKI.Designer.vb">
+      <DependentUpon>Form_f_CHUKI_YOUSHIKI.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form_f_CHUKI_YOUSHIKI.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_f_flx_BEPPYO2.Designer.vb">
+      <DependentUpon>Form_f_flx_BEPPYO2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form_f_flx_BEPPYO2.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_f_flx_CHUKI.Designer.vb">
+      <DependentUpon>Form_f_flx_CHUKI.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form_f_flx_CHUKI.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_f_flx_IDOLST.Designer.vb">
+      <DependentUpon>Form_f_flx_IDOLST.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form_f_flx_IDOLST.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_f_flx_KHIYO.Designer.vb">
+      <DependentUpon>Form_f_flx_KHIYO.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form_f_flx_KHIYO.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_f_flx_KLSRYO.Designer.vb">
+      <DependentUpon>Form_f_flx_KLSRYO.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form_f_flx_KLSRYO.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_f_flx_SAIMU.Designer.vb">
+      <DependentUpon>Form_f_flx_SAIMU.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form_f_flx_SAIMU.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_f_flx_YOSAN.Designer.vb">
+      <DependentUpon>Form_f_flx_YOSAN.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form_f_flx_YOSAN.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_f_flx_ZANDAKA.Designer.vb">
+      <DependentUpon>Form_f_flx_ZANDAKA.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form_f_flx_ZANDAKA.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_f_IDOLST_JOKEN.Designer.vb">
+      <DependentUpon>Form_f_IDOLST_JOKEN.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form_f_IDOLST_JOKEN.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_f_KHIYO_JOKEN.Designer.vb">
+      <DependentUpon>Form_f_KHIYO_JOKEN.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form_f_KHIYO_JOKEN.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_f_KLSRYO_JOKEN.Designer.vb">
+      <DependentUpon>Form_f_KLSRYO_JOKEN.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form_f_KLSRYO_JOKEN.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_f_KEIJO_JOKEN.Designer.vb">
+      <DependentUpon>Form_f_KEIJO_JOKEN.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form_f_KEIJO_JOKEN.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_f_TOUGETSU_JOKEN.Designer.vb">
+      <DependentUpon>Form_f_TOUGETSU_JOKEN.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form_f_TOUGETSU_JOKEN.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_f_FlexOutputDLG.Designer.vb">
+      <DependentUpon>Form_f_FlexOutputDLG.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form_f_FlexOutputDLG.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_f_flx_KEIJO.Designer.vb">
+      <DependentUpon>Form_f_flx_KEIJO.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form_f_flx_KEIJO.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_f_flx_M_RSRVK1.Designer.vb">
+      <DependentUpon>Form_f_flx_M_RSRVK1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form_f_flx_M_RSRVK1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_f_flx_TANA.Designer.vb">
+      <DependentUpon>Form_f_flx_TANA.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form_f_flx_TANA.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_f_M_GSHA_CHANGE.Designer.vb">
+      <DependentUpon>Form_f_M_GSHA_CHANGE.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form_f_M_GSHA_CHANGE.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormHelper.vb" />
+    <Compile Include="Form_BCAT.Designer.vb">
+      <DependentUpon>Form_BCAT.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form_BCAT.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_BKNRI.Designer.vb">
+      <DependentUpon>Form_BKNRI.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form_BKNRI.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_f_flx_D_GSON.Designer.vb">
+      <DependentUpon>Form_f_flx_D_GSON.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form_f_flx_D_GSON.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_f_flx_D_HAIF.Designer.vb">
+      <DependentUpon>Form_f_flx_D_HAIF.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form_f_flx_D_HAIF.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_f_flx_D_HENF.Designer.vb">
+      <DependentUpon>Form_f_flx_D_HENF.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form_f_flx_D_HENF.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_f_flx_M_BCAT.Designer.vb">
+      <DependentUpon>Form_f_flx_M_BCAT.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form_f_flx_M_BCAT.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_f_flx_M_BKIND.Designer.vb">
+      <DependentUpon>Form_f_flx_M_BKIND.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form_f_flx_M_BKIND.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_f_flx_M_BKNRI.Designer.vb">
+      <DependentUpon>Form_f_flx_M_BKNRI.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form_f_flx_M_BKNRI.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_f_flx_M_CORP.Designer.vb">
+      <DependentUpon>Form_f_flx_M_CORP.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form_f_flx_M_CORP.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_f_flx_M_GENK.Designer.vb">
+      <DependentUpon>Form_f_flx_M_GENK.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form_f_flx_M_GENK.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_f_flx_M_GSHA.Designer.vb">
+      <DependentUpon>Form_f_flx_M_GSHA.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form_f_flx_M_GSHA.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_f_flx_M_HKHO.Designer.vb">
+      <DependentUpon>Form_f_flx_M_HKHO.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form_f_flx_M_HKHO.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_f_flx_M_HKMK.Designer.vb">
+      <DependentUpon>Form_f_flx_M_HKMK.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form_f_flx_M_HKMK.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_f_flx_M_KKNRI.Designer.vb">
+      <DependentUpon>Form_f_flx_M_KKNRI.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form_f_flx_M_KKNRI.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_f_flx_M_KOZA.Designer.vb">
+      <DependentUpon>Form_f_flx_M_KOZA.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form_f_flx_M_KOZA.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_f_flx_M_LCPT.Designer.vb">
+      <DependentUpon>Form_f_flx_M_LCPT.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form_f_flx_M_LCPT.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_f_flx_M_MCPT.Designer.vb">
+      <DependentUpon>Form_f_flx_M_MCPT.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form_f_flx_M_MCPT.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_f_flx_M_RSRVB1.Designer.vb">
+      <DependentUpon>Form_f_flx_M_RSRVB1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form_f_flx_M_RSRVB1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_f_flx_M_RSRVH1.Designer.vb">
+      <DependentUpon>Form_f_flx_M_RSRVH1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form_f_flx_M_RSRVH1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_f_flx_M_SHHO.Designer.vb">
+      <DependentUpon>Form_f_flx_M_SHHO.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form_f_flx_M_SHHO.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_f_flx_M_SKMK.Designer.vb">
+      <DependentUpon>Form_f_flx_M_SKMK.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form_f_flx_M_SKMK.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_f_M_BCAT_CHANGE.Designer.vb">
+      <DependentUpon>Form_f_M_BCAT_CHANGE.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form_f_M_BCAT_CHANGE.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_f_M_BCAT_INP.Designer.vb">
+      <DependentUpon>Form_f_M_BCAT_INP.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form_f_M_BCAT_INP.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_f_M_BKIND_CHANGE.Designer.vb">
+      <DependentUpon>Form_f_M_BKIND_CHANGE.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form_f_M_BKIND_CHANGE.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_f_M_BKIND_INP.Designer.vb">
+      <DependentUpon>Form_f_M_BKIND_INP.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form_f_M_BKIND_INP.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_f_M_BKNRI_CHANGE.Designer.vb">
+      <DependentUpon>Form_f_M_BKNRI_CHANGE.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form_f_M_BKNRI_CHANGE.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_f_M_BKNRI_INP.Designer.vb">
+      <DependentUpon>Form_f_M_BKNRI_INP.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form_f_M_BKNRI_INP.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_f_M_CORP_CHANGE.Designer.vb">
+      <DependentUpon>Form_f_M_CORP_CHANGE.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form_f_M_CORP_CHANGE.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_f_M_CORP_INP.Designer.vb">
+      <DependentUpon>Form_f_M_CORP_INP.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form_f_M_CORP_INP.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_f_M_GENK_CHANGE.Designer.vb">
+      <DependentUpon>Form_f_M_GENK_CHANGE.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form_f_M_GENK_CHANGE.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_f_M_GENK_INP.Designer.vb">
+      <DependentUpon>Form_f_M_GENK_INP.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form_f_M_GENK_INP.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_f_M_GSHA_INP.Designer.vb">
+      <DependentUpon>Form_f_M_GSHA_INP.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form_f_M_GSHA_INP.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_f_M_HKHO_CHANGE.Designer.vb">
+      <DependentUpon>Form_f_M_HKHO_CHANGE.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form_f_M_HKHO_CHANGE.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_f_M_HKHO_INP.Designer.vb">
+      <DependentUpon>Form_f_M_HKHO_INP.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form_f_M_HKHO_INP.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_f_M_HKMK_CHANGE.Designer.vb">
+      <DependentUpon>Form_f_M_HKMK_CHANGE.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form_f_M_HKMK_CHANGE.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_f_M_HKMK_INP.Designer.vb">
+      <DependentUpon>Form_f_M_HKMK_INP.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form_f_M_HKMK_INP.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_f_M_KKNRI_CHANGE.Designer.vb">
+      <DependentUpon>Form_f_M_KKNRI_CHANGE.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form_f_M_KKNRI_CHANGE.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_f_M_KKNRI_INP.Designer.vb">
+      <DependentUpon>Form_f_M_KKNRI_INP.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form_f_M_KKNRI_INP.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_f_M_KOZA_CHANGE.Designer.vb">
+      <DependentUpon>Form_f_M_KOZA_CHANGE.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form_f_M_KOZA_CHANGE.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_f_M_KOZA_INP.Designer.vb">
+      <DependentUpon>Form_f_M_KOZA_INP.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form_f_M_KOZA_INP.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_f_M_LCPT_CHANGE.Designer.vb">
+      <DependentUpon>Form_f_M_LCPT_CHANGE.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form_f_M_LCPT_CHANGE.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_f_M_LCPT_INP.Designer.vb">
+      <DependentUpon>Form_f_M_LCPT_INP.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form_f_M_LCPT_INP.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_f_M_MCPT_CHANGE.Designer.vb">
+      <DependentUpon>Form_f_M_MCPT_CHANGE.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form_f_M_MCPT_CHANGE.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_f_M_MCPT_INP.Designer.vb">
+      <DependentUpon>Form_f_M_MCPT_INP.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form_f_M_MCPT_INP.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_f_M_RSRVB1_INP.Designer.vb">
+      <DependentUpon>Form_f_M_RSRVB1_INP.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form_f_M_RSRVB1_INP.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_f_M_RSRVB1_CHANGE.Designer.vb">
+      <DependentUpon>Form_f_M_RSRVB1_CHANGE.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form_f_M_RSRVB1_CHANGE.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_f_M_RSRVK1_INP.Designer.vb">
+      <DependentUpon>Form_f_M_RSRVK1_INP.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form_f_M_RSRVK1_INP.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_f_M_RSRVK1_CHANGE.Designer.vb">
+      <DependentUpon>Form_f_M_RSRVK1_CHANGE.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form_f_M_RSRVK1_CHANGE.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_f_M_SHHO_CHANGE.Designer.vb">
+      <DependentUpon>Form_f_M_SHHO_CHANGE.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form_f_M_SHHO_CHANGE.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_f_M_SHHO_INP.Designer.vb">
+      <DependentUpon>Form_f_M_SHHO_INP.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form_f_M_SHHO_INP.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_f_M_SKMK_CHANGE.Designer.vb">
+      <DependentUpon>Form_f_M_SKMK_CHANGE.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form_f_M_SKMK_CHANGE.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_f_M_SKMK_INP.Designer.vb">
+      <DependentUpon>Form_f_M_SKMK_INP.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form_f_M_SKMK_INP.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_f_SAIMU_JOKEN.Designer.vb">
+      <DependentUpon>Form_f_SAIMU_JOKEN.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form_f_SAIMU_JOKEN.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_f_IMPORT_SAILEASE_FROM_EXCEL.Designer.vb">
+      <DependentUpon>Form_f_IMPORT_SAILEASE_FROM_EXCEL.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form_f_IMPORT_SAILEASE_FROM_EXCEL.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_f_ZENKAI_LOG.Designer.vb">
+      <DependentUpon>Form_f_ZENKAI_LOG.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form_f_ZENKAI_LOG.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_f_TANA_JOKEN.Designer.vb">
+      <DependentUpon>Form_f_TANA_JOKEN.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form_f_TANA_JOKEN.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_f_T_HOLIDAY.Designer.vb">
+      <DependentUpon>Form_f_T_HOLIDAY.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form_f_T_HOLIDAY.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_f_T_KARI_RITU.Designer.vb">
+      <DependentUpon>Form_f_T_KARI_RITU.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form_f_T_KARI_RITU.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_f_T_ZEI_KAISEI.Designer.vb">
+      <DependentUpon>Form_f_T_ZEI_KAISEI.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form_f_T_ZEI_KAISEI.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_f_YOSAN_JOKEN.Designer.vb">
+      <DependentUpon>Form_f_YOSAN_JOKEN.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form_f_YOSAN_JOKEN.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_f_ZANDAKA_JOKEN.Designer.vb">
+      <DependentUpon>Form_f_ZANDAKA_JOKEN.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form_f_ZANDAKA_JOKEN.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_f_IMPORT_CONTRACT_FROM_EXCEL.Designer.vb">
+      <DependentUpon>Form_f_IMPORT_CONTRACT_FROM_EXCEL.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form_f_IMPORT_CONTRACT_FROM_EXCEL.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_f_IMPORT_GSON_FROM_EXCEL.Designer.vb">
+      <DependentUpon>Form_f_IMPORT_GSON_FROM_EXCEL.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form_f_IMPORT_GSON_FROM_EXCEL.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_HKMK.Designer.vb">
+      <DependentUpon>Form_HKMK.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form_HKMK.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_KKNRI.Designer.vb">
+      <DependentUpon>Form_KKNRI.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form_KKNRI.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_LCPT.Designer.vb">
+      <DependentUpon>Form_LCPT.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form_LCPT.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_MAIN.Designer.vb">
+      <DependentUpon>Form_MAIN.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form_MAIN.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_SKMK.Designer.vb">
+      <DependentUpon>Form_SKMK.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form_SKMK.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_BuknEntry.Designer.vb">
+      <DependentUpon>Form_BuknEntry.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form_BuknEntry.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_ContractEntry.Designer.vb">
+      <DependentUpon>Form_ContractEntry.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form_ContractEntry.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_f_flx_CONTRACT.Designer.vb">
+      <DependentUpon>Form_f_flx_CONTRACT.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form_f_flx_CONTRACT.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_JournalEntry.Designer.vb">
+      <DependentUpon>Form_JournalEntry.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form_JournalEntry.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_f_flx_BUKN.Designer.vb">
+      <DependentUpon>Form_f_flx_BUKN.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form_f_flx_BUKN.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="UtilControl.vb" />
+    <Compile Include="UtilDate.vb" />
+    <Compile Include="Utils.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_fc_TC_HREL.resx">
+      <DependentUpon>Form_fc_TC_HREL.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_f_BEPPYO2_JOKEN.resx">
+      <DependentUpon>Form_f_BEPPYO2_JOKEN.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_f_BEPPYO2_REP.resx">
+      <DependentUpon>Form_f_BEPPYO2_REP.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_f_IMPORT_IDO_FROM_EXCEL.resx">
+      <DependentUpon>Form_f_IMPORT_IDO_FROM_EXCEL.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_f_CHUKI_JOKEN.resx">
+      <DependentUpon>Form_f_CHUKI_JOKEN.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_f_CHUKI_RECALC.resx">
+      <DependentUpon>Form_f_CHUKI_RECALC.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_f_CHUKI_SCH.resx">
+      <DependentUpon>Form_f_CHUKI_SCH.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_f_CHUKI_YOUSHIKI.resx">
+      <DependentUpon>Form_f_CHUKI_YOUSHIKI.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_f_flx_BEPPYO2.resx">
+      <DependentUpon>Form_f_flx_BEPPYO2.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_f_flx_CHUKI.resx">
+      <DependentUpon>Form_f_flx_CHUKI.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_f_flx_IDOLST.resx">
+      <DependentUpon>Form_f_flx_IDOLST.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_f_flx_KHIYO.resx">
+      <DependentUpon>Form_f_flx_KHIYO.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_f_flx_KLSRYO.resx">
+      <DependentUpon>Form_f_flx_KLSRYO.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_f_flx_SAIMU.resx">
+      <DependentUpon>Form_f_flx_SAIMU.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_f_flx_YOSAN.resx">
+      <DependentUpon>Form_f_flx_YOSAN.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_f_flx_ZANDAKA.resx">
+      <DependentUpon>Form_f_flx_ZANDAKA.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_f_IDOLST_JOKEN.resx">
+      <DependentUpon>Form_f_IDOLST_JOKEN.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_f_KHIYO_JOKEN.resx">
+      <DependentUpon>Form_f_KHIYO_JOKEN.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_f_KLSRYO_JOKEN.resx">
+      <DependentUpon>Form_f_KLSRYO_JOKEN.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_f_KEIJO_JOKEN.resx">
+      <DependentUpon>Form_f_KEIJO_JOKEN.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_f_TOUGETSU_JOKEN.resx">
+      <DependentUpon>Form_f_TOUGETSU_JOKEN.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_f_FlexOutputDLG.resx">
+      <DependentUpon>Form_f_FlexOutputDLG.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_f_flx_KEIJO.resx">
+      <DependentUpon>Form_f_flx_KEIJO.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_f_flx_M_RSRVK1.resx">
+      <DependentUpon>Form_f_flx_M_RSRVK1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_f_flx_TANA.resx">
+      <DependentUpon>Form_f_flx_TANA.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_f_M_GSHA_CHANGE.resx">
+      <DependentUpon>Form_f_M_GSHA_CHANGE.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_f_flx_D_GSON.resx">
+      <DependentUpon>Form_f_flx_D_GSON.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_f_flx_D_HAIF.resx">
+      <DependentUpon>Form_f_flx_D_HAIF.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_f_flx_D_HENF.resx">
+      <DependentUpon>Form_f_flx_D_HENF.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_f_flx_M_BCAT.resx">
+      <DependentUpon>Form_f_flx_M_BCAT.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_f_flx_M_BKIND.resx">
+      <DependentUpon>Form_f_flx_M_BKIND.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_f_flx_M_BKNRI.resx">
+      <DependentUpon>Form_f_flx_M_BKNRI.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_f_flx_M_CORP.resx">
+      <DependentUpon>Form_f_flx_M_CORP.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_f_flx_M_GENK.resx">
+      <DependentUpon>Form_f_flx_M_GENK.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_f_flx_M_GSHA.resx">
+      <DependentUpon>Form_f_flx_M_GSHA.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_f_flx_M_HKHO.resx">
+      <DependentUpon>Form_f_flx_M_HKHO.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_f_flx_M_HKMK.resx">
+      <DependentUpon>Form_f_flx_M_HKMK.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_f_flx_M_KKNRI.resx">
+      <DependentUpon>Form_f_flx_M_KKNRI.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_f_flx_M_KOZA.resx">
+      <DependentUpon>Form_f_flx_M_KOZA.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_f_flx_M_LCPT.resx">
+      <DependentUpon>Form_f_flx_M_LCPT.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_f_flx_M_MCPT.resx">
+      <DependentUpon>Form_f_flx_M_MCPT.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_f_flx_M_RSRVB1.resx">
+      <DependentUpon>Form_f_flx_M_RSRVB1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_f_flx_M_RSRVH1.resx">
+      <DependentUpon>Form_f_flx_M_RSRVH1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_f_flx_M_SHHO.resx">
+      <DependentUpon>Form_f_flx_M_SHHO.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_f_flx_M_SKMK.resx">
+      <DependentUpon>Form_f_flx_M_SKMK.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_f_M_BCAT_CHANGE.resx">
+      <DependentUpon>Form_f_M_BCAT_CHANGE.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_f_M_BCAT_INP.resx">
+      <DependentUpon>Form_f_M_BCAT_INP.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_f_M_BKIND_CHANGE.resx">
+      <DependentUpon>Form_f_M_BKIND_CHANGE.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_f_M_BKIND_INP.resx">
+      <DependentUpon>Form_f_M_BKIND_INP.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_f_M_BKNRI_CHANGE.resx">
+      <DependentUpon>Form_f_M_BKNRI_CHANGE.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_f_M_BKNRI_INP.resx">
+      <DependentUpon>Form_f_M_BKNRI_INP.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_f_M_CORP_CHANGE.resx">
+      <DependentUpon>Form_f_M_CORP_CHANGE.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_f_M_CORP_INP.resx">
+      <DependentUpon>Form_f_M_CORP_INP.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_f_M_GENK_CHANGE.resx">
+      <DependentUpon>Form_f_M_GENK_CHANGE.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_f_M_GENK_INP.resx">
+      <DependentUpon>Form_f_M_GENK_INP.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_f_M_GSHA_INP.resx">
+      <DependentUpon>Form_f_M_GSHA_INP.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_f_M_HKHO_CHANGE.resx">
+      <DependentUpon>Form_f_M_HKHO_CHANGE.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_f_M_HKHO_INP.resx">
+      <DependentUpon>Form_f_M_HKHO_INP.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_f_M_HKMK_CHANGE.resx">
+      <DependentUpon>Form_f_M_HKMK_CHANGE.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_f_M_HKMK_INP.resx">
+      <DependentUpon>Form_f_M_HKMK_INP.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_f_M_KKNRI_CHANGE.resx">
+      <DependentUpon>Form_f_M_KKNRI_CHANGE.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_f_M_KKNRI_INP.resx">
+      <DependentUpon>Form_f_M_KKNRI_INP.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_f_M_KOZA_CHANGE.resx">
+      <DependentUpon>Form_f_M_KOZA_CHANGE.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_f_M_KOZA_INP.resx">
+      <DependentUpon>Form_f_M_KOZA_INP.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_f_M_LCPT_CHANGE.resx">
+      <DependentUpon>Form_f_M_LCPT_CHANGE.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_f_M_LCPT_INP.resx">
+      <DependentUpon>Form_f_M_LCPT_INP.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_f_M_MCPT_CHANGE.resx">
+      <DependentUpon>Form_f_M_MCPT_CHANGE.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_f_M_MCPT_INP.resx">
+      <DependentUpon>Form_f_M_MCPT_INP.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_f_M_RSRVB1_CHANGE.resx">
+      <DependentUpon>Form_f_M_RSRVB1_CHANGE.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_f_M_RSRVB1_INP.resx">
+      <DependentUpon>Form_f_M_RSRVB1_INP.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_f_M_RSRVK1_CHANGE.resx">
+      <DependentUpon>Form_f_M_RSRVK1_CHANGE.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_f_M_RSRVK1_INP.resx">
+      <DependentUpon>Form_f_M_RSRVK1_INP.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_f_M_SHHO_CHANGE.resx">
+      <DependentUpon>Form_f_M_SHHO_CHANGE.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_f_M_SHHO_INP.resx">
+      <DependentUpon>Form_f_M_SHHO_INP.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_f_M_SKMK_CHANGE.resx">
+      <DependentUpon>Form_f_M_SKMK_CHANGE.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_f_M_SKMK_INP.resx">
+      <DependentUpon>Form_f_M_SKMK_INP.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_f_SAIMU_JOKEN.resx">
+      <DependentUpon>Form_f_SAIMU_JOKEN.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_f_IMPORT_SAILEASE_FROM_EXCEL.resx">
+      <DependentUpon>Form_f_IMPORT_SAILEASE_FROM_EXCEL.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_f_ZENKAI_LOG.resx">
+      <DependentUpon>Form_f_ZENKAI_LOG.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_f_TANA_JOKEN.resx">
+      <DependentUpon>Form_f_TANA_JOKEN.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_f_T_HOLIDAY.resx">
+      <DependentUpon>Form_f_T_HOLIDAY.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_f_T_KARI_RITU.resx">
+      <DependentUpon>Form_f_T_KARI_RITU.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_f_T_ZEI_KAISEI.resx">
+      <DependentUpon>Form_f_T_ZEI_KAISEI.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_f_YOSAN_JOKEN.resx">
+      <DependentUpon>Form_f_YOSAN_JOKEN.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_f_ZANDAKA_JOKEN.resx">
+      <DependentUpon>Form_f_ZANDAKA_JOKEN.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_f_IMPORT_CONTRACT_FROM_EXCEL.resx">
+      <DependentUpon>Form_f_IMPORT_CONTRACT_FROM_EXCEL.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_f_IMPORT_GSON_FROM_EXCEL.resx">
+      <DependentUpon>Form_f_IMPORT_GSON_FROM_EXCEL.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_KKNRI.resx">
+      <DependentUpon>Form_KKNRI.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_LCPT.resx">
+      <DependentUpon>Form_LCPT.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_MAIN.resx">
+      <DependentUpon>Form_MAIN.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_BuknEntry.resx">
+      <DependentUpon>Form_BuknEntry.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_ContractEntry.resx">
+      <DependentUpon>Form_ContractEntry.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_f_flx_CONTRACT.resx">
+      <DependentUpon>Form_f_flx_CONTRACT.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_JournalEntry.resx">
+      <DependentUpon>Form_JournalEntry.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_f_flx_BUKN.resx">
+      <DependentUpon>Form_f_flx_BUKN.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\app.manifest" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\LeaseM4BS\LeaseM4BS.DataAccess\LeaseM4BS.DataAccess.vbproj">
+      <Project>{a1b2c3d4-e5f6-7890-abcd-ef1234567890}</Project>
+      <Name>LeaseM4BS.DataAccess</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 および x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>8</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Excel">
+      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>9</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <Import Project="..\packages\System.Text.Json.6.0.0\build\System.Text.Json.targets" Condition="Exists('..\packages\System.Text.Json.6.0.0\build\System.Text.Json.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>このプロジェクトは、このコンピューター上にない NuGet パッケージを参照しています。それらのパッケージをダウンロードするには、[NuGet パッケージの復元] を使用します。詳細については、http://go.microsoft.com/fwlink/?LinkID=322105 を参照してください。見つからないファイルは {0} です。</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\System.Text.Json.6.0.0\build\System.Text.Json.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\System.Text.Json.6.0.0\build\System.Text.Json.targets'))" />
+  </Target>
+</Project>

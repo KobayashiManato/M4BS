@@ -1,0 +1,121 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+LeaseM4BS.TestWinForms
+</name>
+</assembly>
+<members>
+<member name="T:My.Resources.Resources">
+<summary>
+  ローカライズされた文字列などを検索するための、厳密に型指定されたリソース クラスです。
+</summary>
+</member>
+<member name="P:My.Resources.Resources.ResourceManager">
+<summary>
+  このクラスで使用されているキャッシュされた ResourceManager インスタンスを返します。
+</summary>
+</member>
+<member name="P:My.Resources.Resources.Culture">
+<summary>
+  すべてについて、現在のスレッドの CurrentUICulture プロパティをオーバーライドします
+  現在のスレッドの CurrentUICulture プロパティをオーバーライドします。
+</summary>
+</member>
+<member name="T:UsageExamples">
+ <summary>
+ DbConnectionManager の使用例を示すクラス
+ DAO コードから Npgsql への移行パターンを実装しています
+ </summary>
+</member>
+<member name="M:UsageExamples.Example1_BasicSelect">
+ <summary>
+ 例1: 基本的なデータ取得（SELECT）
+ DAO.Recordset の代替
+ </summary>
+</member>
+<member name="M:UsageExamples.Example2_ParameterizedQuery(System.Int32)">
+ <summary>
+ 例2: パラメータ付きクエリ
+ SQL インジェクション対策
+ </summary>
+</member>
+<member name="M:UsageExamples.Example3_InsertData(System.String,System.String)">
+ <summary>
+ 例3: データの挿入（INSERT）
+ DAO.Recordset.AddNew の代替
+ </summary>
+</member>
+<member name="M:UsageExamples.Example4_UpdateData(System.Int32,System.String)">
+ <summary>
+ 例4: データの更新（UPDATE）
+ DAO.Recordset.Edit / Update の代替
+ </summary>
+</member>
+<member name="M:UsageExamples.Example5_DeleteData(System.Int32)">
+ <summary>
+ 例5: データの削除（DELETE）
+ DAO.Recordset.Delete の代替
+ </summary>
+</member>
+<member name="M:UsageExamples.Example6_Transaction(System.String,System.String)">
+ <summary>
+ 例6: トランザクション処理
+ DAO.Workspace.BeginTrans / CommitTrans / Rollback の代替
+ </summary>
+</member>
+<member name="M:UsageExamples.Example7_LoadDataTable">
+ <summary>
+ 例7: DataTable への読み込み
+ DataGridView へのバインディング用
+ </summary>
+</member>
+<member name="M:UsageExamples.Example8_BindToDataGridView(System.Windows.Forms.DataGridView)">
+ <summary>
+ 例8: DataGridView へのバインディング
+ </summary>
+</member>
+<member name="M:UsageExamples.Example9_GetRecordCount">
+ <summary>
+ 例9: レコード数の取得
+ DAO.Recordset.RecordCount の代替
+ </summary>
+</member>
+<member name="M:UsageExamples.Example10_GetRecordCountWithCondition(System.String)">
+ <summary>
+ 例10: 条件付きレコード数の取得
+ </summary>
+</member>
+<member name="M:UsageExamples.Example11_RecordExists(System.Int32)">
+ <summary>
+ 例11: レコードの存在チェック
+ DAO.Recordset.EOF の代替
+ </summary>
+</member>
+<member name="M:UsageExamples.Example12_JoinQuery">
+ <summary>
+ 例12: 複数テーブルの JOIN クエリ
+ </summary>
+</member>
+<member name="M:UsageExamples.Example13_CallStoredProcedure(System.Int32)">
+ <summary>
+ 例13: ストアドプロシージャの呼び出し
+ </summary>
+</member>
+<member name="M:UsageExamples.Example14_BatchInsert(System.Collections.Generic.List{System.String})">
+ <summary>
+ 例14: バッチ挿入（複数レコードの一括挿入）
+ </summary>
+</member>
+<member name="M:UsageExamples.Example15_TestConnection">
+ <summary>
+ 例15: 接続テスト
+ </summary>
+</member>
+<member name="M:FileHelper.PadRightByte(System.String,System.Int32)">
+ <summary>
+ 文字列をバイト数指定でパディング（または切り捨て）します
+ </summary>
+</member>
+</members>
+</doc>

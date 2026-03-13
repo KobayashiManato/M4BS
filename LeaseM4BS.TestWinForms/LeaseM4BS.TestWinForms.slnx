@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="../LeaseM4BS/LeaseM4BS.DataAccess/LeaseM4BS.DataAccess.vbproj" Id="a1b2c3d4-e5f6-7890-abcd-ef1234567890" />
+  <Project Path="LeaseM4BS.TestWinForms/LeaseM4BS.TestWinForms.vbproj" Id="77a9ae2a-e73b-468c-bcce-841079f4724c" />
+</Solution>

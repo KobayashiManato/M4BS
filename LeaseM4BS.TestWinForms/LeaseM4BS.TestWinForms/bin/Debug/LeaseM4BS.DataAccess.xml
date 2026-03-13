@@ -1,0 +1,200 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+LeaseM4BS.DataAccess
+</name>
+</assembly>
+<members>
+<member name="T:LeaseM4BS.DataAccess.CrudHelper">
+ <summary>
+ PostgreSQL データベースに対する汎用的な CRUD 操作を提供するヘルパークラス
+ DAO.Recordset の代替として使用します
+ </summary>
+</member>
+<member name="M:LeaseM4BS.DataAccess.CrudHelper.#ctor">
+ <summary>
+ デフォルトコンストラクタ
+ </summary>
+</member>
+<member name="M:LeaseM4BS.DataAccess.CrudHelper.#ctor(System.String)">
+ <summary>
+ 接続文字列を指定するコンストラクタ
+ </summary>
+</member>
+<member name="M:LeaseM4BS.DataAccess.CrudHelper.#ctor(LeaseM4BS.DataAccess.DbConnectionManager)">
+ <summary>
+ DbConnectionManager を指定するコンストラクタ
+ </summary>
+</member>
+<member name="M:LeaseM4BS.DataAccess.CrudHelper.GetDataTable(System.String,System.Collections.Generic.List{Npgsql.NpgsqlParameter})">
+ <summary>
+ SQL クエリを実行し、結果を DataTable として取得します
+ </summary>
+</member>
+<member name="M:LeaseM4BS.DataAccess.CrudHelper.ExecuteNonQuery(System.String,System.Collections.Generic.List{Npgsql.NpgsqlParameter})">
+ <summary>
+ INSERT、UPDATE、DELETE などの非クエリ SQL コマンドを実行します
+ </summary>
+</member>
+<member name="M:LeaseM4BS.DataAccess.CrudHelper.ExecuteScalar``1(System.String,System.Collections.Generic.List{Npgsql.NpgsqlParameter})">
+ <summary>
+ SQLを実行し、単一の値を指定した型で取得します。（NULLの場合はデフォルト値を返します）
+ 使用例: Dim count = db.ExecuteScalar(Of Integer)("SELECT count(*) FROM ...")
+ </summary>
+</member>
+<member name="M:LeaseM4BS.DataAccess.CrudHelper.SafeConvert``1(System.Object,``0)">
+ <summary>
+ DBの値を安全に指定の型に変換します（DBNullの場合はデフォルト値を返します）
+ 使用例: Dim name = db.SafeConvert(Of String)(row("user_name"))
+ </summary>
+</member>
+<member name="M:LeaseM4BS.DataAccess.CrudHelper.CreateErrorMessage(System.Exception,System.String,System.Collections.Generic.List{Npgsql.NpgsqlParameter})">
+ <summary>
+ エラー発生時に、実行しようとしたSQLとパラメータ情報を文字列化します
+ </summary>
+</member>
+<member name="M:LeaseM4BS.DataAccess.CrudHelper.Insert(System.String,System.Collections.Generic.Dictionary{System.String,System.Object})">
+ <summary>
+ テーブルにレコードを挿入します
+ </summary>
+</member>
+<member name="M:LeaseM4BS.DataAccess.CrudHelper.Update(System.String,System.Collections.Generic.Dictionary{System.String,System.Object},System.String,System.Collections.Generic.List{Npgsql.NpgsqlParameter})">
+ <summary>
+ テーブルのレコードを更新します
+ </summary>
+</member>
+<member name="M:LeaseM4BS.DataAccess.CrudHelper.Delete(System.String,System.String,System.Collections.Generic.List{Npgsql.NpgsqlParameter})">
+ <summary>
+ テーブルからレコードを削除します
+ </summary>
+</member>
+<member name="M:LeaseM4BS.DataAccess.CrudHelper.Exists(System.String,System.String,System.Collections.Generic.List{Npgsql.NpgsqlParameter})">
+ <summary>
+ レコードが存在するかチェックします
+ </summary>
+</member>
+<member name="M:LeaseM4BS.DataAccess.CrudHelper.BeginTransaction">
+ <summary>
+ トランザクションを開始します
+ </summary>
+</member>
+<member name="M:LeaseM4BS.DataAccess.CrudHelper.Commit">
+ <summary>
+ トランザクションをコミットします
+ </summary>
+</member>
+<member name="M:LeaseM4BS.DataAccess.CrudHelper.Rollback">
+ <summary>
+ トランザクションをロールバックします
+ </summary>
+</member>
+<member name="P:LeaseM4BS.DataAccess.CrudHelper.IsInTransaction">
+ <summary>
+ トランザクションが進行中かどうかを取得します
+ </summary>
+</member>
+<member name="T:LeaseM4BS.DataAccess.DbConnectionManager">
+ <summary>
+ PostgreSQL データベース接続を管理するクラス
+ DAO.Database の代替として使用します
+ </summary>
+ <remarks>
+ このクラスは、従来の Access DAO コードを置き換えるための
+ PostgreSQL 接続管理機能を提供します。
+ 
+ 使用例:
+ Dim connMgr As New DbConnectionManager()
+ Using conn As NpgsqlConnection = connMgr.GetConnection()
+     ' データベース操作を実行
+ End Using
+ </remarks>
+</member>
+<member name="M:LeaseM4BS.DataAccess.DbConnectionManager.#ctor">
+ <summary>
+ デフォルトコンストラクタ
+ App.config または Web.config から接続文字列を読み込みます
+ </summary>
+</member>
+<member name="M:LeaseM4BS.DataAccess.DbConnectionManager.#ctor(System.String)">
+ <summary>
+ 接続文字列を指定するコンストラクタ
+ </summary>
+ <param name="connectionString">PostgreSQL 接続文字列</param>
+</member>
+<member name="M:LeaseM4BS.DataAccess.DbConnectionManager.GetConnectionString">
+ <summary>
+ 設定ファイルから接続文字列を取得します
+ </summary>
+ <returns>PostgreSQL 接続文字列</returns>
+ <remarks>
+ App.config の connectionStrings セクションから "LeaseM4BS" という名前の
+ 接続文字列を読み込みます。
+ 
+ 設定例:
+ &lt;connectionStrings&gt;
+   &lt;add name="LeaseM4BS" 
+        connectionString="Host=localhost;Port=5432;Database=lease_m4bs;Username=postgres;Password=yourpassword" 
+        providerName="Npgsql" /&gt;
+ &lt;/connectionStrings&gt;
+ </remarks>
+</member>
+<member name="M:LeaseM4BS.DataAccess.DbConnectionManager.GetConnection">
+ <summary>
+ PostgreSQL データベースへの接続を取得します
+ </summary>
+ <returns>開かれた NpgsqlConnection オブジェクト</returns>
+ <remarks>
+ このメソッドは、DAO.Database.OpenRecordset の代替として使用します。
+ 
+ 使用例:
+ Using conn As NpgsqlConnection = connMgr.GetConnection()
+     Using cmd As New NpgsqlCommand("SELECT * FROM tw_M_USER", conn)
+         Using reader As NpgsqlDataReader = cmd.ExecuteReader()
+             While reader.Read()
+                 ' データ処理
+             End While
+         End Using
+     End Using
+ End Using
+ 
+ 注意: 必ず Using ステートメントを使用して、接続を適切に閉じてください。
+ </remarks>
+</member>
+<member name="M:LeaseM4BS.DataAccess.DbConnectionManager.TestConnection">
+ <summary>
+ 接続をテストします
+ </summary>
+ <returns>接続が成功した場合は True、失敗した場合は False</returns>
+</member>
+<member name="M:LeaseM4BS.DataAccess.DbConnectionManager.TestConnection(System.String@)">
+ <summary>
+ 接続をテストし、エラーメッセージを返します
+ </summary>
+ <param name="errorMessage">エラーメッセージ（成功時は空文字列）</param>
+ <returns>接続が成功した場合は True、失敗した場合は False</returns>
+</member>
+<member name="M:LeaseM4BS.DataAccess.DbConnectionManager.GetMaskedConnectionString">
+ <summary>
+ 現在の接続文字列を取得します（パスワードはマスクされます）
+ </summary>
+ <returns>マスクされた接続文字列</returns>
+</member>
+<member name="M:LeaseM4BS.DataAccess.DbConnectionManager.Dispose">
+ <summary>
+ リソースを解放します
+ </summary>
+</member>
+<member name="M:LeaseM4BS.DataAccess.DbConnectionManager.Dispose(System.Boolean)">
+ <summary>
+ リソースを解放します（内部実装）
+ </summary>
+ <param name="disposing">マネージドリソースを解放する場合は True</param>
+</member>
+<member name="M:LeaseM4BS.DataAccess.DbConnectionManager.Finalize">
+ <summary>
+ デストラクタ
+ </summary>
+</member>
+</members>
+</doc>
