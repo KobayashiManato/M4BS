@@ -2,7 +2,7 @@ name: Daily Progress Report
 
 on:
   schedule:
-    - cron: '0 0 * * 1-5'  # 平日 UTC 0:00 (JST 9:00)
+    - cron: '0 9 * * 1-5'  # 平日 UTC 9:00 (JST 18:00)
   workflow_dispatch:
 
 permissions:
