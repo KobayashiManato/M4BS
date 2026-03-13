@@ -75,6 +75,7 @@ ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT ALL ON FUNCTIONS TO lease_m4bs_u
 --
 -- 次のステップ:
 --   1. 各データベースに接続してテーブルを作成:
---      psql -U lease_m4bs_user -d lease_m4bs_dev -f 001_create_tables.sql
---   2. 必要に応じて初期データを投入
+--      psql -U lease_m4bs_user -d lease_m4bs_dev -f 001_ddl.sql
+--   2. 初期データを投入:
+--      psql -U lease_m4bs_user -d lease_m4bs_dev -f 002_seed_dev.sql
 -- ============================================================
